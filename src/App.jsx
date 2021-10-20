@@ -14,10 +14,10 @@ function App() {
         <Link to="/Example">Example Page</Link>
       </li>
     </ul>
-      <Switch>
         <Route path="/Home">
           <Home/>
         </Route>
+        <Switch>
         <Route path="/Example">
           <div className="App">
             <header className="App-header">
