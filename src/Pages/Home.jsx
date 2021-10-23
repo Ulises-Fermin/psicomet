@@ -2,6 +2,13 @@ import React from "react";
 
 export default function Home(){
     return(
-        <h1>Home Page</h1>
+        <>
+        <div className = "encabezado">
+            <img src ="/LogoPsicomet.png" className = "Logo" alt = ""/>
+            <p>prueba 2</p>
+
+        </div>
+        
+        </>
     );
 }
