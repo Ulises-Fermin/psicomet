@@ -37,6 +37,34 @@
   }
 }
 
-Logo{
-  height: 11px;
+.Logo{
+  height: 100px;
+}
+
+.encabezado{
+  background-color: silver;
+  display: flex;
+}
+
+.OpcionEncabezado{
+  color: blue;
+  margin: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+.OpcionesEncabezado{
+  display: flex;
+  margin-left: 765px;
+}
+
+.BotonEncabezado{
+  background-color: blue;
+  border: 1px solid #2e518b;
+  padding: 10px;
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-decoration: none;
+  border-radius: 50px;
 }
