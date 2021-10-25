@@ -72,3 +72,14 @@
 .carrusel{
   background-color: blue;
 }
+
+.TituloInfoQuienesSomos{
+  text-align: center;
+}
+.ContenidoInfoQuienesSomos{
+  text-align: center;
+  margin-right: 60px;
+  margin-left: 60px;
+  font-size: 30px;
+  
+}
