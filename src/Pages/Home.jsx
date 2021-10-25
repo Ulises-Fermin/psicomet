@@ -13,7 +13,13 @@ export default function Home(){
                 <p class = "BotonEncabezado">Iniciar Sesion</p>
             </div>
         </div>
-        
+        <div class = "carrusel">
+            <svg width="1300" height="500">
+                <p>ACA VA EL CARRUSEL</p>
+            </svg>
+
+
+        </div>
         </>
     );
 }
