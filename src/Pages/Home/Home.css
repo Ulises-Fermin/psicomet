@@ -1,0 +1,19 @@
+.carrusel{
+    background-color: blue;
+}
+
+.InfoQuienesSomos{
+    margin-top:50px;
+}
+
+.TituloInfoQuienesSomos{
+    text-align: center;
+}
+
+.ContenidoInfoQuienesSomos{
+    text-align: center;
+    margin-right: 60px;
+    margin-left: 60px;
+    font-size: 30px;
+}
+  
