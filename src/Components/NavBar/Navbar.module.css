@@ -1,0 +1,120 @@
+#NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0px;
+    background-color: silver;
+    box-shadow: 2px 2px 2px silver;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+#Logo {
+    max-width: 110px;
+    max-height: 110px;
+}
+
+#NavLoginLink:link {
+    color: white;
+    text-decoration: none;
+}
+
+#NavLoginLink:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#NavLoginLink:active {
+    color: white;
+    text-decoration: none;
+}
+
+#NavLoginLink:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.NavLink:link {
+    color: black;
+    text-decoration: none;
+}
+
+.NavLink:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.NavLink:active {
+    color: white;
+    text-decoration: none;
+}
+
+.NavLink:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#LoginButton {
+    margin-left: 20px;
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    display: inline;
+    padding: 8px;
+    background-color: blue;
+    border: 1px solid #2e518b;
+    border-radius: 50px;
+}
+
+.NavButton {
+    margin-left: 20px;
+    display: inline;
+}
+
+#NavList {
+    list-style: none;
+    align-items: center;
+}
+
+#NavMenu {
+    align-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+
+/* .Logo{
+    height: 100px;
+}
+  
+.encabezado{
+    background-color: silver;
+    display: flex;
+}
+  
+.OpcionEncabezado{
+    color: blue;
+    margin: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+  
+}
+.OpcionesEncabezado{
+    display: flex;
+    margin-left: 765px;
+}
+  
+.BotonEncabezado{
+    background-color: blue;
+    border: 1px solid #2e518b;
+    padding: 10px;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    border-radius: 50px;
+} */
