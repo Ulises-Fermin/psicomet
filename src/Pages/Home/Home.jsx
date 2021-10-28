@@ -21,10 +21,10 @@ function Home() {
             </div>
 
             <div id={styles.Rates}>
-                <h1 class={styles.h1Rates}>
+                <h1 class={styles.h1AboutUs}>
                     Nuestras Tarifas
                 </h1>
-                <p class={styles.pRates}>
+                <p class={styles.pAboutUs}>
                     En PsicoMet, las tarifas varian de acuerdo a cada especialista, su trayectoria
                     y disponibilidad. Puedes encontrar cada sesion a partir de:
                 </p>
@@ -36,7 +36,21 @@ function Home() {
                         60 minutos en llamada
                     </p>
                 </div>
-                
+            </div>
+
+            <div id={styles.FAQs}>
+                <h1 class={styles.h1AboutUs}>
+                    FAQs
+                </h1>
+                <p class={styles.pAboutUs}>
+                    Visita nuestra seccion de preguntas frecuentes para informarte sobre 
+                    nuestros servicios
+                </p>
+                <div class={styles.BottomFAQs}>
+                    <p class={styles.pFAQs}>
+                        visitar pagina
+                    </p>
+                </div>
             </div>
         </div>
     );

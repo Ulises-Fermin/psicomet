@@ -27,29 +27,48 @@
 #Rates{
     background-color: #6EB5B8;
     padding-left: 5%;
-    padding-right: 5%;
-}
-
-.h1Rates{
-    text-align: center;
-    font-size: 285%;
-    
-}
-
-.pRates{
-    text-align: center;    
-    font-size: 200%;
+    padding-right: 5%;   
 }
 
 .BottomRates{
     background-color: #F5A020;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .h4Bottom{
     color: white;
+    font-size: 240%;
+    text-align: center;
 }
 
 .pBottom{
-    color:white
+    color:white;
+    font-size:150%;
+    margin-top: -5%;
+    text-align: center;
 }
 
+#FAQs{
+    padding-left: 5%;
+    padding-right: 5%;   
+}
+
+.BottomFAQs{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    background-color:#6EB5B8;
+    border-radius: 10px;
+    max-width: 10%; 
+    margin-left: auto;
+    margin-right: auto;  
+    
+}
+.pFAQs{
+    text-align: center;
+    font-weight: bold;
+}
