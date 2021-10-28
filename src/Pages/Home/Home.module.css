@@ -1,0 +1,26 @@
+#Body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Slyder{
+    background-color: blue;
+    height: 500px;
+}
+
+#AboutUs{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.h1AboutUs{
+    text-align: center;
+    font-size: 40px;
+}
+
+.pAboutUs{
+    text-align: justify;    
+    font-size: 30px;
+}
+  

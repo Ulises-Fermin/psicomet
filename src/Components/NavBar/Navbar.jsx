@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 
 function Navbar() {
     return(
-        <div id = {styles.NavBar}>
-            <img src ="/LogoPsicomet.png" id={styles.Logo} alt = "Logo de Psicomet"/>
+        <div id={styles.NavBar}>
+            <img src="/LogoPsicomet.png" id={styles.Logo} alt = "Logo de Psicomet"/>
             <div id={styles.NavMenu}>
                 <ul id={styles.NavList}>
                     <li class={styles.NavButton}>
