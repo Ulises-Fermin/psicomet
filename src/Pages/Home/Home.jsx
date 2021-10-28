@@ -5,8 +5,9 @@ function Home() {
     return(
         <div id={styles.Body}>
             <div id={styles.Slyder}>
-            
+                
             </div> 
+
             <div id={styles.AboutUs}>
                 <h1 class={styles.h1AboutUs}>
                 Quienes Somos?
@@ -17,6 +18,25 @@ function Home() {
                 distancia, a un precio accesible, para aquellas personas que quieran iniciar el proceso 
                 de terapia psicológica desde la comodidad de sus hogares.
                 </p>
+            </div>
+
+            <div id={styles.Rates}>
+                <h1 class={styles.h1Rates}>
+                    Nuestras Tarifas
+                </h1>
+                <p class={styles.pRates}>
+                    En PsicoMet, las tarifas varian de acuerdo a cada especialista, su trayectoria
+                    y disponibilidad. Puedes encontrar cada sesion a partir de:
+                </p>
+                <div class={styles.BottomRates}>
+                    <h4 class={styles.h4Bottom}>
+                        15$ USD o Bs al cambio
+                    </h4>
+                    <p class={styles.pBottom}>
+                        60 minutos en llamada
+                    </p>
+                </div>
+                
             </div>
         </div>
     );
