@@ -17,8 +17,12 @@ function CreateAccount(){
             </div>
 
             <div id={styles.Bottoms_Container}>
-                
+                <img src="/logoGoogle.png" id={styles.Logo} alt = ""/>
+                <img src="/logoTwitter.jpg" id={styles.Logo} alt = ""/>
+                <img src="/logoFacebook.png" id={styles.Logo} alt = ""/>
             </div>
+
+
         </div>
         
 

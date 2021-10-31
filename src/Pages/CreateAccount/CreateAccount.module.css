@@ -5,47 +5,35 @@
 .link{
     margin-top: 0.5%;
     padding: 0.5%;
+    margin-bottom: 0.5%;
 }
 p{
     padding: 0.5%;
     margin-top: 0.5%;
+    margin-bottom: 0.5%;
 }
 
 #title{
     text-align: center;
 }
+
 h2{
     margin-bottom: 0.5%;
 }
 
-.Bottoms_Container {
-    display: flex;
+#Bottoms_Container{
     justify-content: center;
-    position: relative;
-    margin-bottom: 15px;
-    list-style: none;
-    background-color: red;
+    display: flex;
+    
 }
 
-.Bottoms_Container li a {
-    color: blue;
-    height: 100%;
-    width: 100%;
+#Logo{
+    max-width: 2.75%;
     border-radius: 50%;
-    background: #fff;
-    display: block;
-    line-height: 40px;
-    transition: all 0.3s;
-}
+    border-style:groove;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
 
-.Bottoms_Container li {
-    border-radius: 50%;
-    background-color: #fff;
-    height: 40px;
-    width: 40px;
-    margin: 0 5px;
-    line-height: 40px;
-    text-align: center;
-    transform: scale(0);
-    transition: all 0.5s ease;
 }
