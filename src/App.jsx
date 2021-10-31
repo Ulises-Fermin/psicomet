@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import './App.css';
 import Home from './Pages/Home/Home';
 import Navbar from './Components/NavBar/Navbar';
+import CreateAccount from './Pages/CreateAccount/CreateAccount';
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
     <Navbar/>
         <Route path="/Home">
           <Home/>
-        </Route>
+        </Route>  
       <Switch>
+        <Route path="/CreateAccount">
+          <CreateAccount/>
+        </Route>
         <Route path="/Example">
           <div className="App">
             <header className="App-header">

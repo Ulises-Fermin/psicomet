@@ -1,0 +1,39 @@
+#subtitle{
+    display: flex;
+    justify-content: center;
+}
+.link{
+    margin-top: 0.5%;
+    padding: 0.5%;
+    margin-bottom: 0.5%;
+}
+p{
+    padding: 0.5%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+#title{
+    text-align: center;
+}
+
+h2{
+    margin-bottom: 0.5%;
+}
+
+#Bottoms_Container{
+    justify-content: center;
+    display: flex;
+    
+}
+
+#Logo{
+    max-width: 2.75%;
+    border-radius: 50%;
+    border-style:groove;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+
+}
