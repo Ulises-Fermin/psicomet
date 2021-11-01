@@ -2,16 +2,20 @@ import logo from './logo.svg';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import './App.css';
 import Home from './Pages/Home/Home';
+import Contact from './Pages/Contact/Contact';
 import Navbar from './Components/NavBar/Navbar';
 
 function App() {
   return (
     <Router>
     <Navbar/>
+    <Switch>
         <Route path="/Home">
           <Home/>
         </Route>
-      <Switch>
+        <Route path="/Contact">
+          <Contact/>
+        </Route>
         <Route path="/Example">
           <div className="App">
             <header className="App-header">
