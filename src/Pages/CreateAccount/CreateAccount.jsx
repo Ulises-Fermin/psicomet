@@ -22,6 +22,7 @@ function CreateAccount(){
                 <img src="/logoFacebook.png" id={styles.Logo} alt = ""/>
             </div>
 
+            <div></div>
 
         </div>
         

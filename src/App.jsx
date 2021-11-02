@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Pages/Home/Home';
 import Navbar from './Components/NavBar/Navbar';
 import CreateAccount from './Pages/CreateAccount/CreateAccount';
+import TypeAccount from './Pages/TypeAccount/TypeAccount';
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
           <Home/>
         </Route>  
       <Switch>
-        <Route path="/CreateAccount">
-          <CreateAccount/>
+        <Route path="/TypeAccount">
+          <TypeAccount/>
         </Route>
         <Route path="/Example">
           <div className="App">

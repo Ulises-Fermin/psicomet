@@ -17,24 +17,30 @@
 .h1AboutUs{
     text-align: center;
     font-size: 285%;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
 }
 
 .pAboutUs{
     text-align: center;    
-    font-size: 200%;
+    font-size: 190%;
 }
 
 #Rates{
     background-color: #6EB5B8;
     padding-left: 5%;
-    padding-right: 5%;   
+    padding-right: 5%; 
+    padding-top: 1%;
+    padding-bottom: 2%;  
 }
 
 .BottomRates{
     background-color: #F5A020;
-    max-width: 40%;
+    max-width: 50%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     
 }
 
@@ -42,18 +48,23 @@
     color: white;
     font-size: 240%;
     text-align: center;
+    margin-top: 2.5%;
+    margin-bottom: 4%;
 }
 
 .pBottom{
     color:white;
     font-size:150%;
-    margin-top: -5%;
+    margin-top: 0%;
     text-align: center;
+    margin-bottom: 2%;
+    
 }
 
 #FAQs{
     padding-left: 5%;
-    padding-right: 5%;   
+    padding-right: 5%; 
+    padding-top: 4%;  
 }
 
 .BottomFAQs{
@@ -63,9 +74,13 @@
     padding: 8px;
     background-color:#6EB5B8;
     border-radius: 10px;
-    max-width: 10%; 
+    max-width: 15%; 
     margin-left: auto;
     margin-right: auto;  
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
     
 }
 .pFAQs{
