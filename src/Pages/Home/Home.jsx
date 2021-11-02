@@ -6,7 +6,7 @@ function Home() {
     return(
         <div id={styles.Body}>
             <div id={styles.Slyder}>
-                <Link to="/CreateAccount" class={styles.NavLink} id={styles.LinkCreateAccount}>
+                <Link to="/TypeAccount" class={styles.NavLink} id={styles.LinkCreateAccount}>
                     Crear Cuenta
                 </Link>
             </div> 
