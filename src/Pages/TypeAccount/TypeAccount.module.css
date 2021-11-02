@@ -13,8 +13,28 @@
 
 #pTypeAccount{
    font-size: 100%; 
+   margin: auto;
+   padding: 0%;
 }
 
 #h4TypeAccount{
     font-size: 150%;
+}
+
+#BottomContainer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4%;
+}
+
+#account{
+    margin-left: 4%;
+    margin-right:4%;
+    color: white;
+    background-color: #03A79D;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
 }
