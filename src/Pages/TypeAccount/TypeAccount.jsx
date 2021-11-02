@@ -15,7 +15,7 @@ function TypeAccount(){
                 <p id={styles.account}>Cliente</p>
                 <p id={styles.account}>Psicologo</p>
             </div>
-            <p id={styles.pTypeAccount}>Ya tienes una cuenta?</p>
+            <p id={styles.pTypeAccount}>?Ya tienes una cuenta?</p>
             <p id={styles.pTypeAccount}>Iniciar sesion</p>
 
 
