@@ -24,9 +24,19 @@ function CreateAccount(){
 
             <div class={styles.DatesContainer}>
                 <div id={styles.File1}>
-                    <p id={styles.name}>nombre</p>
-                    <p id={styles.lastname}>apellido</p>
+                    <p id={styles.name}>Nombre</p>
+                    <p id={styles.lastname}>Apellido</p>
                 </div>
+                <div id={styles.File2}>
+                    <p id={styles.email}>Correo Electronico</p>
+                </div>
+            
+                <div id={styles.File3}>
+                    <p id={styles.password}>Contrasena</p>
+                    <p id={styles.ConfirmPassword}>Confirmar Contrasena</p>
+                </div>
+
+                
             </div>
 
         </div>
