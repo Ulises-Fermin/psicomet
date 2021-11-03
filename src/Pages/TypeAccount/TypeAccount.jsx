@@ -12,7 +12,11 @@ function TypeAccount(){
             <p id={styles.pTypeAccount}>La plataforma N1 en atencion psicologica en linea</p>
             <h4 id={styles.h4TypeAccount}>Registrate Gratis</h4>
             <div id={styles.BottomContainer}>
-                <p id={styles.account}>Cliente</p>
+                <Link to="/CreateAccount" class={styles.NavLink} id={styles.account}>
+                    Cliente
+                </Link>
+                
+                
                 <p id={styles.account}>Psicologo</p>
             </div>
             <p id={styles.pTypeAccount}>Ya tienes una cuenta?</p>

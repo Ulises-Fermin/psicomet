@@ -17,6 +17,9 @@ function App() {
         <Route path="/TypeAccount">
           <TypeAccount/>
         </Route>
+        <Route path="/CreateAccount">
+          <CreateAccount/>
+        </Route>
         <Route path="/Example">
           <div className="App">
             <header className="App-header">
