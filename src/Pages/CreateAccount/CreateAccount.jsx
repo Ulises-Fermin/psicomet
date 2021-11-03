@@ -52,6 +52,7 @@ function CreateAccount(){
                     <p id={styles.month}>MM</p>
                     <p class={styles.slash}>/</p>
                     <p id={styles.year}>AAAA</p>    
+                    <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
                 </div>
                 <div id={styles.File6}>
                     <p id={styles.gender}>Genero</p>

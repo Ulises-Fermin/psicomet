@@ -214,7 +214,7 @@ h2{
 }
 
 #register{
-    margin-left: 70%;
+    margin-left: 68.5%;
     color: white;
     background-color: #1CB0A7;
     padding-right: 2%;
@@ -223,5 +223,11 @@ h2{
     padding-bottom: 1%;
     border-radius: 10px;
     max-width: 10%;
+    text-align: center;
+}
+
+#instructions{
+    margin-left: 5%;
+    max-width: 15%;
     text-align: center;
 }
