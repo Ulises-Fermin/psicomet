@@ -36,7 +36,25 @@ function CreateAccount(){
                     <p id={styles.ConfirmPassword}>Confirmar Contrasena</p>
                 </div>
 
-                
+                <div id={styles.File4}>
+                    <p id={styles.number}>Telefono</p>
+                </div>   
+            </div>
+
+            <div id={styles.line}>
+                <hr></hr>
+            </div>
+            
+            <div class={styles.DatesContainer}>
+                <div id={styles.File5}>
+                    <p id={styles.day}>DD</p>
+                    <p class={styles.slash}>/</p>
+                    <p id={styles.month}>MM</p>
+                    <p class={styles.slash}>/</p>
+                    <p id={styles.year}>AAAA</p>    
+                </div>
+
+
             </div>
 
         </div>

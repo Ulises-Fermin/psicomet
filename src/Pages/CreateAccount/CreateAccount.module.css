@@ -54,6 +54,12 @@ h2{
 
 #File3{
     display: flex;
+    margin-bottom: 3%;
+}
+
+#File5{
+    display: flex;
+    margin-top: 4%;
 }
 
 #name{
@@ -118,4 +124,72 @@ h2{
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
+}
+
+#number{
+    margin-left: 4%;
+    margin-right:4%;
+    color: black;
+    background-color: #E9E5E5;
+    padding-right: 8.0%;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-right: 1%;
+    max-width: 40%;
+}
+
+#line{
+    max-width: 55%;
+    margin-top: 3%;
+    padding-left: 28%;
+}
+
+#day{
+    margin-left: 4%;
+    color: black;
+    background-color: #E9E5E5;
+    padding-right: 8.0%;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-right: 0.7%;
+    max-width: 40%;
+}
+
+#month{
+    margin-left: 0.7%;
+    color: black;
+    background-color: #E9E5E5;
+    padding-right: 8.0%;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-right: 0.7%;
+    max-width: 40%;
+}
+
+#year{
+    margin-left: 0.7%;
+    color: black;
+    background-color: #E9E5E5;
+    padding-right: 8.0%;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-right: 0.7%;
+    max-width: 40%;
+}
+
+.slash{
+    font-size: 300%;
+    margin-top: -2%;
+    padding-top: -2%;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    font-weight: 10;
 }
