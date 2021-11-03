@@ -22,7 +22,46 @@ function CreateAccount(){
                 <img src="/logoFacebook.png" id={styles.Logo} alt = ""/>
             </div>
 
-            <div></div>
+            <div class={styles.DatesContainer}>
+                <div id={styles.File1}>
+                    <p id={styles.name}>Nombre</p>
+                    <p id={styles.lastname}>Apellido</p>
+                </div>
+                <div id={styles.File2}>
+                    <p id={styles.email}>Correo Electronico</p>
+                </div>
+            
+                <div id={styles.File3}>
+                    <p id={styles.password}>Contrasena</p>
+                    <p id={styles.ConfirmPassword}>Confirmar Contrasena</p>
+                </div>
+
+                <div id={styles.File4}>
+                    <p id={styles.number}>Telefono</p>
+                </div>   
+            </div>
+
+            <div id={styles.line}>
+                <hr></hr>
+            </div>
+            
+            <div class={styles.DatesContainer}>
+                <div id={styles.File5}>
+                    <p id={styles.day}>DD</p>
+                    <p class={styles.slash}>/</p>
+                    <p id={styles.month}>MM</p>
+                    <p class={styles.slash}>/</p>
+                    <p id={styles.year}>AAAA</p>    
+                    <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
+                </div>
+                <div id={styles.File6}>
+                    <p id={styles.gender}>Genero</p>
+                    
+                </div>
+
+            </div>
+            
+            <p id={styles.register}>Crear cuenta</p>
 
         </div>
         
