@@ -53,9 +53,14 @@ function CreateAccount(){
                     <p class={styles.slash}>/</p>
                     <p id={styles.year}>AAAA</p>    
                 </div>
-
+                <div id={styles.File6}>
+                    <p id={styles.gender}>Genero</p>
+                    
+                </div>
 
             </div>
+            
+            <p id={styles.register}>Crear cuenta</p>
 
         </div>
         
