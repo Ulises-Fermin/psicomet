@@ -37,3 +37,38 @@ h2{
     margin-left: 2.5%;
 
 }
+
+.DatesContainer{
+    max-width: 75%;
+    padding-left: 25%;
+}
+
+#File1{
+    display:flex;
+}
+
+#name{
+    margin-left: 4%;
+    margin-right:4%;
+    color: black;
+    background-color: #E9E5E5;
+    padding-right: 15%;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-right: 1%;
+}
+
+#lastname{
+    margin-left: 4%;
+    margin-right:4%;
+    color: black;
+    background-color: #E9E5E5;
+    padding-right: 15%;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-left: 1%;
+}
