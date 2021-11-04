@@ -1,11 +1,16 @@
 import React from "react";
 import styles from "./Home.module.css";
 import {Link} from "react-router-dom";
+import Slideshow from "./Components/SlideShow/SlideShow";
+
+
+
 
 function Home() {
     return(
         <div id={styles.Body}>
             <div id={styles.Slyder}>
+                <Slideshow/>
                 <Link to="/TypeAccount" class={styles.NavLink} id={styles.LinkCreateAccount}>
                     Crear Cuenta
                 </Link>
