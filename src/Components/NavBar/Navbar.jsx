@@ -1,8 +1,16 @@
 import React from "react";
+import {useContext} from "react";
 import styles from "./Navbar.module.css";
 import {Link} from "react-router-dom";
+import {UserContext} from "../../Context/UserContext";
+import {auth} from "../../Utils/FireBaseConfig"
 
 function Navbar() {
+    const {user, setUser} = useContext(UserContext)
+    const handleLogOut = async() => {
+        await auth.signOut();
+        setUser(null);
+    }
     return(
         <div id={styles.NavBar}>
             <img src="/LogoPsicomet.png" id={styles.Logo} alt = "Logo de Psicomet"/>
@@ -39,9 +47,15 @@ function Navbar() {
                         </Link> 
                     </li> 
                     <li id={styles.LoginButton}>
-                        <Link to="/Login" id={styles.NavLoginLink}>
+                        {!!user ? (
+                            <Link to ="/Home" id={styles.NavLoginLink} onClick={handleLogOut}>
+                            Cerrar Sesion de {user.name}
+                            </Link>
+                        ) : (
+                            <Link to="/Login" id={styles.NavLoginLink}>
                             Iniciar Sesion
-                        </Link> 
+                            </Link> 
+                        )}
                     </li> 
                 </ul>
             </div>
