@@ -24,20 +24,22 @@ function CreateAccount(){
 
             <div class={styles.DatesContainer}>
                 <div id={styles.File1}>
-                    <p id={styles.name}>Nombre</p>
-                    <p id={styles.lastname}>Apellido</p>
+                    <input type="text" id={styles.name} placeholder="Nombre"></input>
+                    <input type="text" id={styles.lastname} placeholder="Apellido"></input>  
                 </div>
                 <div id={styles.File2}>
-                    <p id={styles.email}>Correo Electronico</p>
+                    <input
+                        type="email" id={styles.email} placeholder="Correo Electronico"
+                    ></input>
                 </div>
             
                 <div id={styles.File3}>
-                    <p id={styles.password}>Contrasena</p>
-                    <p id={styles.ConfirmPassword}>Confirmar Contrasena</p>
+                    <input type="text" id={styles.password} placeholder="Contraseña"></input>
+                    <input type="text" id={styles.ConfirmPassword} placeholder="Confirmar Contraseña"></input>
                 </div>
 
                 <div id={styles.File4}>
-                    <p id={styles.number}>Telefono</p>
+                    <input type="tel" id={styles.number} placeholder="Telefono"></input>
                 </div>   
             </div>
 
@@ -47,16 +49,15 @@ function CreateAccount(){
             
             <div class={styles.DatesContainer}>
                 <div id={styles.File5}>
-                    <p id={styles.day}>DD</p>
-                    <p class={styles.slash}>/</p>
-                    <p id={styles.month}>MM</p>
-                    <p class={styles.slash}>/</p>
-                    <p id={styles.year}>AAAA</p>    
+                    <input type="date" id={styles.date} placeholder="DD/MM/AAAA"></input>
                     <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
                 </div>
                 <div id={styles.File6}>
-                    <p id={styles.gender}>Genero</p>
-                    
+                    <select name="Genero" id={styles.gender}>
+                        <option value="">Genero</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>   
                 </div>
 
             </div>

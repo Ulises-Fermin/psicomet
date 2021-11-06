@@ -63,11 +63,7 @@ function CreateAccountP() {
 
       <div class={styles.DatesContainer}>
         <div id={styles.File5}>
-          <p id={styles.day}>DD</p>
-          <p class={styles.slash}>/</p>
-          <p id={styles.month}>MM</p>
-          <p class={styles.slash}>/</p>
-          <p id={styles.year}>AAAA</p>
+          <input type="date" id={styles.date} placeholder="DD/MM/AAAA"></input>
           <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
         </div>
         <div id={styles.File6}>
@@ -85,23 +81,18 @@ function CreateAccountP() {
         </div>
 
         <div id={styles.File1}>
-          <input
-            id={styles.name}
-            type="text"
-            placeholder="Ingrese la universidad en la que cursó sus estudios"
-          />
+          <input id={styles.name} type="text" placeholder="Ingrese la universidad en la que cursó sus estudios"/>
         </div>
 
         <div id={styles.File1}>
-          <select name="Campo_especialidad" id={styles.name}>
-            <option value="">Especialidad</option>
+          <select name="Campo_especialidad" id={styles.name} placeholder="Especialidad">
             <option value="Depresión">Depresión</option>
             <option value="Ansiedad">Ansiedad</option>
             <option value="Sexualidad">Sexualidad</option>
           </select>
         </div>
 
-        <p>
+        <p id={styles.instructions2}>
           En el siguiente campo adjunte un archivo que contenga su curriculum
         </p>
 

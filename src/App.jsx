@@ -8,7 +8,7 @@ import CreateAccountP from "./Pages/CreateAccountP/CreateAccountP";
 import TypeAccount from "./Pages/TypeAccount/TypeAccount";
 import LogIn from "./Pages/LogIn/LogIn";
 import UserContextProvider from "./Context/UserContext";
-import Usuario from "./Pages/Usuario/Usuario";
+import User from "./Pages/User/User";
 
 function App() {
   return (
@@ -28,8 +28,8 @@ function App() {
           <Route path="/CreateAccount_p">
             <CreateAccountP />
           </Route>
-          <Route path="/Usuario">
-            <Usuario />
+          <Route path="/User">
+            <User />
           </Route>
           <Route path="/Example">
             <div className="App">
