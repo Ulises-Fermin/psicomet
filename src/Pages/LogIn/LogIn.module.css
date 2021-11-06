@@ -1,4 +1,87 @@
-#LogIn{
-    padding: 0px;
-    margin: 0px;
+.body {
+}
+
+#LogIn {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 6%;
+}
+
+#button1 {
+  margin-left: 42.5%;
+  width: 15%;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #00bfff;
+  border: none;
+  font-size: large;
+  padding: 0.5%;
+  color: white;
+}
+
+.inicio {
+  padding: 0%;
+  margin-top: 2%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#parrafo2 {
+  padding: 0%;
+  margin-bottom: 3%;
+  background-color: #00bfff;
+  width: 20%;
+  margin-left: 40%;
+  border-radius: 5px;
+  padding: 0.3%;
+  font-size: larger;
+  color: white;
+}
+
+#email {
+  padding: 0.5%;
+  margin-left: 42.5%;
+  width: 15%;
+}
+
+#password {
+  padding: 0.5%;
+  margin-top: 2%;
+  margin-left: 42.5%;
+  width: 15%;
+}
+
+#button2 {
+  margin-left: 42.5%;
+  width: 15%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 2%;
+  background-color: #00bfff;
+  border: none;
+  font-size: large;
+  padding: 0.3%;
+  color: white;
+}
+
+.registro {
+  padding: 0%;
+  margin-top: 7%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#link {
+  margin-left: 42.5%;
+  background-color: #00bfff;
+  width: 15%;
+  color: white;
+  font-size: large;
+  padding: 0.5%;
+  border-radius: 5px;
 }

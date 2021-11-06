@@ -47,9 +47,15 @@ function Navbar() {
             </Link>
           </li>
           <li class={styles.NavButton}>
+            {!!user ? (
               <Link to="/User" id={styles.NavLoginLink}>
                 Usuario
               </Link>
+            ) : (
+              <Link to="/Login" id={styles.NavLoginLink}>
+                Usuario
+              </Link>
+            )}
           </li>
           <li id={styles.LoginButton}>
             {!!user ? (
