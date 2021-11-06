@@ -1,0 +1,50 @@
+.body {
+  background-image: url("../../Images/Terapia.jpg");
+  width: 100%;
+}
+
+.buttons_usuario {
+  display: flex;
+  justify-content: space-around;
+  padding: 0%;
+  margin: 0%;
+}
+#buttons1 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+#buttons2 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+#Mis_consultas {
+  margin-top: 35%;
+  margin-bottom: 20%;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#Ver_especialistas {
+  margin-top: 35%;
+  margin-bottom: 38.4%;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#Mis_chats {
+  margin-top: 35%;
+  margin-bottom: 20%;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#Calendaio {
+  margin-top: 35%;
+  margin-bottom: 38.4%;
+  cursor: pointer;
+  border-radius: 10px;
+}

@@ -6,8 +6,9 @@ import Navbar from "./Components/NavBar/Navbar";
 import CreateAccount from "./Pages/CreateAccount/CreateAccount";
 import CreateAccountP from "./Pages/CreateAccountP/CreateAccountP";
 import TypeAccount from "./Pages/TypeAccount/TypeAccount";
-import LogIn from "./Pages/LogIn/LogIn"
+import LogIn from "./Pages/LogIn/LogIn";
 import UserContextProvider from "./Context/UserContext";
+import Usuario from "./Pages/Usuario/Usuario";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/CreateAccount_p">
             <CreateAccountP />
+          </Route>
+          <Route path="/Usuario">
+            <Usuario />
           </Route>
           <Route path="/Example">
             <div className="App">
