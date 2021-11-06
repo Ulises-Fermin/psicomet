@@ -78,6 +78,7 @@ h2{
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
+    max-width: 10%;
 }
 
 #lastname{
@@ -91,19 +92,19 @@ h2{
     padding-bottom: 1%;
     border-radius: 10px;
     margin-left: 1%;
+    max-width: 10%;
 }
 
 #email{
     margin-left: 4%;
-    margin-right:4%;
     color: black;
     background-color: #E9E5E5;
-    padding-right: 0%;
+    padding-right: 7%;
     padding-left: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
     border-radius: 10px;
-    max-width: 48%;
+    max-width: 18%;
 }
 
 #password{
@@ -117,6 +118,7 @@ h2{
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
+    max-width: 18%;
 }
 
 #ConfirmPassword{
@@ -129,6 +131,7 @@ h2{
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
+    max-width: 16%;
 }
 
 #number{
@@ -142,61 +145,37 @@ h2{
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
-    max-width: 10%;
+    max-width: 18%;
 }
 
 #line{
     max-width: 55%;
     margin-top: 3%;
     padding-left: 28%;
+    max-height: 5%;
 }
 
-#day{
+#date{
     margin-left: 4%;
     color: black;
     background-color: #E9E5E5;
-    padding-right: 8.0%;
+    padding-right: 8%;
     padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 0%;
     border-radius: 10px;
     margin-right: 0.7%;
-    max-width: 40%;
+    
 }
 
-#month{
-    margin-left: 0.7%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 0.7%;
-    max-width: 40%;
-}
-
-#year{
-    margin-left: 0.7%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 0.7%;
-    max-width: 40%;
-}
 
 .slash{
-    font-size: 300%;
+    font-size: 250%;
     margin-top: -2%;
     padding-top: -2%;
     margin-bottom: 0%;
     padding-bottom: 0%;
     font-weight: 10;
+    max-height: 5%;
 }
 
 #gender{
@@ -204,13 +183,13 @@ h2{
     margin-right:4%;
     color: black;
     background-color: #E9E5E5;
-    padding-right: 8.0%;
+    padding-right: 15.0%;
     padding-left: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
-    max-width: 20%;
+    
 }
 
 #register{
@@ -228,6 +207,5 @@ h2{
 
 #instructions{
     margin-left: 5%;
-    max-width: 15%;
     text-align: center;
 }
