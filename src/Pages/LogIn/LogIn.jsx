@@ -21,31 +21,42 @@ function LogIn() {
   };
   return (
     <div class={styles.body}>
-      <div id={styles.LogIn}>
-        <p id={styles.parrafo1}>
-          Si tiene cuenta de google, puede iniciar con ella
-        </p>
-        <br />
-        <button id={styles.button1} type="button" onClick={googleLogin}>
-          Iniciar sesion con Google
-        </button>
-      </div>
+      <img
+        src="https://image.freepik.com/vector-gratis/ayuda-psicologia-linea-ilustracion-psicoterapia-salud-paciente-psicologo-apoyo-mujer-depresion_109722-1836.jpg"
+        alt=""
+        id={styles.body2}
+      />
+      <div class={styles.body3}>
+        <div id={styles.LogIn}>
+          <p id={styles.parrafo1}>
+            Si tiene cuenta de google, puede iniciar con ella
+          </p>
+          <br />
+          <button id={styles.button1} type="button" onClick={googleLogin}>
+            Iniciar sesion con Google
+          </button>
+        </div>
 
-      <div class={styles.inicio}>
-        <input
-          type="email"
-          id={styles.email}
-          placeholder="Correo Electronico"
-        />
-        <input type="password" id={styles.password} placeholder="Contraseña" />
-        <button id={styles.button2}>Iniciar Sesion</button>
-      </div>
+        <div class={styles.inicio}>
+          <input
+            type="email"
+            id={styles.email}
+            placeholder="Correo Electronico"
+          />
+          <input
+            type="password"
+            id={styles.password}
+            placeholder="Contraseña"
+          />
+          <button id={styles.button2}>Iniciar Sesion</button>
+        </div>
 
-      <div class={styles.registro}>
-        <p id={styles.parrafo3}>Si no tiene una cuenta registrese</p>
-        <Link to="/TypeAccount" id={styles.link}>
-          Registrese
-        </Link>
+        <div class={styles.registro}>
+          <p id={styles.parrafo3}>Si no tiene una cuenta registrese</p>
+          <Link to="/TypeAccount" id={styles.link}>
+            Registrese
+          </Link>
+        </div>
       </div>
     </div>
   );
