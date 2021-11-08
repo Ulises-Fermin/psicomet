@@ -26,17 +26,22 @@
   margin-bottom: 30%;
   cursor: pointer;
   text-align: center;
+  font-size: 200%;
 }
 #Mis_consults:hover{
-  text-shadow: -3px -3px 3px #0000DF, 3px -3px 3px #0000DF, -3px 3px 3px #0000DF, 3px 3px 3px #0000DF;
+  text-shadow: -1px -1px #fff;
 }
 
 
 #Ver_especialists {
-  margin-top: 5%;
+  margin-top: 2.5%;
   margin-bottom: 30%;
   cursor: pointer;
   text-align: center;
+  font-size: 200%;
+}
+#Ver_especialists:hover{
+  text-shadow:  -1px -1px #fff;
 }
 
 
@@ -53,10 +58,14 @@
 
 
 #Calendar {
-  margin-top: 5%;
+  margin-top: 2.5%;
   margin-bottom: 30%;
   cursor: pointer;
   text-align: center;
+  font-size: 200%;
+}
+#Calendar:hover{
+  text-shadow:  -1px -1px #fff;
 }
 
 #title{
@@ -64,6 +73,12 @@
   margin-top: 0%;
   padding-top: 5%;
   margin-bottom: 10%;
+  font-size: 250%;
+}
+#title:hover{
+  font-size: 255%;
+  color: #1CB0A7;
+  transition: 0.15s;
 }
 
 #image{
@@ -73,4 +88,12 @@
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
   display: block;
   margin: auto;
+}
+#image:hover{
+  width: 8.75rem;
+  height: 8.75rem;
+  border-radius: 100px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+  transition: 1s;
+  cursor: pointer;
 }
