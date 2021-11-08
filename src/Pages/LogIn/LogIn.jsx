@@ -34,11 +34,8 @@ function LogIn() {
 
   return (
     <div class={styles.body}>
-      <img
-        src="https://image.freepik.com/vector-gratis/ayuda-psicologia-linea-ilustracion-psicoterapia-salud-paciente-psicologo-apoyo-mujer-depresion_109722-1836.jpg"
-        alt=""
-        id={styles.body2}
-      />
+      <img src="https://image.freepik.com/vector-gratis/ayuda-psicologia-linea-ilustracion-psicoterapia-salud-paciente-psicologo-apoyo-mujer-depresion_109722-1836.jpg"
+        alt="" id={styles.body2}/>
       <div class={styles.body3}>
         <div id={styles.LogIn}>
           <p id={styles.parrafo1}>
@@ -51,22 +48,10 @@ function LogIn() {
         </div>
         <form onSubmit={handleSubmit}>
           <div class={styles.inicio}>
-            <input
-              name="email"
-              type="email"
-              id={styles.email}
-              placeholder="Correo Electronico"
-              value={values.email}
-              onChange={handleOnChange}
-            />
-            <input
-              name="password"
-              type="password"
-              id={styles.password}
-              placeholder="Contraseña"
-              value={values.password}
-              onChange={handleOnChange}
-            />
+            <input name="email" type="email" id={styles.email} placeholder="Correo Electronico"
+              value={values.email} onChange={handleOnChange}/>
+            <input name="password" type="password" id={styles.password} placeholder="Contraseña"
+              value={values.password} onChange={handleOnChange}/>
             <button type="submit" id={styles.button2} onClick={handleSubmit}>Acceder</button>
           </div>
         </form>
