@@ -41,22 +41,13 @@ function Navbar() {
               Testimonios
             </Link>
           </li>
-          <li class={styles.NavButton}>
-            <Link to="/Example" class={styles.NavLink}>
-              Ejemplo
-            </Link>
-          </li>
-          <li class={styles.NavButton}>
             {!!user ? (
-              <Link to="/User" id={styles.NavLoginLink}>
-                Usuario
-              </Link>
-            ) : (
-              <Link to="/Login" id={styles.NavLoginLink}>
-                Usuario
-              </Link>
-            )}
-          </li>
+              <li class={styles.NavButton}>
+                <Link to="/User" class={styles.NavLink}>
+                  Usuario
+                </Link>
+              </li>
+            ) : (null)}
           <li id={styles.LoginButton}>
             {!!user ? (
               <Link to="/Home" id={styles.NavLoginLink} onClick={handleLogOut}>

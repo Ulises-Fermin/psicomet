@@ -22,7 +22,9 @@ function TypeAccount() {
         </Link>
       </div>
       <p id={styles.pTypeAccount}>¿Ya tienes una cuenta?</p>
-      <p id={styles.pTypeAccount2}>Iniciar sesion</p>
+      <Link to="/LogIn" class={styles.link} id={styles.pTypeAccount2}>
+          Iniciar sesion
+      </Link>
     </div>
   );
 }

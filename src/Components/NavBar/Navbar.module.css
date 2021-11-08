@@ -56,7 +56,6 @@
 }
 
 #LoginButton {
-    margin-left: 20px;
     list-style: none;
     color: white;
     text-decoration: none;
@@ -65,6 +64,7 @@
     background-color: blue;
     border: 1px solid #2e518b;
     border-radius: 50px;
+    margin-left: 20px;
 }
 
 .NavButton {

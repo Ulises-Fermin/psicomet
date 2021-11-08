@@ -1,24 +1,37 @@
 import React from "react";
-import { useContext } from "react";
+import {useContext, useState} from "react";
 import styles from "./LogIn.module.css";
-import { googleProvider, auth } from "../../Utils/FireBaseConfig";
-import { useHistory } from "react-router";
-import { UserContext } from "../../Context/UserContext";
-import { Link } from "react-router-dom";
+import {googleProvider, auth} from "../../Utils/FireBaseConfig";
+import {useHistory} from "react-router";
+import {UserContext} from "../../Context/UserContext";
+import {Link} from "react-router-dom";
 
 function LogIn() {
   const { setUser } = useContext(UserContext);
 
   const history = useHistory();
 
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  })
+
   const googleLogin = async () => {
-    const response = await auth.signInWithPopup(googleProvider);
-    setUser({
-      name: response.user.displayName,
-      email: response.user.email,
-    });
+    await auth.signInWithPopup(googleProvider);
     history.push("/Home");
   };
+
+  const handleOnChange = (event) => {
+    const {value, name: inputName} = event.target;
+    setValues({...values, [inputName]:value})
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await auth.signInWithEmailAndPassword(values.email, values.password)
+    history.push("/Home");
+  }
+
   return (
     <div class={styles.body}>
       <img
@@ -36,21 +49,27 @@ function LogIn() {
             Iniciar sesion con Google
           </button>
         </div>
-
-        <div class={styles.inicio}>
-          <input
-            type="email"
-            id={styles.email}
-            placeholder="Correo Electronico"
-          />
-          <input
-            type="password"
-            id={styles.password}
-            placeholder="Contraseña"
-          />
-          <button id={styles.button2}>Iniciar Sesion</button>
-        </div>
-
+        <form onSubmit={handleSubmit}>
+          <div class={styles.inicio}>
+            <input
+              name="email"
+              type="email"
+              id={styles.email}
+              placeholder="Correo Electronico"
+              value={values.email}
+              onChange={handleOnChange}
+            />
+            <input
+              name="password"
+              type="password"
+              id={styles.password}
+              placeholder="Contraseña"
+              value={values.password}
+              onChange={handleOnChange}
+            />
+            <button type="submit" id={styles.button2} onClick={handleSubmit}>Acceder</button>
+          </div>
+        </form>
         <div class={styles.registro}>
           <p id={styles.parrafo3}>Si no tiene una cuenta registrese</p>
           <Link to="/TypeAccount" id={styles.link}>
@@ -61,4 +80,5 @@ function LogIn() {
     </div>
   );
 }
+
 export default LogIn;
