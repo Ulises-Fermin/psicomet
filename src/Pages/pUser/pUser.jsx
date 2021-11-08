@@ -14,19 +14,27 @@ function User() {
   return (
     <div class={styles.body}>
       {!!user ? (
-              <h1 id={styles.title}>Bienvenido {user.name} </h1>
+              <h1 id={styles.title}>Bienvenido Dr. {user.name} </h1>
             ) : (
               <h1 id={styles.title}>No deberia estar aca sin haber iniciado pero bienvenido igual</h1>
             )}
       
       <div class={styles.buttons_usuario}>
         <div id={styles.buttons1}>
-          <button id={styles.Mis_consults}>Consultas</button>
-          <button id={styles.Ver_especialists}>Ver Especialistas</button>
+          <div class={styles.card}>
+            <img id={styles.image} src="/Consulta.png" alt=""/>
+            <p id={styles.Mis_consults}>Consultas</p>
+          </div>
+          <div class={styles.card}>
+            <img id={styles.image} src="/Especialista.png" alt=""/>
+            <p id={styles.Ver_especialists}>Ver Especialistas</p>
+          </div>
         </div>
         <div id={styles.buttons2}>
-          <button id={styles.My_chats}>Mis Chats</button>
-          <button id={styles.Calendar}>Calendario</button>
+          <img id={styles.image} src="/chats.png" alt=""/>  
+          <p id={styles.My_chats}>Mis Chats</p>
+          <img id={styles.image} src="" alt=""/>
+          <p id={styles.Calendar}>Calendario</p>
         </div>
       </div>
     </div>
