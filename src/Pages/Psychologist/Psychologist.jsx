@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./User.module.css";
-import { Link } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
-import { auth } from "../../Utils/FireBaseConfig";
-import { useContext } from "react";
+import styles from "./Psychologist.module.css";
+import {Link} from "react-router-dom";
+import {UserContext} from "../../Context/UserContext";
+import {auth} from "../../Utils/FireBaseConfig";
+import {useContext} from "react";
 
-function User() {
+function Psychologist() {
   const { user, setUser } = useContext(UserContext);
   const handleLogOut = async () => {
     await auth.signOut();
@@ -41,4 +41,4 @@ function User() {
   );
 }
 
-export default User;
+export default Psychologist;

@@ -5,7 +5,7 @@ import {getFirstElementArrayCollection} from "../Utils/Parsers";
 export const UserContext = createContext(null);
 
 function UserContextProvider({children}){
-    const [user,setUser] = useState(null);
+    const [user, setUser] = useState(null);
 
     const createUser = async (user, uid) => {
         await db.collection("users").doc(uid).set(user);
@@ -29,8 +29,13 @@ function UserContextProvider({children}){
                 if(!profile){
                     const newProfile={
                         name: loggedUser.displayName,
+                        lastName: null,
                         email: loggedUser.email,
-                        phone: loggedUser.phoneNumber,
+                        phone: null,
+                        date: null,
+                        role: "pacient",
+                        id: null,
+                        college: null,
                     };
                     await createUser(newProfile ,loggedUser.uid);
                     setUser(newProfile);

@@ -5,8 +5,11 @@
 }
 
 #Slyder {
-  background-color: blue;
-  height: 200px;
+  height: 500px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #AboutUs {
@@ -100,7 +103,17 @@
   font-weight: bold;
 }
 
-#LinkCreateAccount {
-  background-color: white;
-  margin: 40%;
+#LinkCreateAccount { 
+    color: white;
+    text-decoration: none;
+    display: inline;
+    padding: 8px;
+    background-color: blue;
+    border: 1px solid #2e518b;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+#LinkCreateAccount:hover {
+  color: red;
+  text-decoration: none;
 }

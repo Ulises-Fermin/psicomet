@@ -10,6 +10,7 @@ import LogIn from "./Pages/LogIn/LogIn";
 import UserContextProvider from "./Context/UserContext";
 import User from "./Pages/User/User";
 import Contact from "./Pages/Contact/Contact";
+import Psychologist from "./Pages/Psychologist/Psychologist"
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/User">
             <User />
+          </Route>
+          <Route path="/Psychologist">
+            <Psychologist />
           </Route>
           <Route path="/Contact">
             <Contact />

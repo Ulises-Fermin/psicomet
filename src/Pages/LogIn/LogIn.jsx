@@ -28,7 +28,7 @@ function LogIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await auth.signInWithEmailAndPassword(values.email, values.password)
+    await auth.signInWithEmailAndPassword(values.email, values.password);
     history.push("/Home");
   }
 

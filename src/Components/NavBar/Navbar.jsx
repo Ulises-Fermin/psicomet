@@ -1,9 +1,9 @@
 import React from "react";
-import { useContext } from "react";
+import {useContext} from "react";
 import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
-import { auth } from "../../Utils/FireBaseConfig";
+import {Link} from "react-router-dom";
+import {UserContext} from "../../Context/UserContext";
+import {auth} from "../../Utils/FireBaseConfig";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -41,10 +41,17 @@ function Navbar() {
               Testimonios
             </Link>
           </li>
-            {!!user ? (
+            {(user?.role === "pacient") ? (
               <li class={styles.NavButton}>
                 <Link to="/User" class={styles.NavLink}>
                   Usuario
+                </Link>
+              </li>
+            ) : (null)}
+            {(user?.role === "psychologist") ? (
+              <li class={styles.NavButton}>
+                <Link to="/Psychologist" class={styles.NavLink}>
+                  Psicologo
                 </Link>
               </li>
             ) : (null)}

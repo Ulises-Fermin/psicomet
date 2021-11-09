@@ -16,6 +16,9 @@ function CreateAccount(){
         password: "",
         phone: "",
         date: "",
+        role: "pacient",
+        id: null,
+        college: null,
     });
 
     const history = useHistory();
@@ -39,6 +42,9 @@ function CreateAccount(){
             email: values.email,
             phone: values.phone,
             date: values.date,
+            role: "pacient",
+            id: null,
+            college: null,
         }, response.user.uid);
         history.push("/Home");
     };
@@ -62,18 +68,57 @@ function CreateAccount(){
             <form onSubmit={handleSubmit}>
                 <div class={styles.DatesContainer}>
                     <div id={styles.File1}>
-                        <input name="name" type="text" id={styles.name} placeholder="Nombre" value={values.name} onChange={handleOnChange}></input>
-                        <input name="lastName" type="text" id={styles.lastname} placeholder="Apellido" value={values.lastName} onChange={handleOnChange}></input>  
+                        <input 
+                        name="name" 
+                        type="text" 
+                        id={styles.name} 
+                        placeholder="Nombre" 
+                        value={values.name} 
+                        onChange={handleOnChange}>
+                        </input>
+                        <input 
+                        name="lastName" 
+                        type="text" 
+                        id={styles.lastname} 
+                        placeholder="Apellido" 
+                        value={values.lastName} 
+                        onChange={handleOnChange}>
+                        </input>  
                     </div>
                     <div id={styles.File2}>
-                        <input name="email" type="email" id={styles.email} placeholder="Correo Electronico" value={values.email} onChange={handleOnChange}></input>
+                        <input 
+                        name="email" 
+                        type="email" 
+                        id={styles.email} 
+                        placeholder="Correo Electronico" 
+                        value={values.email} 
+                        onChange={handleOnChange}>
+                        </input>
                     </div>
                     <div id={styles.File3}>
-                        <input name="password" type="password" id={styles.password} placeholder="Contraseña" value={values.password} onChange={handleOnChange}></input>
-                        <input type="password" id={styles.ConfirmPassword} placeholder="Confirmar Contraseña"></input>
+                        <input 
+                        name="password" 
+                        type="password" 
+                        id={styles.password} 
+                        placeholder="Contraseña" 
+                        value={values.password} 
+                        onChange={handleOnChange}>
+                        </input>
+                        <input 
+                        type="password" 
+                        id={styles.ConfirmPassword} 
+                        placeholder="Confirmar Contraseña">
+                        </input>
                     </div>
                     <div id={styles.File4}>
-                        <input name="phone" type="tel" id={styles.number} placeholder="Telefono" value={values.phone} onChange={handleOnChange}></input>
+                        <input 
+                        name="phone" 
+                        type="tel" 
+                        id={styles.number} 
+                        placeholder="Telefono" 
+                        value={values.phone} 
+                        onChange={handleOnChange}>
+                        </input>
                     </div>   
                 </div>
                 <div id={styles.line}>
@@ -81,11 +126,18 @@ function CreateAccount(){
                 </div>
                 <div class={styles.DatesContainer}>
                     <div id={styles.File5}>
-                        <input name="date" type="date" id={styles.date} placeholder="DD/MM/AAAA" value={values.date} onChange={handleOnChange}></input>
+                        <input 
+                        name="date" 
+                        type="date" 
+                        id={styles.date} 
+                        placeholder="DD/MM/AAAA" 
+                        value={values.date} 
+                        onChange={handleOnChange}>
+                        </input>
                         <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
                     </div>
                     <div id={styles.File6}>
-                        <select name="Genero" id={styles.gender}>
+                        <select name="gender" id={styles.gender} value={values.gender} onChange={handleOnChange}>
                             <option value="">Genero</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
