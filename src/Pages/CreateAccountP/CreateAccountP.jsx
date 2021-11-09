@@ -101,14 +101,14 @@ function CreateAccountP(){
           <div id={styles.File3}>
             <input
               name="password"
-              type="text"
+              type="password"
               id={styles.password}
               placeholder="Contraseña"
               value={values.password}
               onChange={handleOnChange}
             ></input>
             <input
-              type="text"
+              type="password"
               id={styles.ConfirmPassword}
               placeholder="Confirmar Contraseña"
               onChange={handleOnChange}

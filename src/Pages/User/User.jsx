@@ -36,6 +36,12 @@ function User() {
           <img id={styles.image} src="" alt=""/>
           <p id={styles.Calendar}>Calendario</p>
         </div>
+        <div id={styles.buttons2}>
+          <img id={styles.image} src="/chats.png" alt=""/>  
+          <p id={styles.My_chats}>Reservar cita</p>
+          <img id={styles.image} src="" alt=""/>
+          <p id={styles.Calendar}>Calendario</p>
+        </div>
       </div>
     </div>
   );
