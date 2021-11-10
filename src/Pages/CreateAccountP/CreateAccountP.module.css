@@ -201,6 +201,7 @@ h2 {
   border-radius: 10px;
   max-width: 10%;
   text-align: center;
+  cursor: pointer;
 }
 
 #instructions {
