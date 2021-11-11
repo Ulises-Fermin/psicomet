@@ -1,0 +1,55 @@
+#body{
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#TestimonialsSpace{
+    width: 70%;
+    padding-right: 5%;
+    
+} 
+#WriteSpace{
+    margin-top: 5%;
+    width: 30%;
+}
+#button{
+    background-color: #2CBEB5;
+    font-size: 130%;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+#Write{
+    height: 70%;
+    margin-bottom: 5%;
+    width: 100%;
+    
+}
+
+#cuadro{
+    border:0.01px #CDCDCD solid;
+    list-style-type: none;
+    padding: 2%;
+    padding-left: 5%;
+}
+#title{
+    text-align: center;
+    font-size: 200%;
+}
+
+#Logo{
+    max-height: 100px;
+    max-height: 100px;
+    margin-right: 3%;
+}
+#block{
+    display: flex;
+}
+#text{
+    width: 80%;
+    padding-left: 3%;
+    
+}

@@ -31,8 +31,11 @@ function User() {
           </div>
         </div>
         <div id={styles.buttons2}>
-          <img id={styles.image} src="/chats.png" alt=""/>  
-          <p id={styles.My_chats}>Mis Chats</p>
+          <img id={styles.image} src="/chats.png" alt=""/>
+          <Link to="/Chats" id={styles.My_chats}>
+            Mis chats
+          </Link>
+
           <img id={styles.image} src="" alt=""/>
           <p id={styles.Calendar}>Calendario</p>
         </div>

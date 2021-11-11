@@ -37,7 +37,7 @@ function Navbar() {
             </Link>
           </li>
           <li class={styles.NavButton}>
-            <Link to="/Reviews" class={styles.NavLink}>
+            <Link to="/Testimonials" class={styles.NavLink}>
               Testimonios
             </Link>
           </li>
