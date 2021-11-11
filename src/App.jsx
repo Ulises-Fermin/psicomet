@@ -11,6 +11,7 @@ import UserContextProvider from "./Context/UserContext";
 import User from "./Pages/User/User";
 import Contact from "./Pages/Contact/Contact";
 import Psychologist from "./Pages/Psychologist/Psychologist"
+import Chats from "./Pages/Chats/Chats"
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path="/LogIn">
             <LogIn />
+          </Route>
+          <Route path="/Chats">
+            <Chats />
           </Route>
         </Switch>
       </Router>
