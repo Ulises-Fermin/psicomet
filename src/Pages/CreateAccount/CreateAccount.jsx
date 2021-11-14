@@ -16,6 +16,7 @@ function CreateAccount(){
         password: "",
         phone: "",
         date: "",
+        gender: "",
         role: "pacient",
         id: null,
         college: null,
@@ -30,23 +31,47 @@ function CreateAccount(){
     };
 
     const handleSubmit = async (e) => {
-        console.log(values)
-        e.preventDefault();
-        const response = await auth.createUserWithEmailAndPassword(
-            values.email, 
-            values.password,
-        );
-        await createUser({
-            name: values.name,
-            lastName: values.lastName,
-            email: values.email,
-            phone: values.phone,
-            date: values.date,
-            role: "pacient",
-            id: null,
-            college: null,
-        }, response.user.uid);
-        history.push("/Home");
+        if (!((values.name === "")|(values.lastName === ""))){
+            if ((!(values.email === "")|(values.email.includes("@")))){
+                if (values.password===values.confirmPassword){
+                    if (!isNaN(values.phone)&!(values.phone==="")){
+                        if (!(values.date==="")){
+                            if (!(values.gender ==="")){
+                                e.preventDefault();
+                                const response = await auth.createUserWithEmailAndPassword(
+                                    values.email, 
+                                    values.password,
+                                );
+                                await createUser({
+                                    name: values.name,
+                                    lastName: values.lastName,
+                                    email: values.email,
+                                    phone: values.phone,
+                                    date: values.date,
+                                    gender: values.gender,
+                                    role: "pacient",
+                                    id: null,
+                                    college: null,
+                                }, response.user.uid);
+                                history.push("/Home"); 
+                            }else{
+                                window.alert("Seleccione un genero.")
+                            }
+                        }else{
+                            window.alert("Ingrese una fecha de nacimiento valida.")
+                        }
+                    }else{
+                        window.alert("Ingrese un numero de telefono valido.")
+                    }
+                }else{
+                    window.alert("Las contrasenas ingresadas no coinciden.")
+                }
+            }else{
+                window.alert("Ingrese un correo electronico valido.")
+            }
+        }else {
+            window.alert("Ingrese un nombre y un apellido valido.")
+        }
     };
 
     return(
@@ -59,11 +84,6 @@ function CreateAccount(){
                 <Link to="/LogIn" class={styles.link}>
                     Iniciar sesion
                 </Link>
-            </div>
-            <div id={styles.Bottoms_Container}>
-                <img src="/logoGoogle.png" id={styles.Logo} alt = ""/>
-                <img src="/logoTwitter.jpg" id={styles.Logo} alt = ""/>
-                <img src="/logoFacebook.png" id={styles.Logo} alt = ""/>
             </div>
             <form onSubmit={handleSubmit}>
                 <div class={styles.DatesContainer}>
@@ -105,9 +125,12 @@ function CreateAccount(){
                         onChange={handleOnChange}>
                         </input>
                         <input 
+                        name="confirmPassword" 
                         type="password" 
                         id={styles.ConfirmPassword} 
-                        placeholder="Confirmar Contraseña">
+                        placeholder="Confirmar Contraseña"
+                        value={values.confirmPassword} 
+                        onChange={handleOnChange}>
                         </input>
                     </div>
                     <div id={styles.File4}>

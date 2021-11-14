@@ -7,7 +7,7 @@ import {UserContext} from "../../Context/UserContext";
 import {Link} from "react-router-dom";
 
 function LogIn() {
-  const { setUser } = useContext(UserContext);
+  const {setUser} = useContext(UserContext);
 
   const history = useHistory();
 
@@ -39,26 +39,27 @@ function LogIn() {
       <div class={styles.body3}>
         <div id={styles.LogIn}>
           <p id={styles.parrafo1}>
-            Si tiene cuenta de google, puede iniciar con ella
+            Si tiene cuenta de google, puede iniciar con ella:
           </p>
           <br />
-          <button id={styles.button1} type="button" onClick={googleLogin}>
+          <button id={styles.buttonGoogle} type="button" onClick={googleLogin}>
             Iniciar sesion con Google
           </button>
         </div>
         <form onSubmit={handleSubmit}>
           <div class={styles.inicio}>
+            <p>Ingrese su nombre de usuario y contrasena:</p>
             <input name="email" type="email" id={styles.email} placeholder="Correo Electronico"
               value={values.email} onChange={handleOnChange}/>
             <input name="password" type="password" id={styles.password} placeholder="Contraseña"
               value={values.password} onChange={handleOnChange}/>
-            <button type="submit" id={styles.button2} onClick={handleSubmit}>Acceder</button>
+            <button type="submit" id={styles.buttonLogIn} onClick={handleSubmit}>Acceder</button>
           </div>
         </form>
         <div class={styles.registro}>
-          <p id={styles.parrafo3}>Si no tiene una cuenta registrese</p>
-          <Link to="/TypeAccount" id={styles.link}>
-            Registrese
+          <p id={styles.parrafo3}>Si no tiene una cuenta registrese:</p>
+          <Link to="/TypeAccount" id={styles.linkRegister}>
+            Registrarse
           </Link>
         </div>
       </div>

@@ -23,12 +23,8 @@ function Contact() {
             </div>
             <div id={styles.file2}>
                 <div class={styles.card}>
-                    <img id={styles.logo} src="/logoGoogle.png"  alt = ""/>
-                    <p id={styles.contactP}>clientepsicomet@gmail.com</p>
                 </div>
                 <div class={styles.card}>
-                    <img id={styles.logo} src="/logoTwitter.jpg"  alt = ""/>
-                    <p id={styles.contactP}>0412-01010101</p>
                 </div>
             </div>
 

@@ -13,16 +13,16 @@ function TypeAccount() {
       </p>
       <h4 id={styles.h4TypeAccount}>Registrate Gratis</h4>
       <div id={styles.BottomContainer}>
-        <Link to="/CreateAccount" class={styles.NavLink} id={styles.account}>
+        <Link to="/CreateAccount" class={styles.account}>
           Cliente
         </Link>
 
-        <Link to="/CreateAccount_p" class={styles.NavLink} id={styles.account}>
+        <Link to="/CreateAccount_p" class={styles.account}>
           Psicologo
         </Link>
       </div>
       <p id={styles.pTypeAccount}>¿Ya tienes una cuenta?</p>
-      <Link to="/LogIn" class={styles.link} id={styles.pTypeAccount2}>
+      <Link to="/LogIn" id={styles.pTypeAccount2}>
           Iniciar sesion
       </Link>
     </div>
@@ -30,7 +30,3 @@ function TypeAccount() {
 }
 
 export default TypeAccount;
-
-/*<Link to="/CreateAccount" class={styles.NavLink} id={styles.LinkCreateAccount}>
-                    Crear Cuenta
-                </Link>*/
