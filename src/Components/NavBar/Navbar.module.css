@@ -5,11 +5,10 @@
     padding-left: 5%;
     padding-right: 5%;
     margin: 0px;
-    background-color: silver;
+    background-color:lightblue;
     font-family: Arial, Helvetica, sans-serif;
     position:sticky;
     top: 0px;
-    
 }
 
 #Logo {
@@ -33,7 +32,7 @@
 }
 
 #NavLoginLink:hover {
-    color: red;
+    color:black;
     text-decoration: none;
 }
 

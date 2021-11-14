@@ -25,38 +25,41 @@ function App() {
     <UserContextProvider>
       <Router>
         <Navbar />
-        <Route path="/Home">
+        <Route exact path="/">
           <Home />
         </Route>
         <Switch>
-          <Route path="/TypeAccount">
+          <Route exact path="/Home">
+            <Home />
+          </Route>
+          <Route exact path="/TypeAccount">
             <TypeAccount />
           </Route>
-          <Route path="/CreateAccount">
+          <Route exact path="/CreateAccount">
             <CreateAccount />
           </Route>
-          <Route path="/CreateAccount_p">
+          <Route exact path="/CreateAccount_p">
             <CreateAccountP />
           </Route>
-          <Route path="/User">
+          <Route exact path="/User">
             <User />
           </Route>
-          <Route path="/Psychologist">
+          <Route exact path="/Psychologist">
             <Psychologist />
           </Route>
-          <Route path="/Contact">
+          <Route exact path="/Contact">
             <Contact />
           </Route>
-          <Route path="/LogIn">
+          <Route exact path="/LogIn">
             <LogIn />
           </Route>
-          <Route path="/Chats">
+          <Route exact path="/Chats">
             <Chats />
           </Route>
-          <Route path="/Testimonials">
+          <Route exact path="/Testimonials">
             <Testimonials />
           </Route>
-          <Route path="/Price">
+          <Route exact path="/Price">
             <Price />
           </Route>
         </Switch>

@@ -81,85 +81,18 @@ h2{
     margin-bottom: 10%;
 }
 
-#name{
+.fields {
     margin-left: 4%;
     margin-right:4%;
     color: black;
     background-color: #E9E5E5;
-    padding-right: 15%;
+    padding-right: 1%;
     padding-left: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
-    max-width: 10%;
-}
-
-#lastname{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 15%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-left: 1%;
-    max-width: 10%;
-}
-
-#email{
-    margin-left: 4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 7%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    max-width: 18%;
-}
-
-#password{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    max-width: 18%;
-}
-
-#ConfirmPassword{
-    margin-left: 1%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    max-width: 16%;
-}
-
-#number{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    max-width: 18%;
+    width: 18%;
 }
 
 #line{
@@ -169,19 +102,6 @@ h2{
     max-height: 5%;
 }
 
-#date{
-    margin-left: 4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8%;
-    padding-left: 2%;
-    padding-top: 0%;
-    border-radius: 10px;
-    margin-right: 0.7%;
-    
-}
-
-
 .slash{
     font-size: 250%;
     margin-top: -2%;
@@ -190,20 +110,6 @@ h2{
     padding-bottom: 0%;
     font-weight: 10;
     max-height: 5%;
-}
-
-#gender{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 15.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    
 }
 
 #register{
@@ -218,6 +124,7 @@ h2{
     max-width: 10%;
     text-align: center;
     cursor:pointer;
+    font-size: medium;
 }
 
 #register:hover{

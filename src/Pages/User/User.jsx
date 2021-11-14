@@ -43,7 +43,7 @@ function User() {
           <img id={styles.image} src="/chats.png" alt=""/>  
           <p id={styles.My_chats}>Reservar cita</p>
           <img id={styles.image} src="" alt=""/>
-          <p id={styles.Calendar}>Calendario</p>
+          <p id={styles.Calendar}>Mi Perfil</p>
         </div>
       </div>
     </div>

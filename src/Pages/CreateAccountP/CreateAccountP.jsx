@@ -106,7 +106,7 @@ function CreateAccountP(){
             <input 
             name="name"
             type="text" 
-            id={styles.name} 
+            class={styles.fields}
             placeholder="Nombre"
             value={values.name}
             onChange={handleOnChange}
@@ -114,7 +114,7 @@ function CreateAccountP(){
             <input
               name="lastName"
               type="text"
-              id={styles.lastname}
+              class={styles.fields}
               placeholder="Apellido"
               value={values.lastName}
               onChange={handleOnChange}
@@ -124,7 +124,7 @@ function CreateAccountP(){
             <input
               name="email"
               type="email"
-              id={styles.email}
+              class={styles.fields}
               placeholder="Correo Electronico"
               value={values.email}
               onChange={handleOnChange}
@@ -135,7 +135,7 @@ function CreateAccountP(){
             <input
               name="password"
               type="password"
-              id={styles.password}
+              class={styles.fields}
               placeholder="Contraseña"
               value={values.password}
               onChange={handleOnChange}
@@ -143,7 +143,7 @@ function CreateAccountP(){
             <input
               name="confirmPassword"
               type="password"
-              id={styles.ConfirmPassword}
+              class={styles.fields}
               value={values.confirmPassword}
               placeholder="Confirmar Contraseña"
               onChange={handleOnChange}
@@ -154,7 +154,7 @@ function CreateAccountP(){
             <input 
             name="phone"
             type="tel" 
-            id={styles.number} 
+            class={styles.fields}
             placeholder="Telefono"
             value={values.phone}
             onChange={handleOnChange}
@@ -171,7 +171,7 @@ function CreateAccountP(){
             <input 
             name="date"
             type="date" 
-            id={styles.date} 
+            class={styles.fields}
             placeholder="DD/MM/AAAA"
             value={values.date}
             onChange={handleOnChange}
@@ -179,7 +179,7 @@ function CreateAccountP(){
             <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
           </div>
           <div id={styles.File6}>
-            <select name="gender" id={styles.gender} value={values.gender} onChange={handleOnChange}>
+            <select name="gender" class={styles.fields} value={values.gender} onChange={handleOnChange}>
               <option value="">Genero</option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
@@ -190,7 +190,7 @@ function CreateAccountP(){
           <div id={styles.File1}>
             <input 
             name="id"
-            id={styles.name} 
+            class={styles.fields} 
             type="text" 
             placeholder="Ingrese su carnet" 
             value={values.id}
@@ -201,7 +201,7 @@ function CreateAccountP(){
           <div id={styles.File1}>
             <input 
             name="college"
-            id={styles.name} 
+            class={styles.fields} 
             type="text" 
             placeholder="Ingrese la universidad en la que cursó sus estudios"
             value={values.college}
@@ -210,7 +210,7 @@ function CreateAccountP(){
           </div>
 
           <div id={styles.File6}>
-            <select name="specialty" id={styles.gender} value={values.specialty} onChange={handleOnChange}>
+            <select name="specialty" class={styles.fields} value={values.specialty} onChange={handleOnChange}>
               <option value="">Especialidad</option>
               <option value="Masculino">Depresion</option>
               <option value="Femenino">Ansiedad</option>
