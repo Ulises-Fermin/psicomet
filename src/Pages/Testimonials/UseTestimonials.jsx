@@ -5,13 +5,13 @@ export const useTestimonials = () => {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
     const [messages, setMessages] = useState([])
-
     useEffect(
         () => {
             const unsubscribe = db.collection("messages").onSnapshot(
                 snapshop => {   
                     setLoading(false)
                     setMessages(snapshop.docs.map(d => ({ id: d.id, ...d.data() } )));
+    
             },
             err => {
                 setError(err);
@@ -21,6 +21,7 @@ export const useTestimonials = () => {
     },
     [setMessages]
     
+    
     )
-    return{ error, loading, messages, }
+    return{ error, loading, messages }
 }

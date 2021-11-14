@@ -18,6 +18,7 @@ import Contact from "./Pages/Contact/Contact";
 import Psychologist from "./Pages/Psychologist/Psychologist"
 import Chats from "./Pages/Chats/Chats"
 import Testimonials from "./Pages/Testimonials/Testimonials";
+import Price from "./Pages/Price/Price";
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
           </Route>
           <Route path="/Testimonials">
             <Testimonials />
+          </Route>
+          <Route path="/Price">
+            <Price />
           </Route>
         </Switch>
       </Router>

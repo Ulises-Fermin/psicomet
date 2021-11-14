@@ -12,7 +12,6 @@ import userEvent from "@testing-library/user-event";
 function Testimonials(){
     const [message, setMessage] = React.useState('');
     const {loading, messages, error} = useTestimonials();
-    
     const sendMessage = (e) =>{
         e.preventDefault();
 
@@ -28,12 +27,12 @@ function Testimonials(){
                 <ul>
                     <div>  
                         {messages.map(m => <li id={styles.cuadro} key={m.id}>
-                        <div id={styles.block}>
-                            <img src="/LogoPsicomet.png" id={styles.Logo} alt="Logo de Psicomet" />
-                            <div id={styles.text}>
-                                <p>*Nombre* *fecha*</p>
-                                <p>*Correo*</p>
-                                <br></br>
+                            <div id={styles.block}>
+                                <img src="/LogoPsicomet.png" id={styles.Logo} alt="Logo de Psicomet" />
+                                <div id={styles.text}>
+                                    <p>*Nombre* *fecha*</p>
+                                    <p>*Correo*</p>
+                                    <br></br>
                                 {m.message}
                             </div>
                         </div></li>)}
