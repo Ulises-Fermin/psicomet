@@ -1,14 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
 import {Link} from "react-router-dom";
-<<<<<<< HEAD
-import Slideshow from "./Components/SlideShow/SlideShow";
-
-
-
-=======
 import Slideshow from "../../Components/SlideShow/SlideShow"
->>>>>>> 1a0f9726ebe3e5ceee569db9fcd226eadc082b5d
 
 function Home() {
     return(
