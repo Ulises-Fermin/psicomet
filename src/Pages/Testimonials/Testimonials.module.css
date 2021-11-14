@@ -15,11 +15,25 @@
 #button{
     background-color: #2CBEB5;
     font-size: 130%;
-    border-radius: 15px;
+    border-radius: 5px;
     color: white;
     text-align: center;
     display: block;
     margin: auto;
+    padding: 5px;
+}
+
+#button:hover{
+    background-color: transparent;
+    font-size: 130%;
+    border-radius: 5px;
+    color: #2CBEB5;
+    text-align: center;
+    display: block;
+    margin: auto;
+    padding: 5px;
+    cursor: pointer;
+    border-width: 3px;
 }
 
 #Write{

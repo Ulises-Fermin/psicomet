@@ -96,7 +96,7 @@ function CreateAccountP(){
 
         <div id={styles.subtitle}>
           <p>¿Ya tienes una cuenta?</p>
-          <Link to="/Home" class={styles.link}>
+          <Link to="/Login" class={styles.link}>
             Iniciar sesion
           </Link>
         </div>

@@ -87,8 +87,8 @@ function CreateAccount(){
             </div>
             <form onSubmit={handleSubmit}>
                 <div class={styles.DatesContainer}>
-                    <div id={styles.File1}>
-                        <input 
+                <div id={styles.File1}>
+                    <input 
                         name="name" 
                         type="text" 
                         id={styles.name} 
@@ -103,7 +103,7 @@ function CreateAccount(){
                         placeholder="Apellido" 
                         value={values.lastName} 
                         onChange={handleOnChange}>
-                        </input>  
+                        </input> 
                     </div>
                     <div id={styles.File2}>
                         <input 

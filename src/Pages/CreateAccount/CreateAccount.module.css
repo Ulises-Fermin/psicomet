@@ -53,24 +53,7 @@ h2{
     
 }
 
-#Logo{
-    max-width: 2.75%;
-    border-radius: 50%;
-    border-style:groove;
-    margin-top: 0%;
-    margin-bottom: 1%;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-
-}
-#Logo:hover{
-    max-width: 2.8%;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
-    cursor:pointer;
-}
-
 .DatesContainer{
-    max-width: 75%;
     padding-left: 25%;
 }
 
