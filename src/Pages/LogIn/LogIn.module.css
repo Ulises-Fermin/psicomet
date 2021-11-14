@@ -1,0 +1,87 @@
+.body {
+  display: flex;
+}
+
+.body3 {
+  width: 35%;
+}
+
+#body2 {
+  margin: 0%;
+  padding: 0%;
+  height: 70%;
+}
+
+#LogIn {
+  padding: 0px;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 6%;
+}
+
+#button1 {
+  margin-left: 28%;
+  width: 45%;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #00bfff;
+  border: none;
+  font-size: large;
+  padding: 0.5%;
+  color: white;
+}
+
+.inicio {
+  padding: 0%;
+  margin-top: 2%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#email {
+  margin-top: 21%;
+  padding: 0.5%;
+  margin-left: 30%;
+  width: 40%;
+}
+
+#password {
+  padding: 0.5%;
+  margin-top: 2%;
+  margin-left: 30%;
+  width: 40%;
+}
+
+#button2 {
+  margin-left: 37%;
+  width: 25%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 2%;
+  background-color: #00bfff;
+  border: none;
+  font-size: 18px;
+  padding: 0.3%;
+  color: white;
+}
+
+.registro {
+  padding: 0%;
+  margin-top: 35%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#link {
+  margin-left: 42.5%;
+  background-color: #00bfff;
+  width: 15%;
+  color: white;
+  font-size: 15px;
+  padding: 0.5%;
+  border-radius: 5px;
+}

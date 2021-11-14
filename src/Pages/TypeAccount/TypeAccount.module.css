@@ -16,6 +16,17 @@
    margin: auto;
    padding: 0%;
 }
+#pTypeAccount2{
+    font-size: 100%; 
+    margin: auto;
+    padding: 0%;
+    padding-bottom: 5%;
+}
+#pTypeAccount2:hover{
+    color: blue;
+    transition: 0.25s;
+    cursor:pointer;
+}
 
 #h4TypeAccount{
     font-size: 150%;
