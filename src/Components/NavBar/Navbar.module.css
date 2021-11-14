@@ -68,6 +68,17 @@
     border-radius: 50px;
     margin-left: 20px;
 }
+#LoginButton:hover {
+    list-style: none;
+    color: red;
+    text-decoration: none;
+    display: inline;
+    padding: 8px;
+    background-color: transparent;
+    border: 3px solid #2e518b;
+    border-radius: 50px;
+    margin-left: 20px;
+}
 
 .NavButton {
     margin-left: 20px;

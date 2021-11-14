@@ -33,9 +33,11 @@ function UserContextProvider({children}){
                         email: loggedUser.email,
                         phone: null,
                         date: null,
+                        gender: null,
                         role: "pacient",
                         id: null,
                         college: null,
+                        specialty: null,
                     };
                     await createUser(newProfile ,loggedUser.uid);
                     setUser(newProfile);

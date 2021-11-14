@@ -7,9 +7,7 @@ function Home() {
     return(
         <div id={styles.Body}>
             <div id={styles.Slyder}>
-                <Link to="/TypeAccount" class={styles.NavLink} id={styles.LinkCreateAccount}>
-                    Crear Cuenta
-                </Link>
+                <h1 id={styles.welcome}>Bienvenido a PsicoMet!</h1>
             </div> 
 
             <div id={styles.AboutUs}>

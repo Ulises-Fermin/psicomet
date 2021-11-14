@@ -1,9 +1,9 @@
 #Body {
-    padding-left: 5%;
-    padding-right: 5%;
     background-image: url("../../Images/Terapia.jpg");
     max-width: 100%;
     height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #title{
