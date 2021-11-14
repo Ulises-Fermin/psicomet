@@ -13,6 +13,7 @@ import Contact from "./Pages/Contact/Contact";
 import Psychologist from "./Pages/Psychologist/Psychologist"
 import Chats from "./Pages/Chats/Chats"
 import Testimonials from "./Pages/Testimonials/Testimonials";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
             <Testimonials />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </UserContextProvider>
   );
