@@ -16,9 +16,11 @@ function CreateAccountP(){
         password: "",
         phone: "",
         date: "",
+        gender: "",
         role: "psychologist",
         id: "",
         college: "",
+        specialty: "",
     });
 
     const history = useHistory();
@@ -30,23 +32,60 @@ function CreateAccountP(){
     };
 
     const handleSubmit = async (e) => {
-        console.log(values)
-        e.preventDefault();
-        const response = await auth.createUserWithEmailAndPassword(
-            values.email, 
-            values.password,
-        );
-        await createUser({
-            name: values.name,
-            lastName: values.lastName,
-            email: values.email,
-            phone: values.phone,
-            date: values.date,
-            role: "psychologist",
-            id: values.id,
-            college: values.college,  
-        }, response.user.uid);
-        history.push("/Home");
+      if (!((values.name === "")|(values.lastName === ""))){
+        if ((!(values.email === "")|(values.email.includes("@")))){
+            if (values.password===values.confirmPassword){
+                if (!isNaN(values.phone)&!(values.phone==="")){
+                    if (!(values.date==="")){
+                        if (!(values.gender ==="")){
+                          if (!isNaN(values.id)&!(values.id==="")){
+                            if (!(values.college === "")){
+                              if (!(values.specialty ==="")){
+                                e.preventDefault();
+                            const response = await auth.createUserWithEmailAndPassword(
+                                values.email, 
+                                values.password,
+                            );
+                            await createUser({
+                                name: values.name,
+                                lastName: values.lastName,
+                                email: values.email,
+                                phone: values.phone,
+                                date: values.date,
+                                gender: values.gender,
+                                role: "psychologist",
+                                id: values.id,
+                                college: values.college,
+                                specialty: values.specialty,
+                            }, response.user.uid);
+                            history.push("/Home");
+                              }else{
+                                window.alert("Seleccione una especialidad.")
+                              }
+                            }else{
+                              window.alert("Ingrese una universidad valida.")
+                            }
+                          }else{
+                            window.alert("Ingrese un carnet valido.")
+                          }
+                        }else{
+                            window.alert("Seleccione un genero.")
+                        }
+                    }else{
+                        window.alert("Ingrese una fecha de nacimiento valida.")
+                    }
+                }else{
+                    window.alert("Ingrese un numero de telefono valido.")
+                }
+            }else{
+                window.alert("Las contrasenas ingresadas no coinciden.")
+            }
+        }else{
+            window.alert("Ingrese un correo electronico valido.")
+        }
+    }else {
+        window.alert("Ingrese un nombre y un apellido valido.")
+    }
     };
 
   return (
@@ -57,15 +96,9 @@ function CreateAccountP(){
 
         <div id={styles.subtitle}>
           <p>¿Ya tienes una cuenta?</p>
-          <Link to="/Home" class={styles.link}>
+          <Link to="/Login" class={styles.link}>
             Iniciar sesion
           </Link>
-        </div>
-
-        <div id={styles.Bottoms_Container}>
-          <img src="/logoGoogle.png" id={styles.Logo} alt="" />
-          <img src="/logoTwitter.jpg" id={styles.Logo} alt="" />
-          <img src="/logoFacebook.png" id={styles.Logo} alt="" />
         </div>
 
         <div class={styles.DatesContainer}>
@@ -73,7 +106,7 @@ function CreateAccountP(){
             <input 
             name="name"
             type="text" 
-            id={styles.name} 
+            class={styles.fields}
             placeholder="Nombre"
             value={values.name}
             onChange={handleOnChange}
@@ -81,7 +114,7 @@ function CreateAccountP(){
             <input
               name="lastName"
               type="text"
-              id={styles.lastname}
+              class={styles.fields}
               placeholder="Apellido"
               value={values.lastName}
               onChange={handleOnChange}
@@ -91,7 +124,7 @@ function CreateAccountP(){
             <input
               name="email"
               type="email"
-              id={styles.email}
+              class={styles.fields}
               placeholder="Correo Electronico"
               value={values.email}
               onChange={handleOnChange}
@@ -102,14 +135,16 @@ function CreateAccountP(){
             <input
               name="password"
               type="password"
-              id={styles.password}
+              class={styles.fields}
               placeholder="Contraseña"
               value={values.password}
               onChange={handleOnChange}
             ></input>
             <input
+              name="confirmPassword"
               type="password"
-              id={styles.ConfirmPassword}
+              class={styles.fields}
+              value={values.confirmPassword}
               placeholder="Confirmar Contraseña"
               onChange={handleOnChange}
             ></input>
@@ -119,7 +154,7 @@ function CreateAccountP(){
             <input 
             name="phone"
             type="tel" 
-            id={styles.number} 
+            class={styles.fields}
             placeholder="Telefono"
             value={values.phone}
             onChange={handleOnChange}
@@ -136,7 +171,7 @@ function CreateAccountP(){
             <input 
             name="date"
             type="date" 
-            id={styles.date} 
+            class={styles.fields}
             placeholder="DD/MM/AAAA"
             value={values.date}
             onChange={handleOnChange}
@@ -144,19 +179,18 @@ function CreateAccountP(){
             <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
           </div>
           <div id={styles.File6}>
-            <select name="gender" id={styles.gender} value={values.gender} onChange={handleOnChange}>
+            <select name="gender" class={styles.fields} value={values.gender} onChange={handleOnChange}>
               <option value="">Genero</option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
             </select>
           </div>
         </div>
-
         <div class={styles.DatesContainer}>
           <div id={styles.File1}>
             <input 
             name="id"
-            id={styles.name} 
+            class={styles.fields} 
             type="text" 
             placeholder="Ingrese su carnet" 
             value={values.id}
@@ -167,7 +201,7 @@ function CreateAccountP(){
           <div id={styles.File1}>
             <input 
             name="college"
-            id={styles.name} 
+            class={styles.fields} 
             type="text" 
             placeholder="Ingrese la universidad en la que cursó sus estudios"
             value={values.college}
@@ -175,11 +209,12 @@ function CreateAccountP(){
             ></input>
           </div>
 
-          <div id={styles.File1}>
-            <select name="specialty" id={styles.name} placeholder="Especialidad" value={values.specialty} onChange={handleOnChange}>
-              <option value="Depresión">Depresión</option>
-              <option value="Ansiedad">Ansiedad</option>
-              <option value="Sexualidad">Sexualidad</option>
+          <div id={styles.File6}>
+            <select name="specialty" class={styles.fields} value={values.specialty} onChange={handleOnChange}>
+              <option value="">Especialidad</option>
+              <option value="Masculino">Depresion</option>
+              <option value="Femenino">Ansiedad</option>
+              <option value="Femenino">Otros</option>
             </select>
           </div>
 

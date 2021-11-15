@@ -21,7 +21,7 @@
   margin-bottom: 6%;
 }
 
-#button1 {
+#buttonGoogle {
   margin-left: 28%;
   width: 45%;
   cursor: pointer;
@@ -33,16 +33,29 @@
   color: white;
 }
 
+#buttonGoogle:hover {
+  margin-left: 28%;
+  width: 45%;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: large;
+  padding: 0.5%;
+  color: #00bfff;
+  border: solid;
+  border-color: #00bfff;
+}
+
 .inicio {
   padding: 0%;
-  margin-top: 2%;
+  margin-top: 21%;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 #email {
-  margin-top: 21%;
+  margin-top: 2%;
   padding: 0.5%;
   margin-left: 30%;
   width: 40%;
@@ -55,7 +68,7 @@
   width: 40%;
 }
 
-#button2 {
+#buttonLogIn {
   margin-left: 37%;
   width: 25%;
   cursor: pointer;
@@ -67,6 +80,19 @@
   padding: 0.3%;
   color: white;
 }
+#buttonLogIn:hover {
+  margin-left: 37%;
+  width: 25%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 2%;
+  background-color: transparent;
+  border: solid;
+  border-color: #00bfff;
+  font-size: 18px;
+  padding: 0.3%;
+  color: #00bfff;
+}
 
 .registro {
   padding: 0%;
@@ -76,12 +102,27 @@
   flex-direction: column;
 }
 
-#link {
-  margin-left: 42.5%;
+#linkRegister {
+  text-decoration: none;
+  margin-left: 40%;
   background-color: #00bfff;
-  width: 15%;
+  width: fit-content;
   color: white;
   font-size: 15px;
   padding: 0.5%;
   border-radius: 5px;
+  font-size: large;
+}
+#linkRegister:hover {
+  text-decoration: none;
+  margin-left: 40%;
+  background-color: transparent;
+  width: fit-content;
+  color: #00bfff;
+  font-size: 15px;
+  padding: 0.5%;
+  border-radius: 5px;
+  border: solid;
+  border-color: #00bfff;
+  font-size: large;
 }

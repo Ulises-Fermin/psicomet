@@ -17,38 +17,20 @@ const Footer = () => {
                         <FooterLinkItems>
                             <FooterLinkTitle>Nosotros</FooterLinkTitle>
                                 {/* Si vamos a linkear algo de afuera usamos un a tag */}
-                                <FooterLink to="/signin">Funcionamiento</FooterLink>
-                                <FooterLink to="/signin">Testimonios</FooterLink>
-                                <FooterLink to="/signin">Empresa</FooterLink>
-                                <FooterLink to="/signin">Inversionistas</FooterLink>
-                                <FooterLink to="/signin">Terminos y servicios</FooterLink>
+                                <FooterLink to="/" toggle={toggleHome}>Ingresa</FooterLink>
+                                <FooterLink to="../Especialistas" toggle={toggleHome}>Especialistas</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
-                            <FooterLinkTitle>Nosotros</FooterLinkTitle>
+                            <FooterLinkTitle>Precios</FooterLinkTitle>
                                 {/* Si vamos a linkear algo de afuera usamos un a tag */}
-                                <FooterLink to="/signin">Funcionamiento</FooterLink>
-                                <FooterLink to="/signin">Testimonios</FooterLink>
-                                <FooterLink to="/signin">Empresa</FooterLink>
-                                <FooterLink to="/signin">Inversionistas</FooterLink>
-                                <FooterLink to="/signin">Terminos y servicios</FooterLink>
+                                <FooterLink to="../Price" toggle={toggleHome}>Bolívares</FooterLink>
+                                <FooterLink to="../Price" toggle={toggleHome}>Dólares</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
-                            <FooterLinkTitle>Nosotros</FooterLinkTitle>
+                            <FooterLinkTitle>Modalidades</FooterLinkTitle>
                                 {/* Si vamos a linkear algo de afuera usamos un a tag */}
-                                <FooterLink to="/signin">Funcionamiento</FooterLink>
-                                <FooterLink to="/signin">Testimonios</FooterLink>
-                                <FooterLink to="/signin">Empresa</FooterLink>
-                                <FooterLink to="/signin">Inversionistas</FooterLink>
-                                <FooterLink to="/signin">Terminos y servicios</FooterLink>
-                        </FooterLinkItems>
-                        <FooterLinkItems>
-                            <FooterLinkTitle>Nosotros</FooterLinkTitle>
-                                {/* Si vamos a linkear algo de afuera usamos un a tag */}
-                                <FooterLink to="/signin">Funcionamiento</FooterLink>
-                                <FooterLink to="/signin">Testimonios</FooterLink>
-                                <FooterLink to="/signin">Empresa</FooterLink>
-                                <FooterLink to="/signin">Inversionistas</FooterLink>
-                                <FooterLink to="/signin">Terminos y servicios</FooterLink>
+                                <FooterLink to="../Testimonials" toggle={toggleHome}>Testimonios</FooterLink>
+                                <FooterLink to="../Contact" toggle={toggleHome}>Contacto</FooterLink>
                         </FooterLinkItems>
                     </FooterLinksWrapper>
                 </FooterLinksContainer>
@@ -66,7 +48,7 @@ const Footer = () => {
                                 <FaFacebook />
                             </SocialIconLink>
                             {/* En href va el enlace, en target blank para que se abra en otra pestana */}
-                            <SocialIconLink href="/" target="_blank" aria-label="Instagram">
+                            <SocialIconLink href="//www.instagram.com/psicomet_SDI" target="_blank" aria-label="Instagram">
                                 <FaInstagram />
                             </SocialIconLink>
                             {/* En href va el enlace, en target blank para que se abra en otra pestana */}
@@ -74,7 +56,7 @@ const Footer = () => {
                                 <FaYoutube />
                             </SocialIconLink>
                             {/* En href va el enlace, en target blank para que se abra en otra pestana */}
-                            <SocialIconLink href="//www.twitter.com/" target="_blank" aria-label="Twitter">
+                            <SocialIconLink href="//www.twitter.com/psicomet_sdi" target="_blank" aria-label="Twitter">
                                 <FaTwitter />
                             </SocialIconLink>
                         </SocialIcons>

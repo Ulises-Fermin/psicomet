@@ -10,6 +10,15 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  background-image: url("../../Images/Terapia.jpg");
+  background-size: cover;
+}
+
+#welcome{
+  color: black;
+  font-size: 100px;
+  background-color: white;
+  border-radius: 25px;
 }
 
 #AboutUs {
@@ -114,6 +123,13 @@
     margin-left: 20px;
 }
 #LinkCreateAccount:hover {
-  color: red;
-  text-decoration: none;
+  list-style: none;
+    color: red;
+    text-decoration: none;
+    display: inline;
+    padding: 8px;
+    background-color: transparent;
+    border: 3px solid #2e518b;
+    border-radius: 50px;
+    margin-left: 20px;
 }

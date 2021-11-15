@@ -2,16 +2,15 @@ import React from "react";
 import styles from "./Home.module.css";
 import {Link} from "react-router-dom";
 import Slideshow from "../../Components/SlideShow/SlideShow"
+import HeroSection from "../../Components/HeroSection";
 
 function Home() {
     return(
         <div id={styles.Body}>
-            <div id={styles.Slyder}>
-                <Slideshow/>
-                <Link to="/TypeAccount" class={styles.NavLink} id={styles.LinkCreateAccount}>
-                    Crear Cuenta
-                </Link>
-            </div> 
+            {/* <div id={styles.Slyder}>
+                <h1 id={styles.welcome}>Bienvenido a PsicoMet!</h1>
+            </div>  */}
+            <HeroSection />
 
             <div id={styles.AboutUs}>
                 <h1 class={styles.h1AboutUs}>

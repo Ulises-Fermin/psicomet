@@ -2,11 +2,37 @@
     display: flex;
     justify-content: center;
 }
+
 .link{
+    text-decoration: none;
     margin-top: 0.5%;
     padding: 0.5%;
     margin-bottom: 0.5%;
+    color:blue;
 }
+.link:visited{
+    text-decoration: none;
+    margin-top: 0.5%;
+    padding: 0.5%;
+    margin-bottom: 0.5%;
+    color:blue;
+}
+.link:active{
+    text-decoration: none;
+    margin-top: 0.5%;
+    padding: 0.5%;
+    margin-bottom: 0.5%;
+    color:blue;
+}
+.link:hover{
+    text-decoration: none;
+    margin-top: 0.5%;
+    padding: 0.5%;
+    margin-bottom: 0.5%;
+    color:darkblue;
+    font-size: large;
+}
+
 p{
     padding: 0.5%;
     margin-top: 0.5%;
@@ -27,24 +53,7 @@ h2{
     
 }
 
-#Logo{
-    max-width: 2.75%;
-    border-radius: 50%;
-    border-style:groove;
-    margin-top: 0%;
-    margin-bottom: 1%;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-
-}
-#Logo:hover{
-    max-width: 2.8%;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
-    cursor:pointer;
-}
-
 .DatesContainer{
-    max-width: 75%;
     padding-left: 25%;
 }
 
@@ -72,85 +81,18 @@ h2{
     margin-bottom: 10%;
 }
 
-#name{
+.fields {
     margin-left: 4%;
     margin-right:4%;
     color: black;
     background-color: #E9E5E5;
-    padding-right: 15%;
+    padding-right: 1%;
     padding-left: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
     border-radius: 10px;
     margin-right: 1%;
-    max-width: 10%;
-}
-
-#lastname{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 15%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-left: 1%;
-    max-width: 10%;
-}
-
-#email{
-    margin-left: 4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 7%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    max-width: 18%;
-}
-
-#password{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    max-width: 18%;
-}
-
-#ConfirmPassword{
-    margin-left: 1%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    max-width: 16%;
-}
-
-#number{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    max-width: 18%;
+    width: 18%;
 }
 
 #line{
@@ -159,19 +101,6 @@ h2{
     padding-left: 28%;
     max-height: 5%;
 }
-
-#date{
-    margin-left: 4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 8%;
-    padding-left: 2%;
-    padding-top: 0%;
-    border-radius: 10px;
-    margin-right: 0.7%;
-    
-}
-
 
 .slash{
     font-size: 250%;
@@ -183,24 +112,25 @@ h2{
     max-height: 5%;
 }
 
-#gender{
-    margin-left: 4%;
-    margin-right:4%;
-    color: black;
-    background-color: #E9E5E5;
-    padding-right: 15.0%;
-    padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    margin-right: 1%;
-    
-}
-
 #register{
     margin-left: 68.5%;
     color: white;
     background-color: #1CB0A7;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    max-width: 10%;
+    text-align: center;
+    cursor:pointer;
+    font-size: medium;
+}
+
+#register:hover{
+    margin-left: 68.5%;
+    color: #1CB0A7;
+    background-color: transparent;
     padding-right: 2%;
     padding-left: 2%;
     padding-top: 1%;

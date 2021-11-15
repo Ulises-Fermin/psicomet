@@ -5,16 +5,18 @@
     padding-left: 5%;
     padding-right: 5%;
     margin: 0px;
-    background-color: silver;
+    background-color:lightblue;
     font-family: Arial, Helvetica, sans-serif;
     position:sticky;
     top: 0px;
+    height: 70px;
     
 }
 
 #Logo {
     max-width: 110px;
     max-height: 110px;
+    cursor: pointer;
 }
 
 #NavLoginLink:link {
@@ -33,7 +35,7 @@
 }
 
 #NavLoginLink:hover {
-    color: red;
+    color:black;
     text-decoration: none;
 }
 
@@ -65,6 +67,17 @@
     padding: 8px;
     background-color: blue;
     border: 1px solid #2e518b;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+#LoginButton:hover {
+    list-style: none;
+    color: red;
+    text-decoration: none;
+    display: inline;
+    padding: 8px;
+    background-color: transparent;
+    border: 3px solid #2e518b;
     border-radius: 50px;
     margin-left: 20px;
 }

@@ -1,9 +1,9 @@
-import React from "react";
-import {useContext} from "react";
+import React, {useState, useEffect, useContext} from 'react'
 import styles from "./Navbar.module.css";
 import {Link} from "react-router-dom";
 import {UserContext} from "../../Context/UserContext";
 import {auth} from "../../Utils/FireBaseConfig";
+import { animateScroll as scroll } from 'react-scroll'
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -11,9 +11,14 @@ function Navbar() {
     await auth.signOut();
     setUser(null);
   };
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+}
+
   return (
     <div id={styles.NavBar}>
-      <img src="/LogoPsicomet.png" id={styles.Logo} alt="Logo de Psicomet" />
+      <img src="/LogoPsicomet.png" Link to='/' onClick={toggleHome}  id={styles.Logo} alt="Logo de Psicomet"/>
       <div id={styles.NavMenu}>
         <ul id={styles.NavList}>
           <li class={styles.NavButton}>

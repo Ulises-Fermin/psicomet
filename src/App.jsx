@@ -1,3 +1,8 @@
+// Listos todos los diagramas segun lo conversado. Estuve viendo y me parece que vamos fino. El documento casi listo.
+// La proxima entrega aporto mas en el codigo aprovechando que tengo la arquitectura fresca.
+// Pienso que podemos mejorar un poco en el diseno. Hice un curso de 4 horas sobre algunos para implementarlos en react.
+
+
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -14,45 +19,53 @@ import Psychologist from "./Pages/Psychologist/Psychologist"
 import Chats from "./Pages/Chats/Chats"
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Footer from "./Components/Footer";
+import Price from "./Pages/Price/Price";
+import HeroSection from "./Components/HeroSection";
 
 function App() {
   return (
     <UserContextProvider>
       <Router>
         <Navbar />
-        <Route path="/Home">
+        <Route exact path="/">
           <Home />
         </Route>
         <Switch>
-          <Route path="/TypeAccount">
+          <Route exact path="/Home">
+            <Home />
+          </Route>
+          <Route exact path="/TypeAccount">
             <TypeAccount />
           </Route>
-          <Route path="/CreateAccount">
+          <Route exact path="/CreateAccount">
             <CreateAccount />
           </Route>
-          <Route path="/CreateAccount_p">
+          <Route exact path="/CreateAccount_p">
             <CreateAccountP />
           </Route>
-          <Route path="/User">
+          <Route exact path="/User">
             <User />
           </Route>
-          <Route path="/Psychologist">
+          <Route exact path="/Psychologist">
             <Psychologist />
           </Route>
-          <Route path="/Contact">
+          <Route exact path="/Contact">
             <Contact />
           </Route>
-          <Route path="/LogIn">
+          <Route exact path="/LogIn">
             <LogIn />
           </Route>
-          <Route path="/Chats">
+          <Route exact path="/Chats">
             <Chats />
           </Route>
-          <Route path="/Testimonials">
+          <Route exact path="/Testimonials">
             <Testimonials />
           </Route>
+          <Route exact path="/Price">
+            <Price />
+          </Route>
         </Switch>
-        <Footer />
+          <Footer />
       </Router>
     </UserContextProvider>
   );
