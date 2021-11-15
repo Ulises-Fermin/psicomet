@@ -14,7 +14,7 @@ function Testimonials(){
     const sendMessage = (e) =>{
         e.preventDefault();
         {!!user ? (
-            db.collection("messages").add({ timestramp: Date.now(), message})
+            db.collection("messages").add({ timestramp: Date.now(), message, userName:user.name, userLastName:user.lastName, userEmail:user.email})
             ) : (
             window.alert("Debes iniciar sesion para enviar un testimonio.")
             )
@@ -33,8 +33,8 @@ function Testimonials(){
                             <div id={styles.block}>
                                 <img src="/LogoPsicomet.png" id={styles.Logo} alt="Logo de Psicomet" />
                                 <div id={styles.text}>
-                                    <p>{}</p>
-                                    <p></p>
+                                    <p>{m.userName} {m.userLastName}</p>
+                                    <p>{m.userEmail}</p>
                                     <br></br>
                                 {m.message}
                             </div>
