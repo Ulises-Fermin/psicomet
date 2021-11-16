@@ -12,13 +12,17 @@ function Testimonials(){
     const [message, setMessage] = React.useState('');
     const {loading, messages, error} = useTestimonials();
     const sendMessage = (e) =>{
-        e.preventDefault();
+        if (!(message==="")){
+            e.preventDefault();
         {!!user ? (
             db.collection("messages").add({ timestramp: Date.now(), message, userName:user.name, userLastName:user.lastName, userEmail:user.email})
             ) : (
             window.alert("Debes iniciar sesion para enviar un testimonio.")
             )
         };
+        }else{
+            window.alert("El testimonio se encuentra vacio, intentelo nuevamente.")
+        }
     };
     return (
         <>
