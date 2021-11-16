@@ -19,6 +19,7 @@ import Psychologist from "./Pages/Psychologist/Psychologist"
 import Chats from "./Pages/Chats/Chats"
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Price from "./Pages/Price/Price";
+import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 
 function App() {
   return (
@@ -61,6 +62,9 @@ function App() {
           </Route>
           <Route exact path="/Price">
             <Price />
+          </Route>
+          <Route exact path="/RecoverPassword">
+            <RecoverPassword />
           </Route>
         </Switch>
       </Router>

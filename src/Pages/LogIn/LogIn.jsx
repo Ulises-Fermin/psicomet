@@ -69,6 +69,7 @@ function LogIn() {
                   <input name="password" type="password" id={styles.password} placeholder="Contraseña"
                     value={values.password} onChange={handleOnChange}/>
                   <button type="submit" id={styles.buttonLogIn} onClick={handleSubmit}>Iniciar Sesión</button>
+                  <p>Olvidaste tu contraseña?</p><Link to="RecoverPassword">Recuperar</Link>
                 </div>
               </form>
               <div class={styles.registro}>
