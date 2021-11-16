@@ -45,7 +45,7 @@ function Testimonials(){
             <div id={styles.WriteSpace}>
                 <p>Escribe tu testimonio aqui: </p>
                 <form action=""> 
-                    <input id={styles.Write} value={message} onChange={(e) => setMessage(e.target.value)}/>
+                    <textarea id={styles.Write} rows="10" placeholder= "Escribe tu opinion acerca de la pagina aqui:" value={message} onChange={(e) => setMessage(e.target.value)}/>
                     <button type="submit" id={styles.button} onClick={sendMessage}> Enviar mensaje</button>    
                 </form>
                 

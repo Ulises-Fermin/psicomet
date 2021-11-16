@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 
 function LogIn() {
   const {setUser} = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   const history = useHistory();
 
@@ -27,44 +28,56 @@ function LogIn() {
   };
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     await auth.signInWithEmailAndPassword(values.email, values.password);
+    setIsLoading(false);
     history.push("/Home");
   }
 
   return (
-    <div class={styles.body}>
-      <img src="https://image.freepik.com/vector-gratis/ayuda-psicologia-linea-ilustracion-psicoterapia-salud-paciente-psicologo-apoyo-mujer-depresion_109722-1836.jpg"
-        alt="" id={styles.body2}/>
-      <div class={styles.body3}>
-        <div id={styles.LogIn}>
-          <p id={styles.parrafo1}>
-            Si tiene cuenta de google, puede iniciar con ella:
-          </p>
-          <br />
-          <button id={styles.buttonGoogle} type="button" onClick={googleLogin}>
-            Iniciar sesion con Google
-          </button>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div class={styles.inicio}>
-            <p>Ingrese su nombre de usuario y contrasena:</p>
-            <input name="email" type="email" id={styles.email} placeholder="Correo Electronico"
-              value={values.email} onChange={handleOnChange}/>
-            <input name="password" type="password" id={styles.password} placeholder="Contraseña"
-              value={values.password} onChange={handleOnChange}/>
-            <button type="submit" id={styles.buttonLogIn} onClick={handleSubmit}>Acceder</button>
+    <>
+      {isLoading ? (
+          <div id={styles.isLoading}>
+              <h1>¡Gracias por iniciar sesión!</h1>
+              <h1>Será redirigido automáticamente.</h1>
           </div>
-        </form>
-        <div class={styles.registro}>
-          <p id={styles.parrafo3}>Si no tiene una cuenta registrese:</p>
-          <Link to="/TypeAccount" id={styles.linkRegister}>
-            Registrarse
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+      ) : (
+          <div class={styles.body}>
+            <img src="https://image.freepik.com/vector-gratis/ayuda-psicologia-linea-ilustracion-psicoterapia-salud-paciente-psicologo-apoyo-mujer-depresion_109722-1836.jpg"
+              alt="" id={styles.body2}/>
+            <div class={styles.body3}>
+              <div id={styles.LogIn}>
+                <p id={styles.parrafo1}>
+                  Si tiene cuenta de google, puede iniciar con ella:
+                </p>
+                <br />
+                <button id={styles.buttonGoogle} type="button" onClick={googleLogin}>
+                  Iniciar sesion con Google
+                </button>
+              </div>
+              <form onSubmit={handleSubmit}>
+                <div class={styles.inicio}>
+                  <p>Ingrese su nombre de usuario y contrasena:</p>
+                  <input name="email" type="email" id={styles.email} placeholder="Correo Electronico"
+                    value={values.email} onChange={handleOnChange}/>
+                  <input name="password" type="password" id={styles.password} placeholder="Contraseña"
+                    value={values.password} onChange={handleOnChange}/>
+                  <button type="submit" id={styles.buttonLogIn} onClick={handleSubmit}>Iniciar Sesión</button>
+                </div>
+              </form>
+              <div class={styles.registro}>
+                <p id={styles.parrafo3}>Si no tiene una cuenta registrese:</p>
+                <Link to="/TypeAccount" id={styles.linkRegister}>
+                  Registrarse
+                </Link>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    </>
+  )
 }
 
 export default LogIn;

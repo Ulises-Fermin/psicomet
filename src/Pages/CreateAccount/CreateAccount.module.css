@@ -1,6 +1,7 @@
 #subtitle{
     display: flex;
     justify-content: center;
+    margin-bottom: 2%;
 }
 
 .link{
@@ -41,6 +42,7 @@ p{
 
 #title{
     text-align: center;
+    margin-top: 2%;
 }
 
 h2{
@@ -121,7 +123,7 @@ h2{
     padding-top: 1%;
     padding-bottom: 1%;
     border-radius: 10px;
-    max-width: 10%;
+    width: fit-content;
     text-align: center;
     cursor:pointer;
     font-size: medium;
@@ -136,7 +138,7 @@ h2{
     padding-top: 1%;
     padding-bottom: 1%;
     border-radius: 10px;
-    max-width: 10%;
+    width: fit-content;
     text-align: center;
     cursor:pointer;
 }
@@ -144,4 +146,18 @@ h2{
 #instructions{
     margin-left: 5%;
     text-align: center;
+}
+
+#isLoading{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4%;
+    background-image: url("../../Images/Loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    align-content: center;
+    color: white;
 }

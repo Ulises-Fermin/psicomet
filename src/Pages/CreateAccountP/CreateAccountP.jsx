@@ -8,6 +8,7 @@ import {UserContext} from "../../Context/UserContext";
 
 function CreateAccountP(){
   const {createUser} = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
 
     const [values, setValues] = useState({
         name: "",
@@ -41,6 +42,7 @@ function CreateAccountP(){
                           if (!isNaN(values.id)&!(values.id==="")){
                             if (!(values.college === "")){
                               if (!(values.specialty ==="")){
+                                setIsLoading(true);
                                 e.preventDefault();
                             const response = await auth.createUserWithEmailAndPassword(
                                 values.email, 
@@ -58,6 +60,7 @@ function CreateAccountP(){
                                 college: values.college,
                                 specialty: values.specialty,
                             }, response.user.uid);
+                            setIsLoading(false);
                             history.push("/Home");
                               }else{
                                 window.alert("Seleccione una especialidad.")
@@ -89,152 +92,162 @@ function CreateAccountP(){
     };
 
   return (
-    <div id={styles.Body}>
-        <div id={styles.title}>
-          <h2>Crea una cuenta de espacialista Psicomet</h2>
+    <>
+      {isLoading ? (
+        <div id={styles.isLoading}>
+            <h1>¡Gracias por crear una cuenta con nosotros!</h1>
+            <h1>Será redirigido automáticamente.</h1>
         </div>
+      ) : (
+        <div id={styles.Body}>
+          <div id={styles.title}>
+            <h2>Crea una cuenta de espacialista Psicomet</h2>
+          </div>
 
-        <div id={styles.subtitle}>
-          <p>¿Ya tienes una cuenta?</p>
-          <Link to="/Login" class={styles.link}>
-            Iniciar sesion
-          </Link>
-        </div>
+          <div id={styles.subtitle}>
+            <p>¿Ya tienes una cuenta?</p>
+            <Link to="/Login" class={styles.link}>
+              Iniciar sesion
+            </Link>
+          </div>
 
-        <div class={styles.DatesContainer}>
-          <div id={styles.File1}>
-            <input 
-            name="name"
-            type="text" 
-            class={styles.fields}
-            placeholder="Nombre"
-            value={values.name}
-            onChange={handleOnChange}
-            ></input>
-            <input
-              name="lastName"
-              type="text"
+          <div class={styles.DatesContainer}>
+            <div id={styles.File1}>
+              <input 
+              name="name"
+              type="text" 
               class={styles.fields}
-              placeholder="Apellido"
-              value={values.lastName}
+              placeholder="Nombre"
+              value={values.name}
               onChange={handleOnChange}
-            ></input>
-          </div>
-          <div id={styles.File2}>
-            <input
-              name="email"
-              type="email"
+              ></input>
+              <input
+                name="lastName"
+                type="text"
+                class={styles.fields}
+                placeholder="Apellido"
+                value={values.lastName}
+                onChange={handleOnChange}
+              ></input>
+            </div>
+            <div id={styles.File2}>
+              <input
+                name="email"
+                type="email"
+                class={styles.fields}
+                placeholder="Correo Electronico"
+                value={values.email}
+                onChange={handleOnChange}
+              ></input>
+            </div>
+
+            <div id={styles.File3}>
+              <input
+                name="password"
+                type="password"
+                class={styles.fields}
+                placeholder="Contraseña"
+                value={values.password}
+                onChange={handleOnChange}
+              ></input>
+              <input
+                name="confirmPassword"
+                type="password"
+                class={styles.fields}
+                value={values.confirmPassword}
+                placeholder="Confirmar Contraseña"
+                onChange={handleOnChange}
+              ></input>
+            </div>
+
+            <div id={styles.File4}>
+              <input 
+              name="phone"
+              type="tel" 
               class={styles.fields}
-              placeholder="Correo Electronico"
-              value={values.email}
+              placeholder="Telefono"
+              value={values.phone}
               onChange={handleOnChange}
-            ></input>
+              ></input>
+            </div>
           </div>
 
-          <div id={styles.File3}>
-            <input
-              name="password"
-              type="password"
+          <div id={styles.line}>
+            <hr></hr>
+          </div>
+
+          <div class={styles.DatesContainer}>
+            <div id={styles.File5}>
+              <input 
+              name="date"
+              type="date" 
               class={styles.fields}
-              placeholder="Contraseña"
-              value={values.password}
+              placeholder="DD/MM/AAAA"
+              value={values.date}
               onChange={handleOnChange}
-            ></input>
-            <input
-              name="confirmPassword"
-              type="password"
-              class={styles.fields}
-              value={values.confirmPassword}
-              placeholder="Confirmar Contraseña"
+              ></input>
+              <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
+            </div>
+            <div id={styles.File6}>
+              <select name="gender" class={styles.fields} value={values.gender} onChange={handleOnChange}>
+                <option value="">Genero</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
+            </div>
+          </div>
+          <div class={styles.DatesContainer}>
+            <div id={styles.File1}>
+              <input 
+              name="id"
+              class={styles.fields} 
+              type="text" 
+              placeholder="Ingrese su carnet" 
+              value={values.id}
               onChange={handleOnChange}
-            ></input>
+              ></input>
+            </div>
+
+            <div id={styles.File1}>
+              <input 
+              name="college"
+              class={styles.fields} 
+              type="text" 
+              placeholder="Ingrese la universidad en la que cursó sus estudios"
+              value={values.college}
+              onChange={handleOnChange}
+              ></input>
+            </div>
+
+            <div id={styles.File6}>
+              <select name="specialty" class={styles.fields} value={values.specialty} onChange={handleOnChange}>
+                <option value="">Especialidad</option>
+                <option value="Masculino">Depresion</option>
+                <option value="Femenino">Ansiedad</option>
+                <option value="Femenino">Otros</option>
+              </select>
+            </div>
+
+            <p id={styles.instructions2}>
+              En el siguiente campo adjunte un archivo que contenga su curriculum
+            </p>
+
+            <div id={styles.File1}>
+              <input
+                type="file"
+                name="Curriculum"
+                id={styles.name}
+                placeholder="Ingrese su curriculum"
+              />
+            </div>
           </div>
 
-          <div id={styles.File4}>
-            <input 
-            name="phone"
-            type="tel" 
-            class={styles.fields}
-            placeholder="Telefono"
-            value={values.phone}
-            onChange={handleOnChange}
-            ></input>
-          </div>
+          <p type="submit" id={styles.register} onClick={handleSubmit}>Crear cuenta</p>
         </div>
-
-        <div id={styles.line}>
-          <hr></hr>
-        </div>
-
-        <div class={styles.DatesContainer}>
-          <div id={styles.File5}>
-            <input 
-            name="date"
-            type="date" 
-            class={styles.fields}
-            placeholder="DD/MM/AAAA"
-            value={values.date}
-            onChange={handleOnChange}
-            ></input>
-            <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
-          </div>
-          <div id={styles.File6}>
-            <select name="gender" class={styles.fields} value={values.gender} onChange={handleOnChange}>
-              <option value="">Genero</option>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-            </select>
-          </div>
-        </div>
-        <div class={styles.DatesContainer}>
-          <div id={styles.File1}>
-            <input 
-            name="id"
-            class={styles.fields} 
-            type="text" 
-            placeholder="Ingrese su carnet" 
-            value={values.id}
-            onChange={handleOnChange}
-            ></input>
-          </div>
-
-          <div id={styles.File1}>
-            <input 
-            name="college"
-            class={styles.fields} 
-            type="text" 
-            placeholder="Ingrese la universidad en la que cursó sus estudios"
-            value={values.college}
-            onChange={handleOnChange}
-            ></input>
-          </div>
-
-          <div id={styles.File6}>
-            <select name="specialty" class={styles.fields} value={values.specialty} onChange={handleOnChange}>
-              <option value="">Especialidad</option>
-              <option value="Masculino">Depresion</option>
-              <option value="Femenino">Ansiedad</option>
-              <option value="Femenino">Otros</option>
-            </select>
-          </div>
-
-          <p id={styles.instructions2}>
-            En el siguiente campo adjunte un archivo que contenga su curriculum
-          </p>
-
-          <div id={styles.File1}>
-            <input
-              type="file"
-              name="Curriculum"
-              id={styles.name}
-              placeholder="Ingrese su curriculum"
-            />
-          </div>
-        </div>
-
-        <p type="submit" id={styles.register} onClick={handleSubmit}>Crear cuenta</p>
-    </div>
-  );
+      )
+      }
+    </>
+  )
 }
 
 export default CreateAccountP;

@@ -8,6 +8,7 @@ import {UserContext} from "../../Context/UserContext";
 
 function CreateAccount(){
     const {createUser} = useContext(UserContext);
+    const [isLoading, setIsLoading] = useState(false);
 
     const [values, setValues] = useState({
         name: "",
@@ -37,6 +38,7 @@ function CreateAccount(){
                     if (!isNaN(values.phone)&!(values.phone==="")){
                         if (!(values.date==="")){
                             if (!(values.gender ==="")){
+                                setIsLoading(true);
                                 e.preventDefault();
                                 const response = await auth.createUserWithEmailAndPassword(
                                     values.email, 
@@ -53,6 +55,7 @@ function CreateAccount(){
                                     id: null,
                                     college: null,
                                 }, response.user.uid);
+                                setIsLoading(false);
                                 history.push("/Home"); 
                             }else{
                                 window.alert("Seleccione un genero.")
@@ -75,102 +78,111 @@ function CreateAccount(){
     };
 
     return(
-        <div id={styles.Body}>
-            <div id={styles.title}>
-                <h2>Crea una cuenta de Psicomet</h2>
-            </div>
-            <div id={styles.subtitle}>
-                <p>Ya tienes una cuenta?</p>
-                <Link to="/LogIn" class={styles.link}>
-                    Iniciar sesion
-                </Link>
-            </div>
-            <form onSubmit={handleSubmit}>
-                <div class={styles.DatesContainer}>
-                    <div id={styles.File1}>
-                        <input 
-                        name="name" 
-                        type="text" 
-                        class={styles.fields}
-                        placeholder="Nombre" 
-                        value={values.name} 
-                        onChange={handleOnChange}>
-                        </input>
-                        <input 
-                        name="lastName" 
-                        type="text" 
-                        class={styles.fields} 
-                        placeholder="Apellido" 
-                        value={values.lastName} 
-                        onChange={handleOnChange}>
-                        </input> 
-                    </div>
-                    <div id={styles.File2}>
-                        <input 
-                        name="email" 
-                        type="email" 
-                        class={styles.fields}
-                        placeholder="Correo Electronico" 
-                        value={values.email} 
-                        onChange={handleOnChange}>
-                        </input>
-                    </div>
-                    <div id={styles.File3}>
-                        <input 
-                        name="password" 
-                        type="password" 
-                        class={styles.fields}
-                        placeholder="Contraseña" 
-                        value={values.password} 
-                        onChange={handleOnChange}>
-                        </input>
-                        <input 
-                        name="confirmPassword" 
-                        type="password" 
-                        class={styles.fields} 
-                        placeholder="Confirmar Contraseña"
-                        value={values.confirmPassword} 
-                        onChange={handleOnChange}>
-                        </input>
-                    </div>
-                    <div id={styles.File4}>
-                        <input 
-                        name="phone" 
-                        type="tel" 
-                        class={styles.fields} 
-                        placeholder="Telefono" 
-                        value={values.phone} 
-                        onChange={handleOnChange}>
-                        </input>
-                    </div>   
+        <>
+            {isLoading ? (
+                <div id={styles.isLoading}>
+                    <h1>¡Gracias por crear una cuenta con nosotros!</h1>
+                    <h1>Será redirigido automáticamente.</h1>
                 </div>
-                <div id={styles.line}>
-                    <hr></hr>
+            ) : (
+                <div id={styles.Body}>
+                <div id={styles.title}>
+                    <h2>Crea una cuenta de Psicomet</h2>
                 </div>
-                <div class={styles.DatesContainer}>
-                    <div id={styles.File5}>
-                        <input 
-                        name="date" 
-                        type="date" 
-                        class={styles.fields}
-                        placeholder="DD/MM/AAAA" 
-                        value={values.date} 
-                        onChange={handleOnChange}>
-                        </input>
-                        <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
-                    </div>
-                    <div id={styles.File6}>
-                        <select name="gender" class={styles.fields} value={values.gender} onChange={handleOnChange}>
-                            <option value="">Genero</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                        </select>   
-                    </div>
+                <div id={styles.subtitle}>
+                    <p>Ya tienes una cuenta?</p>
+                    <Link to="/LogIn" class={styles.link}>
+                        Iniciar sesion
+                    </Link>
                 </div>
-                <button type="submit" id={styles.register} onClick={handleSubmit}>Crear cuenta</button>
-            </form>
-        </div>
+                <form onSubmit={handleSubmit}>
+                    <div class={styles.DatesContainer}>
+                        <div id={styles.File1}>
+                            <input 
+                            name="name" 
+                            type="text" 
+                            class={styles.fields}
+                            placeholder="Nombre" 
+                            value={values.name} 
+                            onChange={handleOnChange}>
+                            </input>
+                            <input 
+                            name="lastName" 
+                            type="text" 
+                            class={styles.fields} 
+                            placeholder="Apellido" 
+                            value={values.lastName} 
+                            onChange={handleOnChange}>
+                            </input> 
+                        </div>
+                        <div id={styles.File2}>
+                            <input 
+                            name="email" 
+                            type="email" 
+                            class={styles.fields}
+                            placeholder="Correo Electronico" 
+                            value={values.email} 
+                            onChange={handleOnChange}>
+                            </input>
+                        </div>
+                        <div id={styles.File3}>
+                            <input 
+                            name="password" 
+                            type="password" 
+                            class={styles.fields}
+                            placeholder="Contraseña" 
+                            value={values.password} 
+                            onChange={handleOnChange}>
+                            </input>
+                            <input 
+                            name="confirmPassword" 
+                            type="password" 
+                            class={styles.fields} 
+                            placeholder="Confirmar Contraseña"
+                            value={values.confirmPassword} 
+                            onChange={handleOnChange}>
+                            </input>
+                        </div>
+                        <div id={styles.File4}>
+                            <input 
+                            name="phone" 
+                            type="tel" 
+                            class={styles.fields} 
+                            placeholder="Telefono" 
+                            value={values.phone} 
+                            onChange={handleOnChange}>
+                            </input>
+                        </div>   
+                    </div>
+                    <div id={styles.line}>
+                        <hr></hr>
+                    </div>
+                    <div class={styles.DatesContainer}>
+                        <div id={styles.File5}>
+                            <input 
+                            name="date" 
+                            type="date" 
+                            class={styles.fields}
+                            placeholder="DD/MM/AAAA" 
+                            value={values.date} 
+                            onChange={handleOnChange}>
+                            </input>
+                            <p id={styles.instructions}>Introduzca fecha de nacimiento</p>
+                        </div>
+                        <div id={styles.File6}>
+                            <select name="gender" class={styles.fields}  value={values.gender} onChange={handleOnChange}>
+                                <option value="">Genero</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>   
+                        </div>
+                    </div>
+                    <button type="submit" id={styles.register} onClick={handleSubmit}>Crear cuenta</button>
+                </form>
+                </div>
+                )
+            }
+        </>
     )
 }
-
 export default CreateAccount;
