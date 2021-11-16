@@ -33,62 +33,67 @@ function CreateAccountP(){
     };
 
     const handleSubmit = async (e) => {
-      if (!((values.name === "")|(values.lastName === ""))){
-        if ((!(values.email === "")|(values.email.includes("@")))){
-            if (values.password===values.confirmPassword){
-                if (!isNaN(values.phone)&!(values.phone==="")){
-                    if (!(values.date==="")){
-                        if (!(values.gender ==="")){
-                          if (!isNaN(values.id)&!(values.id==="")){
-                            if (!(values.college === "")){
-                              if (!(values.specialty ==="")){
-                                setIsLoading(true);
-                                e.preventDefault();
-                            const response = await auth.createUserWithEmailAndPassword(
-                                values.email, 
-                                values.password,
-                            );
-                            await createUser({
-                                name: values.name,
-                                lastName: values.lastName,
-                                email: values.email,
-                                phone: values.phone,
-                                date: values.date,
-                                gender: values.gender,
-                                role: "psychologist",
-                                id: values.id,
-                                college: values.college,
-                                specialty: values.specialty,
-                            }, response.user.uid);
-                            setIsLoading(false);
-                            history.push("/Home");
+      try{
+        if (!((values.name === "")|(values.lastName === ""))){
+          if ((!(values.email === "")|(values.email.includes("@")))){
+              if (values.password===values.confirmPassword){
+                  if (!isNaN(values.phone)&!(values.phone==="")){
+                      if (!(values.date==="")){
+                          if (!(values.gender ==="")){
+                            if (!isNaN(values.id)&!(values.id==="")){
+                              if (!(values.college === "")){
+                                if (!(values.specialty ==="")){
+                                  setIsLoading(true);
+                                  e.preventDefault();
+                              const response = await auth.createUserWithEmailAndPassword(
+                                  values.email, 
+                                  values.password,
+                              );
+                              await createUser({
+                                  name: values.name,
+                                  lastName: values.lastName,
+                                  email: values.email,
+                                  phone: values.phone,
+                                  date: values.date,
+                                  gender: values.gender,
+                                  role: "psychologist",
+                                  id: values.id,
+                                  college: values.college,
+                                  specialty: values.specialty,
+                              }, response.user.uid);
+                              setIsLoading(false);
+                              history.push("/Home");
+                                }else{
+                                  window.alert("Seleccione una especialidad.")
+                                }
                               }else{
-                                window.alert("Seleccione una especialidad.")
+                                window.alert("Ingrese una universidad valida.")
                               }
                             }else{
-                              window.alert("Ingrese una universidad valida.")
+                              window.alert("Ingrese un carnet valido.")
                             }
                           }else{
-                            window.alert("Ingrese un carnet valido.")
+                              window.alert("Seleccione un genero.")
                           }
-                        }else{
-                            window.alert("Seleccione un genero.")
-                        }
-                    }else{
-                        window.alert("Ingrese una fecha de nacimiento valida.")
-                    }
-                }else{
-                    window.alert("Ingrese un numero de telefono valido.")
-                }
-            }else{
-                window.alert("Las contrasenas ingresadas no coinciden.")
-            }
-        }else{
-            window.alert("Ingrese un correo electronico valido.")
-        }
-    }else {
-        window.alert("Ingrese un nombre y un apellido valido.")
-    }
+                      }else{
+                          window.alert("Ingrese una fecha de nacimiento valida.")
+                      }
+                  }else{
+                      window.alert("Ingrese un numero de telefono valido.")
+                  }
+              }else{
+                  window.alert("Las contrasenas ingresadas no coinciden.")
+              }
+          }else{
+              window.alert("Ingrese un correo electronico valido.")
+          }
+      }else {
+          window.alert("Ingrese un nombre y un apellido valido.")
+      }
+      }catch(error){
+        window.alert(error);
+        setIsLoading(false);
+      }
     };
 
   return (

@@ -28,11 +28,16 @@ function LogIn() {
   };
 
   const handleSubmit = async (e) => {
-    setIsLoading(true);
+    try{
+      setIsLoading(true);
     e.preventDefault();
     await auth.signInWithEmailAndPassword(values.email, values.password);
     setIsLoading(false);
     history.push("/Home");
+    }catch(error){
+      window.alert(error);
+      setIsLoading(false);
+    }
   }
 
   return (
