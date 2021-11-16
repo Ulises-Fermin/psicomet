@@ -2,7 +2,6 @@
 // La proxima entrega aporto mas en el codigo aprovechando que tengo la arquitectura fresca.
 // Pienso que podemos mejorar un poco en el diseno. Hice un curso de 4 horas sobre algunos para implementarlos en react.
 
-
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -15,11 +14,12 @@ import LogIn from "./Pages/LogIn/LogIn";
 import UserContextProvider from "./Context/UserContext";
 import User from "./Pages/User/User";
 import Contact from "./Pages/Contact/Contact";
-import Psychologist from "./Pages/Psychologist/Psychologist"
-import Chats from "./Pages/Chats/Chats"
+import Psychologist from "./Pages/Psychologist/Psychologist";
+import Chats from "./Pages/Chats/Chats";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Price from "./Pages/Price/Price";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
+import Profile from "./Pages/Profile/Profile";
 
 function App() {
   return (
@@ -65,6 +65,9 @@ function App() {
           </Route>
           <Route exact path="/RecoverPassword">
             <RecoverPassword />
+          </Route>
+          <Route exact path="/Profile">
+            <Profile />
           </Route>
         </Switch>
       </Router>
