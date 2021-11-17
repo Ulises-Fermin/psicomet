@@ -14,7 +14,7 @@ function User() {
   return (
     <div class={styles.body}>
       {!!user ? (
-        <h1 id={styles.title}>Bienvenido {user.name} </h1>
+        <h1 id={styles.title}>Bienvenido/a {user.name} </h1>
       ) : (
         <h1 id={styles.title}>
           No deberia estar aca sin haber iniciado pero bienvenido igual
