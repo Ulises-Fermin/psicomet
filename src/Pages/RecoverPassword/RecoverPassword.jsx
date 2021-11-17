@@ -2,48 +2,36 @@ import React from "react";
 import {useContext, useState} from "react";
 import styles from "./RecoverPassword.module.css";
 import {googleProvider, auth} from "../../Utils/FireBaseConfig";
+import { UserContext } from "../../Context/UserContext";
 import {useHistory} from "react-router";
-import {UserContext} from "../../Context/UserContext";
-import {Link} from "react-router-dom";
-
+import firebase from "firebase";
 
 function RecoverPassword() {
-    const {setUser} = useContext(UserContext);
-    const [isLoading, setIsLoading] = useState(false);
-
-    const history = useHistory();
-
     const [values, setValues] = useState({
         email: "",
-        password: "",
     })
     const handleOnChange = (event) => {
         const {value, name: inputName} = event.target;
         setValues({...values, [inputName]:value})
-        };
-    const handleSubmit = async (e) => {
-        try{
-            setIsLoading(true);
-        e.preventDefault();
-        await auth.signInWithEmail(values.email);
-        setIsLoading(false);
-        history.push("/Home");
-            }catch(error){
-            window.alert(error);
-            setIsLoading(false);
-        }
-    }
-    
+    };
+    const auth = firebase.auth();
+    const emailAddress = (values.email);
+    auth.sendPasswordResetEmail(emailAddress)
+    .then(function(){
+        alert("Se ha enviado la contrasena a tu correo")
+    },function(error){
+        console.log("error");
+    })
+
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div class={styles.inicio}>
-                    <p>Ingrese correo para recuperar su contraseña</p>
-                    <input name="email" type="email" id={styles.email} placeholder="Correo Electronico"
-                        value={values.email} onChange={handleOnChange}/>
-                    <button type="submit" id={styles.buttonLogIn} onClick={handleSubmit}>Enviar Correo</button>
-                </div>
-            </form>
+        <div>   
+            <div class={styles.inicio}>
+                <p>Coloque el correo al que se enviara la contrasena:</p>
+                <input name="email" type="email" value={values.email} id={styles.password} placeholder="Email" onChange={handleOnChange}/>
+                <button type="submit" id={styles.buttonLogIn} 
+                onClick={RecoverPassword}>Enviar Contrasena</button>
+            </div>
+              
         </div>
     )
 }
