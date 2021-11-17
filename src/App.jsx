@@ -19,7 +19,8 @@ import Chats from "./Pages/Chats/Chats";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Price from "./Pages/Price/Price";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
-import Profile from "./Pages/Profile/Profile";
+import Profile_p from "./Pages/Profile/Profile_p";
+import Profile_e from "./Pages/Profile/Profile_e";
 
 function App() {
   return (
@@ -66,8 +67,11 @@ function App() {
           <Route exact path="/RecoverPassword">
             <RecoverPassword />
           </Route>
-          <Route exact path="/Profile">
-            <Profile />
+          <Route exact path="/Profile_p">
+            <Profile_p />
+          </Route>
+          <Route exact path="/Profile_e">
+            <Profile_e />
           </Route>
         </Switch>
       </Router>

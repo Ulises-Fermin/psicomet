@@ -1,0 +1,121 @@
+#img1 {
+  width: 20%;
+  margin-left: 2%;
+}
+
+.box1 {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+}
+
+.info {
+  margin-left: 4%;
+  width: 15%;
+}
+
+#rol {
+  margin-top: 15%;
+}
+
+.box4 {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+}
+
+.box2 {
+  box-sizing: border-box;
+  width: 20%;
+  border: 7px solid lightblue;
+  margin-left: 2%;
+}
+
+#label1 {
+  font-weight: 600;
+  color: rgb(102, 102, 228);
+}
+
+#label2 {
+  font-weight: 600;
+  color: rgb(102, 102, 228);
+}
+
+#label3 {
+  font-weight: 600;
+  color: rgb(102, 102, 228);
+}
+
+#label4 {
+  font-weight: 600;
+  color: rgb(102, 102, 228);
+}
+
+#label5 {
+  font-weight: 600;
+  color: rgb(102, 102, 228);
+}
+
+#label6 {
+  color: rgb(102, 102, 228);
+}
+
+#profesional {
+  color: rgb(102, 102, 228);
+}
+
+#label7 {
+  color: rgb(102, 102, 228);
+}
+
+#about {
+  color: rgb(102, 102, 228);
+}
+#label8 {
+  font-weight: 600;
+
+  color: rgb(102, 102, 228);
+}
+
+.box3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0%;
+  height: 45%;
+}
+
+#areas {
+  width: 120%;
+  margin-top: 3%;
+}
+
+#profesionalt {
+  width: 120%;
+  margin-top: 3%;
+}
+
+.box7 {
+  margin-left: 4%;
+  width: 60%;
+}
+
+.box8 {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 45%;
+}
+
+#academia {
+  width: 117%;
+  margin-top: 0.5%;
+}
+
+#info {
+  width: 117%;
+  margin-top: 0.5%;
+}

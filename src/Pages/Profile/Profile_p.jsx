@@ -1,8 +1,17 @@
 import React from "react";
-import styles from "./Profile.module.css";
+import styles from "./Profile_p.module.css";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
+import { auth } from "../../Utils/FireBaseConfig";
+import { useContext } from "react";
 
-function Profile() {
+function Profile_p() {
+  const { user, setUser } = useContext(UserContext);
+  const handleLogOut = async () => {
+    await auth.signOut();
+    setUser(null);
+  };
+
   return (
     <>
       <div class={styles.box1}>
@@ -12,16 +21,23 @@ function Profile() {
           alt=""
         />
         <div class={styles.info}>
-          <p id={styles.name}>Nombre: Ulises Fermin</p>
-          <p id={styles.rol}>Rol: Paciente</p>
+          <p id={styles.name}>Nombre:ulises</p>
+          <p id={styles.rol}>Rol: paciente</p>
         </div>
       </div>
       <div class={styles.box4}>
         <div class={styles.box2}>
+          <p id={styles.label}>Correo Electrónico:</p>
           <p id={styles.mail}>ulisesfs12@gmail.com</p>
+          <br />
+          <br />
+          <br />
+          <br />
+          <p id={styles.labe2}>Género:</p>
           <p id={styles.gender}>Masculino</p>
         </div>
         <div class={styles.box3}>
+          <h2 id={styles.titulo1}>Modificación de Datos</h2>
           <p>Ingrese el nuevo nombre: </p>
           <input
             type="text"
@@ -55,4 +71,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Profile_p;
