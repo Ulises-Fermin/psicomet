@@ -13,45 +13,56 @@
 }
 
 #LogIn {
-  padding: 0px;
+  padding: 8%;
+  padding-top: 4%;
   margin-top: 3%;
+  margin-left: 3%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 6%;
+  background-color: rgba(224, 223, 223, 0.568);
+  border-width: 2px;
+  border-style: solid;
+  border-color: lightgray;
 }
 
 #buttonGoogle {
-  margin-left: 28%;
-  width: 45%;
+  margin-left: 20%;
+  width: fit-content;
   cursor: pointer;
   border-radius: 5px;
   background-color: #00bfff;
   border: none;
-  font-size: large;
-  padding: 0.5%;
+  font-size: 17px;
+  padding: 3%;
   color: white;
 }
 
 #buttonGoogle:hover {
-  margin-left: 28%;
-  width: 45%;
+  margin-left: 20%;
+  width: fit-content;
   cursor: pointer;
   border-radius: 5px;
   background-color: transparent;
-  font-size: large;
-  padding: 0.5%;
+  font-size: 17px;
+  padding: 3%;
   color: #00bfff;
   border: solid;
   border-color: #00bfff;
 }
 
 .inicio {
-  padding: 0%;
-  margin-top: 21%;
+  padding: 8%;
+  padding-top: 4%;
+  margin-top: 3%;
+  margin-left: 3%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: rgba(224, 223, 223, 0.568);
+  border-width: 2px;
+  border-style: solid;
+  border-color: lightgray;
 }
 
 #email {
@@ -69,20 +80,20 @@
 }
 
 #buttonLogIn {
-  margin-left: 37%;
-  width: 25%;
+  margin-left: 32%;
+  width: fit-content;
   cursor: pointer;
   border-radius: 5px;
   margin-top: 2%;
   background-color: #00bfff;
   border: none;
   font-size: 18px;
-  padding: 0.3%;
+  padding: 3%;
   color: white;
 }
 #buttonLogIn:hover {
-  margin-left: 37%;
-  width: 25%;
+  margin-left: 32%;
+  width: fit-content;
   cursor: pointer;
   border-radius: 5px;
   margin-top: 2%;
@@ -90,39 +101,60 @@
   border: solid;
   border-color: #00bfff;
   font-size: 18px;
-  padding: 0.3%;
+  padding: 3%;
   color: #00bfff;
 }
 
 .registro {
-  padding: 0%;
-  margin-top: 35%;
+  padding: 8%;
+  padding-top: 4%;
+  margin-top: 3%;
+  margin-left: 3%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: rgba(224, 223, 223, 0.568);
+  border-width: 2px;
+  border-style: solid;
+  border-color: lightgray;
 }
 
 #linkRegister {
   text-decoration: none;
-  margin-left: 40%;
+  margin-left: 35%;
   background-color: #00bfff;
   width: fit-content;
   color: white;
   font-size: 15px;
-  padding: 0.5%;
+  padding: 3%;
   border-radius: 5px;
   font-size: large;
+  margin-top: 2%;
 }
 #linkRegister:hover {
   text-decoration: none;
-  margin-left: 40%;
+  margin-left: 35%;
   background-color: transparent;
   width: fit-content;
   color: #00bfff;
   font-size: 15px;
-  padding: 0.5%;
+  padding: 3%;
   border-radius: 5px;
   border: solid;
   border-color: #00bfff;
   font-size: large;
+}
+
+#isLoading{
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4%;
+  background-image: url("../../Images/Loading.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  align-content: center;
+  color: white;
 }

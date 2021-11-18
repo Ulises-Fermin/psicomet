@@ -9,21 +9,21 @@ function TypeAccount() {
         <img src="/LogoPsicomet.png" id={styles.Logo} alt="" />
       </div>
       <p id={styles.pTypeAccount}>
-        La plataforma N1 en atencion psicologica en linea
+        La plataforma nº1 en atención psicológica en línea
       </p>
-      <h4 id={styles.h4TypeAccount}>Registrate Gratis</h4>
+      <h4 id={styles.h4TypeAccount}>Regístrate gratis</h4>
       <div id={styles.BottomContainer}>
         <Link to="/CreateAccount" class={styles.account}>
-          Cliente
+          Paciente
         </Link>
 
         <Link to="/CreateAccount_p" class={styles.account}>
-          Psicologo
+          Psicólogo
         </Link>
       </div>
       <p id={styles.pTypeAccount}>¿Ya tienes una cuenta?</p>
       <Link to="/LogIn" id={styles.pTypeAccount2}>
-          Iniciar sesion
+        Iniciar sesión
       </Link>
     </div>
   );

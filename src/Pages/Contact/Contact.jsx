@@ -9,12 +9,12 @@ function Contact() {
             </h1>
             <div id={styles.file1}>
                 <div class={styles.card}>
-                    <img id={styles.logo} src="/logoInstagram.jpg"  alt = ""/>
-                    <p id={styles.contactP}>@PsicoMet</p>
+                    <a href="https://www.instagram.com/psicomet_sdi/"> <img id={styles.logo} src="/logoInstagram.jpg"  alt = ""/></a>
+                    <a href="https://www.instagram.com/psicomet_sdi/"><p id={styles.contactP}>@PsicoMet</p></a>
                 </div>
                 <div class={styles.card}>
-                    <img id={styles.logo} src="/logoTwitter.jpg"  alt = ""/>
-                    <p id={styles.contactP}>@PsicoMetVE</p>
+                    <a href="mailto:psicometsdi@gmail.com"><img id={styles.logo} src="/logoGoogle.png"  alt = ""/></a>
+                    <a href="mailto:psicometsdi@gmail.com"><p id={styles.contactP}>psicometsdi@gmail.com</p></a>
                 </div>
                 <div class={styles.card}>
                     <img id={styles.logo} src="/logoFacebook.png" alt = ""/>

@@ -2,7 +2,6 @@
 // La proxima entrega aporto mas en el codigo aprovechando que tengo la arquitectura fresca.
 // Pienso que podemos mejorar un poco en el diseno. Hice un curso de 4 horas sobre algunos para implementarlos en react.
 
-
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -15,13 +14,19 @@ import LogIn from "./Pages/LogIn/LogIn";
 import UserContextProvider from "./Context/UserContext";
 import User from "./Pages/User/User";
 import Contact from "./Pages/Contact/Contact";
-import Psychologist from "./Pages/Psychologist/Psychologist"
-import Chats from "./Pages/Chats/Chats"
+import Psychologist from "./Pages/Psychologist/Psychologist";
+import Chats from "./Pages/Chats/Chats";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Footer from "./Components/Footer";
 import Price from "./Pages/Price/Price";
+<<<<<<< HEAD
 import HeroSection from "./Components/HeroSection";
 import Services from "./Components/Services";
+=======
+import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
+import Profile_p from "./Pages/Profile/Profile_p";
+import Profile_e from "./Pages/Profile/Profile_e";
+>>>>>>> 4c154b2c18649a398876807adf9a54b6915f23da
 
 function App() {
   return (
@@ -66,6 +71,15 @@ function App() {
           </Route>
           <Route exact path="/Price">
             <Price />
+          </Route>
+          <Route exact path="/RecoverPassword">
+            <RecoverPassword />
+          </Route>
+          <Route exact path="/Profile_p">
+            <Profile_p />
+          </Route>
+          <Route exact path="/Profile_e">
+            <Profile_e />
           </Route>
         </Switch>
           <Footer />
