@@ -21,6 +21,7 @@ import Testimonials from "./Pages/Testimonials/Testimonials";
 import Footer from "./Components/Footer";
 import Price from "./Pages/Price/Price";
 import HeroSection from "./Components/HeroSection";
+import Services from "./Components/Services";
 
 function App() {
   return (
@@ -29,10 +30,12 @@ function App() {
         <Navbar />
         <Route exact path="/">
           <Home />
+          <Services />
         </Route>
         <Switch>
           <Route exact path="/Home">
             <Home />
+            <Services />
           </Route>
           <Route exact path="/TypeAccount">
             <TypeAccount />
