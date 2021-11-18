@@ -19,14 +19,11 @@ import Chats from "./Pages/Chats/Chats";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Footer from "./Components/Footer";
 import Price from "./Pages/Price/Price";
-<<<<<<< HEAD
 import HeroSection from "./Components/HeroSection";
 import Services from "./Components/Services";
-=======
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 import Profile_p from "./Pages/Profile/Profile_p";
 import Profile_e from "./Pages/Profile/Profile_e";
->>>>>>> 4c154b2c18649a398876807adf9a54b6915f23da
 
 function App() {
   return (

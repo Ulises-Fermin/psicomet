@@ -18,7 +18,10 @@ function Navbar() {
 
   return (
     <div id={styles.NavBar}>
-      <img src="/LogoPsicomet.png" Link to='/' onClick={toggleHome}  id={styles.Logo} alt="Logo de Psicomet"/>
+      <Link to="/" class={styles.NavLink}>
+        <img src="/LogoPsicomet.png"  id={styles.Logo} alt="Logo de Psicomet"/>
+      </Link>
+
       <div id={styles.NavMenu}>
         <ul id={styles.NavList}>
           <li class={styles.NavButton}>
