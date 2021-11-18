@@ -42,7 +42,9 @@ function Psychologist() {
           <img id={styles.image} src="/chats.png" alt="" />
           <p id={styles.My_chats}>Ofertas laborales</p>
           <img id={styles.image} src="" alt="" />
-          <p id={styles.Calendar}>Mi Perfil</p>
+          <Link to="Profile_e" id={styles.Calendar}>
+            Perfil
+          </Link>
         </div>
       </div>
     </div>

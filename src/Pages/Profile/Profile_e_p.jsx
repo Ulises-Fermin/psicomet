@@ -5,7 +5,7 @@ import { UserContext } from "../../Context/UserContext";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useContext } from "react";
 
-function Profile_e() {
+function Profile_e_p() {
   const { user, setUser } = useContext(UserContext);
   const handleLogOut = async () => {
     await auth.signOut();
@@ -100,4 +100,4 @@ function Profile_e() {
   );
 }
 
-export default Profile_e;
+export default Profile_e_p;

@@ -21,20 +21,24 @@ function Profile_p() {
           alt=""
         />
         <div class={styles.info}>
-          <p id={styles.name}>Nombre:ulises</p>
-          <p id={styles.rol}>Rol: paciente</p>
+          <p id={styles.nombre}>
+            Nombre: {user.name} {user.lastName}
+          </p>
+          <p id={styles.rol}>Rol: {user.role}</p>
         </div>
       </div>
       <div class={styles.box4}>
         <div class={styles.box2}>
           <p id={styles.label}>Correo Electrónico:</p>
-          <p id={styles.mail}>ulisesfs12@gmail.com</p>
-          <br />
-          <br />
+          <p id={styles.mail}>{user.email}</p>
           <br />
           <br />
           <p id={styles.labe2}>Género:</p>
-          <p id={styles.gender}>Masculino</p>
+          <p id={styles.gender}>{user.gender}</p>
+          <br />
+          <Link to="/User" id={styles.volver}>
+            Volver
+          </Link>
         </div>
         <div class={styles.box3}>
           <h2 id={styles.titulo1}>Modificación de Datos</h2>
