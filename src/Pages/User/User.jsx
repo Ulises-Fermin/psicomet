@@ -28,24 +28,24 @@ function User() {
             <p id={styles.Mis_consults}>Consultas</p>
           </div>
           <div class={styles.card}>
-            <img id={styles.image} src="/Especialista.png" alt="" />
+            <img id={styles.image} src="/Personas.png" alt="" />
             <p id={styles.Ver_especialists}>Ver Especialistas</p>
           </div>
         </div>
         <div id={styles.buttons2}>
-          <img id={styles.image} src="/chats.png" alt="" />
+          <img id={styles.image} src="/chat.png" alt="" />
           <Link to="/Chats" id={styles.My_chats}>
             Mis chats
           </Link>
 
-          <img id={styles.image} src="" alt="" />
+          <img id={styles.image} src="/Calendario.png" alt="" />
           <p id={styles.Calendar}>Calendario</p>
         </div>
         <div id={styles.buttons2}>
-          <img id={styles.image} src="/chats.png" alt="" />
+          <img id={styles.image} src="/Agendar.png" alt="" />
           <p id={styles.My_chats}>Reservar cita</p>
-          <img id={styles.image} src="" alt="" />
-          <Link to="Profile_p" id={styles.Calendar}>
+          <img id={styles.image} src="/User.png" alt="" />
+          <Link to="/Profile" id={styles.Calendar}>
             Perfil
           </Link>
         </div>
