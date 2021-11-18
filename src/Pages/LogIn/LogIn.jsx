@@ -74,6 +74,13 @@ function LogIn() {
               >
                 Iniciar sesión con Twitter
               </button>
+              <button
+                id={styles.buttonGoogle}
+                type="button"
+                onClick={googleLogin}
+              >
+                Iniciar sesión con Facebook
+              </button>
             </div>
             <form onSubmit={handleSubmit}>
               <div class={styles.inicio}>
