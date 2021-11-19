@@ -24,6 +24,7 @@ import Services from "./Components/Services";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 import Profile_p from "./Pages/Profile/Profile_p";
 import Profile_e from "./Pages/Profile/Profile_e";
+import Quest from "./Pages/Quest/Quest";
 
 function App() {
   return (
@@ -77,6 +78,9 @@ function App() {
           </Route>
           <Route exact path="/Profile_e">
             <Profile_e />
+          </Route>
+          <Route exact path="/Quest">
+            <Quest />
           </Route>
         </Switch>
           <Footer />

@@ -40,7 +40,7 @@ function Navbar() {
             </Link>
           </li>
           <li class={styles.NavButton}>
-            <Link to="/Especialists" class={styles.NavLink}>
+            <Link to="/Quest" class={styles.NavLink}>
               Especialistas
             </Link>
           </li>
