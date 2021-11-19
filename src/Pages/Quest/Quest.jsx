@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Quest.module.css";
 import {db} from "../../Utils/FireBaseConfig";
 import {useState, useEffect} from "react";
+import Popup from "reactjs-popup";
 
 function Quest() {
     const [names, setNames] = useState("");
@@ -11,15 +12,15 @@ function Quest() {
     const list = [];
 
     const fetchPsychologists = async()=>{
-        setIsLoading(true)
+        // setIsLoading(true)
         const response = db.collection("users");
         const data = await response.get();
         data.docs.forEach(item =>{
-            if (item.data().role === "psychologist")
+            if (item.data().role === "psychologist" && item.data().status === "accept")
             list.push(item.data());
         })
         setPsychologists(list);
-        setIsLoading(false);
+        // setIsLoading(false);
         return list
     }
 
@@ -28,16 +29,14 @@ function Quest() {
     },[])
 
     const handleOnChange = async (e) => {
+        fetchPsychologists()
         setNames(e.target.value);
-        if (names === ""){
-            fetchPsychologists()
-        }
     };
 
     const handleSubmit = (e) => {
         const get = [];
         psychologists.forEach(psycho => {
-            if (psycho.name === names){
+            if (((psycho.name +" "+psycho.lastName).toLowerCase()).includes(names.toLocaleLowerCase())){
                 get.push(psycho)
             }
         })
@@ -45,8 +44,11 @@ function Quest() {
     }
 
     const showMore = (e) => {
-        
+        <Popup trigger = {<button class={styles.psychoList} onClick={showMore}>Ver mas</button>} modal>
+            Hola
+        </Popup>
     }
+
 
     return (
         <>
@@ -64,9 +66,16 @@ function Quest() {
             <div id={styles.container}>
                 {psychologists.map((p)=>(
                     <div id={styles.psychoCards}>
-                    <li class={styles.psychoList}>{p.name}</li>
+                    <li class={styles.psychoList}>{p.name} {p.lastName}</li>
                     <li class={styles.psychoList}>{p.specialty}</li>
-                    <button class={styles.psychoList} onClick={showMore}>Ver mas</button>
+                    <Popup trigger = {<button class={styles.psychoList} onClick={showMore}>Ver mas</button>} modal>
+                        <div id = {styles.PopUp}>
+                        <p>Nombre y Apellido: {p.name} {p.lastName}</p>
+                        <p>Correo Electronico: {p.email}</p>
+                        <p>Especialidad: {p.specialty}</p>
+                        <button class={styles.psychoList}>Agendar Cita</button>
+                        </div>
+                    </Popup>
                     </div>
                 ))}
             </div>
