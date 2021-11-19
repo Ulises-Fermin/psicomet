@@ -14,7 +14,7 @@ function UserContextProvider({children}){
     const getUserByEmail = async (email) => {
         const usersReference = db.collection("users");
         const snapshot = await usersReference.where("email", "==", email).get();
-
+        
         if (!snapshot.size) return null;
 
         const loggedUser = getFirstElementArrayCollection(snapshot);

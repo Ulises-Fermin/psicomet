@@ -244,8 +244,8 @@ function CreateAccountP() {
                 onChange={handleOnChange}
               >
                 <option value="">Especialidad</option>
-                <option value="Masculino">Depresion</option>
-                <option value="Femenino">Ansiedad</option>
+                <option value="Depresion">Depresion</option>
+                <option value="Ansiedad">Ansiedad</option>
                 <option value="Otro">Otro</option>
               </select>
             </div>

@@ -14,19 +14,14 @@ function Testimonials() {
   const sendMessage = (e) => {
     if (!(message === "")) {
       e.preventDefault();
-      {
-        !!user
-          ? db
-              .collection("messages")
-              .add({
+      {(!!user) ? (db.collection("messages").add({
                 timestramp: Date.now(),
                 message,
                 userName: user.name,
                 userLastName: user.lastName,
                 userEmail: user.email,
-              })
-          : window.alert("Debes iniciar sesión para enviar un testimonio.");
-      }
+              }))
+          : (window.alert("Debes iniciar sesión para enviar un testimonio."))}
     } else {
       window.alert("El testimonio se encuentra vacío, inténtelo nuevamente.");
     }

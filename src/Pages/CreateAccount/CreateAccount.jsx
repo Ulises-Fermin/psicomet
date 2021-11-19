@@ -5,7 +5,6 @@ import { auth } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
-import { getAuth, sendEmailVerification } from "firebase/auth";
 
 function CreateAccount() {
   const { createUser } = useContext(UserContext);

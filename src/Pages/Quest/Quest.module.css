@@ -17,6 +17,29 @@
     transition: 0.15s;
 }
 
+#container{
+    margin-left: 10%;
+    margin-right: 10%; 
+    padding-bottom: 5%; 
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#psychoCards{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    background-size: cover;
+}
+
+.psychoList{
+    background-color: white;
+    list-style: none;
+    text-align: center;
+    margin: 5px;
+}
+
 #containerQuest{
     background-color: #1CB0A7;
     border-radius: 10px;
@@ -44,4 +67,18 @@
 }
 #button:hover{
     border-color: white;
+}
+
+#isLoading{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4%;
+    background-image: url("../../Images/Loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    align-content: center;
+    color: white;
 }
