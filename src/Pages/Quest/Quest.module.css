@@ -1,3 +1,47 @@
-h1{
+#body{
+    background-image: url("../../Images/Terapia.jpg");
+    
+}
+
+
+#title{
     text-align: center;
+    color: black;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 300%;
+}
+#title:hover{
+    font-size: 305%;
+    color: #1CB0A7;
+    transition: 0.15s;
+}
+
+#containerQuest{
+    background-color: #1CB0A7;
+    border-radius: 10px;
+    width: 80%;
+    height: 20%;
+    justify-content: center;
+    padding: auto;
+    display: flex;
+    margin-bottom: 7.5%;
+    padding: 0.5%;
+    margin-right: auto;
+    margin-left: auto;
+}
+#name{
+    width: 75%;
+    font-size: large;
+    margin-right: 5%;
+}
+#button{
+    background-color:#1CB0A7;
+    color: white;
+    border-color: black;
+    padding: 2%;
+    border-style:solid;
+}
+#button:hover{
+    border-color: white;
 }
