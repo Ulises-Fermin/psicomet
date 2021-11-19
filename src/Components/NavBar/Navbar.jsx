@@ -63,6 +63,13 @@ function Navbar() {
                 </Link>
               </li>
             ) : (null)}
+            {(user?.role === "admi") ? (
+              <li class={styles.NavButton}>
+                <Link to="/Administrator" class={styles.NavLinks}>
+                  Administrador
+                </Link>
+              </li>
+            ) : (null)}
           <li id={styles.LoginButton}>
             {!!user ? (
               <Link to="/Home" id={styles.NavLoginLink} onClick={handleLogOut}>
