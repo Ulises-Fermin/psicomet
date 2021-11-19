@@ -65,7 +65,7 @@ function Navbar() {
             ) : (null)}
             {(user?.role === "admi") ? (
               <li class={styles.NavButton}>
-                <Link to="/Administrator" class={styles.NavLinks}>
+                <Link to="/Admi" class={styles.NavLinks}>
                   Administrador
                 </Link>
               </li>

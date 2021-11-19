@@ -25,6 +25,7 @@ import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 import Profile_p from "./Pages/Profile/Profile_p";
 import Profile_e from "./Pages/Profile/Profile_e";
 import Quest from "./Pages/Quest/Quest";
+import Admi from "./Pages/Admi/Admi";
 
 function App() {
   return (
@@ -81,6 +82,9 @@ function App() {
           </Route>
           <Route exact path="/Quest">
             <Quest />
+          </Route>
+          <Route exact path="/Admi">
+            <Admi />
           </Route>
         </Switch>
           <Footer />
