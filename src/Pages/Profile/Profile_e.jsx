@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useContext } from "react";
+import Popup from "reactjs-popup";
 
 function Profile_e() {
   const { user, setUser } = useContext(UserContext);
@@ -40,7 +41,7 @@ function Profile_e() {
           <p id={styles.gender}>{user.gender}</p>
           <br />
           <p id={styles.label3}>Idiomas:</p>
-          <p id={styles.idioma}>Español, inglés</p>
+          <p id={styles.idioma}>{user.languages}</p>
           <br />
           <p id={styles.label4}>Modelo de Trabajo Terapéutico:</p>
           <p id={styles.model}>Consultas en sincronia</p>
@@ -49,7 +50,9 @@ function Profile_e() {
           <p id={styles.price}>20$ 60 min</p>
           <br />
           <p id={styles.label8}>Ver Itinerario:</p>
-          <button>Itinerario</button>
+          <Popup trigger = {<button> Itinerario </button>} position = "center center" modal>
+            <p>Hola</p>
+          </Popup>
           <br />
           <Link to="/Psychologist" id={styles.volver}>
             Volver
@@ -60,22 +63,22 @@ function Profile_e() {
           <div class={styles.box3}>
             <div id={styles.box5}>
               <h2 id={styles.label6}>Áreas de atención</h2>
-              <div id={styles.caja}>{user.name}</div>
+              <div id={styles.caja}>{user.atencionAreas}</div>
             </div>
             <div id={styles.box6}>
               <h2 id={styles.profesional}>Experiencia Profesional</h2>
-              <div id={styles.caja2}>{user.name}</div>
+              <div id={styles.caja2}>{user.experience}</div>
             </div>
           </div>
 
           <div class={styles.box8}>
             <div id={styles.box9}>
               <h2 id={styles.label7}>Formación Académica</h2>
-              <div id={styles.caja3}>{user.name}</div>
+              <div id={styles.caja3}>{user.academics}</div>
             </div>
             <div id={styles.box10}>
               <h2 id={styles.about}>Sobre mi</h2>
-              <div id={styles.caja4}>{user.name}</div>
+              <div id={styles.caja4}>{user.aboutMe}</div>
             </div>
           </div>
         </div>

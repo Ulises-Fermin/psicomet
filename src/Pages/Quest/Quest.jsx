@@ -12,24 +12,22 @@ function Quest() {
     const list = [];
 
     const fetchPsychologists = async()=>{
-        // setIsLoading(true)
         const response = db.collection("users");
         const data = await response.get();
         data.docs.forEach(item =>{
-            if (item.data().role === "psychologist" && item.data().status === "accept")
-            list.push(item.data());
+            if ((item.data().role === "psychologist") && (item.data().status === "accept") && ((item.data().name +" "+item.data().lastName).toLowerCase()).includes((names).toLocaleLowerCase())){
+                list.push(item.data());
+            }
         })
         setPsychologists(list);
-        // setIsLoading(false);
         return list
     }
 
     useEffect(()=>{
         fetchPsychologists();
-    },[])
+    },[names])
 
     const handleOnChange = async (e) => {
-        fetchPsychologists()
         setNames(e.target.value);
     };
 

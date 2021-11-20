@@ -70,6 +70,7 @@ function CreateAccountP() {
                             atencionAreas: null, 
                             languages: null,
                             curriculum: null,
+                            itinerary: null,
                           },
                           response.user.uid
                         );

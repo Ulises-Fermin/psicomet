@@ -11,8 +11,21 @@ function Modify_p() {
     await auth.signOut();
     setUser(null);
   };
+
+  const monday = [];
+  const check = () => {
+    for (let index = 0; index < 13; index++) {
+      var time = document.getElementsByName("1-"+index)
+      console.log(time.checked);
+      if (time.checked){
+        monday.push(time);
+      }
+    }
+  }
+
   return (
     <>
+    <div>
       <h1 id={styles.titulo}>Modificación de Datos</h1>
       <div class={styles.body}>
         <p id={styles.label1}>Ingrese su nombre: </p>
@@ -84,6 +97,91 @@ function Modify_p() {
           rows="10"
         ></textarea>
       </div>
+      <h1>Itinerario:</h1>
+      <div id={styles.itinerary}>
+        <div class = {styles.day}>
+          <h1>Lunes</h1>
+          <input type = "checkbox" value = "6:00 - 6:50" name = "1-1"/>6:00 - 6:50
+          <input type = "checkbox" value = "7:00 - 7:50" name = "1-2"/>7:00 - 7:50
+          <input type = "checkbox" value = "8:00 - 8:50" name = "1-3"/>8:00 - 8:50
+          <input type = "checkbox" value = "9:00 - 9:50" name = "1-4"/>9:00 - 9:50
+          <input type = "checkbox" value = "10:00 - 10:50" name = "1-5"/>10:00 - 10:50
+          <input type = "checkbox" value = "11:00 - 11:50" name = "1-6"/>11:00 - 11:50
+          <input type = "checkbox" value = "12:00 - 12:50" name = "1-7"/>12:00 - 12:50
+          <input type = "checkbox" value = "1:00 - 1:50" name = "1-8"/>1:00 - 1:50
+          <input type = "checkbox" value = "2:00 - 2:50" name = "1-9"/>2:00 - 2:50
+          <input type = "checkbox" value = "3:00 - 3:50" name = "1-10"/>3:00 - 3:50
+          <input type = "checkbox" value = "4:00 - 4:50" name = "1-11"/>4:00 - 4:50
+          <input type = "checkbox" value = "5:00 - 5:50" name = "1-12"/>5:00 - 5:50
+          <input type = "checkbox" value = "6:00 - 6:50" name = "1-13"/>6:00 - 6:50
+        </div>
+        <div class = {styles.day}>
+          <h1>Martes</h1>
+          <input type = "checkbox" value = "6:00 - 6:50" name = "2-1"/>6:00 - 6:50
+          <input type = "checkbox" value = "7:00 - 7:50" name = "2-2"/>7:00 - 7:50
+          <input type = "checkbox" value = "8:00 - 8:50" name = "2-3"/>8:00 - 8:50
+          <input type = "checkbox" value = "9:00 - 9:50" name = "2-4"/>9:00 - 9:50
+          <input type = "checkbox" value = "10:00 - 10:50" name = "2-5"/>10:00 - 10:50
+          <input type = "checkbox" value = "11:00 - 11:50" name = "2-6"/>11:00 - 11:50
+          <input type = "checkbox" value = "12:00 - 12:50" name = "2-7"/>12:00 - 12:50
+          <input type = "checkbox" value = "1:00 - 1:50" name = "2-8"/>1:00 - 1:50
+          <input type = "checkbox" value = "2:00 - 2:50" name = "2-9"/>2:00 - 2:50
+          <input type = "checkbox" value = "3:00 - 3:50" name = "2-10"/>3:00 - 3:50
+          <input type = "checkbox" value = "4:00 - 4:50" name = "2-11"/>4:00 - 4:50
+          <input type = "checkbox" value = "5:00 - 5:50" name = "2-12"/>5:00 - 5:50
+          <input type = "checkbox" value = "6:00 - 6:50" name = "2-13"/>6:00 - 6:50
+        </div>
+        <div class = {styles.day}>
+          <h1>Miercoles</h1>
+          <input type = "checkbox" value = "6:00 - 6:50" name = "3-1"/>6:00 - 6:50
+          <input type = "checkbox" value = "7:00 - 7:50" name = "3-2"/>7:00 - 7:50
+          <input type = "checkbox" value = "8:00 - 8:50" name = "3-3"/>8:00 - 8:50
+          <input type = "checkbox" value = "9:00 - 9:50" name = "3-4"/>9:00 - 9:50
+          <input type = "checkbox" value = "10:00 - 10:50" name = "3-5"/>10:00 - 10:50
+          <input type = "checkbox" value = "11:00 - 11:50" name = "3-6"/>11:00 - 11:50
+          <input type = "checkbox" value = "12:00 - 12:50" name = "3-7"/>12:00 - 12:50
+          <input type = "checkbox" value = "1:00 - 1:50" name = "3-8"/>1:00 - 1:50
+          <input type = "checkbox" value = "2:00 - 2:50" name = "3-9"/>2:00 - 2:50
+          <input type = "checkbox" value = "3:00 - 3:50" name = "3-10"/>3:00 - 3:50
+          <input type = "checkbox" value = "4:00 - 4:50" name = "3-11"/>4:00 - 4:50
+          <input type = "checkbox" value = "5:00 - 5:50" name = "3-12"/>5:00 - 5:50
+          <input type = "checkbox" value = "6:00 - 6:50" name = "3-13"/>6:00 - 6:50
+        </div>
+        <div class = {styles.day}>
+          <h1>Jueves</h1>
+          <input type = "checkbox" value = "6:00 - 6:50" name = "4-1"/>6:00 - 6:50
+          <input type = "checkbox" value = "7:00 - 7:50" name = "4-2"/>7:00 - 7:50
+          <input type = "checkbox" value = "8:00 - 8:50" name = "4-3"/>8:00 - 8:50
+          <input type = "checkbox" value = "9:00 - 9:50" name = "4-4"/>9:00 - 9:50
+          <input type = "checkbox" value = "10:00 - 10:50" name = "4-5"/>10:00 - 10:50
+          <input type = "checkbox" value = "11:00 - 11:50" name = "4-6"/>11:00 - 11:50
+          <input type = "checkbox" value = "12:00 - 12:50" name = "4-7"/>12:00 - 12:50
+          <input type = "checkbox" value = "1:00 - 1:50" name = "4-8"/>1:00 - 1:50
+          <input type = "checkbox" value = "2:00 - 2:50" name = "4-9"/>2:00 - 2:50
+          <input type = "checkbox" value = "3:00 - 3:50" name = "4-10"/>3:00 - 3:50
+          <input type = "checkbox" value = "4:00 - 4:50" name = "4-11"/>4:00 - 4:50
+          <input type = "checkbox" value = "5:00 - 5:50" name = "4-12"/>5:00 - 5:50
+          <input type = "checkbox" value = "6:00 - 6:50" name = "4-13"/>6:00 - 6:50
+        </div>
+        <div class = {styles.day}>
+          <h1>Viernes</h1>
+          <input type = "checkbox" value = "6:00 - 6:50" name = "5-1"/>6:00 - 6:50
+          <input type = "checkbox" value = "7:00 - 7:50" name = "5-2"/>7:00 - 7:50
+          <input type = "checkbox" value = "8:00 - 8:50" name = "5-3"/>8:00 - 8:50
+          <input type = "checkbox" value = "9:00 - 9:50" name = "5-4"/>9:00 - 9:50
+          <input type = "checkbox" value = "10:00 - 10:50" name = "5-5"/>10:00 - 10:50
+          <input type = "checkbox" value = "11:00 - 11:50" name = "5-6"/>11:00 - 11:50
+          <input type = "checkbox" value = "12:00 - 12:50" name = "5-7"/>12:00 - 12:50
+          <input type = "checkbox" value = "1:00 - 1:50" name = "5-8"/>1:00 - 1:50
+          <input type = "checkbox" value = "2:00 - 2:50" name = "5-9"/>2:00 - 2:50
+          <input type = "checkbox" value = "3:00 - 3:50" name = "5-10"/>3:00 - 3:50
+          <input type = "checkbox" value = "4:00 - 4:50" name = "5-11"/>4:00 - 4:50
+          <input type = "checkbox" value = "5:00 - 5:50" name = "5-12"/>5:00 - 5:50
+          <input type = "checkbox" value = "6:00 - 6:50" name = "5-13"/>6:00 - 6:50
+        </div>
+        <button onClick = {check}>Guardar</button>
+      </div>
+    </div>  
     </>
   );
 }

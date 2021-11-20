@@ -130,3 +130,17 @@
   margin: 0%;
   padding: 0%;
 }
+
+#itinerary{
+  margin: 10%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.day{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
