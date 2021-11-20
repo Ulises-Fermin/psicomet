@@ -65,12 +65,7 @@ function Profile_e() {
             </div>
             <div id={styles.box6}>
               <h2 id={styles.profesional}>Experiencia Profesional</h2>
-              <textarea
-                id={styles.profesionalt}
-                cols="30"
-                rows="10"
-                placeholder="Ingrese su experiencia profesional"
-              ></textarea>
+              <div id={styles.caja}>{user.name}</div>
             </div>
           </div>
 

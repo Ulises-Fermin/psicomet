@@ -119,3 +119,9 @@
   width: 117%;
   margin-top: 0.5%;
 }
+
+#caja {
+  box-sizing: border-box;
+  border: 7px solid lightblue;
+  height: 80%;
+}
