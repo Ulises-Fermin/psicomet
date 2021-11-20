@@ -26,6 +26,7 @@ import Profile_p from "./Pages/Profile/Profile_p";
 import Profile_e from "./Pages/Profile/Profile_e";
 import Quest from "./Pages/Quest/Quest";
 import Admi from "./Pages/Admi/Admi";
+import Waiting from "./Pages/Status/Waiting";
 
 function App() {
   return (
@@ -85,6 +86,9 @@ function App() {
           </Route>
           <Route exact path="/Admi">
             <Admi />
+          </Route>
+          <Route exact path="/Waiting">
+            <Waiting />
           </Route>
         </Switch>
           <Footer />

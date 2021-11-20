@@ -22,6 +22,7 @@ function CreateAccountP() {
     id: "",
     college: "",
     specialty: "",
+    status: "waiting"
   });
 
   const history = useHistory();
@@ -59,6 +60,7 @@ function CreateAccountP() {
                             date: values.date,
                             gender: values.gender,
                             role: "psychologist",
+                            status: "waiting",
                             id: values.id,
                             college: values.college,
                             specialty: values.specialty,
