@@ -61,6 +61,7 @@ function CreateAccount() {
                       academics: null,
                       aboutMe: null,
                       atencionAreas: null, 
+                      languages: null,
                       curriculum: null,
                     },
                     response.user.uid

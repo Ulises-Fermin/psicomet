@@ -44,6 +44,7 @@ function UserContextProvider({children}){
                         aboutMe: null,
                         atencionAreas: null, 
                         curriculum: null,
+                        languages: null,
                     };
                     await createUser(newProfile ,loggedUser.uid);
                     setUser(newProfile);
