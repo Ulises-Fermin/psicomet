@@ -1,76 +1,77 @@
-import {useState, useEffect, createContext} from "react";
-import {auth, db} from "../Utils/FireBaseConfig";
-import {getFirstElementArrayCollection} from "../Utils/Parsers";
+import { useState, useEffect, createContext } from "react";
+import { auth, db } from "../Utils/FireBaseConfig";
+import { getFirstElementArrayCollection } from "../Utils/Parsers";
 
 export const UserContext = createContext(null);
 
-function UserContextProvider({children}){
-    const [user, setUser] = useState(null);
+function UserContextProvider({ children }) {
+  const [user, setUser] = useState(null);
 
-    const createUser = async (user, uid) => {
-        await db.collection("users").doc(uid).set(user);
-    };
+  const createUser = async (user, uid) => {
+    await db.collection("users").doc(uid).set(user);
+  };
 
-    const getUserByEmail = async (email) => {
-        const usersReference = db.collection("users");
-        const snapshot = await usersReference.where("email", "==", email).get();
-        
-        if (!snapshot.size) return null;
+  const getUserByEmail = async (email) => {
+    const usersReference = db.collection("users");
+    const snapshot = await usersReference.where("email", "==", email).get();
 
-        const loggedUser = getFirstElementArrayCollection(snapshot);
+    if (!snapshot.size) return null;
 
-        return getFirstElementArrayCollection(snapshot);
-    }
+    const loggedUser = getFirstElementArrayCollection(snapshot);
 
-    useEffect(() => {
-        const unListen = auth.onAuthStateChanged(async(loggedUser)=>{
-            if (loggedUser){
-                const profile = await getUserByEmail(loggedUser.email);
-                if(!profile){
-                    const newProfile={
-                        name: loggedUser.displayName,
-                        lastName: null,
-                        email: loggedUser.email,
-                        phone: null,
-                        date: null,
-                        gender: null,
-                        role: "pacient",
-                        status: null,
-                        id: null,
-                        college: null,
-                        specialty: null,
-                        experience: null,
-                        academics: null,
-                        aboutMe: null,
-                        atencionAreas: null, 
-                        curriculum: null,
-                        languages: null,
-                        itinerary: null,
-                    };
-                    await createUser(newProfile ,loggedUser.uid);
-                    setUser(newProfile);
-                } else {
-                    setUser(profile);
-                }
-            } else {
-                setUser(null);
-            }
-        });
-        return ()=>{
-            unListen();
+    return getFirstElementArrayCollection(snapshot);
+  };
+
+  useEffect(() => {
+    const unListen = auth.onAuthStateChanged(async (loggedUser) => {
+      if (loggedUser) {
+        const profile = await getUserByEmail(loggedUser.email);
+        if (!profile) {
+          const newProfile = {
+            name: loggedUser.displayName,
+            lastName: null,
+            email: loggedUser.email,
+            phone: null,
+            date: null,
+            gender: null,
+            role: "pacient",
+            status: null,
+            idc: null,
+            college: null,
+            specialty: null,
+            experience: null,
+            academics: null,
+            aboutMe: null,
+            atencionAreas: null,
+            curriculum: null,
+            languages: null,
+            itinerary: null,
+          };
+          await createUser(newProfile, loggedUser.uid);
+          setUser(newProfile);
+        } else {
+          setUser(profile);
         }
-    }, [])
+      } else {
+        setUser(null);
+      }
+    });
+    return () => {
+      unListen();
+    };
+  }, []);
 
-    return(
-        <UserContext.Provider 
-            value={{
-                user,
-                setUser,
-                createUser,
-                getUserByEmail,
-        }}>
-        {children}
-        </UserContext.Provider>
-    )
+  return (
+    <UserContext.Provider
+      value={{
+        user,
+        setUser,
+        createUser,
+        getUserByEmail,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
 }
 export default UserContextProvider;

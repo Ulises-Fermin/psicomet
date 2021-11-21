@@ -19,7 +19,7 @@ function CreateAccount() {
     date: "",
     gender: "",
     role: "pacient",
-    id: null,
+    idc: null,
     college: null,
   });
 
@@ -55,12 +55,12 @@ function CreateAccount() {
                       gender: values.gender,
                       role: "pacient",
                       status: null,
-                      id: null,
+                      idc: null,
                       college: null,
                       experience: null,
                       academics: null,
                       aboutMe: null,
-                      atencionAreas: null, 
+                      atencionAreas: null,
                       languages: null,
                       curriculum: null,
                       itinerary: null,

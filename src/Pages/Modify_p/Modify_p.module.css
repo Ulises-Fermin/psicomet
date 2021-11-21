@@ -131,16 +131,27 @@
   padding: 0%;
 }
 
-#itinerary{
+#itinerary {
   margin: 10%;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
 }
 
-.day{
+.day {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+}
+
+#register {
+  font-weight: 600;
+  color: white;
+  box-sizing: border-box;
+  border: 7px solid lightblue;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lightblue;
+  width: 10%;
 }

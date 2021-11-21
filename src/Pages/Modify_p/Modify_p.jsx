@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Modify_p.module.css";
 import { Link } from "react-router-dom";
-import { auth } from "../../Utils/FireBaseConfig";
+import { auth, db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
@@ -49,6 +49,20 @@ function Modify_p() {
     console.log(inputName, value);
   };
 
+  const handleSubmit = async (e) => {
+    db.collection("users").doc(user.id).update({
+      name: values.name,
+      lastName: values.lastName,
+      phone: values.phone,
+      gender: values.gender,
+      languages: values.languages,
+      atencionAreas: values.atencionAreas,
+      experience: values.experience,
+      academics: values.academics,
+      aboutMe: values.aboutMe,
+    });
+  };
+
   return (
     <>
       <div>
@@ -56,6 +70,7 @@ function Modify_p() {
         <div class={styles.body}>
           <p id={styles.label1}>Ingrese su nombre: </p>
           <input
+            name="name"
             id={styles.nombre}
             type="text"
             placeholder="Ingrese su nombre"
@@ -65,6 +80,7 @@ function Modify_p() {
           <br />
           <p id={styles.label2}>Ingrese su apellido: </p>
           <input
+            name="lastName"
             id={styles.apellido}
             type="text"
             placeholder="Ingrese su apellido"
@@ -72,17 +88,19 @@ function Modify_p() {
             onChange={handleOnChange}
           />
           <br />
-          <p id={styles.label3}>Ingrese su correo: </p>
+          <p id={styles.label2}>Ingrese su número telefónico: </p>
           <input
-            id={styles.correo}
-            type="mail"
-            placeholder="Ingrese su correo"
-            value={values.email}
+            name="phone"
+            id={styles.apellido}
+            type="tel"
+            placeholder="Ingrese su número telefónico"
+            value={values.phone}
             onChange={handleOnChange}
           />
           <br />
           <p id={styles.label4}>Ingrese su género: </p>
           <input
+            name="gender"
             id={styles.genero}
             type="text"
             placeholder="Ingrese su género"
@@ -92,6 +110,7 @@ function Modify_p() {
           <br />
           <p id={styles.label5}>Ingrese sus idiomas (separados por comas): </p>
           <input
+            name="languages"
             id={styles.idiomas}
             type="text"
             placeholder="Ingrese sus idiomas"
@@ -115,6 +134,7 @@ function Modify_p() {
           <br />
           <p id={styles.label8}>Ingrese sus áreas de atención: </p>
           <textarea
+            name="atencionAreas"
             id={styles.areas}
             value={values.atencionAreas}
             onChange={handleOnChange}
@@ -125,6 +145,7 @@ function Modify_p() {
           <br />
           <p id={styles.label9}>Ingrese su experiencia profesional: </p>
           <textarea
+            name="experience"
             value={values.experience}
             onChange={handleOnChange}
             id={styles.experiencia}
@@ -135,6 +156,7 @@ function Modify_p() {
           <br />
           <p id={styles.label10}>Ingrese su formación académica: </p>
           <textarea
+            name="academics"
             id={styles.formacion}
             value={values.academics}
             onChange={handleOnChange}
@@ -145,6 +167,7 @@ function Modify_p() {
           <br />
           <p id={styles.label11}>Ingrese su información sobre usted: </p>
           <textarea
+            name="aboutMe"
             id={styles.información}
             value={values.aboutMe}
             onChange={handleOnChange}
@@ -152,6 +175,9 @@ function Modify_p() {
             cols="30"
             rows="10"
           ></textarea>
+          <p type="submit" id={styles.register} onClick={handleSubmit}>
+            Actualizar Datos
+          </p>
         </div>
         <h1>Itinerario:</h1>
         <div id={styles.itinerary}>

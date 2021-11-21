@@ -19,7 +19,7 @@ function CreateAccountP() {
     date: "",
     gender: "",
     role: "psychologist",
-    id: "",
+    idc: "",
     college: "",
     specialty: "",
     status: "waiting",
@@ -41,7 +41,7 @@ function CreateAccountP() {
             if (!isNaN(values.phone) & !(values.phone === "")) {
               if (!(values.date === "")) {
                 if (!(values.gender === "")) {
-                  if (!isNaN(values.id) & !(values.id === "")) {
+                  if (!isNaN(values.idc) & !(values.idc === "")) {
                     if (!(values.college === "")) {
                       if (!(values.specialty === "")) {
                         setIsLoading(true);
@@ -61,7 +61,7 @@ function CreateAccountP() {
                             gender: values.gender,
                             role: "psychologist",
                             status: "waiting",
-                            id: values.id,
+                            idc: values.idc,
                             college: values.college,
                             specialty: values.specialty,
                             experience: null,
@@ -223,11 +223,11 @@ function CreateAccountP() {
           <div class={styles.DatesContainer}>
             <div id={styles.File1}>
               <input
-                name="id"
+                name="idc"
                 class={styles.fields}
                 type="text"
                 placeholder="Ingrese su carnet"
-                value={values.id}
+                value={values.idc}
                 onChange={handleOnChange}
               ></input>
             </div>
