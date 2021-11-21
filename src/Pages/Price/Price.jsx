@@ -12,7 +12,7 @@ function Price() {
       <div class={styles.container}>
         <div class={styles.card1}>
           <div class={styles.card_encabezado1}>
-            <img src="logoTwitter.jpg" alt="" />
+            <img src="clinica.jpg" alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -44,7 +44,7 @@ function Price() {
 
         <div class={styles.card2}>
           <div class={styles.card_encabezado2}>
-            <img src="logoTwitter.jpg" alt="" />
+            <img src="Maraca.png" alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -76,7 +76,7 @@ function Price() {
 
         <div class={styles.card3}>
           <div class={styles.card_encabezado3}>
-            <img src="logoTwitter.jpg" alt="" />
+            <img src="Couple.png" alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -108,7 +108,7 @@ function Price() {
 
         <div class={styles.card4}>
           <div class={styles.card_encabezado4}>
-            <img src="logoTwitter.jpg" alt="" />
+            <img src="House.jpg" alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -140,7 +140,7 @@ function Price() {
 
         <div class={styles.card5}>
           <div class={styles.card_encabezado5}>
-            <img src="logoTwitter.jpg" alt="" />
+            <img src="Psiquiatra.png" alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div

@@ -7,22 +7,22 @@
   box-sizing: border-box;
 }
 #body {
-    background-image: url("../../Images/Terapia.jpg");
-    width: 100%;
-    height: 100%;
-    position: relative;
+  background-image: url("../../Images/Terapia.png");
+  width: 100%;
+  height: 100%;
+  background-size:cover;
+  background-repeat: no-repeat;
     
     
 }
 #title {
-  margin-bottom: auto;
-  padding-left: 5%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  color: #fff;
-  margin-top: 0%;
-  font-size: 110%;
   text-align: center;
+  font-family: 'Merriweather', serif;
+  color: black;
+  padding-top: 8%;
+  margin-bottom: 10%;
+  font-size: 150%;
+  margin-top: 0%;
 }
 a {
   text-decoration: none;
@@ -31,47 +31,15 @@ a {
   transition: all 0.5s;
 }
 #title:nth-child(1) a {
-  color: #ff1177;
-  font-family: Monoton;
+  text-align: center;
+    font-family: 'Merriweather', serif;
+    color: black;
+    padding-top: 6%;
+    margin-bottom: 10%;
+    font-size: 100%;
+    margin-top: 0%;
 }
-#title:nth-child(1) a:hover {
-  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  animation: neon1 1.5s ease-in-out infinite alternate;
-}
-#title a:hover {
-  color: #ffffff;
-}
-@-webkit-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
-      0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
-      0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
-  }
-}
-@-moz-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
-      0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
-      0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
-  }
-}
-@keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
-      0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
-      0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
-  }
-}
+
 
 #subtitle {
   font-size: 130%;
@@ -105,7 +73,7 @@ a {
   transition: all 0.4s ease-in-out;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   text-align: center;
-  background: linear-gradient(-125deg, #f6a204, #f81313);
+  background: lightblue;
 }
 .card2 {
   width: 200px;
@@ -118,7 +86,7 @@ a {
   transition: all 0.4s ease-in-out;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   text-align: center;
-  background: linear-gradient(-125deg, #eaee14, #ff8903);
+  background: lightblue;
 }
 .card3 {
   width: 200px;
@@ -131,7 +99,7 @@ a {
   transition: all 0.4s ease-in-out;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   text-align: center;
-  background: linear-gradient(-125deg, #18c259, #c4c718);
+  background: lightblue;
 }
 .card4 {
   width: 200px;
@@ -144,7 +112,7 @@ a {
   transition: all 0.4s ease-in-out;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   text-align: center;
-  background: linear-gradient(-125deg, #2d5fdd, #19d360);
+  background: lightblue;
 }
 .card5 {
   width: 200px;
@@ -157,7 +125,7 @@ a {
   transition: all 0.4s ease-in-out;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   text-align: center;
-  background: linear-gradient(-125deg, #ff1493, #0833a2);
+  background: lightblue;
 }
 .card1:hover {
   height: 450px;
