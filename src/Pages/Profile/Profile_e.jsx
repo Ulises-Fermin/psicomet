@@ -37,6 +37,9 @@ function Profile_e() {
           <p id={styles.label1}>Correo Electrónico:</p>
           <p id={styles.mail}>{user.email}</p>
           <br />
+          <p id={styles.label1}>Telefono:</p>
+          <p id={styles.phone}>{user.phone}</p>
+          <br />
           <p id={styles.label2}>Género:</p>
           <p id={styles.gender}>{user.gender}</p>
           <br />
@@ -50,7 +53,11 @@ function Profile_e() {
           <p id={styles.price}>20$ 60 min</p>
           <br />
           <p id={styles.label8}>Ver Itinerario:</p>
-          <Popup trigger = {<button> Itinerario </button>} position = "center center" modal>
+          <Popup
+            trigger={<button> Itinerario </button>}
+            position="center center"
+            modal
+          >
             <p>Hola</p>
           </Popup>
           <br />

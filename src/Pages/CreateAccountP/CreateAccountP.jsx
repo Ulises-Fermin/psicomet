@@ -22,7 +22,7 @@ function CreateAccountP() {
     id: "",
     college: "",
     specialty: "",
-    status: "waiting"
+    status: "waiting",
   });
 
   const history = useHistory();
@@ -67,7 +67,7 @@ function CreateAccountP() {
                             experience: null,
                             academics: null,
                             aboutMe: null,
-                            atencionAreas: null, 
+                            atencionAreas: null,
                             languages: null,
                             curriculum: null,
                             itinerary: null,
