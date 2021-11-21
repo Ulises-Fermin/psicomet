@@ -54,8 +54,15 @@ function CreateAccount() {
                       date: values.date,
                       gender: values.gender,
                       role: "pacient",
+                      status: null,
                       id: null,
                       college: null,
+                      experience: null,
+                      academics: null,
+                      aboutMe: null,
+                      atencionAreas: null, 
+                      languages: null,
+                      curriculum: null,
                     },
                     response.user.uid
                   );

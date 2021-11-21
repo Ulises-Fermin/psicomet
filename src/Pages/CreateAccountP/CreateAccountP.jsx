@@ -64,6 +64,12 @@ function CreateAccountP() {
                             id: values.id,
                             college: values.college,
                             specialty: values.specialty,
+                            experience: null,
+                            academics: null,
+                            aboutMe: null,
+                            atencionAreas: null, 
+                            languages: null,
+                            curriculum: null,
                           },
                           response.user.uid
                         );
