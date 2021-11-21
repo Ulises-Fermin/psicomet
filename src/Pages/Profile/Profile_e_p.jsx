@@ -36,7 +36,7 @@ function Profile_e_p() {
           <p id={styles.gender}>{user.gender}</p>
           <br />
           <p id={styles.label3}>Idiomas:</p>
-          <p id={styles.idioma}>Español, inglés</p>
+          <p id={styles.idioma}>{user.languages}</p>
           <br />
           <p id={styles.label4}>Modelo de Trabajo Terapéutico:</p>
           <p id={styles.model}>Consultas en sincronia</p>

@@ -22,6 +22,7 @@ function CreateAccountP() {
     id: "",
     college: "",
     specialty: "",
+    status: "waiting"
   });
 
   const history = useHistory();
@@ -59,9 +60,17 @@ function CreateAccountP() {
                             date: values.date,
                             gender: values.gender,
                             role: "psychologist",
+                            status: "waiting",
                             id: values.id,
                             college: values.college,
                             specialty: values.specialty,
+                            experience: null,
+                            academics: null,
+                            aboutMe: null,
+                            atencionAreas: null, 
+                            languages: null,
+                            curriculum: null,
+                            itinerary: null,
                           },
                           response.user.uid
                         );
@@ -242,8 +251,8 @@ function CreateAccountP() {
                 onChange={handleOnChange}
               >
                 <option value="">Especialidad</option>
-                <option value="Masculino">Depresion</option>
-                <option value="Femenino">Ansiedad</option>
+                <option value="Depresion">Depresion</option>
+                <option value="Ansiedad">Ansiedad</option>
                 <option value="Otro">Otro</option>
               </select>
             </div>

@@ -14,7 +14,35 @@ function Navbar() {
 
   const toggleHome = () => {
     scroll.scrollToTop();
-}
+  }
+  const handleOnChange = (event) => {
+      const { value, name: inputName } = event.target;
+      setValues({ ...values, [inputName]: value });
+      console.log(inputName, value);
+  };
+  const [values, setValues] = useState({
+    status: "",
+  });
+
+  const zone = () => {
+    if (values.status === "waiting"){
+      <Link to="/waiting" class={styles.NavLinks}>
+        Psicologo
+      </Link>
+    }
+    else if (values.status === "accept"){
+      <Link to="/Psychologist" class={styles.NavLinks}>
+        Psicologo
+      </Link>
+    }
+    else {
+      <Link to="/Denegate" class={styles.NavLinks}>
+        Psicologo
+      </Link>
+    }
+  }
+  
+
 
   return (
     <div id={styles.NavBar}>
@@ -24,11 +52,13 @@ function Navbar() {
 
       <div id={styles.NavMenu}>
         <ul id={styles.NavList}>
+
           <li class={styles.NavButton}>
             <Link to="/Home" class={styles.NavLink}>
               Inicio
             </Link>
           </li>
+
           <li class={styles.NavButton}>
             <Link to="/Contact" class={styles.NavLink}>
               Contacto
@@ -40,7 +70,7 @@ function Navbar() {
             </Link>
           </li>
           <li class={styles.NavButton}>
-            <Link to="/Especialists" class={styles.NavLink}>
+            <Link to="/Quest" class={styles.NavLink}>
               Especialistas
             </Link>
           </li>
@@ -48,7 +78,7 @@ function Navbar() {
             <Link to="/Testimonials" class={styles.NavLink}>
               Testimonios
             </Link>
-          </li>
+          </li> 
             {(user?.role === "pacient") ? (
               <li class={styles.NavButton}>
                 <Link to="/User" class={styles.NavLink}>
@@ -58,8 +88,27 @@ function Navbar() {
             ) : (null)}
             {(user?.role === "psychologist") ? (
               <li class={styles.NavButton}>
-                <Link to="/Psychologist" class={styles.NavLink}>
-                  Psicologo
+                {(user?.status === "waiting") ? (
+                  <Link to="/Waiting" class={styles.NavLink}>
+                    Psicologo
+                  </Link>
+                ) : (null)}
+                {(user?.status === "accept") ? (
+                  <Link to="/Psychologist" class={styles.NavLink}>
+                    Psicologo
+                  </Link>
+                ) : (null)}
+                {(user?.status === "denegate") ? (
+                  <Link to="/Denegate" class={styles.NavLink}>
+                    Psicologo
+                  </Link>
+                ) : (null)}
+              </li>
+            ) : (null)}
+            {(user?.role === "admi") ? (
+              <li class={styles.NavButton}>
+                <Link to="/Admi" class={styles.NavLinks}>
+                  Administrador
                 </Link>
               </li>
             ) : (null)}
@@ -81,3 +130,26 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+/*(user?.status === "waiting") ? (
+  <li class={styles.NavButton}>
+      <Link to="/Waiting" class={styles.NavLink}>
+        Psicologo
+      </Link>
+  </li>
+) : (null)
+(user?.status === "accept") ? (
+  <li class={styles.NavButton}>
+      <Link to="/Psychologist" class={styles.NavLink}>
+        Psicologo
+      </Link>
+  </li>
+) : (null)
+(user?.status === "denegate") ? (
+  <li class={styles.NavButton}>
+      <Link to="/Denegate" class={styles.NavLink}>
+        Psicologo
+      </Link>
+  </li>
+) : (null)*/

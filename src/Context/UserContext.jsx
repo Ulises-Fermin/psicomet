@@ -14,7 +14,7 @@ function UserContextProvider({children}){
     const getUserByEmail = async (email) => {
         const usersReference = db.collection("users");
         const snapshot = await usersReference.where("email", "==", email).get();
-
+        
         if (!snapshot.size) return null;
 
         const loggedUser = getFirstElementArrayCollection(snapshot);
@@ -35,9 +35,17 @@ function UserContextProvider({children}){
                         date: null,
                         gender: null,
                         role: "pacient",
+                        status: null,
                         id: null,
                         college: null,
                         specialty: null,
+                        experience: null,
+                        academics: null,
+                        aboutMe: null,
+                        atencionAreas: null, 
+                        curriculum: null,
+                        languages: null,
+                        itinerary: null,
                     };
                     await createUser(newProfile ,loggedUser.uid);
                     setUser(newProfile);

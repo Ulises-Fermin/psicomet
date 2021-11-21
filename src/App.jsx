@@ -24,6 +24,10 @@ import Services from "./Components/Services";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 import Profile_p from "./Pages/Profile/Profile_p";
 import Profile_e from "./Pages/Profile/Profile_e";
+import Quest from "./Pages/Quest/Quest";
+import Admi from "./Pages/Admi/Admi";
+import Waiting from "./Pages/Status/Waiting";
+import Modify_p from "./Pages/Modify_p/Modify_p";
 
 function App() {
   return (
@@ -78,8 +82,20 @@ function App() {
           <Route exact path="/Profile_e">
             <Profile_e />
           </Route>
+          <Route exact path="/Quest">
+            <Quest />
+          </Route>
+          <Route exact path="/Admi">
+            <Admi />
+          </Route>
+          <Route exact path="/Waiting">
+            <Waiting />
+          </Route>
+          <Route exact path="/Modify_p">
+            <Modify_p />
+          </Route>
         </Switch>
-          <Footer />
+        <Footer />
       </Router>
     </UserContextProvider>
   );

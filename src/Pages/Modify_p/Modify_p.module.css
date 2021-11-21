@@ -1,0 +1,146 @@
+#titulo {
+  color: rgb(102, 102, 228);
+  margin-left: 0.5%;
+  padding: 0%;
+}
+
+.body {
+  margin: 0%;
+  padding: 0%;
+  margin-left: 1%;
+}
+
+#label1 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#nombre {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label2 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#apellido {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label3 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#correo {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label4 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#genero {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label5 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#idiomas {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label6 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#consulta {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label7 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#precio {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label8 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#areas {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label9 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#experiencia {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label10 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#formacion {
+  margin: 0%;
+  padding: 0%;
+}
+
+#label11 {
+  color: rgb(102, 102, 228);
+  margin: 0%;
+  padding: 0%;
+}
+
+#información {
+  margin: 0%;
+  padding: 0%;
+}
+
+#itinerary{
+  margin: 10%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.day{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}

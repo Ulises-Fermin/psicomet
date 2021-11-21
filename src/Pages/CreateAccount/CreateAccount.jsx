@@ -5,7 +5,6 @@ import { auth } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
-import { getAuth, sendEmailVerification } from "firebase/auth";
 
 function CreateAccount() {
   const { createUser } = useContext(UserContext);
@@ -55,8 +54,16 @@ function CreateAccount() {
                       date: values.date,
                       gender: values.gender,
                       role: "pacient",
+                      status: null,
                       id: null,
                       college: null,
+                      experience: null,
+                      academics: null,
+                      aboutMe: null,
+                      atencionAreas: null, 
+                      languages: null,
+                      curriculum: null,
+                      itinerary: null,
                     },
                     response.user.uid
                   );

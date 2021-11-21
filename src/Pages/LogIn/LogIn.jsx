@@ -2,6 +2,7 @@ import React from "react";
 import { useContext, useState } from "react";
 import styles from "./LogIn.module.css";
 import { googleProvider, auth } from "../../Utils/FireBaseConfig";
+import { facebookProvider, twitterProvider } from "../../Utils/FireBaseConfig";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
 import { Link } from "react-router-dom";
@@ -19,6 +20,14 @@ function LogIn() {
 
   const googleLogin = async () => {
     await auth.signInWithPopup(googleProvider);
+    history.push("/Home");
+  };
+  const facebookLogin = async () => {
+    await auth.signInWithPopup(facebookProvider);
+    history.push("/Home");
+  };
+  const twitterLogin = async () => {
+    await auth.signInWithPopup(twitterProvider);
     history.push("/Home");
   };
 
@@ -66,6 +75,20 @@ function LogIn() {
                 onClick={googleLogin}
               >
                 Iniciar sesión con Google
+              </button>
+              <button
+                id={styles.buttonGoogle}
+                type="button"
+                onClick={facebookLogin}
+              >
+                Iniciar sesión con Facebook
+              </button>
+              <button
+                id={styles.buttonGoogle}
+                type="button"
+                onClick={twitterLogin}
+              >
+                Iniciar sesión con Twitter
               </button>
             </div>
             <form onSubmit={handleSubmit}>
