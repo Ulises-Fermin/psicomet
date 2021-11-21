@@ -25,6 +25,10 @@ function Profile_e() {
             Nombre: {user.name} {user.lastName}
           </p>
           <p id={styles.rol}>Rol: {user.role}</p>
+          <br />
+          <Link id={styles.Modify} to="/Modify_p">
+            Modificar Datos
+          </Link>
         </div>
       </div>
       <div class={styles.box4}>
@@ -56,37 +60,22 @@ function Profile_e() {
           <div class={styles.box3}>
             <div id={styles.box5}>
               <h2 id={styles.label6}>Áreas de atención</h2>
-              <textarea
-                id={styles.areas}
-                cols="30"
-                rows="10"
-                placeholder="Ingrese las areas a atender"
-              ></textarea>
+              <div id={styles.caja}>{user.name}</div>
             </div>
             <div id={styles.box6}>
               <h2 id={styles.profesional}>Experiencia Profesional</h2>
-              <div id={styles.caja}>{user.name}</div>
+              <div id={styles.caja2}>{user.name}</div>
             </div>
           </div>
 
           <div class={styles.box8}>
             <div id={styles.box9}>
               <h2 id={styles.label7}>Formación Académica</h2>
-              <textarea
-                id={styles.academia}
-                cols="30"
-                rows="10"
-                placeholder="Ingrese su formacion"
-              ></textarea>
+              <div id={styles.caja3}>{user.name}</div>
             </div>
             <div id={styles.box10}>
               <h2 id={styles.about}>Sobre mi</h2>
-              <textarea
-                id={styles.info}
-                cols="30"
-                rows="10"
-                placeholder="Informacion"
-              ></textarea>
+              <div id={styles.caja4}>{user.name}</div>
             </div>
           </div>
         </div>
