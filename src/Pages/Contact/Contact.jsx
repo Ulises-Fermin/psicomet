@@ -5,16 +5,16 @@ function Contact() {
     return(
         <div id={styles.Body}>
             <h1 id={styles.title}>
-                !Contactate con nosotros!
+                ¡Contáctate con nosotros!
             </h1>
             <div id={styles.file1}>
                 <div class={styles.card}>
-                    <a href="https://www.instagram.com/psicomet_sdi/" target="_blank"> <img id={styles.logo} src="/logoInstagram.jpg"  alt = ""/></a>
+                    <a href="https://www.instagram.com/psicomet_sdi/" target="_blank"> <img id={styles.logo} src="/igLogo.png"  alt = ""/></a>
                     <a href="https://www.instagram.com/psicomet_sdi/" target="_blank"><p id={styles.contactP}>@PsicoMet</p></a>
                 </div>
                 <div class={styles.card}>
-                    <a href="mailto:psicometsdi@gmail.com" target="_blank"><img id={styles.logo} src="/logoGoogle.png"  alt = ""/></a>
-                    <a href="mailto:psicometsdi@gmail.com" target="_blank"><p id={styles.contactP}>psicometsdi@gmail.com</p></a>
+                    <a href="mailto:Psicometsdi@gmail.com" target="_blank"><img id={styles.logo} src="/logoGoogle.png"  alt = ""/></a>
+                    <a href="mailto:Psicometsdi@gmail.com" target="_blank"><p id={styles.contactP}>Psicometsdi@gmail.com</p></a>
                 </div>
                 <div class={styles.card}>
                     {/* Arreglar el usuario de facebook para que no mande al perfil */}

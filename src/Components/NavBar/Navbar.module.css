@@ -14,8 +14,9 @@
 }
 
 #Logo {
+    padding-top: 8%;
     max-width: 110px;
-    max-height: 110px;
+    max-height: 90px;
     cursor: pointer;
 }
 
