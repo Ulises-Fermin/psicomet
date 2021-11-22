@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {UserContext} from "../../Context/UserContext";
 import {auth} from "../../Utils/FireBaseConfig";
 import { animateScroll as scroll } from 'react-scroll'
+import psicometLogo from '../../Images/LogoPsicomet.png'
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -42,12 +43,10 @@ function Navbar() {
     }
   }
   
-
-
   return (
     <div id={styles.NavBar}>
       <Link to="/" class={styles.NavLink}>
-        <img src="/LogoPsicomet.png"  id={styles.Logo} alt="Logo de Psicomet"/>
+        <img src={psicometLogo}  id={styles.Logo} alt="Logo de Psicomet"/>
       </Link>
 
       <div id={styles.NavMenu}>

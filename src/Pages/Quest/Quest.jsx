@@ -3,6 +3,7 @@ import styles from "./Quest.module.css";
 import {db} from "../../Utils/FireBaseConfig";
 import {useState, useEffect} from "react";
 import Popup from "reactjs-popup";
+import clinica from '../../Images/clinica.jpg'
 
 function Quest() {
     const [names, setNames] = useState("");
