@@ -9,6 +9,7 @@ const Footer = () => {
     const toggleHome = () => {
         scroll.scrollToTop();
     }
+
     return (
         <FooterContainer>
             <FooterWrap>
@@ -18,7 +19,7 @@ const Footer = () => {
                             <FooterLinkTitle>Nosotros</FooterLinkTitle>
                                 {/* Si vamos a linkear algo de afuera usamos un a tag */}
                                 <FooterLink to="/" toggle={toggleHome}>Ingresa</FooterLink>
-                                <FooterLink to="../Especialistas" toggle={toggleHome}>Especialistas</FooterLink>
+                                <FooterLink to="/Quest" toggle={toggleHome}>Especialistas</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Precios</FooterLinkTitle>
@@ -29,8 +30,8 @@ const Footer = () => {
                         <FooterLinkItems>
                             <FooterLinkTitle>Modalidades</FooterLinkTitle>
                                 {/* Si vamos a linkear algo de afuera usamos un a tag */}
-                                <FooterLink to="../Testimonials" toggle={toggleHome}>Testimonios</FooterLink>
-                                <FooterLink to="../Contact" toggle={toggleHome}>Contacto</FooterLink>
+                                <FooterLink to="/Testimonials" toggle={toggleHome}>Testimonios</FooterLink>
+                                <FooterLink to="/Contact" toggle={toggleHome}>Contacto</FooterLink>
                         </FooterLinkItems>
                     </FooterLinksWrapper>
                 </FooterLinksContainer>

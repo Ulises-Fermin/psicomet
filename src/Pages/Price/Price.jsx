@@ -1,5 +1,10 @@
 import React from "react";
 import styles from "./Price.module.css";
+import house from '../../Images/House.jpg'
+import clinica from '../../Images/clinica.jpg'
+import maraca from '../../Images/Maraca.png'
+import couple from '../../Images/Couple.png'
+import psiquiatra from '../../Images/Psiquiatra.png'
 
 function Price() {
   return (
@@ -12,7 +17,7 @@ function Price() {
       <div class={styles.container}>
         <div class={styles.card1}>
           <div class={styles.card_encabezado1}>
-            <img src="clinica.jpg" alt="" />
+            <img src={clinica} alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -44,7 +49,7 @@ function Price() {
 
         <div class={styles.card2}>
           <div class={styles.card_encabezado2}>
-            <img src="Maraca.png" alt="" />
+            <img src={maraca} alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -76,7 +81,7 @@ function Price() {
 
         <div class={styles.card3}>
           <div class={styles.card_encabezado3}>
-            <img src="Couple.png" alt="" />
+            <img src={couple} alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -108,7 +113,7 @@ function Price() {
 
         <div class={styles.card4}>
           <div class={styles.card_encabezado4}>
-            <img src="House.jpg" alt="" />
+            <img src={house} alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
@@ -140,7 +145,7 @@ function Price() {
 
         <div class={styles.card5}>
           <div class={styles.card_encabezado5}>
-            <img src="Psiquiatra.png" alt="" />
+            <img src={psiquiatra} alt="" />
           </div>
           <div class={styles.card_contenido}>
             <div
