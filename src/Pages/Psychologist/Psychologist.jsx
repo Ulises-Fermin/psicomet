@@ -14,7 +14,7 @@ function Psychologist() {
   return (
     <div class={styles.body}>
       {!!user ? (
-        <h1 id={styles.title}>Bienvenido Dr. {user.name} </h1>
+        <h1 id={styles.title}>Bienvenido/a Dr. {user.name} </h1>
       ) : (
         <h1 id={styles.title}>
           No deberia estar aca sin haber iniciado pero bienvenido igual
