@@ -65,6 +65,7 @@ function Navbar() {
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className="navbar toggle">
+              {/* El # es para que se cierre */}
               <Link to="#" className='menu-bars'>
                 <BiX />
               </Link>
@@ -115,8 +116,9 @@ function Navbar() {
                 Testimonios
               </Link>
             </li> 
+            {/* Este es el icono que aparece cuando se reduce el tamano */}
               <MobileIcon>
-                <FaBars />
+                <FaBars onClick={showSidebar}/>
               </MobileIcon>
               {(user?.role === "pacient") ? (
                 <li class={styles.NavButton}>

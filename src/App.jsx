@@ -35,7 +35,7 @@ function App() {
     <UserContextProvider>
       <Router>
         <ScrollToTop>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Navbar />
         <Route exact path="/">
           <Home />
