@@ -30,6 +30,19 @@
     flex-direction: column;
     background-color: white;
     background-size: cover;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border-color: #1CB0A7;
+    border-width: 20px;
+}
+
+#psychoCards img {
+   border-radius: 100%; 
+   border-style: solid;
+   border-color: black;
+   display: block;
+   width: 150px;
+   height: 150px;
 }
 
 .psychoList{
@@ -61,15 +74,17 @@
     border-style: hidden ;
 }
 #button{
-    background-color:#1CB0A7;
-    color: white;
-    border-color: black;
+    background-color:white;
+    color: black;
+    border-color: lightgray;
     padding: 0.8%;
     border-style:solid;
     border-radius: 5px;
 }
 #button:hover{
-    border-color: white;
+    border-color:darkcyan;
+    background-color: darkcyan;
+    color: white;
 }
 
 #isLoading{
