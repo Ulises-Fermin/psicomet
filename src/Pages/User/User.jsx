@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useContext } from "react";
+import Consulta from '../../Images/Consulta.png'
+import Personas from '../../Images/Personas.png'
+import chat from '../../Images/chat.png'
+import Calendario from '../../Images/Calendario.png'
+import Agendar from '../../Images/Agendar.png'
+import Usuario from '../../Images/Usuario.png'
 
 function User() {
   const { user, setUser } = useContext(UserContext);
@@ -25,27 +31,27 @@ function User() {
       <div class={styles.buttons_usuario}>
         <div id={styles.buttons1}>
           <div class={styles.card}>
-            <img id={styles.image} src="/Consulta.png" alt="" />
+            <img id={styles.image} src={Consulta} alt="" />
             <p id={styles.Mis_consults}>Consultas</p>
           </div>
           <div class={styles.card}>
-            <img id={styles.image} src="/Personas.png" alt="" />
+            <img id={styles.image} src={Personas} alt="" />
             <p id={styles.Ver_especialists}>Ver Especialistas</p>
           </div>
         </div>
         <div id={styles.buttons2}>
-          <img id={styles.image} src="/chat.png" alt="" />
+          <img id={styles.image} src={chat} alt="" />
           <Link to="/Chats" id={styles.My_chats}>
             Mis chats
           </Link>
 
-          <img id={styles.image} src="/Calendario.png" alt="" />
+          <img id={styles.image} src={Calendario} alt="" />
           <p id={styles.Calendar}>Calendario</p>
         </div>
         <div id={styles.buttons2}>
-          <img id={styles.image} src="/Agendar.png" alt="" />
+          <img id={styles.image} src={Agendar} alt="" />
           <p id={styles.My_chats}>Reservar cita</p>
-          <img id={styles.image} src="/User.png" alt="" />
+          <img id={styles.image} src={Usuario} alt="" />
           <Link to="/Profile_p" id={styles.Calendar}>
             Perfil
           </Link>

@@ -3,7 +3,6 @@ import styles from "./Quest.module.css";
 import {db} from "../../Utils/FireBaseConfig";
 import {useState, useEffect} from "react";
 import Popup from "reactjs-popup";
-import clinica from '../../Images/clinica.jpg'
 
 function Quest() {
     const [names, setNames] = useState("");
@@ -65,13 +64,13 @@ function Quest() {
             <div id={styles.container}>
                 {psychologists.map((p)=>(
                     <div id={styles.psychoCards}>
-                        <img src={clinica} alt="" />
+                        <img src="clinica.jpg" alt="" />
                     <li class={styles.psychoList}>{p.name} {p.lastName}</li>
                     <li class={styles.psychoList}>{p.specialty}</li>
-                    <Popup trigger = {<button class={styles.psychoList} onClick={showMore}>Ver más</button>} modal>
+                    <Popup trigger = {<button class={styles.psychoList} onClick={showMore}>Ver mas</button>} modal>
                         <div id = {styles.PopUp}>
                         <p>Nombre y Apellido: {p.name} {p.lastName}</p>
-                        <p>Correo electrónico: {p.email}</p>
+                        <p>Correo Electronico: {p.email}</p>
                         <p>Especialidad: {p.specialty}</p>
                         <button class={styles.psychoList}>Agendar Cita</button>
                         </div>
