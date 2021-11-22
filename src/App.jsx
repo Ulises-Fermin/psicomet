@@ -15,7 +15,6 @@ import Chats from "./Pages/Chats/Chats";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Footer from "./Components/Footer";
 import Price from "./Pages/Price/Price";
-import HeroSection from "./Components/HeroSection";
 import Services from "./Components/Services";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 import Profile_p from "./Pages/Profile/Profile_p";
@@ -24,24 +23,14 @@ import Quest from "./Pages/Quest/Quest";
 import Admi from "./Pages/Admi/Admi";
 import Waiting from "./Pages/Status/Waiting";
 import Modify_p from "./Pages/Modify_p/Modify_p";
-<<<<<<< HEAD
 import Modify_pa from "./Pages/Modify_pa/Modify_pa";
-=======
 import ScrollToTop from "./ScrollToTop";
 import Sidebar from "./Components/SideBar";
 import React, {useState} from 'react'
 
->>>>>>> carrasquero
 
 function App() {
   
-  // const Prueba = () => {
-  //   const[isOpen, setIsOpen] = useState(false)
-  
-  //   const toggle = () => {
-  //       setIsOpen(!isOpen)
-  //   }
-  // }
   return (
     <UserContextProvider>
       <Router>
@@ -107,9 +96,6 @@ function App() {
           </Route>
           <Route exact path="/Modify_p">
             <Modify_p />
-          </Route>
-          <Route exact path="/Modify_pa">
-            <Modify_pa />
           </Route>
         </Switch>
         <Footer />
