@@ -1,6 +1,9 @@
 .body {
-  background-image: url("../../Images/Terapia.jpg");
+  background-image: url("../../Images/Terapia.png");
   width: 100%;
+  height: 110%;
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 .buttons_usuario {
@@ -73,15 +76,11 @@
 
 #title{
   text-align: center;
+  font-family: 'Merriweather', serif;
   margin-top: 0%;
-  padding-top: 5%;
-  margin-bottom: 10%;
+  padding-top: 3%;
+  margin-bottom: 5%;
   font-size: 250%;
-}
-#title:hover{
-  font-size: 255%;
-  color: #1CB0A7;
-  transition: 0.15s;
 }
 
 #image{

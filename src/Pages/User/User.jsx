@@ -11,6 +11,7 @@ function User() {
     await auth.signOut();
     setUser(null);
   };
+  
   return (
     <div class={styles.body}>
       {!!user ? (
