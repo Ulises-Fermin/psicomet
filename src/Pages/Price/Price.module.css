@@ -17,7 +17,7 @@
 }
 #title {
   text-align: center;
-  font-family: 'Merriweather', serif;
+  font-family: 'Scope One', serif;
   color: black;
   padding-top: 8%;
   margin-bottom: 10%;
@@ -32,7 +32,7 @@ a {
 }
 #title:nth-child(1) a {
   text-align: center;
-    font-family: 'Merriweather', serif;
+  font-family: 'Scope One', serif;
     color: black;
     padding-top: 6%;
     margin-bottom: 10%;
@@ -43,6 +43,7 @@ a {
 
 #subtitle {
   font-size: 130%;
+  font-family: 'Scope One', serif;
   font-weight: bold;
   margin-bottom: 5%;
 }
@@ -273,4 +274,5 @@ a {
 }
 .info_personal {
   color: #fff;
+  font-family: 'Mukta', sans-serif;
 }

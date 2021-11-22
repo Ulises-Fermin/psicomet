@@ -54,6 +54,7 @@
 }
 #title{
     text-align: center;
+    font-family: 'Scope One', serif;
     font-size: 200%;
 }
 
@@ -68,5 +69,6 @@
 #text{
     width: 80%;
     padding-left: 3%;
+    font-family: 'Mukta', sans-serif;
     
 }
