@@ -28,6 +28,7 @@ import Quest from "./Pages/Quest/Quest";
 import Admi from "./Pages/Admi/Admi";
 import Waiting from "./Pages/Status/Waiting";
 import Modify_p from "./Pages/Modify_p/Modify_p";
+import Modify_pa from "./Pages/Modify_pa/Modify_pa";
 
 function App() {
   return (
@@ -93,6 +94,9 @@ function App() {
           </Route>
           <Route exact path="/Modify_p">
             <Modify_p />
+          </Route>
+          <Route exact path="/Modify_pa">
+            <Modify_pa />
           </Route>
         </Switch>
         <Footer />

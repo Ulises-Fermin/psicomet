@@ -43,32 +43,9 @@ function Profile_p() {
         <div class={styles.box3}>
           <h2 id={styles.titulo1}>Modificación de Datos</h2>
           <p>Ingrese el nuevo nombre: </p>
-          <input
-            type="text"
-            id={styles.changename}
-            placeholder="Ingrese su nombre"
-          />
-          <button type="button" id={styles.button1}>
-            Cambiar Nombre
-          </button>
-          <p>Ingrese el nuevo correo: </p>
-          <input
-            type="text"
-            id={styles.changename}
-            placeholder="Ingrese su correo"
-          />
-          <button type="button" id={styles.button2}>
-            Cambiar Correo
-          </button>
-          <p>Ingrese su género: </p>
-          <input
-            type="text"
-            id={styles.changename}
-            placeholder="Ingrese su género"
-          />
-          <button type="button" id={styles.button3}>
-            Cambiar Dato
-          </button>
+          <p>{user.name}</p>
+
+          <Link to="/Modify_pa">Modificar datos</Link>
         </div>
       </div>
     </>

@@ -1,0 +1,61 @@
+#label1 {
+  margin: 0%;
+  padding: 0%;
+  color: rgb(102, 102, 228);
+  font-size: 300%;
+  font-weight: 600;
+}
+
+#label2 {
+  margin: 0%;
+  padding: 0%;
+  color: rgb(102, 102, 228);
+}
+
+#label3 {
+  margin: 0%;
+  padding: 0%;
+  color: rgb(102, 102, 228);
+}
+
+#label4 {
+  margin: 0%;
+  padding: 0%;
+  color: rgb(102, 102, 228);
+}
+
+#box1 {
+  width: 20%;
+}
+
+#nombre {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 0.2%;
+}
+
+#apellido {
+  margin: 0%;
+  padding: 0%;
+}
+
+#telefono {
+  margin: 0%;
+  padding: 0%;
+}
+
+#genero {
+  margin: 0%;
+  padding: 0%;
+}
+
+#register {
+  font-weight: 600;
+  color: white;
+  box-sizing: border-box;
+  border: 7px solid lightblue;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lightblue;
+  width: 10%;
+}
