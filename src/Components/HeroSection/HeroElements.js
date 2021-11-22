@@ -7,9 +7,8 @@ export const HeroContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 30px;
-    height: 550px;
+    height: 600px;
     position: relative;
-    z-index: -1
 
     /* Esto lo que hace es que cambia un poco la opacidad del video. Se ve un poco mas oscuro para que se lea mejor */
     :before {
@@ -19,7 +18,7 @@ export const HeroContainer = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 0%);
         z-index: 2;
 
     }

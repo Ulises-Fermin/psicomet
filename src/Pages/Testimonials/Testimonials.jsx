@@ -6,6 +6,7 @@ import { db } from "../../Utils/FireBaseConfig";
 import "firebase/auth";
 import "firebase/firestore";
 import { useTestimonials } from "./UseTestimonials";
+import psicometLogo from '../../Images/LogoPsicomet.png'
 
 function Testimonials() {
   const { user, setUser } = useContext(UserContext);
@@ -39,7 +40,7 @@ function Testimonials() {
                 <li id={styles.cuadro} key={m.id}>
                   <div id={styles.block}>
                     <img
-                      src="/LogoPsicomet.png"
+                      src={psicometLogo}
                       id={styles.Logo}
                       alt="Logo de Psicomet"
                     />

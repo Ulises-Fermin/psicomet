@@ -65,7 +65,7 @@ function Quest() {
             <div id={styles.container}>
                 {psychologists.map((p)=>(
                     <div id={styles.psychoCards}>
-                        <img src="clinica.jpg" alt="" />
+                        <img src={clinica} alt="" />
                     <li class={styles.psychoList}>{p.name} {p.lastName}</li>
                     <li class={styles.psychoList}>{p.specialty}</li>
                     <Popup trigger = {<button class={styles.psychoList} onClick={showMore}>Ver más</button>} modal>

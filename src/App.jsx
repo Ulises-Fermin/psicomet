@@ -1,7 +1,3 @@
-// Listos todos los diagramas segun lo conversado. Estuve viendo y me parece que vamos fino. El documento casi listo.
-// La proxima entrega aporto mas en el codigo aprovechando que tengo la arquitectura fresca.
-// Pienso que podemos mejorar un poco en el diseno. Hice un curso de 4 horas sobre algunos para implementarlos en react.
-
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -28,11 +24,25 @@ import Quest from "./Pages/Quest/Quest";
 import Admi from "./Pages/Admi/Admi";
 import Waiting from "./Pages/Status/Waiting";
 import Modify_p from "./Pages/Modify_p/Modify_p";
+import ScrollToTop from "./ScrollToTop";
+import Sidebar from "./Components/SideBar";
+import React, {useState} from 'react'
+
 
 function App() {
+  
+  // const Prueba = () => {
+  //   const[isOpen, setIsOpen] = useState(false)
+  
+  //   const toggle = () => {
+  //       setIsOpen(!isOpen)
+  //   }
+  // }
   return (
     <UserContextProvider>
       <Router>
+        <ScrollToTop>
+        <Sidebar />
         <Navbar />
         <Route exact path="/">
           <Home />
@@ -96,6 +106,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        </ScrollToTop>
       </Router>
     </UserContextProvider>
   );
