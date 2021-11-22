@@ -50,17 +50,76 @@ function Modify_p() {
   };
 
   const handleSubmit = async (e) => {
-    db.collection("users").doc(user.id).update({
-      name: values.name,
-      lastName: values.lastName,
-      phone: values.phone,
-      gender: values.gender,
-      languages: values.languages,
-      atencionAreas: values.atencionAreas,
-      experience: values.experience,
-      academics: values.academics,
-      aboutMe: values.aboutMe,
-    });
+    if (values.name === "") {
+      user.name = user.name;
+    } else {
+      db.collection("users").doc(user.id).update({
+        name: values.name,
+      });
+    }
+    if (values.lastName === "") {
+      user.lastName = user.lastName;
+    } else {
+      db.collection("users").doc(user.id).update({
+        lastName: values.lastName,
+      });
+    }
+
+    if (values.phone === "") {
+      user.phone = user.phone;
+    } else {
+      db.collection("users").doc(user.id).update({
+        phone: values.phone,
+      });
+    }
+
+    if (values.gender === "") {
+      user.gender = user.gender;
+    } else {
+      db.collection("users").doc(user.id).update({
+        gender: values.gender,
+      });
+    }
+
+    if (values.languages === "") {
+      user.languages = user.languages;
+    } else {
+      db.collection("users").doc(user.id).update({
+        languages: values.languages,
+      });
+    }
+
+    if (values.atencionAreas === "") {
+      user.atencionAreas = user.atencionAreas;
+    } else {
+      db.collection("users").doc(user.id).update({
+        atencionAreas: values.atencionAreas,
+      });
+    }
+
+    if (values.experience === "") {
+      user.experience = user.experience;
+    } else {
+      db.collection("users").doc(user.id).update({
+        experience: values.experience,
+      });
+    }
+
+    if (values.academics === "") {
+      user.academics = user.academics;
+    } else {
+      db.collection("users").doc(user.id).update({
+        experience: values.academics,
+      });
+    }
+
+    if (values.aboutMe === "") {
+      user.aboutMe = user.aboutMe;
+    } else {
+      db.collection("users").doc(user.id).update({
+        aboutMe: values.aboutMe,
+      });
+    }
   };
 
   return (
