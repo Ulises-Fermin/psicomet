@@ -67,10 +67,10 @@ function Quest() {
                         <img src="clinica.jpg" alt="" />
                     <li class={styles.psychoList}>{p.name} {p.lastName}</li>
                     <li class={styles.psychoList}>{p.specialty}</li>
-                    <Popup trigger = {<button class={styles.psychoList} onClick={showMore}>Ver mas</button>} modal>
+                    <Popup trigger = {<button class={styles.psychoList} onClick={showMore}>Ver más</button>} modal>
                         <div id = {styles.PopUp}>
                         <p>Nombre y Apellido: {p.name} {p.lastName}</p>
-                        <p>Correo Electronico: {p.email}</p>
+                        <p>Correo electrónico: {p.email}</p>
                         <p>Especialidad: {p.specialty}</p>
                         <button class={styles.psychoList}>Agendar Cita</button>
                         </div>

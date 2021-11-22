@@ -27,6 +27,7 @@
 
 #psychoCards{
     display: flex;
+    font-family: 'Scope One', serif;
     flex-direction: column;
     background-color: white;
     background-size: cover;
@@ -47,6 +48,7 @@
 
 .psychoList{
     background-color: white;
+    font-family: 'Scope One', serif;
     list-style: none;
     text-align: center;
     margin: 5px;
@@ -67,6 +69,7 @@
 }
 #name{
     width: 90%;
+    font-family: 'Scope One', serif;
     font-size: large;
     margin-right: 1%;
     margin-left: 1%;
@@ -103,6 +106,7 @@
 
 #PopUp{
     background-color: white;
+    font-family: 'Scope One', serif;
     font-size: large;
     box-shadow: 0px 0px 10px 0px #000000;
     display: flex;
