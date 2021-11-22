@@ -66,34 +66,34 @@ function LogIn() {
           <div class={styles.body3}>
             <div id={styles.LogIn}>
               <p id={styles.parrafo1}>
-                Si tiene cuenta de google, puede iniciar sesión con ella:
+                Ingresar con plataforma externa:
               </p>
               <br />
               <button
                 id={styles.buttonGoogle}
                 type="button"
                 onClick={googleLogin}
-              >
+              ><img src="/googleBlanco.png"/>
                 Iniciar sesión con Google
               </button>
               <button
                 id={styles.buttonGoogle}
                 type="button"
                 onClick={facebookLogin}
-              >
+              ><img src="/fbCircular.png"/>
                 Iniciar sesión con Facebook
               </button>
               <button
                 id={styles.buttonGoogle}
                 type="button"
                 onClick={twitterLogin}
-              >
+              ><img src="/twCircular.png"/>
                 Iniciar sesión con Twitter
               </button>
             </div>
             <form onSubmit={handleSubmit}>
               <div class={styles.inicio}>
-                <p>Ingrese su nombre de usuario y contraseña:</p>
+                <p>Ingresar con correo electrónico:</p>
                 <input
                   name="email"
                   type="email"
