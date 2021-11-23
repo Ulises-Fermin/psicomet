@@ -11,15 +11,15 @@ function Contact() {
                 ¡Contáctate con nosotros!
             </h1>
             <div id={styles.file1}>
-                <div class={styles.card}>
+                <div class={styles.card} id="Instagram">
                     <a href="https://www.instagram.com/psicomet_sdi/" target="_blank"> <img id={styles.logo} src={igLogo}  alt = ""/></a>
                     <a href="https://www.instagram.com/psicomet_sdi/" target="_blank"><p id={styles.contactP}>@PsicoMet</p></a>
                 </div>
-                <div class={styles.card}>
+                <div class={styles.card} id="Gmail">
                     <a href="mailto:Psicometsdi@gmail.com" target="_blank"><img id={styles.logo} src={googleLogo}  alt = ""/></a>
                     <a href="mailto:Psicometsdi@gmail.com" target="_blank"><p id={styles.contactP}>Psicometsdi@gmail.com</p></a>
                 </div>
-                <div class={styles.card}>
+                <div class={styles.card} id="Facebook">
                     {/* Arreglar el usuario de facebook para que no mande al perfil */}
                     <a href="https://www.facebook.com/profile.php?id=100075055452476" target="_blank"> <img id={styles.logo} src={fbLogo} target="_blank" alt= ""/></a>
                     <a href="https://www.facebook.com/profile.php?id=100075055452476" target="_blank"><p id={styles.contactP}>@PsicoMet</p></a>
