@@ -22,7 +22,7 @@
     position: fixed;
     top: 0;
     /* Para que no se vea cuando esta inactivo */
-    left: -100%;
+    left: -150%;
     transition: 850ms;
   }
   

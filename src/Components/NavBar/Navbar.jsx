@@ -57,6 +57,10 @@ function Navbar() {
     <>
       <IconContext.Provider value={{ color: '#ffd779' }}>
         <div id={styles.NavBar}>
+          {/* Este MobileIcon es el boton que activa el sidebar */}
+          <MobileIcon onClick={showSidebar}>
+              <FaBars/>
+          </MobileIcon>
           <Link to="/" class={styles.NavLink}>
             <img src={psicometLogo} id={styles.Logo} alt="Logo de Psicomet" />
           </Link>
@@ -70,6 +74,7 @@ function Navbar() {
                   <BiX />
                 </Link>
               </li>
+              {/* Este map va poniendo 1 por 1 todos los items del archivo SidebarData.js */}
               {SidebarData.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}>
@@ -86,9 +91,6 @@ function Navbar() {
 
           <div id={styles.NavMenu}>
             <ul id={styles.NavList}>
-            <Link to="/" className={styles.NavButton}>
-              <FaBars onClick={showSidebar} id= "FaBars"/>
-            </Link>
               <li class={styles.NavButton}>
                 <Link to="/Home" onClick={toggleHome} class={styles.NavLink}>
                   Inicio
@@ -115,10 +117,6 @@ function Navbar() {
                   Testimonios
                 </Link>
               </li>
-              {/* Este es el icono que aparece cuando se reduce el tamaño */}
-              <MobileIcon>
-                <FaBars onClick={showSidebar} />
-              </MobileIcon>
               {(user?.role === "pacient") ? (
                 <li class={styles.NavButton}>
                   <Link to="/User" class={styles.NavLink}>

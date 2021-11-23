@@ -6,7 +6,7 @@ export const MobileIcon = styled.div`
     display: none;
 
     /* rem es por defecto de 16px creo */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 980px) {
         display: block;
         position:absolute;
         top: 0;
@@ -15,6 +15,7 @@ export const MobileIcon = styled.div`
         font-size: 1.8rem;
         cursor: pointer;
         color: #fff;
+        z-index: 99;
 
 
     }
