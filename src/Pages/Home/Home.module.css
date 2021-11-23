@@ -44,7 +44,7 @@
 .pAboutUs {
   text-align: center;
   font-size: 190%;
-  font-size: 2vw;
+  font-size: 2.5vw;
   margin-bottom: 2%;
   margin-top: 1%;
   color: #434244;
@@ -116,7 +116,7 @@
 .pFAQs {
   text-align: center;
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 #LinkCreateAccount { 
