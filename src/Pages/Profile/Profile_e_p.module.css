@@ -1,6 +1,8 @@
 #img1 {
   width: 20%;
   margin-left: 2%;
+  box-sizing: border-box;
+  border: 7px solid lightblue;
 }
 
 .box1 {
@@ -22,6 +24,7 @@
   margin-top: 1%;
   display: flex;
   flex-direction: row;
+  margin-bottom: 1%;
 }
 
 .box2 {
@@ -29,6 +32,7 @@
   width: 20%;
   border: 7px solid lightblue;
   margin-left: 2%;
+  padding-bottom: 1%;
 }
 
 #label1 {
@@ -77,6 +81,27 @@
   color: rgb(102, 102, 228);
 }
 
+#volver {
+  box-sizing: border-box;
+  border: 5px solid lightblue;
+  margin-left: 78%;
+  border-radius: 5px;
+  padding: 1%;
+  color: white;
+  font-weight: 600;
+  background-color: lightblue;
+}
+
+#Modify {
+  box-sizing: border-box;
+  border: 5px solid lightblue;
+  border-radius: 5px;
+  padding: 1%;
+  color: white;
+  font-weight: 600;
+  background-color: lightblue;
+}
+
 .box3 {
   display: flex;
   flex-direction: row;
@@ -106,7 +131,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 82%;
   height: 45%;
 }
 
@@ -118,4 +143,31 @@
 #info {
   width: 117%;
   margin-top: 0.5%;
+}
+
+#caja {
+  box-sizing: border-box;
+  border: 7px solid lightblue;
+  height: 80%;
+  width: 130.5%;
+}
+
+#caja2 {
+  box-sizing: border-box;
+  border: 7px solid lightblue;
+  height: 80%;
+}
+
+#caja3 {
+  box-sizing: border-box;
+  border: 7px solid lightblue;
+  height: 85%;
+  width: 106%;
+}
+
+#caja4 {
+  box-sizing: border-box;
+  border: 7px solid lightblue;
+  height: 85%;
+  width: 260%;
 }

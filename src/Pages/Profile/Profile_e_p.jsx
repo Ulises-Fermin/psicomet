@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useContext } from "react";
+import Popup from "reactjs-popup";
 
 function Profile_e_p() {
   const { user, setUser } = useContext(UserContext);
@@ -25,12 +26,16 @@ function Profile_e_p() {
             Nombre: {user.name} {user.lastName}
           </p>
           <p id={styles.rol}>Rol: {user.role}</p>
+          <br />
         </div>
       </div>
       <div class={styles.box4}>
         <div class={styles.box2}>
           <p id={styles.label1}>Correo Electrónico:</p>
           <p id={styles.mail}>{user.email}</p>
+          <br />
+          <p id={styles.label1}>Telefono:</p>
+          <p id={styles.phone}>{user.phone}</p>
           <br />
           <p id={styles.label2}>Género:</p>
           <p id={styles.gender}>{user.gender}</p>
@@ -45,7 +50,13 @@ function Profile_e_p() {
           <p id={styles.price}>20$ 60 min</p>
           <br />
           <p id={styles.label8}>Ver Itinerario:</p>
-          <button>Itinerario</button>
+          <Popup
+            trigger={<button> Itinerario </button>}
+            position="center center"
+            modal
+          >
+            <p>Hola</p>
+          </Popup>
           <br />
           <Link to="/Psychologist" id={styles.volver}>
             Volver
@@ -56,42 +67,22 @@ function Profile_e_p() {
           <div class={styles.box3}>
             <div id={styles.box5}>
               <h2 id={styles.label6}>Áreas de atención</h2>
-              <textarea
-                id={styles.areas}
-                cols="30"
-                rows="10"
-                placeholder="Ingrese las areas a atender"
-              ></textarea>
+              <div id={styles.caja}>{user.atencionAreas}</div>
             </div>
             <div id={styles.box6}>
               <h2 id={styles.profesional}>Experiencia Profesional</h2>
-              <textarea
-                id={styles.profesionalt}
-                cols="30"
-                rows="10"
-                placeholder="Ingrese su experiencia profesional"
-              ></textarea>
+              <div id={styles.caja2}>{user.experience}</div>
             </div>
           </div>
 
           <div class={styles.box8}>
             <div id={styles.box9}>
               <h2 id={styles.label7}>Formación Académica</h2>
-              <textarea
-                id={styles.academia}
-                cols="30"
-                rows="10"
-                placeholder="Ingrese su formacion"
-              ></textarea>
+              <div id={styles.caja3}>{user.academics}</div>
             </div>
             <div id={styles.box10}>
               <h2 id={styles.about}>Sobre mi</h2>
-              <textarea
-                id={styles.info}
-                cols="30"
-                rows="10"
-                placeholder="Informacion"
-              ></textarea>
+              <div id={styles.caja4}>{user.aboutMe}</div>
             </div>
           </div>
         </div>
