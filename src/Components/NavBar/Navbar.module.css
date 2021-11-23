@@ -11,8 +11,10 @@
     top: 0px;
     height: 70px;
     z-index: 7;
+    overflow: hidden;
     
 }
+
 
 #Logo {
     padding-top: 8%;
@@ -98,7 +100,7 @@
 
 #NavList {
     list-style: none;
-    align-items: center;
+    align-items: center; 
 }
 
 #NavMenu {
@@ -178,5 +180,12 @@
 
 span {
   margin-left: 16px;
+}
+
+@media only screen and (max-width: 980px) {
+
+  #NavList {
+    display: none;
+}
 }
 
