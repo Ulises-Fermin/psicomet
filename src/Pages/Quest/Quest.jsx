@@ -3,10 +3,10 @@ import styles from "./Quest.module.css";
 import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
-import { Link } from "react-router-dom";
 import ShowItinerary from "../Itinerary/ShowItinerary";
 import newUser from "../../Images/newUser.png";
 import { app } from "../../Utils/FireBaseConfig";
+import { Link } from "react-router-dom";
 
 function Quest() {
   const [names, setNames] = useState("");
@@ -182,7 +182,7 @@ function Quest() {
                         </div>
                       </div>
                     </div>
-                    <button class={styles.psychoList}>Agendar Cita</button>
+                    <Link to = "/CreateAppointment">Agendar Cita</Link>
                   </div>
                 </Popup>
               </div>
