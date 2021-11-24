@@ -9,7 +9,8 @@
 }
 #TestimonialsSpace{
     width: 70%;
-    padding-right: 5%;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
     padding-bottom: 5%;
     display: block;
     box-sizing: border-box;
@@ -50,7 +51,7 @@
 }
 
 #Write{
-    margin-top: 5%;
+    margin-top: 3%;
     margin-bottom: 3%;
     width: 100%;
     border-radius: 5px;
@@ -72,6 +73,7 @@
     font-size: 200%;
     font-family: 'Scope One', serif;
     margin-top: 2%;
+    padding-top: 2%;
 }
 
 #Logo{
@@ -116,6 +118,8 @@ p {
         left: 0px;
         top: 110px;
         display: block;
+        padding-right: 7%;
+        padding-left: 7%;
     }
 
   }
