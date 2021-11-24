@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./CreateAccountP.module.css";
 import { Link } from "react-router-dom";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
+import {db} from "../../Utils/FireBaseConfig";
+import { app } from "../../Utils/FireBaseConfig"
 
 function CreateAccountP() {
   const { createUser } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [fileURL, setFileURL] = React.useState(null)
   const [values, setValues] = useState({
     name: "",
     lastName: "",
@@ -23,6 +25,7 @@ function CreateAccountP() {
     college: "",
     specialty: "",
     status: "waiting",
+    curriculum: "",
   });
 
   const history = useHistory();
@@ -32,6 +35,14 @@ function CreateAccountP() {
     setValues({ ...values, [inputName]: value });
     console.log(inputName, value);
   };
+  const handleOnChange2 = async (event) => {
+    const file = event.target.files[0]
+    const storageRef = app.storage().ref()
+    const fileRef = storageRef.child(file.name)
+    await fileRef.put(file)
+    setFileURL(await fileRef.getDownloadURL())
+  }
+  
 
   const handleSubmit = async (e) => {
     try {
@@ -69,7 +80,7 @@ function CreateAccountP() {
                             aboutMe: null,
                             atencionAreas: null,
                             languages: null,
-                            curriculum: null,
+                            curriculum: fileURL,
                             itinerary: null,
                           },
                           response.user.uid
@@ -262,13 +273,18 @@ function CreateAccountP() {
             </p>
 
             <div id={styles.File1}>
-              <input
-                type="file"
-                name="Curriculum"
-                id={styles.name}
-                placeholder="Adjuntes su currículum"
-              />
+              <form>
+                <input
+                  type="file"
+                  name="Curriculum"
+                  onChange ={handleOnChange2}
+                  id={styles.name}
+                  placeholder="Adjunte su currículum"
+                  value={values.curriculum}
+                />
+              </form>
             </div>
+            
           </div>
 
           <p type="submit" id={styles.register} onClick={handleSubmit}>
