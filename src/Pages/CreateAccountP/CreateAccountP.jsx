@@ -271,19 +271,6 @@ function CreateAccountP() {
               </select>
             </div>
 
-            <p id={styles.instructions2}>
-              En el siguiente campo adjunte su currículum en formato PDF.
-            </p>
-
-            <div id={styles.File1}>
-              <input
-                type="file"
-                name="Curriculum"
-                accept="application/pdf"
-                id={styles.name}
-                placeholder="Adjunte su currículum"
-              />
-            </div>
           </div>
 
           <p type="submit" id={styles.register} onClick={handleSubmit}>
