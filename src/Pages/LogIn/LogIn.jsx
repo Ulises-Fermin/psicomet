@@ -6,6 +6,9 @@ import { facebookProvider, twitterProvider } from "../../Utils/FireBaseConfig";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
 import { Link } from "react-router-dom";
+import fbCircular from "../../Images/fbCircular.png";
+import googleBlanco from "../../Images/googleBlanco.png";
+import twCircular from "../../Images/twCircular.png";
 
 function LogIn() {
   const { setUser } = useContext(UserContext);
@@ -73,21 +76,21 @@ function LogIn() {
                 id={styles.buttonGoogle}
                 type="button"
                 onClick={googleLogin}
-              ><img src="/googleBlanco.png"/>
+              ><img src={googleBlanco}/>
                 Iniciar sesión con Google
               </button>
               <button
                 id={styles.buttonGoogle}
                 type="button"
                 onClick={facebookLogin}
-              ><img src="/fbCircular.png"/>
+              ><img src={fbCircular}/>
                 Iniciar sesión con Facebook
               </button>
               <button
                 id={styles.buttonGoogle}
                 type="button"
                 onClick={twitterLogin}
-              ><img src="/twCircular.png"/>
+              ><img src={twCircular}/>
                 Iniciar sesión con Twitter
               </button>
             </div>
@@ -118,7 +121,7 @@ function LogIn() {
                   Iniciar sesión
                 </button>
                 <p>¿Olvidaste tu contraseña?</p>
-                <Link to="RecoverPassword">Recuperar</Link>
+                <Link to="RecoverPassword" id={styles.linkRecover}>Recuperar</Link>
               </div>
             </form>
             <div class={styles.registro}>

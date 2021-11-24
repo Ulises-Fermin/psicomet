@@ -11,7 +11,9 @@ function Admi() {
     const [isLoading, setIsLoading] = useState(false);
     const { user, setUser } = useContext(UserContext);
     const list = [];
-    
+    /*const [values, setValues] = useState({
+        status: "",
+    })*/
     const fetchPsychologists = async()=>{
         setIsLoading(true)
         const response = db.collection("users");
@@ -29,36 +31,50 @@ function Admi() {
         fetchPsychologists();
     },[])
 
-    const handleOnChange = async (e) => {
-        setNames(e.target.value);
-        if (names === ""){
-            fetchPsychologists()
-        }
-    };
+    /*const handleOnChange = (event) => {
+        const { value, name: inputName } = event.target;
+        setValues({ ...values, [inputName]: value });
+        console.log(inputName, value);
+      };*/
 
-    const handleSubmit = (e) => {
-        const get = [];
-        psychologists.forEach(psycho => {
-            if (psycho.name === names){
-                get.push(psycho)
-            }
-        })
-        setPsychologists(get);
+    /*const handleSubmit = async (e) => {
+        if (values.status === "accept") {
+            console.log("YESSS")
+           db.collection("users").doc(user.id).update({
+              status: values.status,
+            }); 
+        } else {
+            console.log("NOOO")
+            user.status = user.status;
+        }
     }
+    const handleSubmit2 = async (e) => {
+        if (values.status === "denegate") {
+           db.collection("users").doc(user.id).update({
+              status: values.status,
+            }); 
+        } else {
+            user.status = user.status;
+        }
+    }*/
+
+
+
 
     const ChangeStatusA = async (p) => {
         db.collection("users").doc("DdsZfdEJS5ZoodypvRPiEUKjSvQ2").update({
             status: "accept", 
             
-        });console.log(user.status)
+        });console.log(p.name)
           
     }
-
+    
     const ChangeStatusD = async (p) => {
         db.collection("users").doc(user.id).update({
-            status: "denegate",   
+            status: "denegate", 
+            
         })
-        
+          
     }
     
     
@@ -82,7 +98,7 @@ function Admi() {
                     <li class={styles.psychoList}>{p.email}</li>
                     <li class={styles.psychoList}>{p.phone}</li>
                     <li class={styles.psychoList}>{p.specialty}</li>
-                    <li class={styles.psychoList}>{user.id}</li>
+                    <li class={styles.psychoList}>{p.curriculum}</li>
                     <button class={styles.psychoListA} onClick={ChangeStatusA}>Aceptar</button>
                     <button class={styles.psychoListD} onClick={ChangeStatusD}>Denegar</button>
                     </div>
@@ -96,3 +112,12 @@ function Admi() {
   )
 }
 export default Admi;
+
+/*<input
+                        name="status"
+                        id={styles.nombre}
+                        type="text"
+                        placeholder="accept/denegate"
+                        value={values.status}
+                        onChange={handleOnChange}
+                    />*/

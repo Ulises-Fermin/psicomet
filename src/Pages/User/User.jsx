@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useContext } from "react";
-import Consulta from '../../Images/Consulta.png'
-import Personas from '../../Images/Personas.png'
-import chat from '../../Images/chat.png'
-import Calendario from '../../Images/Calendario.png'
-import Agendar from '../../Images/Agendar.png'
-import Usuario from '../../Images/Usuario.png'
+import Consulta from "../../Images/Consulta.png";
+import Personas from "../../Images/Personas.png";
+import chat from "../../Images/chat.png";
+import Calendario from "../../Images/Calendario.png";
+import Agendar from "../../Images/Agendar.png";
+import Usuario from "../../Images/Usuario.png";
 
 function User() {
   const { user, setUser } = useContext(UserContext);
@@ -17,7 +17,7 @@ function User() {
     await auth.signOut();
     setUser(null);
   };
-  
+
   return (
     <div class={styles.body}>
       {!!user ? (
@@ -36,7 +36,9 @@ function User() {
           </div>
           <div class={styles.card}>
             <img id={styles.image} src={Personas} alt="" />
-            <p id={styles.Ver_especialists}>Ver Especialistas</p>
+            <Link to="/Quest" id={styles.Ver_especialists}>
+              Ver Especialistas
+            </Link>
           </div>
         </div>
         <div id={styles.buttons2}>
