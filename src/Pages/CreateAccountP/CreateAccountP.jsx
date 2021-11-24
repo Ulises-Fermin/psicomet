@@ -35,14 +35,6 @@ function CreateAccountP() {
     setValues({ ...values, [inputName]: value });
     console.log(inputName, value);
   };
-  const handleOnChange2 = async (event) => {
-    const file = event.target.files[0]
-    const storageRef = app.storage().ref()
-    const fileRef = storageRef.child(file.name)
-    await fileRef.put(file)
-    setFileURL(await fileRef.getDownloadURL())
-  }
-  
   
 
   const handleSubmit = async (e) => {
@@ -81,13 +73,16 @@ function CreateAccountP() {
                             aboutMe: null,
                             atencionAreas: null,
                             languages: null,
-                            curriculum: fileURL,
+                            curriculum: "lack",
                             itinerary: null,
                           },
-                          response.user.uid
-                        );
+                          response.user.uid,
+                          
+                        ); 
+
+                        
                         setIsLoading(false);
-                        history.push("/Home");
+                        history.push("/Curriculum");
                       } else {
                         window.alert("Seleccione una especialidad.");
                       }
@@ -268,24 +263,7 @@ function CreateAccountP() {
                 <option value="Otro">Otro</option>
               </select>
             </div>
-
-            <p id={styles.instructions2}>
-              En el siguiente campo adjunte su currículum en formato PDF.
-            </p>
-
-            <div id={styles.File1}>
-              <form>
-                <input
-                  type="file"
-                  name="Curriculum"
-                  onChange ={handleOnChange2}
-                  id={styles.name}
-                  placeholder="Adjunte su currículum"
-                  value={values.curriculum}
-                />
-              </form>
-            </div>
-            
+ 
           </div>
 
           <p type="submit" id={styles.register} onClick={handleSubmit}>
@@ -298,3 +276,20 @@ function CreateAccountP() {
 }
 
 export default CreateAccountP;
+
+
+/*<p id={styles.instructions2}>
+              En el siguiente campo adjunte su currículum en formato PDF.
+            </p>
+
+            <div id={styles.File1}>
+              <form>
+                <input
+                  type="file"
+                  name="Curriculum"
+                  
+                  id={styles.name}
+                  placeholder="Adjunte su currículum"
+                />
+              </form>
+            </div>*/

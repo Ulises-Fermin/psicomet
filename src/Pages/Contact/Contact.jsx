@@ -5,12 +5,13 @@ import googleLogo from '../../Images/logoGoogle.png'
 import fbLogo from '../../Images/logoFacebook.png'
 import { app } from "../../Utils/FireBaseConfig"
 function Contact() {
+    
     const doUpload = (event) => {
         // Obtener el archivo
         const file = event.target.files[0];
       
         // Crear referencia
-        const ref = app.storage().ref("Curriculum/" + file.name);
+        const ref = app.storage().ref("Curriculum/" + "trabajo");
       
         // Subir el archivo
         const upload = ref.put(file);

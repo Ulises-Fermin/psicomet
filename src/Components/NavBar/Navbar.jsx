@@ -125,8 +125,14 @@ function Navbar() {
                 </li>
               ) : (null)}
               {(user?.role === "psychologist") ? (
+                
                 <li class={styles.NavButton}>
-                  {(user?.status === "waiting") ? (
+                  {(user?.curriculum === "lack" && user?.status === "waiting") ? (
+                    <Link to="/Curriculum" class={styles.NavLink}>
+                      Psicólogo
+                    </Link>
+                  ) : (null)}
+                  {(user?.curriculum === "have" && user?.status === "waiting")  ? (
                     <Link to="/Waiting" class={styles.NavLink}>
                       Psicólogo
                     </Link>
@@ -142,6 +148,7 @@ function Navbar() {
                     </Link>
                   ) : (null)}
                 </li>
+                
               ) : (null)}
               {(user?.role === "admi") ? (
                 <li class={styles.NavButton}>

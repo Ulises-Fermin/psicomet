@@ -3,7 +3,7 @@ import styles from "./Admi.module.css";
 import {db} from "../../Utils/FireBaseConfig";
 import {useState, useEffect, useContext} from "react";
 import { UserContext } from "../../Context/UserContext";
-
+import { app } from "../../Utils/FireBaseConfig"
 
 function Admi() {
     const [names, setNames] = useState("");
@@ -11,19 +11,19 @@ function Admi() {
     const [isLoading, setIsLoading] = useState(false);
     const { user, setUser } = useContext(UserContext);
     const list = [];
-    
     const fetchPsychologists = async()=>{
         setIsLoading(true)
         const response = db.collection("users");
         const data = await response.get();
         data.docs.forEach(item =>{
-            if (item.data().status === "waiting")
+            if (item.data().status === "waiting" && item.data().curriculum === "have")
             list.push({data:item.data(), id:item.id});
         })
         setPsychologists(list);
         setIsLoading(false);
         return list
     }
+
 
     useEffect(()=>{
         fetchPsychologists();
@@ -47,8 +47,14 @@ function Admi() {
         db.collection("users").doc(p.id).update({
             status: "denegate",   
         })
-        fetchPsychologists()
-          
+        fetchPsychologists()    
+    }
+
+    const DownloadCurriculum = async (p) => {
+        const ref = app.storage().ref("Curriculum/" + p.id);
+        const url = await ref.getDownloadURL()
+        window.location= url;
+        
     }
       
 
@@ -69,7 +75,9 @@ function Admi() {
                     <li class={styles.psychoList}>{p.data.email}</li>
                     <li class={styles.psychoList}>{p.data.phone}</li>
                     <li class={styles.psychoList}>{p.data.specialty}</li>
-                    <li class={styles.psychoList}>{p.data.curriculum}</li>
+                    <li class={styles.psychoList}>{p.id}</li>
+                    <button class={styles.psychoListC} onClick={() => DownloadCurriculum(p)}>Ver Curriculum</button>
+                    
                     <button class={styles.psychoListA} onClick={() => ChangeStatusA(p)}>Aceptar</button>
                     <button class={styles.psychoListD} onClick={() => ChangeStatusD(p)}>Denegar</button>
                     </div>
