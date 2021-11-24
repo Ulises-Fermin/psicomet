@@ -5,6 +5,8 @@ import { auth } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
+import { pp } from "./pp";
+import newUser from "../../Images/newUser.png";
 
 function CreateAccountP() {
   const { createUser } = useContext(UserContext);
@@ -128,6 +130,14 @@ function CreateAccountP() {
               Iniciar sesión
             </Link>
           </div>
+
+          <div class = {styles.profileDiv}>
+            <img id={styles.photo} src={newUser} alt = "Profile picture"/>
+            <input type="file" id ={styles.file}/>
+            <label for = {styles.file} id={styles.uploadBtn}>Elegir foto</label>
+          </div>
+
+          <script scr = './ProfilePic'></script>
 
           <div class={styles.DatesContainer}>
             <div id={styles.File1}>
