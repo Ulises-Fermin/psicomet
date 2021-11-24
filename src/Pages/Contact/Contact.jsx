@@ -3,8 +3,32 @@ import styles from "./Contact.module.css"
 import igLogo from '../../Images/igLogo.png'
 import googleLogo from '../../Images/logoGoogle.png'
 import fbLogo from '../../Images/logoFacebook.png'
-
+import { app } from "../../Utils/FireBaseConfig"
 function Contact() {
+    const doUpload = (event) => {
+        // Obtener el archivo
+        const file = event.target.files[0];
+      
+        // Crear referencia
+        const ref = app.storage().ref("Curriculum/" + file.name);
+      
+        // Subir el archivo
+        const upload = ref.put(file);
+      
+        // Supervisar el proceso
+        upload.on(
+          "state_changed",
+          function progress(snapshot) {
+            console.warn((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          },
+          function error(error) {
+            console.error(error);
+          },
+          function complete() {
+            console.info("Finished uploading!");
+          }
+        );
+    }
     return(
         <div id={styles.Body}>
             <h1 id={styles.title}>
@@ -31,7 +55,15 @@ function Contact() {
                 <div class={styles.card}>
                 </div>
             </div>
-
+            <div id={styles.File1}>
+                <input
+                  type="file"
+                  name="Curriculum"
+                  onChange ={doUpload}
+                  id={styles.name}
+                  placeholder="Adjunte su currículum"
+                />
+            </div>
         </div>
     )
 }

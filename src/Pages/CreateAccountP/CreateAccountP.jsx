@@ -43,6 +43,10 @@ function CreateAccountP() {
     setFileURL(await fileRef.getDownloadURL())
   }
   
+<<<<<<< HEAD
+=======
+  
+>>>>>>> develop
 
   const handleSubmit = async (e) => {
     try {

@@ -1,18 +1,30 @@
 #body{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
     padding-left: 5%;
     padding-right: 5%;
+    height: auto;
 }
 #TestimonialsSpace{
     width: 70%;
     padding-right: 5%;
     padding-bottom: 5%;
+    display: block;
+    box-sizing: border-box;
     
 } 
 #WriteSpace{
     margin-top: 5%;
     width: 30%;
+    padding-left: 2%;
 }
+
+#WriteSpace p{
+    text-align: center;
+}
+
 #button{
     background-color: #2CBEB5;
     font-size: 130%;
@@ -39,7 +51,7 @@
 
 #Write{
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     width: 100%;
     border-radius: 5px;
     border-color:#2CBEB5;
@@ -51,10 +63,15 @@
     list-style-type: none;
     padding: 2%;
     padding-left: 5%;
+    width: 100%;
+    
+    
 }
 #title{
     text-align: center;
     font-size: 200%;
+    font-family: 'Scope One', serif;
+    margin-top: 2%;
 }
 
 #Logo{
@@ -64,10 +81,52 @@
 }
 #block{
     display: flex;
+    
 }
+
 #text{
     width: 80%;
     padding-left: 3%;
     font-family: 'Mukta', sans-serif;
-    
+    white-space: initial;
 }
+
+p {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+    #TestimonialsSpace{
+        width: 100%;
+        height: auto;
+        z-index: 1; 
+        position: relative;
+        left: 0px;
+        margin-top: 300px;
+        display: block;
+        padding-bottom: 3%;
+    } 
+
+    #WriteSpace{
+        width: 100%;
+        margin-bottom: 2%;
+        z-index: -1; 
+        position: absolute;
+        left: 0px;
+        top: 110px;
+        display: block;
+    }
+
+  }
+
+  @media only screen and (max-width: 640px) {
+    #TestimonialsSpace{
+        width: 100%;
+        font-size: 2.7vw;
+    } 
+
+    #block img{
+        width: 40%;
+    } 
+  }
