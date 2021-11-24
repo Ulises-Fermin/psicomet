@@ -1,3 +1,4 @@
+
 #Body {
   margin: 0px;
   padding: 0px;
@@ -28,7 +29,7 @@
 
 .h1AboutUs {
   text-align: center;
-  font-size: 285%;
+  font-size: 4vw;
   margin-top: 1.5%;
   margin-bottom: 1%;
   color:#434244;
@@ -43,6 +44,7 @@
 .pAboutUs {
   text-align: center;
   font-size: 190%;
+  font-size: 2.5vw;
   margin-bottom: 2%;
   margin-top: 1%;
   color: #434244;
@@ -74,6 +76,7 @@
 .h4Bottom {
   color: #434244;
   font-size: 240%;
+  font-size: 3vw;
   text-align: center;
   margin-top: 2.5%;
   margin-bottom: 4%;
@@ -82,6 +85,7 @@
 .pBottom {
   color: #434244;
   font-size: 150%;
+  font-size: 2vw;
   margin-top: 0%;
   text-align: center;
   margin-bottom: 2%;
@@ -112,6 +116,7 @@
 .pFAQs {
   text-align: center;
   font-weight: bold;
+  font-size: 1.5vw;
 }
 
 #LinkCreateAccount { 

@@ -31,7 +31,7 @@ function Home() {
           de:
         </p>
         <div class={styles.BottomRates}>
-          <h4 class={styles.h4Bottom}>15$ USD o Bs al cambio.</h4>
+          <h4 class={styles.h4Bottom}>$30 USD o Bs al cambio.</h4>
           <p class={styles.pBottom}>60 minutos en llamada.</p>
         </div>
       </div>
