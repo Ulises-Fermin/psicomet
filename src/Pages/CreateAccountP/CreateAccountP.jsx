@@ -275,6 +275,7 @@ function CreateAccountP() {
               <input
                 type="file"
                 name="Curriculum"
+                accept="application/pdf"
                 id={styles.name}
                 placeholder="Adjuntes su currículum"
               />
