@@ -26,8 +26,7 @@ import Modify_p from "./Pages/Modify_p/Modify_p";
 import Modify_pa from "./Pages/Modify_pa/Modify_pa";
 import ScrollToTop from "./ScrollToTop";
 import Sidebar from "./Components/SideBar";
-import React, {useState} from 'react'
-
+import React, {useState} from 'react';
 
 function App() {
   
@@ -96,6 +95,9 @@ function App() {
           </Route>
           <Route exact path="/Modify_p">
             <Modify_p />
+          </Route>
+          <Route exact path="/Modify_pa">
+            <Modify_pa />
           </Route>
         </Switch>
         <Footer />

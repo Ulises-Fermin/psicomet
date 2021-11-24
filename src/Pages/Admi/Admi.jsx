@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./Admi.module.css";
 import {db} from "../../Utils/FireBaseConfig";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
+import { UserContext } from "../../Context/UserContext";
+
 
 function Admi() {
     const [names, setNames] = useState("");
     const [psychologists, setPsychologists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-
+    const { user, setUser } = useContext(UserContext);
     const list = [];
-
+    
     const fetchPsychologists = async()=>{
         setIsLoading(true)
         const response = db.collection("users");
@@ -44,12 +46,24 @@ function Admi() {
         setPsychologists(get);
     }
 
-    const ChangeStatusA = (e) => {
+    const ChangeStatusA = async (p) => {
+        db.collection("users").doc("DdsZfdEJS5ZoodypvRPiEUKjSvQ2").update({
+            status: "accept", 
+            
+        });console.log(user.status)
+          
+    }
+
+    const ChangeStatusD = async (p) => {
+        db.collection("users").doc(user.id).update({
+            status: "denegate",   
+        })
         
     }
-    const ChangeStatusD = (e) => {
-        
-    }
+    
+    
+
+    
 
     return (
         <>
@@ -68,7 +82,7 @@ function Admi() {
                     <li class={styles.psychoList}>{p.email}</li>
                     <li class={styles.psychoList}>{p.phone}</li>
                     <li class={styles.psychoList}>{p.specialty}</li>
-
+                    <li class={styles.psychoList}>{user.id}</li>
                     <button class={styles.psychoListA} onClick={ChangeStatusA}>Aceptar</button>
                     <button class={styles.psychoListD} onClick={ChangeStatusD}>Denegar</button>
                     </div>
