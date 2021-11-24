@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import styles from "./Itinerary.module.css";
-import { auth, db } from "../../Utils/FireBaseConfig";
+import { db } from "../../Utils/FireBaseConfig";
 import { UserContext } from "../../Context/UserContext";
+import { useHistory } from "react-router";
 
 const initialStateOfHours = [
   {
@@ -111,23 +112,20 @@ const HoursInDay = ({ day, hours, onChange }) => {
 };
 
 export default function Itinerary() {
-  const { user, setUser } = useContext(UserContext);
-  const handleLogOut = async () => {
-    await auth.signOut();
-    setUser(null);
-  };
+  const { user} = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const history = useHistory();
 
   const [values, setValues] = useState({});
 
-  const handleOnSubmit = () => {
-    for (var days in values){
-      for (var hour in days){
-        console.log(hour)
-      }
-    }
+  const handleOnSubmit = (e) => {
+    setIsLoading(true);
     db.collection("users").doc(user.id).update({
       itinerary: values
     });
+    setIsLoading(false);
+    history.push("/Home");
   };
 
   const onChangeDays = (day, hours) => {
@@ -138,45 +136,53 @@ export default function Itinerary() {
   };
 
   return (
-    <div class= {styles.body}>
-      <form onSubmit={handleOnSubmit} id= {styles.body}>
-        <div class={styles.section}>
-        <HoursInDay
-          day="Lunes:"
-          hours={initialStateOfHours}
-          onChange={onChangeDays}
-        />
+    <>
+    {isLoading ? (
+      <div id={styles.isLoading}>
+        <h1>Cargando Especialistas.</h1>
+      </div>
+    ) : (
+        <div class= {styles.body}>
+          <form onSubmit={handleOnSubmit} id= {styles.body}>
+            <div class={styles.section}>
+            <HoursInDay
+              day="Lunes:"
+              hours={initialStateOfHours}
+              onChange={onChangeDays}
+            />
+            </div>
+            <div>
+            <HoursInDay
+              day="Martes:"
+              hours={initialStateOfHours}
+              onChange={onChangeDays}
+            />
+            </div>
+            <div>
+            <HoursInDay
+              day="Miercoles:"
+              hours={initialStateOfHours}
+              onChange={onChangeDays}
+            />
+            </div>
+            <div>
+            <HoursInDay
+              day="Jueves:"
+              hours={initialStateOfHours}
+              onChange={onChangeDays}
+            />
+            </div>
+            <div>
+            <HoursInDay
+              day="Viernes:"
+              hours={initialStateOfHours}
+              onChange={onChangeDays}
+            />
+            </div>
+          </form>
+          <button onClick={handleOnSubmit}>Guardar</button>
         </div>
-        <div>
-        <HoursInDay
-          day="Martes:"
-          hours={initialStateOfHours}
-          onChange={onChangeDays}
-        />
-        </div>
-        <div>
-        <HoursInDay
-          day="Miercoles:"
-          hours={initialStateOfHours}
-          onChange={onChangeDays}
-        />
-        </div>
-        <div>
-        <HoursInDay
-          day="Jueves:"
-          hours={initialStateOfHours}
-          onChange={onChangeDays}
-        />
-        </div>
-        <div>
-        <HoursInDay
-          day="Viernes:"
-          hours={initialStateOfHours}
-          onChange={onChangeDays}
-        />
-        </div>
-      </form>
-      <button onClick={handleOnSubmit}>Guardar</button>
-    </div>
-  );
+    )}
+  </>
+  )
 }

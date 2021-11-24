@@ -4,6 +4,7 @@ import { auth, db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import Itinerary from "../Itinerary/Itinerary";
+
 function Modify_p() {
   const { user, setUser } = useContext(UserContext);
   const handleLogOut = async () => {

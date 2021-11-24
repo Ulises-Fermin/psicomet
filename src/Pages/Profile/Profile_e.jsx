@@ -4,21 +4,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useContext } from "react";
+import ShowItinerary from "../Itinerary/ShowItinerary";
 import Popup from "reactjs-popup";
-
-function ShowItinerary(){
-  const {user} = useContext(UserContext);
-  const itinerary = "vacio";
-  if(!user.itinerary !== null){
-    const itinerary = user.itinerary;
-  }
-  return(
-    <>
-    {itinerary}
-    </>
-  )
-}
-
 
 function Profile_e() {
   const { user, setUser } = useContext(UserContext);
@@ -72,7 +59,7 @@ function Profile_e() {
             position="center center"
             modal
           >
-            <ShowItinerary />
+          <ShowItinerary/>
           </Popup>
           <br />
           <Link to="/Psychologist" id={styles.volver}>
