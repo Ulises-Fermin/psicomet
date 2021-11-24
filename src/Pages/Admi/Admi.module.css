@@ -50,6 +50,12 @@
     text-align: center;
     margin: 5px;
 }
+.psychoListC{
+    background-color:silver;
+    list-style: none;
+    text-align: center;
+    margin: 5px;
+}
 
 #containerQuest{
     background-color: #1CB0A7;

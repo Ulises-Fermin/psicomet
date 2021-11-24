@@ -25,6 +25,7 @@ import Admi from "./Pages/Admi/Admi";
 import Waiting from "./Pages/Status/Waiting";
 import Modify_p from "./Pages/Modify_p/Modify_p";
 import Modify_pa from "./Pages/Modify_pa/Modify_pa";
+import Curriculum from "./Pages/Curriculum/Curriculum";
 import ScrollToTop from "./ScrollToTop";
 import Sidebar from "./Components/SideBar";
 import React, { useState } from "react";
@@ -119,6 +120,9 @@ function App() {
             </Route>
             <Route exact path="/Profile_e_p">
               <Profile_e_p />
+            </Route>
+            <Route exact path="/Curriculum">
+              <Curriculum />
             </Route>
           </Switch>
           <Footer />
