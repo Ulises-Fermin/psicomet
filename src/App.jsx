@@ -28,17 +28,35 @@ import Modify_pa from "./Pages/Modify_pa/Modify_pa";
 import ScrollToTop from "./ScrollToTop";
 import Sidebar from "./Components/SideBar";
 import React, { useState } from "react";
+import PayPal from "./Components/PayPal.js";
 
 function App() {
+
+  // Funcion para el PayPal
+  const [checkout, setCheckOut] = useState(false);
+
   return (
     <UserContextProvider>
       <Router>
         <ScrollToTop>
-          {/* <Sidebar /> */}
           <Navbar />
           <Route exact path="/">
             <Home />
             <Services />
+
+            {/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
+            {/* Si checkout es verdadero, renderizamos PayPal. Si no, aparece un boton que al presionarlo se hace verdadero. */}
+            {checkout ? (
+            <PayPal />
+          ) : (
+            <button
+              onClick={() => {
+                setCheckOut(true);
+              }}
+            >
+              Checkout
+            </button>
+          )}
           </Route>
           <Switch>
             <Route exact path="/Home">
