@@ -3,10 +3,27 @@ import styles from "./Quest.module.css";
 import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
-import ShowItinerary from "../Itinerary/ShowItinerary";
 import newUser from "../../Images/newUser.png";
 import { app } from "../../Utils/FireBaseConfig";
 import { Link } from "react-router-dom";
+
+function ShowItinerary(itinerarys) {
+  var list = [];
+  const itinerary = itinerarys;
+  for (const days in itinerary){
+      for (const hours in itinerary[days])
+          if (itinerary[days][hours]["checked"] === true){
+              const day = days + " " + itinerary[days][hours]["value"] + " / ";
+              list.push(day)
+          }
+  }
+  return(
+    <div id={styles.itinerary}>
+      <h3>Itinerario del Especialista:</h3>
+      {list}
+    </div>
+  )
+};
 
 function Quest() {
   const [names, setNames] = useState("");
@@ -151,8 +168,9 @@ function Quest() {
                             trigger={<button> Itinerario </button>}
                             position="center center"
                             modal
+                            id={styles.itinerary}
                           >
-                            <ShowItinerary/>
+                            {ShowItinerary(p.data.itinerary)}
                           </Popup>
                           <br />
                         </div>
@@ -182,7 +200,7 @@ function Quest() {
                         </div>
                       </div>
                     </div>
-                    <Link to = "/CreateAppointment">Agendar Cita</Link>
+                    <Link to = "/CreateAppointment" id={styles.linkk}>Agendar Cita</Link>
                   </div>
                 </Popup>
               </div>
