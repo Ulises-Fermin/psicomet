@@ -5,7 +5,6 @@ import { auth } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
-import { pp } from "./pp";
 import newUser from "../../Images/newUser.png";
 
 function CreateAccountP() {
@@ -275,7 +274,6 @@ function CreateAccountP() {
               <input
                 type="file"
                 name="Curriculum"
-                accept="application/pdf"
                 id={styles.name}
                 placeholder="Adjuntes su currículum"
               />
