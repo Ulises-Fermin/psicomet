@@ -25,6 +25,7 @@ function CreateAccountP() {
     college: "",
     specialty: "",
     status: "waiting",
+    curriculum: "",
   });
 
   const history = useHistory();
@@ -278,12 +279,12 @@ function CreateAccountP() {
                   name="Curriculum"
                   onChange ={handleOnChange2}
                   id={styles.name}
-                  placeholder="Adjuntes su currículum"
+                  placeholder="Adjunte su currículum"
                   value={values.curriculum}
                 />
-                <button>Subir</button>
               </form>
             </div>
+            
           </div>
 
           <p type="submit" id={styles.register} onClick={handleSubmit}>

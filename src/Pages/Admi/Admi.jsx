@@ -11,16 +11,14 @@ function Admi() {
     const [isLoading, setIsLoading] = useState(false);
     const { user, setUser } = useContext(UserContext);
     const list = [];
-    /*const [values, setValues] = useState({
-        status: "",
-    })*/
+    
     const fetchPsychologists = async()=>{
         setIsLoading(true)
         const response = db.collection("users");
         const data = await response.get();
         data.docs.forEach(item =>{
             if (item.data().status === "waiting")
-            list.push(item.data());
+            list.push({data:item.data(), id:item.id});
         })
         setPsychologists(list);
         setIsLoading(false);
@@ -31,55 +29,28 @@ function Admi() {
         fetchPsychologists();
     },[])
 
-    /*const handleOnChange = (event) => {
-        const { value, name: inputName } = event.target;
-        setValues({ ...values, [inputName]: value });
-        console.log(inputName, value);
-      };*/
-
-    /*const handleSubmit = async (e) => {
-        if (values.status === "accept") {
-            console.log("YESSS")
-           db.collection("users").doc(user.id).update({
-              status: values.status,
-            }); 
-        } else {
-            console.log("NOOO")
-            user.status = user.status;
-        }
-    }
-    const handleSubmit2 = async (e) => {
-        if (values.status === "denegate") {
-           db.collection("users").doc(user.id).update({
-              status: values.status,
-            }); 
-        } else {
-            user.status = user.status;
-        }
-    }*/
-
-
-
+    
 
     const ChangeStatusA = async (p) => {
-        db.collection("users").doc("DdsZfdEJS5ZoodypvRPiEUKjSvQ2").update({
+        db.collection("users").doc(p.id).update({
             status: "accept", 
             
-        });console.log(p.name)
+        });
+        fetchPsychologists()
+    
+    
+  };
           
-    }
+    
     
     const ChangeStatusD = async (p) => {
-        db.collection("users").doc(user.id).update({
-            status: "denegate", 
-            
+        db.collection("users").doc(p.id).update({
+            status: "denegate",   
         })
+        fetchPsychologists()
           
     }
-    
-    
-
-    
+      
 
     return (
         <>
@@ -93,20 +64,21 @@ function Admi() {
             <div id={styles.container}>
                 {psychologists.map((p)=>(
                     <div id={styles.psychoCards}>
-                    <li class={styles.psychoList}>{p.name}</li>
-                    <li class={styles.psychoList}>{p.lastName}</li>
-                    <li class={styles.psychoList}>{p.email}</li>
-                    <li class={styles.psychoList}>{p.phone}</li>
-                    <li class={styles.psychoList}>{p.specialty}</li>
-                    <li class={styles.psychoList}>{p.curriculum}</li>
-                    <button class={styles.psychoListA} onClick={ChangeStatusA}>Aceptar</button>
-                    <button class={styles.psychoListD} onClick={ChangeStatusD}>Denegar</button>
+                    <li class={styles.psychoList}>{p.data.name}</li>
+                    <li class={styles.psychoList}>{p.data.lastName}</li>
+                    <li class={styles.psychoList}>{p.data.email}</li>
+                    <li class={styles.psychoList}>{p.data.phone}</li>
+                    <li class={styles.psychoList}>{p.data.specialty}</li>
+                    <li class={styles.psychoList}>{p.data.curriculum}</li>
+                    <button class={styles.psychoListA} onClick={() => ChangeStatusA(p)}>Aceptar</button>
+                    <button class={styles.psychoListD} onClick={() => ChangeStatusD(p)}>Denegar</button>
                     </div>
                 ))}
             </div>
-          
+            <canvas></canvas>
         </div>
         )
+        
     }
     </>
   )
