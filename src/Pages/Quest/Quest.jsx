@@ -119,7 +119,7 @@ function Quest() {
                   <div class={styles.box1}>
                     <img
                       id={styles.img1}
-                      src={newUser}
+                      src={url}
                       alt=""
                     />
                   </div>
