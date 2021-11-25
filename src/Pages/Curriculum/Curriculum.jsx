@@ -8,6 +8,7 @@ import { UserContext } from "../../Context/UserContext";
 import { useContext } from "react";
 import { auth, db } from "../../Utils/FireBaseConfig";
 import { useHistory } from "react-router";
+
 function Curriculum() {
     const { user, setUser } = useContext(UserContext);
     const history = useHistory();
@@ -40,6 +41,7 @@ function Curriculum() {
                 name="Curriculum"
                 onChange ={doUpload}
                 id={styles.name}
+                accept="application/pdf"
                 placeholder="Adjunte su currículum"
             />
         </div>

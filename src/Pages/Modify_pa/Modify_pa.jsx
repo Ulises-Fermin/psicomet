@@ -5,10 +5,12 @@ import { auth, db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
+import { app } from "../../Utils/FireBaseConfig";
 
 function Modify_pa() {
   const { user, setUser } = useContext(UserContext);
-
+  
+  const history = useHistory();
   const [values, setValues] = useState({
     name: "",
     lastName: "",
@@ -60,6 +62,23 @@ function Modify_pa() {
       });
     }
   };
+  const doUpload = (event) => {
+    const file = event.target.files[0];
+    const ref = app.storage().ref("Fotos/" + user.id);
+    const upload = ref.put(file);
+    upload.on(
+      "state_changed",
+      function progress(snapshot) {
+        console.warn((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      },
+      function error(error) {
+        console.error(error);
+      },
+      function complete() {
+        console.info("Finished uploading!");
+      }
+    );
+}
 
   return (
     <>
@@ -105,6 +124,15 @@ function Modify_pa() {
           placeholder="Ingrese su género"
           value={values.gender}
           onChange={handleOnChange}
+        />
+        <p id={styles.label4}>Coloque una foto de perfil: </p>
+        <input
+          type="file"
+          name="foto"
+          onChange ={doUpload}
+          id={styles.name}
+          accept="image/*"
+          placeholder="Suba una foto de perfil"
         />
 
         <p type="submit" id={styles.register} onClick={handleSubmit}>
