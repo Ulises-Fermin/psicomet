@@ -1,0 +1,22 @@
+.body{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.section{
+    margin-top: 3%;
+}
+
+#isLoading{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4%;
+    background-image: url("../../Images/Loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    align-content: center;
+    color: white;
+}

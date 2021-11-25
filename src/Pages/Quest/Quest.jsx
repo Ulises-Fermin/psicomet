@@ -3,9 +3,10 @@ import styles from "./Quest.module.css";
 import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
-import { Link } from "react-router-dom";
 import ShowItinerary from "../Itinerary/ShowItinerary";
 import newUser from "../../Images/newUser.png";
+import { app } from "../../Utils/FireBaseConfig";
+import { Link } from "react-router-dom";
 
 function Quest() {
   const [names, setNames] = useState("");
@@ -108,23 +109,23 @@ function Quest() {
                   <div class={styles.box1}>
                     <img
                       id={styles.img1}
-                      src={newUser}
+                      src={url}
                       alt=""
                     />
                   </div>
                     <div class={styles.info}>
                       <h1 id={styles.nombre}>
-                        Dr. {p.name} {p.lastName}
+                        Dr. {p.data.name} {p.data.lastName}
                       </h1>
-                      <p>Especialidad: {p.specialty}</p>
+                      <p>Especialidad: {p.data.specialty}</p>
                     </div>
                     <div id={styles.box5}>
                       <div class={styles.box4}>
                         <div class={styles.box2}>
                           <p id={styles.label1}>Correo Electrónico:</p>
-                          <p id={styles.mail}>{p.email}</p>
+                          <p id={styles.mail}>{p.data.email}</p>
                           <p id={styles.label1}>Teléfono:</p>
-                          <p id={styles.phone}>{p.phone}</p>
+                          <p id={styles.phone}>{p.data.phone}</p>
                           <p id={styles.label2}>Género:</p>
                           <p id={styles.gender}>{p.gender}</p>
                           <p id={styles.label3}>Idiomas:</p>
@@ -171,7 +172,7 @@ function Quest() {
                         </div>
                       </div>
                     </div>
-                    <button class={styles.psychoList}>Agendar Cita</button>
+                    <Link to = "/CreateAppointment">Agendar Cita</Link>
                   </div>
                 </Popup>
               </div>

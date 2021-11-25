@@ -28,6 +28,7 @@ import Curriculum from "./Pages/Curriculum/Curriculum";
 import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
+import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 
 function App() {
 
@@ -121,6 +122,9 @@ function App() {
             </Route>
             <Route exact path="/Curriculum">
               <Curriculum />
+            </Route>
+            <Route exact path="/CreateAppointment">
+              <CreateAppointment />
             </Route>
           </Switch>
           <Footer />

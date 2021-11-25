@@ -7,22 +7,31 @@ import { useContext } from "react";
 import ShowItinerary from "../Itinerary/ShowItinerary";
 import Popup from "reactjs-popup";
 import newUser from "../../Images/newUser.png";
+import { app } from "../../Utils/FireBaseConfig";
+import { useState, useEffect } from "react";
 
 function Profile_e() {
   const { user, setUser } = useContext(UserContext);
+  const [url, setUrl] = useState([]);
   const handleLogOut = async () => {
     await auth.signOut();
     setUser(null);
   };
-
+  const watchpicture = async (p) => {
+    const ref = app.storage().ref("Fotos/" + user.id);
+    const image = await ref.getDownloadURL()
+    console.log(image)
+    setUrl(image)
+  };
   return (
     <>
     <div class ={styles.body}>
       <div class={styles.box1}>
         <img
           id={styles.img1}
-          src={newUser}
+          src={url}
           alt=""
+          onClick={() => watchpicture(user)} 
         />
         <div class={styles.info}>
           <h1 id={styles.name}>
