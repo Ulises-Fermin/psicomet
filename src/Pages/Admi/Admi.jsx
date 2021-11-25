@@ -53,8 +53,7 @@ function Admi() {
     const DownloadCurriculum = async (p) => {
         const ref = app.storage().ref("Curriculum/" + p.id);
         const url = await ref.getDownloadURL()
-        window.location= url;
-        
+        window.location = (url);
     }
       
 
