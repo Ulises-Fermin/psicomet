@@ -25,6 +25,8 @@ import Waiting from "./Pages/Status/Waiting";
 import Modify_p from "./Pages/Modify_p/Modify_p";
 import Modify_pa from "./Pages/Modify_pa/Modify_pa";
 import Curriculum from "./Pages/Curriculum/Curriculum";
+import Denegate from "./Pages/Status/Denegate";
+import Files from "./Pages/Files/Files";
 import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
@@ -125,6 +127,12 @@ function App() {
             </Route>
             <Route exact path="/CreateAppointment">
               <CreateAppointment />
+            </Route>
+            <Route exact path="/Denegate">
+              <Denegate />
+            </Route>
+            <Route exact path="/Files">
+              <Files />
             </Route>
           </Switch>
           <Footer />

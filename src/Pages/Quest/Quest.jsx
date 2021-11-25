@@ -6,6 +6,8 @@ import Popup from "reactjs-popup";
 import newUser from "../../Images/newUser.png";
 import { app } from "../../Utils/FireBaseConfig";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../Context/UserContext";
 
 function ShowItinerary(itinerarys) {
   var list = [];
@@ -30,7 +32,7 @@ function Quest() {
   const [psychologists, setPsychologists] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [url, setUrl] = useState([]);
-
+  const { user, setUser } = useContext(UserContext);
   const list = [];
 
   const fetchPsychologists = async () => {
@@ -59,7 +61,12 @@ function Quest() {
   const handleOnChange = async (e) => {
     setNames(e.target.value);
   };
-
+  const ChangeStatusD = async (p) => {
+    db.collection("users").doc(p.id).update({
+        status: "denegate",   
+    })
+    fetchPsychologists()    
+  }
   const handleSubmit = (e) => {
     const get = [];
     psychologists.forEach((psycho) => {
@@ -122,8 +129,11 @@ function Quest() {
                 <li class={styles.psychoList}>
                   {p.data.name} {p.data.lastName}
                 </li>
-                <button class={styles.psychoListC} onClick={() => watchpicture(p)}>fotico</button>
                 <li class={styles.psychoList}>{p.data.specialty}</li>
+                {(user?.role === "admi") ? (
+                  <button class={styles.psychoListD} onClick={() => ChangeStatusD(p)}>Bloquear Usuario</button>
+                ) : (null)}
+                
                 <Popup
                   trigger={
                     <button class={styles.psychoList} onClick={showMore}>

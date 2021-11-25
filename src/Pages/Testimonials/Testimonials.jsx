@@ -13,7 +13,7 @@ function Testimonials() {
   const [message, setMessage] = React.useState("");
   const { loading, messages, error } = useTestimonials();
   const sendMessage = (e) => {
-    if (!(message === "")) {
+    if (!(message === "" || user.status === "denegate")) {
       e.preventDefault();
       {(!!user) ? (db.collection("messages").add({
                 timestramp: Date.now(),
@@ -21,10 +21,11 @@ function Testimonials() {
                 userName: user.name,
                 userLastName: user.lastName,
                 userEmail: user.email,
+                userShow: "true"
               }))
           : (window.alert("Debes iniciar sesión para enviar un testimonio."))}
     } else {
-      window.alert("El testimonio se encuentra vacío, inténtelo nuevamente.");
+      window.alert("El testimonio se encuentra vacío o el usuario ha sido bloqueado de la plataforma.");
     }
   };
   return (
@@ -37,23 +38,36 @@ function Testimonials() {
           <ul>
             <div>
               {messages.map((m) => (
+                
+                
                 <li id={styles.cuadro} key={m.id}>
+                  
                   <div id={styles.block}>
                     <img
                       src={psicometLogo}
                       id={styles.Logo}
                       alt="Logo de Psicomet"
                     />
+                   
                     <div id={styles.text}>
                       <p>
-                        {m.userName} {m.userLastName}
+                        {m.userName} {m.userLastName} 
                       </p>
                       <p>{m.userEmail}</p>
                       <br></br>
                       {m.message}
                     </div>
+                   
+
                   </div>
+                  {(user?.role === "admi") ? (
+                    <button class={styles.psychoListA} >Eliminar mensaje</button>
+                  ) : (null)}
+
                 </li>
+
+                
+                
               ))}
             </div>
           </ul>
