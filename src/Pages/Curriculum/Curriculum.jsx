@@ -35,15 +35,24 @@ function Curriculum() {
     }
     return(
         <div id={styles.Body}>
-            <p>pon el curriculum rey</p>
-            <input
-                type="file"
-                name="Curriculum"
-                onChange ={doUpload}
-                id={styles.name}
-                accept="application/pdf"
-                placeholder="Adjunte su currículum"
-            />
+            <h1 id={styles.titulo}>Adjunte su currículum</h1>
+            <div id={styles.informacion}>
+            Usted será redirigido automáticamente a la página principal una vez que cargue su currículum. 
+            Deberá esperar la aprobación del equipo PsicoMet antes de formar parte de nuestro staff. 
+            Esto puede tomar de 3 días a 1 semana.
+            </div>
+            <div id={styles.inputCurriculum}>
+              <input
+                  type="file"
+                  name="Curriculum"
+                  accept="application/pdf"
+                  onChange ={doUpload}
+                  id={styles.name}
+                  placeholder="Adjunte su currículum"
+              />
+            </div>
+            <h2 id={styles.saludo}>¡Gracias por querer formar parte de PsicoMet!</h2>
+            
         </div>
     )
 }

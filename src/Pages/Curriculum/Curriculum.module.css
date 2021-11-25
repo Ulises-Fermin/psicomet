@@ -1,0 +1,54 @@
+#Body {
+    background-image: url("../../Images/Terapia.png");
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#titulo {
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Scope One', serif;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+#saludo {
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Scope One', serif;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#informacion{
+    text-align: center;
+    margin-right: 3%;
+    margin-left: 2%;
+    padding-bottom: 2%;
+    position:static;
+}
+
+#inputCurriculum{
+    text-align: center;
+    padding: 2%
+}
+
+@media only screen and (max-width: 650px) {
+    #titulo {
+        font-size: 5.5vw;
+    }
+
+    #saludo {
+        font-size: 4vw;
+    }
+
+    #informacion {
+        font-size: 2.5vw;
+    }
+}
+    

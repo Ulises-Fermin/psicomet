@@ -4,7 +4,9 @@ import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
-import { app } from "../../Utils/FireBaseConfig"
+import ShowItinerary from "../Itinerary/ShowItinerary";
+import { app } from "../../Utils/FireBaseConfig";
+
 function Quest() {
   const [names, setNames] = useState("");
   const [psychologists, setPsychologists] = useState([]);
@@ -143,7 +145,7 @@ function Quest() {
                             position="center center"
                             modal
                           >
-                            <p>Hola</p>
+                            <ShowItinerary/>
                           </Popup>
                           <br />
                         </div>

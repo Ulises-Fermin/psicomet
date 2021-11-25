@@ -1,0 +1,44 @@
+#body{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    background-color: cyan;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.section{
+    margin-left: 5%;
+    background-color: darkgrey;
+    width: 125px;
+}
+
+#itinerary{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    align-content:auto;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: darkorange;
+}
+
+#saveButton{
+    margin-left: 10%;
+}
+
+#isLoading {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4%;
+    background-image: url("../../Images/Loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    align-content: center;
+    color: white;
+  }
