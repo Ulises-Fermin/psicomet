@@ -40,54 +40,64 @@ function Modify_p() {
   };
 
   const handleSubmit = async (e) => {
-    if (!values.name === "") {
+    if (values.name === "") {
+      user.name = user.name;
+    } else {
       db.collection("users").doc(user.id).update({
         name: values.name,
       });
     }
-    if (!values.lastName === "") {
+    if (values.lastName === "") {
+      user.lastName = user.lastName;
+    } else {
       db.collection("users").doc(user.id).update({
         lastName: values.lastName,
       });
     }
 
-    if (!values.phone === "") {
+    if (values.phone === "") {
+      user.phone = user.phone;
+    } else {
       db.collection("users").doc(user.id).update({
         phone: values.phone,
       });
     }
 
-    if (!values.gender === "") {
-      db.collection("users").doc(user.id).update({
-        gender: values.gender,
-      });
-    }
-
-    if (!values.languages === "") {
+    if (values.languages === "") {
+      user.languages = user.languages;
+    }else {
       db.collection("users").doc(user.id).update({
         languages: values.languages,
       });
     }
 
-    if (!values.atencionAreas === "") {
+    if (values.atencionAreas === "") {
+      user.atencionAreas = user.atencionAreas;
+    }else {
       db.collection("users").doc(user.id).update({
         atencionAreas: values.atencionAreas,
       });
     }
 
-    if (!values.experience === "") {
+    if (values.experience === "") {
+      user.experience = user.experience;
+    }else {
       db.collection("users").doc(user.id).update({
         experience: values.experience,
       });
     }
 
-    if (!values.academics === "") {
+    if (values.academics === "") {
+      user.academics = user.academics;
+    }else {
       db.collection("users").doc(user.id).update({
-        experience: values.academics,
+        academics: values.academics,
       });
     }
 
-    if (!values.aboutMe === "") {
+    if (values.aboutMe === "") {
+      user.aboutMe = user.aboutMe;
+    }else {
       db.collection("users").doc(user.id).update({
         aboutMe: values.aboutMe,
       });
@@ -108,6 +118,7 @@ function Modify_p() {
       },
       function complete() {
         console.info("Finished uploading!");
+        window.alert("Logrado");
       }
     );
 } 

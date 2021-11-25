@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 import ShowItinerary from "../Itinerary/ShowItinerary";
+import newUser from "../../Images/newUser.png";
 import { app } from "../../Utils/FireBaseConfig";
 
 function Quest() {
@@ -115,11 +116,17 @@ function Quest() {
                   modal
                 >
                   <div id={styles.PopUp}>
+                  <div class={styles.box1}>
+                    <img
+                      id={styles.img1}
+                      src={newUser}
+                      alt=""
+                    />
+                  </div>
                     <div class={styles.info}>
-                      <p id={styles.nombre}>
-                        Nombre: {p.data.name} {p.data.lastName}
-                      </p>
-                      <p id={styles.rol}>Rol: {p.data.role}</p>
+                      <h1 id={styles.nombre}>
+                        Dr. {p.data.name} {p.data.lastName}
+                      </h1>
                       <p>Especialidad: {p.data.specialty}</p>
                     </div>
                     <div id={styles.box5}>
@@ -127,7 +134,7 @@ function Quest() {
                         <div class={styles.box2}>
                           <p id={styles.label1}>Correo Electrónico:</p>
                           <p id={styles.mail}>{p.data.email}</p>
-                          <p id={styles.label1}>Telefono:</p>
+                          <p id={styles.label1}>Teléfono:</p>
                           <p id={styles.phone}>{p.data.phone}</p>
                           <p id={styles.label2}>Género:</p>
                           <p id={styles.gender}>{p.data.gender}</p>
@@ -136,7 +143,7 @@ function Quest() {
                           <p id={styles.label4}>
                             Modelo de Trabajo Terapéutico:
                           </p>
-                          <p id={styles.model}>Consultas en sincronia</p>
+                          <p id={styles.model}>Consultas en sincronéa</p>
                           <p id={styles.label5}>Precio de consulta:</p>
                           <p id={styles.price}>20$ 60 min</p>
                           <p id={styles.label8}>Ver Itinerario:</p>
@@ -170,8 +177,8 @@ function Quest() {
                           <div id={styles.caja3}>{p.data.academics}</div>
                         </div>
                         <div id={styles.box10}>
-                          <h2 id={styles.about}>Sobre mi</h2>
-                          <div id={styles.caja4}>{p.data.aboutMe}</div>
+                          <h2 id={styles.about}>Sobre {p.name}</h2>
+                          <div id={styles.caja4}>{p.aboutMe}</div>
                         </div>
                       </div>
                     </div>
