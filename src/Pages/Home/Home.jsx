@@ -3,7 +3,7 @@ import styles from "./Home.module.css";
 import {Link} from "react-router-dom";
 import Slideshow from "../../Components/SlideShow/SlideShow"
 import HeroSection from "../../Components/HeroSection";
-
+ 
 function Home() {
     return(
         <div id={styles.Body}>

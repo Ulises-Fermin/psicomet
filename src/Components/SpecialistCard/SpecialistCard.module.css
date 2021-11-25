@@ -1,0 +1,271 @@
+#body {
+    background-image: url("../../Images/Terapia.png");
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  #PopUp{
+    background-image: url("../../Images/Terapia.png");
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  #img1 {
+    width: auto;
+    margin-left: 11%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    border: 7px solid #6eb5b8;
+    border-radius: 100%;
+  }
+  
+  h2 {
+    font-size: 23px;
+  }
+  
+  p{
+    font-size: 17px;
+  }
+  .info {
+    text-align: center;
+    font-family: 'Scope One', serif;
+    width: 70%;
+    height: 20%;
+    margin-left: 20%;
+    margin-top: -12%;
+  }
+  
+  #nombre {
+    font-size: 30px;
+  }
+  #label1 {
+    font-weight: 600;
+    color: black;
+  }
+  
+  #label2 {
+    font-weight: 600;
+    color: black;
+  }
+  
+  #label3 {
+    font-weight: 600;
+    color: black;
+  }
+  
+  #label4 {
+    font-weight: 600;
+    color: black;
+  }
+  
+  #label5 {
+    font-weight: 600;
+    color: black;
+  }
+  
+  #label6 {
+    color: black;
+  }
+  
+  #label8 {
+    font-weight: 600;
+  
+    color: black;
+  }
+  
+  #title {
+    text-align: center;
+    font-family: "Scope One", serif;
+    color: black;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 300%;
+  } 
+  
+  #container {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+  
+  #psychoCards {
+    display: flex;
+    font-family: "Scope One", serif;
+    flex-direction: column;
+    background-color: white;
+    background-size: cover;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border-color: #1cb0a7;
+    border-width: 20px;
+  }
+  
+  #psychoCards img {
+    border-radius: 100%;
+    border-style: solid;
+    border-color: black;
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .psychoList {
+    background-color: #ffd779;
+    font-weight: 580;
+    border-radius: 30px;
+    font-family: "Scope One", serif;
+    list-style: none;
+    text-align: center;
+    margin: 5px;
+  }
+  
+  #containerQuest {
+    background-color: #1cb0a7;
+    border-radius: 10px;
+    width: 80%;
+    height: 20%;
+    justify-content: center;
+    padding: auto;
+    display: flex;
+    margin-bottom: 7.5%;
+    padding: 0.5%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #name {
+    width: 90%;
+    font-family: "Scope One", serif;
+    font-size: large;
+    margin-right: 1%;
+    margin-left: 1%;
+    border-radius: 10px;
+    border-style: hidden;
+  }
+  #button {
+    background-color: white;
+    color: black;
+    border-color: lightgray;
+    padding: 0.8%;
+    border-style: solid;
+    border-radius: 5px;
+  }
+  #button:hover {
+    border-color: darkcyan;
+    background-color: darkcyan;
+    color: white;
+  }
+  
+  #isLoading {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4%;
+    background-image: url("../../Images/Loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    align-content: center;
+    color: white;
+  }
+  
+  #PopUp {
+    background-color: white;
+    font-family: "Scope One", serif;
+    font-size: large;
+    box-shadow: 0px 0px 10px 0px #000000;
+    width: 160%;
+    justify-content: center;
+    position: relative;
+    left: -30%;
+    height: 80%;
+  }
+  
+  .box4 {
+    margin-top: 2.5%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border: 7px solid #6eb5b8;
+    background-color:white;
+  }
+  
+  #box5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .box7 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #label10 {
+    margin-top: 3%;
+  }
+  
+  #label7 {
+    margin-top: 3%;
+  }
+  
+  #caja {
+    box-sizing: border-box;
+    border: 7px solid #6eb5b8;
+    height: 180px;
+    background-color: white;
+  }
+  
+  #profesional {
+    margin-top: 10%;
+  }
+  
+  #about {
+    margin-top: 10%;
+  }
+  
+  #caja2 {
+    box-sizing: border-box;
+    border: 7px solid #6eb5b8;
+    height: 180px;
+    background-color: white;
+  }
+  
+  #caja3 {
+    box-sizing: border-box;
+    border: 7px solid #6eb5b8;
+    height: 180px;
+    background-color: white;
+  }
+  
+  #caja4 {
+    box-sizing: border-box;
+    border: 7px solid #6eb5b8;
+    height: 180px;
+    background-color: white;
+  }
+  
+  #itinerary{
+    background-color: lightblue;
+    padding: 5%;
+    width: auto;
+    box-shadow: 0px 0px 10px 0px #000000;
+  }
+  
+  #linkk{
+    background-color: white;
+    margin-left: 6.3%;
+    border-color: black;
+    border:solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+  
