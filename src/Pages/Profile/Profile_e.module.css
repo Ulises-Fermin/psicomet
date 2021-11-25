@@ -1,23 +1,38 @@
+.body {
+  background-image: url("../../Images/Terapia.png");
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
 #img1 {
-  width: 20%;
-  margin-left: 2%;
-  box-sizing: border-box;
-  border: 7px solid lightblue;
+  width: auto;
+  margin-left: 6.5%;
+  border: 7px solid #6eb5b8;
+  border-radius: 100%;
 }
 
 .box1 {
-  margin-top: 2%;
+  padding-top: 2%;
   display: flex;
   flex-direction: row;
 }
 
 .info {
-  margin-left: 4%;
-  width: 15%;
+  text-align: center;
+  font-family: 'Scope One', serif;
+  width: 100%;
+  height: 20%;
 }
 
 #rol {
-  margin-top: 15%;
+  margin-top: 1%;
+  margin-bottom: 0%;
+}
+
+#name {
+  padding-top: 2%;
 }
 
 .box4 {
@@ -25,81 +40,95 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 1%;
+  
 }
 
 .box2 {
   box-sizing: border-box;
   width: 20%;
-  border: 7px solid lightblue;
+  border: 7px solid #6eb5b8;
   margin-left: 2%;
   padding-bottom: 1%;
+  background-color: white;
 }
 
 #label1 {
   font-weight: 600;
-  color: rgb(102, 102, 228);
+  font-family: 'Scope One', serif;
+  color: black;
 }
 
 #label2 {
   font-weight: 600;
-  color: rgb(102, 102, 228);
+  font-family: 'Scope One', serif;
+  color: black;
 }
 
 #label3 {
   font-weight: 600;
-  color: rgb(102, 102, 228);
+  font-family: 'Scope One', serif;
+  color: black;
 }
 
 #label4 {
   font-weight: 600;
-  color: rgb(102, 102, 228);
+  font-family: 'Scope One', serif;
+  color: black;
 }
 
 #label5 {
   font-weight: 600;
-  color: rgb(102, 102, 228);
+  font-family: 'Scope One', serif;
+  color: black;
 }
 
 #label6 {
-  color: rgb(102, 102, 228);
+  color: black;
+  font-family: 'Scope One', serif;
 }
 
 #profesional {
-  color: rgb(102, 102, 228);
+  color: black;
+  font-family: 'Scope One', serif;
 }
 
 #label7 {
-  color: rgb(102, 102, 228);
+  color: black;
+  font-family: 'Scope One', serif;
 }
 
 #about {
-  color: rgb(102, 102, 228);
+  color: black;
+  font-family: 'Scope One', serif;
 }
 #label8 {
   font-weight: 600;
-
-  color: rgb(102, 102, 228);
+  font-family: 'Scope One', serif;
+  color: black;
 }
 
 #volver {
   box-sizing: border-box;
-  border: 5px solid lightblue;
-  margin-left: 78%;
-  border-radius: 5px;
+  font-family: 'Scope One', serif;
+  border: 2px solid darkorange;
+  margin-left: 75%;
+  border-radius: 30px;
   padding: 1%;
-  color: white;
+  color: black;
   font-weight: 600;
-  background-color: lightblue;
+  background-color: #ffd779;
 }
 
 #Modify {
   box-sizing: border-box;
-  border: 5px solid lightblue;
-  border-radius: 5px;
-  padding: 1%;
-  color: white;
+  font-size: 13px;
+  border: 3px solid #ffd779;
+  border-radius: 30px;
+  padding: 0.5%;
+  color: black;
   font-weight: 600;
-  background-color: lightblue;
+  background-color: #ffd779;
+  margin-bottom: 2%;
 }
 
 .box3 {
@@ -123,7 +152,7 @@
 
 .box7 {
   margin-left: 4%;
-  width: 60%;
+  width: 70%;
 }
 
 .box8 {
@@ -147,27 +176,32 @@
 
 #caja {
   box-sizing: border-box;
-  border: 7px solid lightblue;
+  border: 7px solid #6eb5b8;
   height: 80%;
   width: 130.5%;
+  background-color: white;
 }
 
 #caja2 {
   box-sizing: border-box;
-  border: 7px solid lightblue;
+  border: 7px solid #6eb5b8;
   height: 80%;
+  width: 110%;
+  background-color: white;
 }
 
 #caja3 {
   box-sizing: border-box;
-  border: 7px solid lightblue;
+  border: 7px solid #6eb5b8;
   height: 85%;
   width: 106%;
+  background-color: white;
 }
 
 #caja4 {
   box-sizing: border-box;
-  border: 7px solid lightblue;
-  height: 85%;
-  width: 260%;
+  border: 7px solid #6eb5b8;
+  height: 80%;
+  width: 300%;
+  background-color: white;
 }
