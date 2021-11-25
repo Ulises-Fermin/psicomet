@@ -4,7 +4,6 @@ import { auth, db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import Itinerary from "../Itinerary/Itinerary";
-import { app } from "../../Utils/FireBaseConfig";
 
 function Modify_p() {
   const { user, setUser } = useContext(UserContext);
@@ -94,23 +93,6 @@ function Modify_p() {
     }
     window.alert("Logrado");
   };
-  const doUpload = (event) => {
-    const file = event.target.files[0];
-    const ref = app.storage().ref("Fotos/" + user.id);
-    const upload = ref.put(file);
-    upload.on(
-      "state_changed",
-      function progress(snapshot) {
-        console.warn((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-      },
-      function error(error) {
-        console.error(error);
-      },
-      function complete() {
-        console.info("Finished uploading!");
-      }
-    );
-} 
 
   return (
     <>
@@ -172,15 +154,6 @@ function Modify_p() {
             id={styles.consulta}
             type="text"
             placeholder="Ingrese su método de consulta"
-          />
-          <p id={styles.label4}>Coloque una foto de perfil: </p>
-          <input
-              type="file"
-              name="foto"
-              onChange ={doUpload}
-              id={styles.name}
-              accept="image/*"
-              placeholder="Suba una foto de perfil"
           />
           <br />
           <p id={styles.label7}>Ingrese el precio de su servicio: </p>

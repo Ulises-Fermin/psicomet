@@ -8,7 +8,6 @@ import { UserContext } from "../../Context/UserContext";
 import { useContext } from "react";
 import { auth, db } from "../../Utils/FireBaseConfig";
 import { useHistory } from "react-router";
-
 function Curriculum() {
     const { user, setUser } = useContext(UserContext);
     const history = useHistory();
