@@ -96,7 +96,7 @@ function Modify_p() {
   return (
     <>
       <div>
-        <h1 id={styles.titulo}>Modificación de Datos</h1>
+        <h1 class='h1'>Modificación de Datos</h1>
         <div class={styles.body}>
           <p id={styles.label1}>Ingrese su nombre: </p>
           <input

@@ -34,10 +34,4 @@ export const SidebarData = [
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
-  {
-    title: 'Inicio de Sesión',
-    path: '/Login',
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: 'nav-text'
-  }
 ];
