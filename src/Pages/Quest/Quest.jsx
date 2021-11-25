@@ -6,11 +6,13 @@ import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 import ShowItinerary from "../Itinerary/ShowItinerary";
 import newUser from "../../Images/newUser.png";
+import { app } from "../../Utils/FireBaseConfig";
 
 function Quest() {
   const [names, setNames] = useState("");
   const [psychologists, setPsychologists] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [url, setUrl] = useState([]);
 
   const list = [];
 
@@ -21,11 +23,12 @@ function Quest() {
       if (
         item.data().role === "psychologist" &&
         item.data().status === "accept" &&
+        item.data().curriculum === "have" &&
         (item.data().name + " " + item.data().lastName)
           .toLowerCase()
           .includes(names.toLocaleLowerCase())
       ) {
-        list.push(item.data());
+        list.push({data:item.data(), id:item.id});
       }
     });
     setPsychologists(list);
@@ -44,7 +47,7 @@ function Quest() {
     const get = [];
     psychologists.forEach((psycho) => {
       if (
-        (psycho.name + " " + psycho.lastName)
+        (psycho.data.name + " " + psycho.data.lastName)
           .toLowerCase()
           .includes(names.toLocaleLowerCase())
       ) {
@@ -52,6 +55,13 @@ function Quest() {
       }
     });
     setPsychologists(get);
+  };
+
+  const watchpicture = async (p) => {
+    const ref = app.storage().ref("Fotos/" + p.id);
+    const image = await ref.getDownloadURL()
+    console.log(image)
+    setUrl(image)
   };
 
   const showMore = (e) => {
@@ -91,11 +101,12 @@ function Quest() {
           <div id={styles.container}>
             {psychologists.map((p) => (
               <div id={styles.psychoCards}>
-                <img src="clinica.jpg" alt="" />
+                <img onClick={() => watchpicture(p)} src={url} alt="" />
                 <li class={styles.psychoList}>
-                  {p.name} {p.lastName}
+                  {p.data.name} {p.data.lastName}
                 </li>
-                <li class={styles.psychoList}>{p.specialty}</li>
+                <button class={styles.psychoListC} onClick={() => watchpicture(p)}>fotico</button>
+                <li class={styles.psychoList}>{p.data.specialty}</li>
                 <Popup
                   trigger={
                     <button class={styles.psychoList} onClick={showMore}>
@@ -126,9 +137,9 @@ function Quest() {
                           <p id={styles.label1}>Teléfono:</p>
                           <p id={styles.phone}>{p.phone}</p>
                           <p id={styles.label2}>Género:</p>
-                          <p id={styles.gender}>{p.gender}</p>
+                          <p id={styles.gender}>{p.data.gender}</p>
                           <p id={styles.label3}>Idiomas:</p>
-                          <p id={styles.idioma}>{p.languages}</p>
+                          <p id={styles.idioma}>{p.data.languages}</p>
                           <p id={styles.label4}>
                             Modelo de Trabajo Terapéutico:
                           </p>
@@ -150,20 +161,20 @@ function Quest() {
                         <div class={styles.box3}>
                           <div id={styles.box8}>
                             <h2 id={styles.label10}>Áreas de atención</h2>
-                            <div id={styles.caja}>{p.atencionAreas}</div>
+                            <div id={styles.caja}>{p.data.atencionAreas}</div>
                           </div>
                           <div id={styles.box6}>
                             <h2 id={styles.profesional}>
                               Experiencia Profesional
                             </h2>
-                            <div id={styles.caja2}>{p.experience}</div>
+                            <div id={styles.caja2}>{p.data.experience}</div>
                           </div>
                         </div>
                       </div>
                       <div id={styles.box9}>
                         <div id={styles.box13}>
                           <h2 id={styles.label7}>Formación Académica</h2>
-                          <div id={styles.caja3}>{p.academics}</div>
+                          <div id={styles.caja3}>{p.data.academics}</div>
                         </div>
                         <div id={styles.box10}>
                           <h2 id={styles.about}>Sobre {p.name}</h2>
