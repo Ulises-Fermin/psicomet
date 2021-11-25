@@ -99,7 +99,7 @@ function Quest() {
                 <Popup
                   trigger={
                     <button class={styles.psychoList} onClick={showMore}>
-                      Ver mas
+                      Ver más
                     </button>
                   }
                   modal
