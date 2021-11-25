@@ -5,6 +5,7 @@ import { UserContext } from "../../Context/UserContext";
 import { auth } from "../../Utils/FireBaseConfig";
 import { useContext } from "react";
 import Popup from "reactjs-popup";
+import newUser from "../../Images/newUser.png";
 
 function Profile_e() {
   const { user, setUser } = useContext(UserContext);
@@ -15,16 +16,17 @@ function Profile_e() {
 
   return (
     <>
+    <div class ={styles.body}>
       <div class={styles.box1}>
         <img
           id={styles.img1}
-          src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg"
+          src={newUser}
           alt=""
         />
         <div class={styles.info}>
-          <p id={styles.name}>
-            Nombre: {user.name} {user.lastName}
-          </p>
+          <h1 id={styles.name}>
+            Dr. {user.name} {user.lastName}
+          </h1>
           <p id={styles.rol}>Rol: {user.role}</p>
           <br />
           <Link id={styles.Modify} to="/Modify_p">
@@ -37,7 +39,7 @@ function Profile_e() {
           <p id={styles.label1}>Correo Electrónico:</p>
           <p id={styles.mail}>{user.email}</p>
           <br />
-          <p id={styles.label1}>Telefono:</p>
+          <p id={styles.label1}>Teléfono:</p>
           <p id={styles.phone}>{user.phone}</p>
           <br />
           <p id={styles.label2}>Género:</p>
@@ -84,11 +86,12 @@ function Profile_e() {
               <div id={styles.caja3}>{user.academics}</div>
             </div>
             <div id={styles.box10}>
-              <h2 id={styles.about}>Sobre mi</h2>
+              <h2 id={styles.about}>Sobre mí</h2>
               <div id={styles.caja4}>{user.aboutMe}</div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
