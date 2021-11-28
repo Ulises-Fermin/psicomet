@@ -30,10 +30,11 @@ function Testimonials() {
   };
   return (
     <>
+      
+      <div id={styles.body}>
       <div id={styles.titlediv}>
         <p id={styles.title}>Testimonios de pacientes</p>
-      </div>
-      <div id={styles.body}>
+      </div>  
         <div id={styles.TestimonialsSpace}>
           <ul>
             <div>

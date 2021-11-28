@@ -48,6 +48,7 @@
     display: block;
     margin: auto;
     
+    
 }
 #logo:hover{
     width: 160px;
@@ -66,11 +67,13 @@
     font-size: 150%;
 }
 #contactP:hover{
-    font-size: 155%;
+    font-size: 150%;
     color: lightseagreen;
     cursor: pointer;
+    text-decoration: underline;
 }
 a{
     color:black;
 }
+
 
