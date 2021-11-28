@@ -18,12 +18,16 @@ function Profile_e() {
     await auth.signOut();
     setUser(null);
   };
+
   const watchpicture = async (p) => {
     const ref = app.storage().ref("Fotos/" + user.id);
     const image = await ref.getDownloadURL()
     console.log(image)
     setUrl(image)
   };
+
+  
+
   return (
     <>
       {!!user ? (
@@ -65,16 +69,37 @@ function Profile_e() {
             </div>
 
             <div id={styles.bigbox}>
-              <div class={styles.box1}>
-                <div class={styles.info}>
-                  <h1 id={styles.names}>
-                    Dr. {user.name} {user.lastName}
-                  </h1>
-                  <p id={styles.rol}>Rol: {user.role}</p>
-                  <br />
-                  <Link id={styles.Modify} to="/Modify_p">
-                    Modificar Datos
-                  </Link>
+              <div id={styles.info}>
+                <div class={styles.box1}>
+                  <div class={styles.info}>
+                    <h1 id={styles.names}>
+                      Dr. {user.name} {user.lastName}
+                    </h1>
+                    <p id={styles.rol}>Rol: {user.role}</p>
+                    <br />
+                    <Link id={styles.Modify} to="/Modify_p">
+                      Modificar Datos
+                    </Link>
+                  </div>
+                  <div id={styles.spaceimg}>
+                    {(user?.photo==="false") ? (
+                      <>
+                      <img
+                        id={styles.img1}
+                        src={Usuario}
+                        alt=""
+                      />
+                      <p>holaaa</p>
+                      </>
+                    ) : (
+                      <img
+                        id={styles.img1}
+                        src={url}
+                        alt=""
+                        onClick={() => watchpicture(user)}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -117,9 +142,4 @@ function Profile_e() {
 
 export default Profile_e;
 
-/*<img
-          id={styles.img1}
-          src={url}
-          alt=""
-          onClick={() => watchpicture(user)}
-        />*/
+/**/

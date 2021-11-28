@@ -5,7 +5,7 @@ import { useState, useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import Itinerary from "../Itinerary/Itinerary";
 import { app } from "../../Utils/FireBaseConfig";
-
+import { useHistory } from "react-router";
 function Modify_p() {
   const { user, setUser } = useContext(UserContext);
   const handleLogOut = async () => {
@@ -39,7 +39,7 @@ function Modify_p() {
     setValues({ ...values, [inputName]: value });
     console.log(inputName, value);
   };
-
+  const history = useHistory();
   const handleSubmit = async (e) => {
     if (values.name === "") {
       user.name = user.name;
@@ -104,6 +104,7 @@ function Modify_p() {
       });
     }
     window.alert("Logrado");
+    
   };
   const doUpload = (event) => {
     const file = event.target.files[0];
