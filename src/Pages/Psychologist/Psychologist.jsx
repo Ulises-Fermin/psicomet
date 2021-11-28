@@ -31,7 +31,9 @@ function Psychologist() {
         <div id={styles.buttons1}>
           <div class={styles.card}>
             <img id={styles.image} src={Consulta} alt="" />
-            <p id={styles.Mis_consults}>Mis Consultas</p>
+            <Link id={styles.Mis_consults} to="/Appointments">
+              Mis Consultas
+            </Link>
           </div>
           <div class={styles.card}>
             <img id={styles.image} src={Agendar} alt="" />

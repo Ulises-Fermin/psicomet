@@ -1,0 +1,25 @@
+#nombre {
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 0%;
+}
+
+#fecha {
+  margin: 0%;
+  padding: 0%;
+}
+
+#titulo {
+  background-color: lightblue;
+  margin: 0%;
+  padding: 0%;
+}
+
+.card {
+  margin-top: 1%;
+  margin-bottom: 5%;
+  width: 20%;
+  background-color: aliceblue;
+  padding-bottom: 0.5%;
+  margin-left: 1%;
+}

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import Navbar from "./Components/NavBar/Navbar";
@@ -30,10 +30,9 @@ import Files from "./Pages/Files/Files";
 import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
-import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
+import Appointments from "./Pages/Appointments/Appointments";
 
 function App() {
-
   // Funcion para el PayPal
   const [checkout, setCheckOut] = useState(false);
 
@@ -49,16 +48,16 @@ function App() {
             {/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
             {/* Si checkout es verdadero, renderizamos PayPal. Si no, aparece un boton que al presionarlo se hace verdadero. */}
             {checkout ? (
-            <PayPal />
-          ) : (
-            <button
-              onClick={() => {
-                setCheckOut(true);
-              }}
-            >
-              Checkout
-            </button>
-          )}
+              <PayPal />
+            ) : (
+              <button
+                onClick={() => {
+                  setCheckOut(true);
+                }}
+              >
+                Checkout
+              </button>
+            )}
           </Route>
           <Switch>
             <Route exact path="/Home">
@@ -125,14 +124,14 @@ function App() {
             <Route exact path="/Curriculum">
               <Curriculum />
             </Route>
-            <Route exact path="/CreateAppointment">
-              <CreateAppointment />
-            </Route>
             <Route exact path="/Denegate">
               <Denegate />
             </Route>
             <Route exact path="/Files">
               <Files />
+            </Route>
+            <Route exact path="/Appointments">
+              <Appointments />
             </Route>
           </Switch>
           <Footer />
