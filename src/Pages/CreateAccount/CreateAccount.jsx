@@ -21,6 +21,7 @@ function CreateAccount() {
     role: "pacient",
     idc: null,
     college: null,
+    photo: "false",
   });
 
   const history = useHistory();
@@ -64,6 +65,7 @@ function CreateAccount() {
                       languages: null,
                       curriculum: null,
                       itinerary: null,
+                      photo: "false",
                     },
                     response.user.uid
                   );

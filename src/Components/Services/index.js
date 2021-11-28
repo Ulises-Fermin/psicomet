@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from "react";
 import { ServicesContainer, ServicesH1, ServicesH2, ServicesP, ServicesWrapper, ServicesCard, ServicesIcon } from './ServicesElements'
 import Icon1 from '../../Images/Icon1.svg'
 import familia from '../../Images/familia.svg'
@@ -6,27 +6,65 @@ import infantil from '../../Images/infantil.svg'
 import pareja from '../../Images/pareja.svg'
 import administrador from '../../Images/psiquiatra.svg'
 import especialista from '../../Images/especialista.svg'
+import PayPal from "../../Components/PayPal.js";
 
-
-const Services = () => {
+            {/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
+            {/* Si checkout es verdadero, renderizamos PayPal. Si no, aparece un boton que al presionarlo se hace verdadero. */}
+  // Funcion para el PayPal
+  
+  const Services = () => {
+    const [checkout, setCheckOut] = useState(false);
     return (
         <ServicesContainer id="services">
-            <ServicesH1>Ingresa</ServicesH1>
+            <ServicesH1>Pago -colocar en sección de pagos-</ServicesH1>
                 <ServicesWrapper>
                     <ServicesCard>
                         <ServicesIcon src={Icon1} alt="" />
-                        <ServicesH2>Paciente</ServicesH2>
+                        <ServicesH2>Psiquiatría</ServicesH2>
+                    {checkout ? (
+                        <PayPal />
+                    ) : (
+                        <button
+                        onClick={() => {
+                            setCheckOut(true);
+                        }}
+                        >
+                        Checkout
+                        </button>
+                    )}
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     </ServicesCard>
                     <ServicesCard>
                         <ServicesIcon src={especialista}/>
-                        <ServicesH2>Especialista</ServicesH2>
+                        <ServicesH2>Terapia de parejas</ServicesH2>
+                    {checkout ? (
+                        <PayPal />
+                    ) : (
+                        <button
+                        onClick={() => {
+                            setCheckOut(true);
+                        }}
+                        >
+                        Checkout
+                        </button>
+                    )}
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     </ServicesCard>
                     <ServicesCard>
                         <ServicesIcon src={administrador} />
-                        <ServicesH2>Administrador</ServicesH2>
+                        <ServicesH2>Consulta clínica</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
+                    {checkout ? (
+                        <PayPal />
+                    ) : (
+                        <button
+                        onClick={() => {
+                            setCheckOut(true);
+                        }}
+                        >
+                        Checkout
+                        </button>
+                    )}
                     </ServicesCard>
                 </ServicesWrapper>
             

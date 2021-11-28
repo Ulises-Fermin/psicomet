@@ -15,61 +15,42 @@
 #buttons1 {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 25%;
 }
 
 #buttons2 {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 25%;
+}
+#buttons3 {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
 }
 
-#Mis_consults {
-  margin-top: 5%;
-  margin-bottom: 30%;
+.subtitle{
+  color:red;
+  text-align: center;
+  background-color: #ffd779;
+  border-radius: 30px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+}
+
+.linkto {
   cursor: pointer;
   text-align: center;
   font-size: 200%;
+  margin-left: auto;
+  margin-right: auto;
 }
-#Mis_consults:hover{
-  text-shadow: -1px -1px #fff;
-}
-
-
-#Ver_especialists {
-  margin-top: 2.5%;
-  margin-bottom: 30%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 200%;
-}
-#Ver_especialists:hover{
+.linkto:hover{
   text-shadow:  -1px -1px #fff;
 }
 
-
-#My_chats {
-  margin-top: 2.5%;
-  margin-bottom: 30%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 200%;
-}
-#My_chats:hover{
-    text-shadow:  -1px -1px #fff;
-}
-
-
-#Calendar {
-  margin-top: 2.5%;
-  margin-bottom: 30%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 200%;
-}
-#Calendar:hover{
-  text-shadow:  -1px -1px #fff;
-}
 
 #title{
   text-align: center;
@@ -79,10 +60,13 @@
   margin-bottom: 4%;
   font-size: 250%;
 }
-#title:hover{
-  font-size: 255%;
-  color: #1CB0A7;
-  transition: 0.15s;
+#subtitle{
+  text-align: center;
+  font-family: 'Scope One', serif;
+  margin-top: 0%;
+  padding-top: 5%;
+  margin-bottom: 4%;
+  font-size: 150%;
 }
 
 #image{
@@ -100,4 +84,11 @@
   box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
   transition: 1s;
   cursor: pointer;
+}
+.card{
+  
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-right: 0%;
+  padding-left: 0%;
 }

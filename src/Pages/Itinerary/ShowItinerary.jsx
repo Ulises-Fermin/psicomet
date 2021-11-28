@@ -19,6 +19,7 @@ export default function ShowItinerary() {
     return(
         <>
         <div id={styles.body}>
+        <h3>Tu Itinerario:</h3>
         {list.map((h) => (
                 <p>{h}</p>
             ))};

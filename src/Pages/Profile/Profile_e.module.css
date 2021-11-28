@@ -5,7 +5,10 @@
     background-size:cover;
     background-repeat: no-repeat;
 }
-
+#megabox{
+  display:flex;
+  flex-direction: row;
+}
 #img1 {
   width: auto;
   margin-left: 6.5%;
@@ -31,21 +34,21 @@
   margin-bottom: 0%;
 }
 
-#name {
+#names {
   padding-top: 2%;
 }
 
 .box4 {
   margin-top: 1%;
-  display: flex;
-  flex-direction: row;
   margin-bottom: 1%;
   
 }
-
+#bigbox{
+  display: block;
+}
 .box2 {
   box-sizing: border-box;
-  width: 20%;
+  width: 25%;
   border: 7px solid #6eb5b8;
   margin-left: 2%;
   padding-bottom: 1%;
@@ -82,25 +85,13 @@
   color: black;
 }
 
-#label6 {
+.label6 {
   color: black;
   font-family: 'Scope One', serif;
+  text-align: center;
 }
 
-#profesional {
-  color: black;
-  font-family: 'Scope One', serif;
-}
 
-#label7 {
-  color: black;
-  font-family: 'Scope One', serif;
-}
-
-#about {
-  color: black;
-  font-family: 'Scope One', serif;
-}
 #label8 {
   font-weight: 600;
   font-family: 'Scope One', serif;
@@ -135,7 +126,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 70%;
   margin-bottom: 0%;
   height: 45%;
 }
@@ -151,17 +142,22 @@
 }
 
 .box7 {
-  margin-left: 4%;
+  margin-left: 5%;
+  margin-top: 2.5%;
   width: 70%;
+
 }
 
 .box8 {
-  margin-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 82%;
+  width: 70%;
   height: 45%;
+}
+.box9{
+  margin-right: 2.5%;
+  margin-left: 2.5%;
 }
 
 #academia {
@@ -174,34 +170,26 @@
   margin-top: 0.5%;
 }
 
-#caja {
+.caja {
   box-sizing: border-box;
   border: 7px solid #6eb5b8;
   height: 80%;
-  width: 130.5%;
+  width: 275px;
   background-color: white;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
-#caja2 {
-  box-sizing: border-box;
-  border: 7px solid #6eb5b8;
-  height: 80%;
-  width: 110%;
-  background-color: white;
-}
-
-#caja3 {
-  box-sizing: border-box;
-  border: 7px solid #6eb5b8;
-  height: 85%;
-  width: 106%;
-  background-color: white;
-}
-
-#caja4 {
-  box-sizing: border-box;
-  border: 7px solid #6eb5b8;
-  height: 80%;
-  width: 300%;
-  background-color: white;
+#isLoading{
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4%;
+  background-image: url("../../Images/Loading.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  align-content: center;
+  color: white;
 }

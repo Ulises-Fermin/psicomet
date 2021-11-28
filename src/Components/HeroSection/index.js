@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Video from '../../Videos/video.mp4'
 import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper, ArrowForward, ArrowRight} from './HeroElements'
 import {Button} from '../ButtonElements';
+import { Link } from "react-router-dom";
 
 
 const HeroSection = () => {
@@ -10,6 +11,9 @@ const HeroSection = () => {
     const onHover = () => {
         setHover(!hover)
     }
+
+    const login = 'login';
+
     return (
         <HeroContainer>
             <HeroBg>
@@ -24,7 +28,7 @@ const HeroSection = () => {
                 </HeroP>
                 <HeroBtnWrapper>
                     {/* Aqui en primary y dark estamos usando estilos del component ButtonElement que es para botones generales*/}
-                    <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark="true">
+                    <Button to="/Login" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark="true">
                         Empieza ahora {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </HeroBtnWrapper>

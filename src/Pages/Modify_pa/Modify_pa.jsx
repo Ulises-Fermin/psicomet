@@ -60,6 +60,26 @@ function Modify_pa() {
       });
     }
   };
+  const doUpload = (event) => {
+    const file = event.target.files[0];
+    const ref = app.storage().ref("Fotos/" + user.id);
+    const upload = ref.put(file);
+    upload.on(
+      "state_changed",
+      function progress(snapshot) {
+        console.warn((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      },
+      function error(error) {
+        console.error(error);
+      },
+      function complete() {
+        console.info("Finished uploading!");
+        db.collection("users").doc(user.id).update({
+          photo: "true",
+        });
+      }
+    );
+}
 
   return (
     <>

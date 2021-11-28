@@ -20,6 +20,7 @@ function Admi() {
             list.push({data:item.data(), id:item.id});
         })
         setPsychologists(list);
+        console.log("aca siiii")
         setIsLoading(false);
         return list
     }
@@ -53,8 +54,7 @@ function Admi() {
     const DownloadCurriculum = async (p) => {
         const ref = app.storage().ref("Curriculum/" + p.id);
         const url = await ref.getDownloadURL()
-        window.location= url;
-        
+        window.location = (url);
     }
       
 

@@ -13,6 +13,7 @@ function RecoverPassword() {
     const handleOnChange = (event) => {
         const {value, name: inputName} = event.target;
         setValues({...values, [inputName]:value})
+        console.log("THAT SI")
     };
     const auth = firebase.auth();
     const emailAddress = (values.email);

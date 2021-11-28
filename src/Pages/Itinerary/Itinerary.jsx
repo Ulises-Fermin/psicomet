@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import styles from "./Itinerary.module.css";
+import modify from "../Modify_p/Modify.css";
 import { db } from "../../Utils/FireBaseConfig";
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
@@ -180,7 +181,7 @@ export default function Itinerary() {
             />
             </div>
           </form>
-          <button onClick={handleOnSubmit}>Guardar</button>
+          <button className='form-input-btn' onClick={handleOnSubmit}>Guardar</button>
         </div>
     )}
   </>

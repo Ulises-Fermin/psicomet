@@ -1,3 +1,6 @@
 #body{
-    background-color: darksalmon;
+background-color: lightblue;
+  padding: 5%;
+  box-shadow: 0px 0px 10px 0px #000000;
+  width: fit-content;
 }

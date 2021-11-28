@@ -11,6 +11,7 @@ import { FaBars } from 'react-icons/fa'
 import { BiX } from 'react-icons/bi'
 import { IconContext } from 'react-icons'
 import { SidebarData } from './SidebarData'
+import * as FaIcons from 'react-icons/fa';
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -75,16 +76,76 @@ function Navbar() {
                 </Link>
               </li>
               {/* Este map va poniendo 1 por 1 todos los items del archivo SidebarData.js */}
+
+              {/* Pone todos los que se repiten */}
               {SidebarData.map((item, index) => {
                 return (
-                  <li key={index} className={item.cName}>
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
+                    <li key={index} className={item.cName}>
+                      <Link to={item.path}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                      </Link>
+                    </li>
                 );
               })}
+
+              {/* Pone los que dependen de si el usuario esta loggeado */}
+
+              {(user?.role === "pacient") ? (
+                <li className='nav-text'>
+                  <Link to='/User'>
+                    <FaIcons.FaUser />
+                    <span>Usuario</span>
+                  </Link>
+                </li>
+              ) : (null)}
+              {(user?.role === "psychologist") ? (
+                <li className='nav-text'>
+                  {(user?.curriculum === "lack" && user?.status === "waiting") ? (
+                    <Link to="/Curriculum" >
+                      <FaIcons.FaUser />
+                      <span>Psicólogo</span>
+                    </Link>
+                  ) : (null)}
+                  {(user?.curriculum === "have" && user?.status === "waiting")  ? (
+                    <Link to="/Waiting" >
+                      <FaIcons.FaUser />
+                      <span>Psicólogo</span>
+                    </Link>
+                  ) : (null)}
+                  {(user?.status === "accept") ? (
+                    <Link to="/Psychologist" >
+                      <FaIcons.FaUser />
+                      <span>Psicólogo</span>
+                    </Link>
+                  ) : (null)}
+                  {(user?.status === "denegate") ? (
+                    <Link to="/Denegate" >
+                      <FaIcons.FaUser />
+                      <span>Psicólogo</span>
+                    </Link>
+                  ) : (null)}
+                </li>
+                ) : (null)}
+                  {(user?.role === "admi") ? (
+                    <li class={styles.NavButton}>
+                      <Link to="/Admi" >
+                        <FaIcons.FaUser />
+                        <span>Administrador</span>
+                      </Link>
+                    </li>
+                  ) : (null)}
+                  <li id={styles.LoginButton}>
+                    {!!user ? (
+                      <Link to="/Home" id={styles.NavLoginLink} onClick={handleLogOut}>
+                        Cerrar Sesión de {user.name}
+                      </Link>
+                    ) : (
+                      <Link to="/Login" id={styles.NavLoginLink}>
+                        Iniciar Sesión
+                      </Link>
+                    )}
+                  </li>
             </ul>
           </nav>
 
