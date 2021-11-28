@@ -5,7 +5,10 @@
     background-size:cover;
     background-repeat: no-repeat;
 }
-
+#megabox{
+  display:flex;
+  flex-direction: row;
+}
 #img1 {
   width: auto;
   margin-left: 6.5%;
@@ -37,12 +40,12 @@
 
 .box4 {
   margin-top: 1%;
-  display: flex;
-  flex-direction: row;
   margin-bottom: 1%;
   
 }
-
+#bigbox{
+  display: block;
+}
 .box2 {
   box-sizing: border-box;
   width: 25%;
@@ -82,25 +85,13 @@
   color: black;
 }
 
-#label6 {
+.label6 {
   color: black;
   font-family: 'Scope One', serif;
+  text-align: center;
 }
 
-#profesional {
-  color: black;
-  font-family: 'Scope One', serif;
-}
 
-#label7 {
-  color: black;
-  font-family: 'Scope One', serif;
-}
-
-#about {
-  color: black;
-  font-family: 'Scope One', serif;
-}
 #label8 {
   font-weight: 600;
   font-family: 'Scope One', serif;
@@ -151,8 +142,10 @@
 }
 
 .box7 {
-  margin-left: 7.5%;
+  margin-left: 5%;
+  margin-top: 2.5%;
   width: 70%;
+
 }
 
 .box8 {
@@ -161,6 +154,10 @@
   justify-content: space-between;
   width: 70%;
   height: 45%;
+}
+.box9{
+  margin-right: 2.5%;
+  margin-left: 2.5%;
 }
 
 #academia {
@@ -177,33 +174,12 @@
   box-sizing: border-box;
   border: 7px solid #6eb5b8;
   height: 80%;
-  width: 130.5%;
+  width: 275px;
   background-color: white;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
-#caja2 {
-  box-sizing: border-box;
-  border: 7px solid #6eb5b8;
-  height: 80%;
-  width: 110%;
-  background-color: white;
-}
-
-#caja3 {
-  box-sizing: border-box;
-  border: 7px solid #6eb5b8;
-  height: 85%;
-  width: 106%;
-  background-color: white;
-}
-
-#caja4 {
-  box-sizing: border-box;
-  border: 7px solid #6eb5b8;
-  height: 80%;
-  width: 300%;
-  background-color: white;
-}
 #isLoading{
   width: 100%;
   text-align: center;

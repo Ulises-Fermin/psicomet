@@ -26,86 +26,91 @@ function Profile_e() {
   };
   return (
     <>
-    {!!user ? (
-    <div class ={styles.body}>
-      <div class={styles.box1}>
-        <div class={styles.info}>
-          <h1 id={styles.names}>
-            Dr. {user.name} {user.lastName}
-          </h1>
-          <p id={styles.rol}>Rol: {user.role}</p>
-          <br />
-          <Link id={styles.Modify} to="/Modify_p">
-            Modificar Datos
-          </Link>
-        </div>
-      </div>
-      <div class={styles.box4}>
-        
-        <div class={styles.box2}>
-          <p id={styles.label1}>Correo Electrónico:</p>
-          <p id={styles.mail}>{user.email}</p>
-          <br />
-          <p id={styles.label1}>Teléfono:</p>
-          <p id={styles.phone}>{user.phone}</p>
-          <br />
-          <p id={styles.label2}>Género:</p>
-          <p id={styles.gender}>{user.gender}</p>
-          <br />
-          <p id={styles.label3}>Idiomas:</p>
-          <p id={styles.idioma}>{user.languages}</p>
-          <br />
-          <p id={styles.label4}>Modelo de Trabajo Terapéutico:</p>
-          <p id={styles.model}>Consultas en sincronia</p>
-          <br />
-          <p id={styles.label5}>Precio de consulta:</p>
-          <p id={styles.price}>20$ 60 min</p>
-          <br />
-          <p id={styles.label8}>Ver Itinerario:</p>
-          <Popup
-            trigger={<button> Itinerario </button>}
-            position="center center"
-            modal
-          >
-          <ShowItinerary/>
-          </Popup>
-          <br />
-          <Link to="/Psychologist" id={styles.volver}>
-            Volver
-          </Link>
-        </div>
-
-        <div class={styles.box7}>
-          <div class={styles.box3}>
-            <div id={styles.box5}>
-              <h2 id={styles.label6}>Áreas de atención</h2>
-              <div class={styles.caja}>{user.atencionAreas}</div>
+      {!!user ? (
+        <div class={styles.body}>
+          <div class={styles.megabox}>
+            <div class={styles.box4}>
+              <div class={styles.box2}>
+                <p id={styles.label1}>Correo Electrónico:</p>
+                <p id={styles.mail}>{user.email}</p>
+                <br />
+                <p id={styles.label1}>Teléfono:</p>
+                <p id={styles.phone}>{user.phone}</p>
+                <br />
+                <p id={styles.label2}>Género:</p>
+                <p id={styles.gender}>{user.gender}</p>
+                <br />
+                <p id={styles.label3}>Idiomas:</p>
+                <p id={styles.idioma}>{user.languages}</p>
+                <br />
+                <p id={styles.label4}>Modelo de Trabajo Terapéutico:</p>
+                <p id={styles.model}>Consultas en sincronia</p>
+                <br />
+                <p id={styles.label5}>Precio de consulta:</p>
+                <p id={styles.price}>20$ 60 min</p>
+                <br />
+                <p id={styles.label8}>Ver Itinerario:</p>
+                <Popup
+                  trigger={<button> Itinerario </button>}
+                  position="center center"
+                  modal
+                >
+                  <ShowItinerary />
+                </Popup>
+                <br />
+                <Link to="/Psychologist" id={styles.volver}>
+                  Volver
+                </Link>
+              </div>
             </div>
-            <div id={styles.box6}>
-              <h2 id={styles.profesional}>Experiencia Profesional</h2>
-              <div class={styles.caja}>{user.experience}</div>
+
+            <div id={styles.bigbox}>
+              <div class={styles.box1}>
+                <div class={styles.info}>
+                  <h1 id={styles.names}>
+                    Dr. {user.name} {user.lastName}
+                  </h1>
+                  <p id={styles.rol}>Rol: {user.role}</p>
+                  <br />
+                  <Link id={styles.Modify} to="/Modify_p">
+                    Modificar Datos
+                  </Link>
+                </div>
+              </div>
+
+
+              <div class={styles.box7}>
+                <div class={styles.box3}>
+                  <div id={styles.box9}>
+                    <h2 class={styles.label6}>Áreas de atención</h2>
+                    <div class={styles.caja}>{user.atencionAreas}</div>
+                  </div>
+                  <div id={styles.box9}>
+                    <h2 class={styles.label6}>Experiencia Profesional</h2>
+                    <div class={styles.caja}>{user.experience}</div>
+                  </div>
+                </div>
+
+                <div class={styles.box3}>
+                  <div id={styles.box9}>
+                    <h2 class={styles.label6}>Formación Académica</h2>
+                    <div class={styles.caja}>{user.academics}</div>
+                  </div>
+                  <div id={styles.box9}>
+                    <h2 class={styles.label6}>Sobre mí</h2>
+                    <div class={styles.caja}>{user.aboutMe}</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class={styles.box3}>
-            <div id={styles.box9}>
-              <h2 id={styles.label7}>Formación Académica</h2>
-              <div class={styles.caja}>{user.academics}</div>
-            </div>
-            <div id={styles.box9}>
-              <h2 id={styles.about}>Sobre mí</h2>
-              <div class={styles.caja}>{user.aboutMe}</div>
-            </div>
-          </div>
         </div>
-      </div>
-      </div>
-    ) : (
-      <h1 id={styles.isLoading}>
-        Cargando...
-      </h1>
-    )}
-    
+      ) : (
+        <h1 id={styles.isLoading}>
+          Cargando...
+        </h1>
+      )}
+
     </>
   );
 }
@@ -116,5 +121,5 @@ export default Profile_e;
           id={styles.img1}
           src={url}
           alt=""
-          onClick={() => watchpicture(user)} 
+          onClick={() => watchpicture(user)}
         />*/
