@@ -10,6 +10,15 @@ import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import SpecialistCard from "../../Components/SpecialistCard/SpecialistCard";
 
+
+
+function Quest() {
+  const [names, setNames] = useState("");
+  const [psychologists, setPsychologists] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [url, setUrl] = useState([]);
+  const { user, setUser } = useContext(UserContext);
+  const list = [];
 function ShowItinerary(itinerarys) {
   var list = [];
   const itinerary = itinerarys;
@@ -28,15 +37,7 @@ function ShowItinerary(itinerarys) {
   )
 };
 
-function Quest() {
-  const [names, setNames] = useState("");
-  const [psychologists, setPsychologists] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [url, setUrl] = useState([]);
-  const { user, setUser } = useContext(UserContext);
-  const list = [];
-
-  const fetchPsychologists = async () => {
+const fetchPsychologists = async () => {
     const response = db.collection("users");
     const data = await response.get();
     data.docs.forEach((item) => {
@@ -44,6 +45,7 @@ function Quest() {
         item.data().role === "psychologist" &&
         item.data().status === "accept" &&
         item.data().curriculum === "have" &&
+        item.data().photo === "true" &&
         (item.data().name + " " + item.data().lastName)
           .toLowerCase()
           .includes(names.toLocaleLowerCase())
@@ -58,8 +60,6 @@ function Quest() {
   useEffect(() => {
     fetchPsychologists();
   }, [names]);
-
-  
 
   const handleOnChange = async (e) => {
     setNames(e.target.value);
@@ -103,6 +103,11 @@ function Quest() {
       Hola
     </Popup>;
   };
+  
+
+  
+
+  
 
   return (
     <>
@@ -136,3 +141,4 @@ function Quest() {
   );
 }
 export default Quest;
+

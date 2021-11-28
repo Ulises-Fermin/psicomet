@@ -13,7 +13,7 @@ export const useTestimonials = () => {
                 snapshop => {   
                     setLoading(false)
                     setMessages(snapshop.docs.map(d => ({ id: d.id, ...d.data() } )));
-    
+                    console.log("por si acaso")
             },
             err => {
                 setError(err);

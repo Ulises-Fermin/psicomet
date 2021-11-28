@@ -31,6 +31,7 @@ function Modify_p() {
     experience: "",
     academics: "",
     aboutMe: "",
+    photo: "false",
   });
 
   const handleOnChange = (event) => {
@@ -119,6 +120,9 @@ function Modify_p() {
       function complete() {
         console.info("Finished uploading!");
         window.alert("Logrado");
+        db.collection("users").doc(user.id).update({
+          photo: "true",
+        });
       }
     );
 } 

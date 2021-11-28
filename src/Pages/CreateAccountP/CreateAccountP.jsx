@@ -25,6 +25,7 @@ function CreateAccountP() {
     specialty: "",
     status: "waiting",
     curriculum: "",
+    photo: "",
   });
 
   const history = useHistory();
@@ -74,6 +75,7 @@ function CreateAccountP() {
                             languages: null,
                             curriculum: "lack",
                             itinerary: null,
+                            photo: "false",
                           },
                           response.user.uid,
                           
@@ -137,7 +139,7 @@ function CreateAccountP() {
 
           <div class = {styles.profileDiv}>
             <img id={styles.photo} src={newUser} alt = "Profile picture"/>
-            <input type="file" id ={styles.file}/>
+            <input type="file" accept="image/*" id ={styles.file}/>
             <label for = {styles.file} id={styles.uploadBtn}>Elegir foto</label>
           </div>
 

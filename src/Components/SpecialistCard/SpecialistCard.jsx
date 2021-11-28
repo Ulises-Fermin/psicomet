@@ -18,6 +18,7 @@ function ShowItinerary(itinerarys) {
             if (itinerary[days][hours]["checked"] === true){
                 const day = days + " " + itinerary[days][hours]["value"] + " / ";
                 list.push(day)
+                console.log("aqui llego")
             }
     }
     return(

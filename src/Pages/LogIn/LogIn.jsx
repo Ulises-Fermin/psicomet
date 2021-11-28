@@ -37,6 +37,7 @@ function LogIn() {
   const handleOnChange = (event) => {
     const { value, name: inputName } = event.target;
     setValues({ ...values, [inputName]: value });
+    console.log("ACA COLUD BE")
   };
 
   const handleSubmit = async (e) => {

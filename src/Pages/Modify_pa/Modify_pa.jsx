@@ -76,6 +76,9 @@ function Modify_pa() {
       },
       function complete() {
         console.info("Finished uploading!");
+        db.collection("users").doc(user.id).update({
+          photo: "true",
+        });
       }
     );
 }

@@ -9,6 +9,7 @@ import Popup from "reactjs-popup";
 import newUser from "../../Images/newUser.png";
 import { app } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
+import Usuario from "../../Images/Usuario.png";
 
 function Profile_e() {
   const { user, setUser } = useContext(UserContext);
@@ -25,16 +26,11 @@ function Profile_e() {
   };
   return (
     <>
+    {!!user ? (
     <div class ={styles.body}>
       <div class={styles.box1}>
-        <img
-          id={styles.img1}
-          src={url}
-          alt=""
-          onClick={() => watchpicture(user)} 
-        />
         <div class={styles.info}>
-          <h1 id={styles.name}>
+          <h1 id={styles.names}>
             Dr. {user.name} {user.lastName}
           </h1>
           <p id={styles.rol}>Rol: {user.role}</p>
@@ -45,6 +41,7 @@ function Profile_e() {
         </div>
       </div>
       <div class={styles.box4}>
+        
         <div class={styles.box2}>
           <p id={styles.label1}>Correo Electrónico:</p>
           <p id={styles.mail}>{user.email}</p>
@@ -82,29 +79,42 @@ function Profile_e() {
           <div class={styles.box3}>
             <div id={styles.box5}>
               <h2 id={styles.label6}>Áreas de atención</h2>
-              <div id={styles.caja}>{user.atencionAreas}</div>
+              <div class={styles.caja}>{user.atencionAreas}</div>
             </div>
             <div id={styles.box6}>
               <h2 id={styles.profesional}>Experiencia Profesional</h2>
-              <div id={styles.caja2}>{user.experience}</div>
+              <div class={styles.caja}>{user.experience}</div>
             </div>
           </div>
 
-          <div class={styles.box8}>
+          <div class={styles.box3}>
             <div id={styles.box9}>
               <h2 id={styles.label7}>Formación Académica</h2>
-              <div id={styles.caja3}>{user.academics}</div>
+              <div class={styles.caja}>{user.academics}</div>
             </div>
-            <div id={styles.box10}>
+            <div id={styles.box9}>
               <h2 id={styles.about}>Sobre mí</h2>
-              <div id={styles.caja4}>{user.aboutMe}</div>
+              <div class={styles.caja}>{user.aboutMe}</div>
             </div>
           </div>
         </div>
       </div>
       </div>
+    ) : (
+      <h1 id={styles.isLoading}>
+        Cargando...
+      </h1>
+    )}
+    
     </>
   );
 }
 
 export default Profile_e;
+
+/*<img
+          id={styles.img1}
+          src={url}
+          alt=""
+          onClick={() => watchpicture(user)} 
+        />*/

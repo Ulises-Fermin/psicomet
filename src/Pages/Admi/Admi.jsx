@@ -20,6 +20,7 @@ function Admi() {
             list.push({data:item.data(), id:item.id});
         })
         setPsychologists(list);
+        console.log("aca siiii")
         setIsLoading(false);
         return list
     }

@@ -21,6 +21,7 @@ function Appointments() {
       }
     });
     setdates(list);
+    console.log("ACAAA SIIII")
     console.log(dates);
     return list;
   };

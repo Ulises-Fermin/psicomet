@@ -31,7 +31,7 @@
   margin-bottom: 0%;
 }
 
-#name {
+#names {
   padding-top: 2%;
 }
 
@@ -45,7 +45,7 @@
 
 .box2 {
   box-sizing: border-box;
-  width: 20%;
+  width: 25%;
   border: 7px solid #6eb5b8;
   margin-left: 2%;
   padding-bottom: 1%;
@@ -135,7 +135,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 70%;
   margin-bottom: 0%;
   height: 45%;
 }
@@ -151,16 +151,15 @@
 }
 
 .box7 {
-  margin-left: 4%;
+  margin-left: 7.5%;
   width: 70%;
 }
 
 .box8 {
-  margin-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 82%;
+  width: 70%;
   height: 45%;
 }
 
@@ -174,7 +173,7 @@
   margin-top: 0.5%;
 }
 
-#caja {
+.caja {
   box-sizing: border-box;
   border: 7px solid #6eb5b8;
   height: 80%;
@@ -204,4 +203,17 @@
   height: 80%;
   width: 300%;
   background-color: white;
+}
+#isLoading{
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4%;
+  background-image: url("../../Images/Loading.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  align-content: center;
+  color: white;
 }

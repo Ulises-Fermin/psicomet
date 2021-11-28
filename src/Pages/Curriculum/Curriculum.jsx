@@ -20,6 +20,7 @@ function Curriculum() {
           "state_changed",
           function progress(snapshot) {
             console.warn((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+            alert("No cambie la pagina ni cierre el programa hasta que la operacion halla finalizado, lleva: " + (snapshot.bytesTransferred / snapshot.totalBytes) * 100)
           },
           function error(error) {
             console.error(error);
@@ -30,6 +31,7 @@ function Curriculum() {
                 curriculum: "have",
             });
             history.push("/Home");
+            window.location.reload()
           }
         );
     }
