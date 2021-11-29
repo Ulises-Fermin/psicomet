@@ -4,12 +4,13 @@ import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { app } from "../../Utils/FireBaseConfig"
-
+import { useHistory } from "react-router";
 function Admi() {
     const [names, setNames] = useState("");
     const [psychologists, setPsychologists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const { user, setUser } = useContext(UserContext);
+    const history = useHistory();
     const list = [];
     const fetchPsychologists = async () => {
         setIsLoading(true)
@@ -65,25 +66,31 @@ function Admi() {
                     <h1>Cargando Especialistas.</h1>
                 </div>
             ) : (
-                <div id={styles.body}>
-                    <h1 id={styles.title}>Aceptar personas</h1>
-                    <div id={styles.container}>
-                        {psychologists.map((p) => (
-                            <div id={styles.psychoCards}>
-                                <li class={styles.psychoList}><p>{p.data.name} {p.data.lastName}</p></li>
-                                <li class={styles.psychoList}><p>{p.data.email}</p></li>
-                                <li class={styles.psychoList}><p>{p.data.phone}</p></li>
-                                <li class={styles.psychoList}><p>{p.data.specialty}</p></li>
-                                <button class={styles.psychoListC} onClick={() => DownloadCurriculum(p)}><p>Ver Curriculum</p></button>
-                                <div id={styles.linebuttom}>
-                                    <button class={styles.psychoListA} onClick={() => ChangeStatusA(p)}><p>Aceptar</p></button>
-                                    <button class={styles.psychoListD} onClick={() => ChangeStatusD(p)}><p>Denegar</p></button>
+                <>
+                    {(user?.role === "admi") ? (
+                        <>
+                            <div id={styles.body}>
+                                <h1 id={styles.title}>Aceptar personas</h1>
+                                <div id={styles.container}>
+                                    {psychologists.map((p) => (
+                                        <div id={styles.psychoCards}>
+                                            <li class={styles.psychoList}><p>{p.data.name} {p.data.lastName}</p></li>
+                                            <li class={styles.psychoList}><p>{p.data.email}</p></li>
+                                            <li class={styles.psychoList}><p>{p.data.phone}</p></li>
+                                            <li class={styles.psychoList}><p>{p.data.specialty}</p></li>
+                                            <button class={styles.psychoListC} onClick={() => DownloadCurriculum(p)}><p>Ver Curriculum</p></button>
+                                            <div id={styles.linebuttom}>
+                                                <button class={styles.psychoListA} onClick={() => ChangeStatusA(p)}><p>Aceptar</p></button>
+                                                <button class={styles.psychoListD} onClick={() => ChangeStatusD(p)}><p>Denegar</p></button>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
+                                <canvas></canvas>
                             </div>
-                        ))}
-                    </div>
-                    <canvas></canvas>
-                </div>
+                        </>
+                    ) : (history.push("/home"))};
+                </>
             )
 
             }

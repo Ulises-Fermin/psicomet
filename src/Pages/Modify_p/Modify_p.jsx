@@ -5,6 +5,7 @@ import { useState, useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import Itinerary from "../Itinerary/Itinerary";
 import { app } from "../../Utils/FireBaseConfig";
+import styles from "./Modify_p.module.css";
 import { useHistory } from "react-router";
 function Modify_p() {
   const { user, setUser } = useContext(UserContext);
@@ -66,7 +67,7 @@ function Modify_p() {
 
     if (values.languages === "") {
       user.languages = user.languages;
-    }else {
+    } else {
       db.collection("users").doc(user.id).update({
         languages: values.languages,
       });
@@ -74,7 +75,7 @@ function Modify_p() {
 
     if (values.atencionAreas === "") {
       user.atencionAreas = user.atencionAreas;
-    }else {
+    } else {
       db.collection("users").doc(user.id).update({
         atencionAreas: values.atencionAreas,
       });
@@ -82,7 +83,7 @@ function Modify_p() {
 
     if (values.experience === "") {
       user.experience = user.experience;
-    }else {
+    } else {
       db.collection("users").doc(user.id).update({
         experience: values.experience,
       });
@@ -90,7 +91,7 @@ function Modify_p() {
 
     if (values.academics === "") {
       user.academics = user.academics;
-    }else {
+    } else {
       db.collection("users").doc(user.id).update({
         academics: values.academics,
       });
@@ -98,7 +99,7 @@ function Modify_p() {
 
     if (values.aboutMe === "") {
       user.aboutMe = user.aboutMe;
-    }else {
+    } else {
       db.collection("users").doc(user.id).update({
         aboutMe: values.aboutMe,
       });
@@ -132,139 +133,151 @@ function Modify_p() {
         });
       }
     );
-} 
+  }
 
   return (
     <>
-      <div className='form-container'>
-        <div className='form-content-left'>
-          <form className='form'>
-            <h1>
-            Modificación de Datos
-            </h1>
-            {/* {/* <h1 id={styles.titulo}>Modificación de Datos</h1> */}
-            <div className='form-inputs'>
-              <label className='form-label'>Nombre</label>
-              <input
-                className='form-input'
-                name="name"
-                type="text"
-                placeholder="Ingrese su nombre"
-                value={values.name}
-                onChange={handleOnChange}
-              />
+      {!!user ? (
+        <>
+          {((user?.role === "psychologist") && (user?.status === "accept")) ? (
+            <>
+              <div className='form-container'>
+                <div className='form-content-left'>
+                  <form className='form'>
+                    <h1>
+                      Modificación de Datos
+                    </h1>
+                    {/* {/* <h1 id={styles.titulo}>Modificación de Datos</h1> */}
+                    <div className='form-inputs'>
+                      <label className='form-label'>Nombre</label>
+                      <input
+                        className='form-input'
+                        name="name"
+                        type="text"
+                        placeholder="Ingrese su nombre"
+                        value={values.name}
+                        onChange={handleOnChange}
+                      />
 
-              <label className='form-label'>Apellido</label>
-              <input
-                name="lastName"
-                className='form-input'
-                type="text"
-                placeholder="Ingrese su apellido"
-                value={values.lastName}
-                onChange={handleOnChange}
-                />
-              <label className='form-label'>Número telefónico</label>
-              <input
-                name="phone"
-                className='form-input'
-                type="t el"
-                placeholder="Ingrese su número telefónico"
-                value={values.phone}
-                onChange={handleOnChange}
-              />
-              <label className='form-label'>Género</label>
-              <input
-                name="gender"
-                className='form-input'
-                type="text"
-                placeholder="Ingrese su género"
-                value={values.gender}
-                onChange={handleOnChange}
-                />
-              <label className='form-label'>Idiomas (separados por comas)</label>
-              <input
-                name="languages"
-                className='form-input'
-                type="text"
-                placeholder="Ingrese sus idiomas"
-                value={values.languages}
-                onChange={handleOnChange}
-                />
-              <label className='form-label'>Método de consulta</label>
-              <input
-                className='form-input'
-                type="text"
-                placeholder="Ingrese su método de consulta"
-                />
+                      <label className='form-label'>Apellido</label>
+                      <input
+                        name="lastName"
+                        className='form-input'
+                        type="text"
+                        placeholder="Ingrese su apellido"
+                        value={values.lastName}
+                        onChange={handleOnChange}
+                      />
+                      <label className='form-label'>Número telefónico</label>
+                      <input
+                        name="phone"
+                        className='form-input'
+                        type="t el"
+                        placeholder="Ingrese su número telefónico"
+                        value={values.phone}
+                        onChange={handleOnChange}
+                      />
+                      <label className='form-label'>Género</label>
+                      <input
+                        name="gender"
+                        className='form-input'
+                        type="text"
+                        placeholder="Ingrese su género"
+                        value={values.gender}
+                        onChange={handleOnChange}
+                      />
+                      <label className='form-label'>Idiomas (separados por comas)</label>
+                      <input
+                        name="languages"
+                        className='form-input'
+                        type="text"
+                        placeholder="Ingrese sus idiomas"
+                        value={values.languages}
+                        onChange={handleOnChange}
+                      />
+                      <label className='form-label'>Método de consulta</label>
+                      <input
+                        className='form-input'
+                        type="text"
+                        placeholder="Ingrese su método de consulta"
+                      />
 
-              <label className='form-label'>Foto</label>
-              <input
-                  type="file"
-                  className='form-input'
-                  name="foto"
-                  onChange ={doUpload}
-                  accept="image/*"
-                  placeholder="Suba una foto de perfil"
-                  />
-              <label className='form-label'>Precio de su servicio</label>
-              <input
-              className='form-input'
-              type="text"
-              placeholder="Ingrese el precio de su servicio"
-            />
-              {/* <p id={styles.label8}>Ingrese sus áreas de atención: </p> */}
-              <label className='form-label'>Áreas de atencion</label>
-                <textarea
-                  name="atencionAreas"
-                  className='form-input'
-                  value={values.atencionAreas}
-                  onChange={handleOnChange}
-                  placeholder="Ingrese sus áreas de atención"
-                  cols="30"
-                  rows="5"
-                  ></textarea>
-              <label className='form-label'>Ingrese su experiencia profesional</label>
-                <textarea
-                  name="experience"
-                  value={values.experience}
-                  onChange={handleOnChange}
-                  className='form-input'
-                  placeholder="Ingrese su experiencia profesional"
-                  cols="30"
-                  rows="5"
-                  ></textarea> 
-              <label className='form-label'>Formación académica</label>
-                <textarea
-                  name="academics"
-                  className='form-input'
-                  onChange={handleOnChange}
-                  placeholder="Ingrese su formación académica"
-                  cols="30"
-                  rows="5"
+                      <label className='form-label'>Foto</label>
+                      <input
+                        type="file"
+                        className='form-input'
+                        name="foto"
+                        onChange={doUpload}
+                        accept="image/*"
+                        placeholder="Suba una foto de perfil"
+                      />
+                      <label className='form-label'>Precio de su servicio</label>
+                      <input
+                        className='form-input'
+                        type="text"
+                        placeholder="Ingrese el precio de su servicio"
+                      />
+                      {/* <p id={styles.label8}>Ingrese sus áreas de atención: </p> */}
+                      <label className='form-label'>Áreas de atencion</label>
+                      <textarea
+                        name="atencionAreas"
+                        className='form-input'
+                        value={values.atencionAreas}
+                        onChange={handleOnChange}
+                        placeholder="Ingrese sus áreas de atención"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                      <label className='form-label'>Ingrese su experiencia profesional</label>
+                      <textarea
+                        name="experience"
+                        value={values.experience}
+                        onChange={handleOnChange}
+                        className='form-input'
+                        placeholder="Ingrese su experiencia profesional"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                      <label className='form-label'>Formación académica</label>
+                      <textarea
+                        name="academics"
+                        className='form-input'
+                        onChange={handleOnChange}
+                        placeholder="Ingrese su formación académica"
+                        cols="30"
+                        rows="5"
 
-                  ></textarea>
-              <label className='form-label'>Ingrese información sobre usted</label>
-                <textarea
-                  name="aboutMe"
-                  className='form-input'
-                  value={values.aboutMe}
-                  onChange={handleOnChange}
-                  placeholder="Ingrese su información sobre usted"
-                  cols="30"
-                  rows="5"
-                ></textarea> 
-                <br />
-            </div>
-              <label className='form-input-btn' onClick={handleSubmit}>Actualizar datos</label>
-          </form>
-        </div>
-        <div className='form-content-right'> 
-          <form className='form'>
-            <h1>Itinerario</h1>
-            <Itinerary />
-          </form>
-        </div>
-      </div>
+                      ></textarea>
+                      <label className='form-label'>Ingrese información sobre usted</label>
+                      <textarea
+                        name="aboutMe"
+                        className='form-input'
+                        value={values.aboutMe}
+                        onChange={handleOnChange}
+                        placeholder="Ingrese su información sobre usted"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                      <br />
+                    </div>
+                    <label className='form-input-btn' onClick={handleSubmit}>Actualizar datos</label>
+                  </form>
+                </div>
+                <div className='form-content-right'>
+                  <form className='form'>
+                    <h1>Itinerario</h1>
+                    <Itinerary />
+                  </form>
+                </div>
+              </div>
+            </>
+          ) : (history.push("/home"))}
+        </>
+      ) : (
+        <h1 id={styles.isLoading}>
+          Cargando...
+        </h1>
+      )}
     </>
   );
 }

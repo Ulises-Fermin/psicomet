@@ -24,9 +24,15 @@
     margin: 0 auto;
     text-align: center;
     font-family: 'Scope One', serif;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 15%;
+    padding-bottom: 5%;
     padding-left: 5%;
     padding-right: 5%;
     
+}
+#Logo{
+    padding-bottom: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
 }
