@@ -103,8 +103,14 @@ function Modify_p() {
         aboutMe: values.aboutMe,
       });
     }
-    window.alert("Logrado");
-    
+    window.alert("Actualizando datos");
+    /*var con = 0
+    while(con<300000){
+      con = con + 1
+      console.log(con)
+    }*/
+    window.alert("Datos actualizados, refresque la pestana para ver cambios")
+    /*history.push("/Psychologist")*/
   };
   const doUpload = (event) => {
     const file = event.target.files[0];

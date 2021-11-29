@@ -11,11 +11,7 @@
     padding-bottom: 5%;
     font-size: 300%;
 }
-#title:hover{
-    font-size: 305%;
-    color: #1CB0A7;
-    transition: 0.15s;
-}
+
 
 #container{
     margin-left: 10%;
@@ -29,32 +25,47 @@
 #psychoCards{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #6eb5b8;
     background-size: cover;
+    border-radius: 15px;
+    padding: 1%;
+    border-style:solid;
+    
 }
 .psychoList{
-    background-color:white;
+    background-color:#6eb5b8;
     list-style: none;
     text-align: center;
-    margin: 5px;
+    
+    
+}
+p{
+    font-family: "Scope One", serif;
 }
 .psychoListA{
     background-color: green;
     list-style: none;
     text-align: center;
     margin: 5px;
+    padding: 1%;
+    border-radius: 10px;
 }
 .psychoListD{
     background-color: red;
     list-style: none;
     text-align: center;
     margin: 5px;
+    padding: 1%;
+    border-radius: 10px;
 }
 .psychoListC{
     background-color:silver;
     list-style: none;
     text-align: center;
     margin: 5px;
+    padding: 1%;
+    border-radius: 10px;
+    margin-top: 15%;
 }
 
 #containerQuest{
@@ -98,4 +109,7 @@
     height: 600px;
     align-content: center;
     color: white;
+}
+#linebuttom{
+    display: flex;
 }

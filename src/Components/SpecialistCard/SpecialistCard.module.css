@@ -125,6 +125,15 @@
     text-align: center;
     margin: 5px;
   }
+  .psychoListD {
+    background-color:red;
+    font-weight: 580;
+    border-radius: 30px;
+    font-family: "Scope One", serif;
+    list-style: none;
+    text-align: center;
+    margin: 5px;
+  }
   
   #containerQuest {
     background-color: #1cb0a7;
@@ -267,5 +276,14 @@
     border:solid;
     border-width: 0.5px;
     border-radius: 5px;
+  }
+  #block{
+    text-align: center;
+    font-family: 'Scope One', serif;
+    font-size: 100%;
+    font-weight: bold;
+  }
+  #img2{
+    margin-bottom: 15%;
   }
   

@@ -97,11 +97,6 @@ const fetchPsychologists = async () => {
     </Popup>;
   };
   
-
-  
-
-  
-
   return (
     <>
       {isLoading ? (

@@ -6,6 +6,8 @@
     padding-left: 5%;
     padding-right: 5%;
     height: auto;
+    background-image: url("../../Images/Terapia.png");
+    
 }
 #TestimonialsSpace{
     width: 70%;
@@ -14,7 +16,6 @@
     padding-bottom: 5%;
     display: block;
     box-sizing: border-box;
-    
 } 
 #WriteSpace{
     margin-top: 5%;
@@ -65,6 +66,9 @@
     padding: 2%;
     padding-left: 5%;
     width: 100%;
+    margin-bottom: 2.5%;
+    background-color: #6eb5b8;
+    border-radius: 10px;
     
     
 }
@@ -75,7 +79,10 @@
     margin-top: 2%;
     padding-top: 2%;
 }
-
+#titlediv{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 #Logo{
     max-height: 100px;
     max-height: 100px;
@@ -91,11 +98,21 @@
     padding-left: 3%;
     font-family: 'Mukta', sans-serif;
     white-space: initial;
+    background-color: white;
+    border-radius: 10px;
 }
 
 p {
     white-space: nowrap;
     overflow: hidden;
+    font-weight: bold;
+}
+
+#minbody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
 }
 
 @media only screen and (max-width: 768px) {
