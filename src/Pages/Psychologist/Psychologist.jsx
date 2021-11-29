@@ -11,6 +11,8 @@ import Calendario from "../../Images/Calendario.png";
 import Agendar from "../../Images/Agendar.png";
 import Usuario from "../../Images/Usuario.png";
 import { useHistory } from "react-router";
+import Histories from "../Histories/Histories";
+
 function Psychologist() {
   const { user, setUser } = useContext(UserContext);
   const history = useHistory();
@@ -42,7 +44,9 @@ function Psychologist() {
                   </div>
                   <div class={styles.card}>
                     <img id={styles.image} src={Agendar} alt="" />
-                    <p class={styles.linkto}>Historial de Pacientes</p>
+                    <Link to="Histories">
+                      <p class={styles.linkto}>Historias de Pacientes</p>
+                    </Link>
                   </div>
                 </div>
                 <div id={styles.buttons2}>

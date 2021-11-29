@@ -1,0 +1,32 @@
+.row{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding:1%;
+    border: solid;
+    border-color: gray;
+    border-width: 0.5px;
+}
+
+#chart{
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+    border-radius: 10px;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+button{
+    margin-left: 5px;
+}

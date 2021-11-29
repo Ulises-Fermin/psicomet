@@ -32,6 +32,7 @@ import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
 import Appointments from "./Pages/Appointments/Appointments";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
+import Histories from "./Pages/Histories/Histories";
 
 function App() {
   // Funcion para el PayPal
@@ -136,6 +137,9 @@ function App() {
             </Route>
             <Route exact path="/CreateAppointment">
               <CreateAppointment />
+            </Route>
+            <Route exact path="/Histories">
+              <Histories />
             </Route>
           </Switch>
           <Footer />

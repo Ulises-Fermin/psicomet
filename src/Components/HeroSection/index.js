@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import Video from '../../Videos/video.mp4'
 import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper, ArrowForward, ArrowRight} from './HeroElements'
 import {Button} from '../ButtonElements';
-import { Link } from "react-router-dom";
 
 
 const HeroSection = () => {
@@ -11,8 +10,6 @@ const HeroSection = () => {
     const onHover = () => {
         setHover(!hover)
     }
-
-    const login = 'login';
 
     return (
         <HeroContainer>
