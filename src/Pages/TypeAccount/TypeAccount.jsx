@@ -9,7 +9,6 @@ function TypeAccount() {
   const history = useHistory();
   return (
     <>
-      {!!user ? (
         <div id={styles.Body}>
           <div id={styles.LogoContainer}>
             <img src="/LogoPsicomet.png" id={styles.Logo} alt="" />
@@ -32,11 +31,6 @@ function TypeAccount() {
             Iniciar sesión
           </Link>
         </div>
-      ) : (
-        <h1 id={styles.isLoading}>
-          Cargando...
-        </h1>
-      )}
     </>
   );
 }

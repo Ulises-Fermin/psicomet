@@ -31,6 +31,7 @@ import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
 import Appointments from "./Pages/Appointments/Appointments";
+import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 
 function App() {
   // Funcion para el PayPal
@@ -132,6 +133,9 @@ function App() {
             </Route>
             <Route exact path="/Appointments">
               <Appointments />
+            </Route>
+            <Route exact path="/CreateAppointment">
+              <CreateAppointment />
             </Route>
           </Switch>
           <Footer />
