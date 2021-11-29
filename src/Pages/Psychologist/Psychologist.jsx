@@ -39,9 +39,6 @@ function Psychologist() {
                 <div id={styles.buttons1}>
                   <div class={styles.card}>
                     <img id={styles.image} src={Consulta} alt="" />
-                    <Link to="/Appointments">
-                      <p class={styles.linkto}>Mis Consultas</p>
-                    </Link>
                   </div>
                   <div class={styles.card}>
                     <img id={styles.image} src={Agendar} alt="" />
@@ -55,7 +52,9 @@ function Psychologist() {
                   </div>
                   <div class={styles.card}>
                     <img id={styles.image} src={Calendario} alt="" />
-                    <p class={styles.linkto}>Calendario citas</p>
+                    <Link to="/Appointments">
+                      <p class={styles.linkto}>Mis Consultas</p>
+                    </Link>
                   </div>
                 </div>
                 <div id={styles.buttons3}>
