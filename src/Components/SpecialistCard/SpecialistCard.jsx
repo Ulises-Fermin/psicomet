@@ -189,7 +189,10 @@ function SpecialistCard({ specialist }) {
               </div>
             </div>
           </div>
-          <Link to="/CreateAppointment" id={styles.linkk}>Agendar Cita</Link>
+          {!!user ? (
+            <Link to="/CreateAppointment" id={styles.linkk}>Agendar Cita</Link>
+          ) : (null)}
+          
         </div>
       </Popup>
       {(user?.role === "admi") ? (

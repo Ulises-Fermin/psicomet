@@ -67,7 +67,7 @@
     padding-left: 5%;
     width: 100%;
     margin-bottom: 2.5%;
-    background-color: #2CBEB5;
+    background-color: #6eb5b8;
     border-radius: 10px;
     
     
@@ -98,6 +98,8 @@
     padding-left: 3%;
     font-family: 'Mukta', sans-serif;
     white-space: initial;
+    background-color: white;
+    border-radius: 10px;
 }
 
 p {
