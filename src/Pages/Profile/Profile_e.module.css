@@ -13,7 +13,8 @@
     padding-bottom: 1%;
 } 
 #img1 {
-  width: auto;
+  width: 7.5rem;
+  height: 7.5rem;
   margin-left: 6.5%;
   border: 7px solid #6eb5b8;
   border-radius: 100%;
@@ -175,7 +176,7 @@
 .caja {
   box-sizing: border-box;
   border: 7px solid #6eb5b8;
-  height: 80%;
+  height: 7.5rem;
   width: 275px;
   background-color: white;
   margin-left: 2.5%;
