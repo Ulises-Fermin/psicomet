@@ -189,7 +189,7 @@ function SpecialistCard({ specialist }) {
               </div>
             </div>
           </div>
-          {!!user ? (
+          {(!!user && user.role==="pacient") ? (
             <Link to="/CreateAppointment" id={styles.linkk}>Agendar Cita</Link>
           ) : (null)}
           

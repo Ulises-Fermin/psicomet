@@ -108,6 +108,13 @@ p {
     font-weight: bold;
 }
 
+#minbody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
 @media only screen and (max-width: 768px) {
     #TestimonialsSpace{
         width: 100%;

@@ -138,12 +138,8 @@ function CreateAccountP() {
           </div>
 
           <div class = {styles.profileDiv}>
-            <img id={styles.photo} src={newUser} alt = "Profile picture"/>
-            <input type="file" accept="image/*" id ={styles.file}/>
-            <label for = {styles.file} id={styles.uploadBtn}>Elegir foto</label>
+            <img id={styles.photo} src={newUser} alt = ""/>
           </div>
-
-          <script scr = './ProfilePic'></script>
 
           <div class={styles.DatesContainer}>
             <div id={styles.File1}>
@@ -269,6 +265,15 @@ function CreateAccountP() {
                 <option value="">Especialidad</option>
                 <option value="Depresion">Depresion</option>
                 <option value="Ansiedad">Ansiedad</option>
+                <option value="Ansiedad">Sexualidad</option>
+                <option value="Ansiedad">Atencio Infantil</option>
+                <option value="Ansiedad">Psiquiatra</option>
+                <option value="Ansiedad">Terapia en familia</option>
+                <option value="Ansiedad">Ansiedad</option>
+                <option value="Ansiedad">Educacion</option>
+                <option value="Ansiedad">Psicoterapia</option>
+                <option value="Ansiedad">NeuroPsicologo</option>
+                <option value="Ansiedad">Psicologo Criminalista</option>
                 <option value="Otro">Otro</option>
               </select>
             </div>

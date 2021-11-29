@@ -113,6 +113,7 @@ function CreateAccount() {
               Iniciar sesión
             </Link>
           </div>
+          
           <form onSubmit={handleSubmit}>
             <div class={styles.DatesContainer}>
               <div id={styles.File1}>
