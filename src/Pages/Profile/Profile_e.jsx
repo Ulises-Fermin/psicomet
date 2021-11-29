@@ -32,8 +32,6 @@ function Profile_e() {
     <>
       {!!user ? (
         <div class={styles.body}>
-          <div class={styles.megabox}>
-            <div class={styles.box4}>
               <div class={styles.box2}>
                 <p id={styles.label1}>Correo Electrónico:</p>
                 <p id={styles.mail}>{user.email}</p>
@@ -48,10 +46,10 @@ function Profile_e() {
                 <p id={styles.idioma}>{user.languages}</p>
                 <br />
                 <p id={styles.label4}>Modelo de Trabajo Terapéutico:</p>
-                <p id={styles.model}>Consultas en sincronia</p>
+                <p id={styles.model}>Consultas en sincronía</p>
                 <br />
                 <p id={styles.label5}>Precio de consulta:</p>
-                <p id={styles.price}>20$ 60 min</p>
+                <p id={styles.price}>$20 60 min</p>
                 <br />
                 <p id={styles.label8}>Ver Itinerario:</p>
                 <Popup
@@ -65,9 +63,12 @@ function Profile_e() {
                 <Link to="/Psychologist" id={styles.volver}>
                   Volver
                 </Link>
+                <br />
+                <br />
               </div>
-            </div>
 
+            
+              
             <div id={styles.bigbox}>
               <div id={styles.info}>
                 <div class={styles.box1}>
@@ -89,7 +90,6 @@ function Profile_e() {
                         src={Usuario}
                         alt=""
                       />
-                      <p>holaaa</p>
                       </>
                     ) : (
                       <img
@@ -102,26 +102,24 @@ function Profile_e() {
                   </div>
                 </div>
               </div>
-
-
               <div class={styles.box7}>
-                <div class={styles.box3}>
-                  <div id={styles.box9}>
+                <div class={styles.boxAE}>
+                  <div id={styles.boxBSS}>
                     <h2 class={styles.label6}>Áreas de atención</h2>
                     <div class={styles.caja}>{user.atencionAreas}</div>
                   </div>
-                  <div id={styles.box9}>
+                  <div id={styles.boxFSS}>
                     <h2 class={styles.label6}>Experiencia Profesional</h2>
                     <div class={styles.caja}>{user.experience}</div>
                   </div>
                 </div>
 
-                <div class={styles.box3}>
-                  <div id={styles.box9}>
+                <div class={styles.boxFS}>
+                  <div id={styles.boxBSS}>
                     <h2 class={styles.label6}>Formación Académica</h2>
                     <div class={styles.caja}>{user.academics}</div>
                   </div>
-                  <div id={styles.box9}>
+                  <div id={styles.boxFSS}>
                     <h2 class={styles.label6}>Sobre mí</h2>
                     <div class={styles.caja}>{user.aboutMe}</div>
                   </div>
@@ -129,7 +127,6 @@ function Profile_e() {
               </div>
             </div>
           </div>
-        </div>
       ) : (
         <h1 id={styles.isLoading}>
           Cargando...

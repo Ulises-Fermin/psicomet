@@ -3,8 +3,9 @@ import styles from "./Modify_pa.module.css";
 import { Link } from "react-router-dom";
 import { auth, db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
-import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
+import { app } from "../../Utils/FireBaseConfig";
+import { useHistory } from "react-router";
 
 function Modify_pa() {
   const { user, setUser } = useContext(UserContext);
