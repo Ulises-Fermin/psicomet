@@ -5,6 +5,8 @@ import Usuario from "../../Images/Usuario.png";
 import { UserContext } from "../../Context/UserContext";
 import { useContext } from "react";
 import { useHistory } from "react-router";
+import PDF from '../../Images/PDF.png';
+import psicometLogo from '../../Images/LogoPsicomet.png';
 function Files() {
     const history = useHistory();
     const { user, setUser } = useContext(UserContext);
@@ -24,21 +26,23 @@ function Files() {
                             <h4>Puede acceder a archivos utiles de PsicoMet</h4>
                             <div id={styles.container}>
                                 <div class={styles.card}>
-                                    <img id={styles.img1} src={Usuario} alt="" />
+                                    <img id={styles.img1} src={PDF} alt="" />
                                     <p>Contrato de terminos y condiciones</p>
-                                    <button class={styles.psychoListC} onClick={() => DownloadCurriculum("Contrato de terminos y condiciones.pdf")}>Descargar</button>
+                                    <button class={styles.psychoListC} onClick={() => DownloadCurriculum("Contrato de terminos y condiciones.pdf")}><p>Descargar</p></button>
                                 </div>
                                 <div class={styles.card}>
-                                    <img id={styles.img1} src={Usuario} alt="" />
+                                    <img id={styles.img1} src={PDF} alt="" />
                                     <p>Instructivo de uso</p>
-                                    <button class={styles.psychoListC} onClick={() => DownloadCurriculum("Instructivo de uso.pdf")}>Descargar</button>
+                                    <button class={styles.psychoListC} onClick={() => DownloadCurriculum("Instructivo de uso.pdf")}><p>Descargar</p></button>
                                 </div>
                                 <div class={styles.card}>
-                                    <img id={styles.img1} src={Usuario} alt="" />
+                                    <img id={styles.img1} src={PDF} alt="" />
                                     <p>Informacion de desarrolladores</p>
-                                    <button class={styles.psychoListC} onClick={() => DownloadCurriculum("Informacion de desarrolladores.pdf")}>Descargar</button>
+                                    <button class={styles.psychoListC} onClick={() => DownloadCurriculum("Informacion de desarrolladores.pdf")}><p>Descargar</p></button>
                                 </div>
+                                
                             </div>
+                            <img src={psicometLogo} id={styles.Logo} alt="" />
 
                         </div>
                     ) : (history.push("/home"))}

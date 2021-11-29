@@ -5,10 +5,13 @@
     background-size:cover;
     background-repeat: no-repeat;
 }
-#megabox{
-  display:flex;
-  flex-direction: row;
-}
+.megabox{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    padding-top: 1%;
+    padding-bottom: 1%;
+} 
 #img1 {
   width: auto;
   margin-left: 6.5%;
@@ -38,13 +41,9 @@
   padding-top: 2%;
 }
 
-.box4 {
-  margin-top: 1%;
-  margin-bottom: 1%;
-  
-}
 #bigbox{
-  display: block;
+  display: inline;
+  margin-left: 10%;
 }
 .box2 {
   box-sizing: border-box;
@@ -55,10 +54,11 @@
   background-color: white;
 }
 
-#label1 {
-  font-weight: 600;
+.label1 {
+  font-weight: 25%;
   font-family: 'Scope One', serif;
   color: black;
+  font-size: 70%;
 }
 
 #label2 {
@@ -129,6 +129,7 @@
   width: 70%;
   margin-bottom: 0%;
   height: 45%;
+  display: flex;
 }
 
 #areas {
@@ -145,6 +146,7 @@
   margin-left: 5%;
   margin-top: 2.5%;
   width: 70%;
+  height: 70%;
 
 }
 
@@ -156,8 +158,8 @@
   height: 45%;
 }
 .box9{
-  margin-right: 2.5%;
-  margin-left: 2.5%;
+  margin: 2%;
+  
 }
 
 #academia {

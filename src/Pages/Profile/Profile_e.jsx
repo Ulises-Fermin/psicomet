@@ -36,40 +36,40 @@ function Profile_e() {
           {((user?.role === "psychologist") && (user?.status === "accept")) ? (
             <div class={styles.body}>
               <div class={styles.megabox}>
-                <div class={styles.box4}>
-                  <div class={styles.box2}>
-                    <p id={styles.label1}>Correo Electrónico:</p>
-                    <p id={styles.mail}>{user.email}</p>
-                    <br />
-                    <p id={styles.label1}>Teléfono:</p>
-                    <p id={styles.phone}>{user.phone}</p>
-                    <br />
-                    <p id={styles.label2}>Género:</p>
-                    <p id={styles.gender}>{user.gender}</p>
-                    <br />
-                    <p id={styles.label3}>Idiomas:</p>
-                    <p id={styles.idioma}>{user.languages}</p>
-                    <br />
-                    <p id={styles.label4}>Modelo de Trabajo Terapéutico:</p>
-                    <p id={styles.model}>Consultas en sincronia</p>
-                    <br />
-                    <p id={styles.label5}>Precio de consulta:</p>
-                    <p id={styles.price}>20$ 60 min</p>
-                    <br />
-                    <p id={styles.label8}>Ver Itinerario:</p>
-                    <Popup
-                      trigger={<button> Itinerario </button>}
-                      position="center center"
-                      modal
-                    >
-                      <ShowItinerary />
-                    </Popup>
-                    <br />
-                    <Link to="/Psychologist" id={styles.volver}>
-                      Volver
-                    </Link>
-                  </div>
+
+                <div class={styles.box2}>
+                  <p class={styles.label1}>Correo Electrónico:</p>
+                  <p class={styles.label1}>{user.email}</p>
+                  <br />
+                  <p class={styles.label1}>Teléfono:</p>
+                  <p class={styles.label1}>{user.phone}</p>
+                  <br />
+                  <p class={styles.label1}>Género:</p>
+                  <p class={styles.label1}>{user.gender}</p>
+                  <br />
+                  <p class={styles.label1}>Idiomas:</p>
+                  <p class={styles.label1}>{user.languages}</p>
+                  <br />
+                  <p class={styles.label1}>Modelo de Trabajo Terapéutico:</p>
+                  <p class={styles.label1}>Consultas en sincronia</p>
+                  <br />
+                  <p class={styles.label1}>Precio de consulta:</p>
+                  <p class={styles.label1}>20$ 60 min</p>
+                  <br />
+                  <p class={styles.label1}>Ver Itinerario:</p>
+                  <Popup
+                    trigger={<button> Itinerario </button>}
+                    position="center center"
+                    modal
+                  >
+                    <ShowItinerary />
+                  </Popup>
+                  <br />
+                  <Link to="/Psychologist" id={styles.volver}>
+                    Volver
+                  </Link>
                 </div>
+
 
                 <div id={styles.bigbox}>
                   <div id={styles.info}>
@@ -109,22 +109,22 @@ function Profile_e() {
 
                   <div class={styles.box7}>
                     <div class={styles.box3}>
-                      <div id={styles.box9}>
+                      <div class={styles.box9}>
                         <h2 class={styles.label6}>Áreas de atención</h2>
                         <div class={styles.caja}>{user.atencionAreas}</div>
                       </div>
-                      <div id={styles.box9}>
+                      <div class={styles.box9}>
                         <h2 class={styles.label6}>Experiencia Profesional</h2>
                         <div class={styles.caja}>{user.experience}</div>
                       </div>
                     </div>
 
                     <div class={styles.box3}>
-                      <div id={styles.box9}>
+                      <div class={styles.box9}>
                         <h2 class={styles.label6}>Formación Académica</h2>
                         <div class={styles.caja}>{user.academics}</div>
                       </div>
-                      <div id={styles.box9}>
+                      <div class={styles.box9}>
                         <h2 class={styles.label6}>Sobre mí</h2>
                         <div class={styles.caja}>{user.aboutMe}</div>
                       </div>
