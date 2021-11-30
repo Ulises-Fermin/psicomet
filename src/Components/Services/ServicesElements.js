@@ -1,37 +1,37 @@
 import styled from "styled-components";
 
 export const ServicesContainer = styled.div`
-    height: 600px;
-    display: flex;
+    height: 650px;
+    display: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #6eb5b8;
+    background: #ffff;
 
-    @media screen and (max-width: 768px) {
-        height: 800px;
+    @media screen and (max-width: 1200px) {
+        height: 1300px;
     }
     
-    @media screen and (max-width: 480px) {
-        height: 900px;
+    @media screen and (max-width: 777px) {
+        height: 1700px;
     }
 `
 
 export const ServicesWrapper = styled.div`
-    max-width: 1000px;
+    max-width: 1250px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     grid-gap: 16px;
     padding: 0 50px;
 
     /* Aqui solo hay dos cajas. Es cuando la pantalla esta por la mitad */
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 777px) {
         grid-template-columns: 1fr;
         padding: 0 20px;
     }
@@ -39,7 +39,7 @@ export const ServicesWrapper = styled.div`
 `
 
 export const ServicesCard = styled.div`
-    background: #fff;
+    background: #FFD779;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -53,7 +53,6 @@ export const ServicesCard = styled.div`
     &:hover {
         transform: scale(1.02);
         transition: all 0.2s ease-in-out;
-        cursor: pointer;
     }
 `
 
@@ -65,9 +64,8 @@ export const ServicesIcon = styled.img`
 
 export const ServicesH1 = styled.h1`
     font-size: 2.5rem;
-    color: #fff;
     margin-bottom: 64px;
-    color: #434244;
+    color: #000000;
     
     @media screen and (max-width: 480px) {
         font-size: 2rem;
