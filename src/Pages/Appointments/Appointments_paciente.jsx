@@ -10,7 +10,7 @@ import { UserContext } from "../../Context/UserContext";
 import { Usechats } from "./UseChats";
 import { useHistory } from "react-router-dom";
 
-function Appointments() {
+function Appointments_paciente() {
   const { user, setUser } = useContext(UserContext);
   const [dates, setdates] = useState([]);
   const list = [];
@@ -18,9 +18,9 @@ function Appointments() {
     const citas = db.collection("consultations");
     const data = await citas.get();
     data.docs.forEach((item) => {
-      if (item.data().idPsycho === user.id) {
+      if (item.data().idPacient === user.id) {
         list.push({ data: item.data(), id: item.id });
-        console.log(item.data.idPsycho);
+        console.log(item.data.idPacient);
       }
     });
     setdates(list);
@@ -37,7 +37,7 @@ function Appointments() {
         {dates.map((d) => (
           <div class={styles.card}>
             <h2 id={styles.titulo}>Consulta</h2>
-            <p id={styles.nombre}>{d.data.namePacient}</p>
+            <p id={styles.nombre}>{d.data.namePsico}</p>
             <p id={styles.fecha}>{d.data.date}</p>
             <Link to={`/Chats/${d.data.idPacient}`}>Abrir Chat</Link>
           </div>
@@ -47,4 +47,4 @@ function Appointments() {
   );
 }
 
-export default Appointments;
+export default Appointments_paciente;

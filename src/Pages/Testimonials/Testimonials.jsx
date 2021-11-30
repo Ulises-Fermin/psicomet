@@ -6,7 +6,7 @@ import { db } from "../../Utils/FireBaseConfig";
 import "firebase/auth";
 import "firebase/firestore";
 import { useTestimonials } from "./UseTestimonials";
-import psicometLogo from '../../Images/LogoPsicomet.png'
+import psicometLogo from "../../Images/LogoPsicomet.png";
 
 function Testimonials() {
   const { user, setUser } = useContext(UserContext);
@@ -16,23 +16,25 @@ function Testimonials() {
     if (!(message === "" || user.status === "denegate")) {
       e.preventDefault();
       {
-        (!!user) ? (db.collection("messages").add({
-          timestramp: Date.now(),
-          message,
-          userName: user.name,
-          userLastName: user.lastName,
-          userEmail: user.email,
-          userShow: "true",
-        }))
-          : (window.alert("Debes iniciar sesión para enviar un testimonio."))
+        !!user
+          ? db.collection("messages").add({
+              timestramp: Date.now(),
+              message,
+              userName: user.name,
+              userLastName: user.lastName,
+              userEmail: user.email,
+              userShow: "true",
+            })
+          : window.alert("Debes iniciar sesión para enviar un testimonio.");
       }
     } else {
-      window.alert("El testimonio se encuentra vacío o el usuario ha sido bloqueado de la plataforma.");
+      window.alert(
+        "El testimonio se encuentra vacío o el usuario ha sido bloqueado de la plataforma."
+      );
     }
   };
   return (
     <>
-
       <div id={styles.body}>
         <div id={styles.titlediv}>
           <p id={styles.title}>Testimonios de pacientes</p>
@@ -42,10 +44,7 @@ function Testimonials() {
             <ul>
               <div>
                 {messages.map((m) => (
-
-
                   <li id={styles.cuadro} key={m.id}>
-
                     <div id={styles.block}>
                       <img
                         src={psicometLogo}
@@ -61,17 +60,13 @@ function Testimonials() {
                         <br></br>
                         {m.message}
                       </div>
-
-
                     </div>
-                    {(user?.role === "admi") ? (
-                      <button class={styles.psychoListA} >Eliminar mensaje</button>
-                    ) : (null)}
-
+                    {user?.role === "admi" ? (
+                      <button class={styles.psychoListA}>
+                        Eliminar mensaje
+                      </button>
+                    ) : null}
                   </li>
-
-
-
                 ))}
               </div>
             </ul>
@@ -99,4 +94,3 @@ function Testimonials() {
 }
 
 export default Testimonials;
-

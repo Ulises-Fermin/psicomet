@@ -11,7 +11,7 @@ import { useCollectionData } from "react";
 import { useState, useEffect } from "react";
 import { MdPanoramaFishEye } from "react-icons/md";
 
-function Chats() {
+function Chats_paciente() {
   const { user } = useContext(UserContext);
   const params = useParams();
   const mensajes_lista = [];
@@ -23,8 +23,8 @@ function Chats() {
     const data = await query.get();
     data.docs.forEach((item) => {
       if (
-        item.data().idEspecialist === user.id &&
-        item.data().idPacient === params.idPacient
+        item.data().idEspecialist === params.idPsico &&
+        item.data().idPacient === user.id
       ) {
         mensajes_lista.push({ data: item.data(), id: item.id });
       }
@@ -85,4 +85,4 @@ function Chats() {
     </div>
   );
 }
-export default Chats;
+export default Chats_paciente;
