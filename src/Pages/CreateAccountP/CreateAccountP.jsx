@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./CreateAccountP.module.css";
 import { Link } from "react-router-dom";
 import { auth } from "../../Utils/FireBaseConfig";
+import { db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
@@ -264,17 +265,16 @@ function CreateAccountP() {
               >
                 <option value="">Especialidad</option>
                 <option value="Depresion">Depresion</option>
+                <option value="Sexualidad">Sexualidad</option>
+                <option value="Atencion infantil">Atencio infantil</option>
+                <option value="Psiquiatra">Psiquiatra</option>
+                <option value="Terapia en familia">Terapia en familia</option>
                 <option value="Ansiedad">Ansiedad</option>
-                <option value="Ansiedad">Sexualidad</option>
-                <option value="Ansiedad">Atencio Infantil</option>
-                <option value="Ansiedad">Psiquiatra</option>
-                <option value="Ansiedad">Terapia en familia</option>
-                <option value="Ansiedad">Ansiedad</option>
-                <option value="Ansiedad">Educacion</option>
-                <option value="Ansiedad">Psicoterapia</option>
-                <option value="Ansiedad">NeuroPsicologo</option>
-                <option value="Ansiedad">Psicologo Criminalista</option>
-                <option value="Otro">Otro</option>
+                <option value="Educacion">Educacion</option>
+                <option value="Psicoterapia">Psicoterapia</option>
+                <option value="Neuropsicologia">Neuropsicologia</option>
+                <option value="Criminalistica">Criminalistica</option>
+                
               </select>
             </div>
 
