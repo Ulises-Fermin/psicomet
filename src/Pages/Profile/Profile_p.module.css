@@ -4,9 +4,8 @@
     height: 100%;
     background-size:cover;
     background-repeat: no-repeat;
+    padding-bottom: 1%;
 }
-
-·box1
 
 #isLoading{
   width: 100%;
@@ -21,3 +20,76 @@
   align-content: center;
   color: white;
 } 
+
+.box1{
+  display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.info{
+  width: 45%;
+  margin-left: 25%;
+}
+.boxing{
+  width: 15%;
+}
+#nombre{
+  font-size: 200%;
+}
+#rol{
+  font-size: 150%;
+}
+.box4{
+  background-color: white;
+  width: 40%;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+  border-style: solid;
+  border-color: #6eb5b8;
+}
+.label{
+  text-align: left;
+}
+
+#pbuttom1{
+  text-align: center;
+  font-family: 'Scope One', serif;
+  font-weight: bold;
+  background-color:#ffd779;
+  padding: 1%;
+  list-style: none;
+  text-align: center;
+  border-radius: 0.3rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+#pbuttom2{
+  text-align: center;
+  font-family: 'Scope One', serif;
+  background-color:silver;
+  font-weight: bold;
+  list-style: none;
+  text-align: center;
+  padding: 1%;
+  border-radius: 0.3rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.box3{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 5%;
+}
+#img1 {
+  width: 7.5rem;
+  height: 7.5rem;
+  margin-left: 6.5%;
+  border: 7px solid #6eb5b8;
+  border-radius: 100%;
+}
