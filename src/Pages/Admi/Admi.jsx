@@ -24,7 +24,7 @@ function Admi() {
         setValues({ ...values, [inputName]: value });
         console.log(inputName, value);
     };
-    const fetchPsychologists = async () => {
+    const fetchPsychologists = async () => { 
         setIsLoading(true)
         const response = db.collection("users");
         const data = await response.get();

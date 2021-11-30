@@ -12,7 +12,8 @@ export const useTestimonials = () => {
             const unsubscribe = db.collection("messages").onSnapshot(
                 snapshop => {   
                     setLoading(false)
-                    setMessages(snapshop.docs.map(d => ({ id: d.id, ...d.data() } )));      
+                    setMessages(snapshop.docs.map(d => ({ id: d.id, ...d.data() } )));    
+                    console.log(snapshop.docs)  
             },
             err => {
                 setError(err);
