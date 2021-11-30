@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Appointments.module.css";
 import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
-import PopUp from "reactjs-popup";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { Link } from "react-router-dom";
@@ -41,7 +40,7 @@ export default function AppointmentsPacients(){
                         <p id={styles.fecha}>{d.data.date}</p>
                         <h3>Hora:</h3>
                         <p id={styles.fecha}>{d.data.hour}</p>
-                        <Link to="/Chat">Abrir Chat</Link>
+                        <Link to={`/Chat/${d.data.idPsycho}`}>Abrir Chat</Link>
                     </div>
                 ))};
             </div>

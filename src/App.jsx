@@ -36,6 +36,7 @@ import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
 import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
 import Chat from "./Pages/Chats/Chat";
+import ChatPsycho from "./Pages/Chats/ChatPsycho"
 
 function App() {
   // Funcion para el PayPal
@@ -150,8 +151,11 @@ function App() {
             <Route exact path="/AppointmentsPacient">
               <AppointmentsPacient />
             </Route>
-            <Route exact path="/Chat">
+            <Route exact path="/Chat/:idPsycho">
               <Chat />
+            </Route>
+            <Route exact path="/ChatPsycho/:idPacient">
+              <ChatPsycho />
             </Route>
           </Switch>
           <Footer />

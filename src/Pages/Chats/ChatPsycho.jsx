@@ -26,7 +26,7 @@ export default function ChatPacient(){
                     id: doc.id,
                 }));
                 data.forEach((item)=>{
-                    if (item.idPacient === user.id && item.idPsycho === params.idPsycho){
+                    if (item.idPsycho === user.id && item.idPacient === params.idPacient){
                         list.push(item);
                     }
                 })
@@ -42,8 +42,8 @@ export default function ChatPacient(){
             db.collection("chats").add({
                 message: newMessage,
                 date: firebase.firestore.FieldValue.serverTimestamp(),
-                idPsycho: params.idPsycho,
-                idPacient: user.id,
+                idPsycho: user.id,
+                idPacient: params.idPacient,
                 from: user.name,
             })
         }
@@ -56,7 +56,7 @@ export default function ChatPacient(){
         <>
             <div>
                 <div>
-                    <h1>Bienvenido al chat con tu Especialista.</h1>
+                    <h1>Bienvenido al chat con tu Paciente.</h1>
                     {messages.map(message => (
                         <div>
                             <h4>{message.from}:</h4>
