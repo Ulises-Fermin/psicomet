@@ -10,6 +10,10 @@ function TypeAccount() {
   return (
     <>
       {!!user ? (
+        <h1 id={styles.isLoading}>
+          Cargando...
+        </h1>
+      ) : (
         <div id={styles.Body}>
           <div id={styles.LogoContainer}>
             <img src="/LogoPsicomet.png" id={styles.Logo} alt="" />
@@ -32,10 +36,6 @@ function TypeAccount() {
             Iniciar sesión
           </Link>
         </div>
-      ) : (
-        <h1 id={styles.isLoading}>
-          Cargando...
-        </h1>
       )}
     </>
   );

@@ -26,8 +26,9 @@ function Profile_e() {
     console.log(image)
     setUrl(image)
   };
-
-
+  useEffect(() => {
+    watchpicture()
+  }, []);
 
   return (
     <>
@@ -92,7 +93,6 @@ function Profile_e() {
                               src={Usuario}
                               alt=""
                             />
-                            <p>holaaa</p>
                           </>
                         ) : (
                           <img
