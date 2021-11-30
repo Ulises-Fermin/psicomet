@@ -21,6 +21,15 @@
     justify-content: space-around;
     align-content: center;
 }
+#container2{
+    margin-left: 10%;
+    margin-right: 10%; 
+    padding-bottom: 5%; 
+    display: block;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
 
 #psychoCards{
     display: flex;
@@ -32,12 +41,23 @@
     border-style:solid;
     
 }
+#psychoCards2{
+    display: flex;
+    background-color: #6eb5b8;
+    background-size: cover;
+    border-radius: 15px;
+    padding: 1%;
+    border-style:solid;
+    width: 30%;
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
 .psychoList{
     background-color:#6eb5b8;
     list-style: none;
-    text-align: center;
-    
-    
+    text-align: center;   
 }
 p{
     font-family: "Scope One", serif;
@@ -46,15 +66,14 @@ p{
     background-color: green;
     list-style: none;
     text-align: center;
-    margin: 5px;
     padding: 1%;
     border-radius: 10px;
+        
 }
 .psychoListD{
     background-color: red;
     list-style: none;
     text-align: center;
-    margin: 5px;
     padding: 1%;
     border-radius: 10px;
 }
@@ -112,4 +131,43 @@ p{
 }
 #linebuttom{
     display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#checkT{
+    background-color: green;
+    border-radius: 1000rem;
+    width:7.5%;
+    color:green;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+#checkF{
+    background-color:red;
+    border-radius: 1000rem;
+    width:7.5%;
+    color:red;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+#newspecialist{
+    margin-bottom: 3%;
+    display: block;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 25%;
+    
+}
+#inputcontainer{
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-around;
+
 }
