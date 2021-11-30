@@ -29,7 +29,7 @@ export default function ChatPacient(){
                     ...doc.data(),
                     id: doc.id,
                 }));
-                setMessages(data.sort((a, b) => a.date - b.date));
+                setMessages(data.sort(function(a,b){return a.date - b.date}));
             });
             return unsubscribe;
         }
