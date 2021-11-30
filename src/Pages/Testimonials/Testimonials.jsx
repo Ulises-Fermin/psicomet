@@ -58,12 +58,12 @@ function Testimonials() {
 
 
   };
-  /*const watchpicture = async (p) => {
+  const watchpicture = async (p) => {
     console.log(p.data.iduser)
     const ref = app.storage().ref("Fotos/" + p);
     const image = await ref.getDownloadURL()
     setUrl(image)
-  };*/
+  };
 
   const deletetext = async (p) => {
     console.log(p.data.iduser)

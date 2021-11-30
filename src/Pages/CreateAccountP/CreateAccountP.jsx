@@ -291,8 +291,6 @@ function CreateAccountP() {
                 {specials.map((m) => (
                   <option value={m.data.name}>{m.data.name}</option>
                 ))}  
-                  
-                 
               </select>
             </div>
 

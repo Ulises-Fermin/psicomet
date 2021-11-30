@@ -33,6 +33,7 @@ import PayPal from "./Components/PayPal.js";
 import Appointments from "./Pages/Appointments/Appointments";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
+import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
 
 function App() {
   // Funcion para el PayPal
@@ -140,6 +141,9 @@ function App() {
             </Route>
             <Route exact path="/Histories">
               <Histories />
+            </Route>
+            <Route exact path="/AppointmentsPacient">
+              <AppointmentsPacient />
             </Route>
           </Switch>
           <Footer />

@@ -8,6 +8,8 @@
     border: solid;
     border-color: gray;
     border-width: 0.5px;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 #chart{
@@ -19,14 +21,34 @@
     border-color: black;
     border-width: 5px;
     border-radius: 10px;
+    margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 .item{
-    display: flex;
-    flex-direction: row;
-    
+    text-align: center;
 }
 
 button{
     margin-left: 5px;
+}
+
+#PopUp{
+    background-color: white;
+    padding: 5%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.info{
+    text-align: left;
+}
+
+#date{
+    text-align: center;
+    margin-bottom: 5%;
 }
