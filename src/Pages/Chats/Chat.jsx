@@ -26,7 +26,7 @@ export default function ChatPacient(){
                     ...doc.data(),
                     id: doc.id,
                 }));
-                setMessages(data);
+                setMessages(data.sort((a, b) => a.date - b.date));
             });
             return unsubscribe;
         }
@@ -37,7 +37,7 @@ export default function ChatPacient(){
         if (db){
             db.collection("chats").add({
                 message: newMessage,
-                date: new Date(),
+                date: firebase.firestore.FieldValue.serverTimestamp(),
                 idPsycho: params.idPsycho,
                 idPacient: user.id,
                 from: user.name + " " + user.lastName,
