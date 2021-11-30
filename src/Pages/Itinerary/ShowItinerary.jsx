@@ -10,11 +10,10 @@ export default function ShowItinerary() {
     const itinerary = user.itinerary;
     console.log(itinerary);
     for (const days in itinerary){
-        for (const hours in itinerary[days])
-            if (itinerary[days][hours]["checked"] === true){
-                const day = days + " " + itinerary[days][hours]["value"];
-                list.push(day)
-            }
+        if (itinerary[days]["checked"] === true){
+            const day = itinerary[days]["value"];
+            list.push(day)
+        }
     }
     return(
         <>

@@ -11,7 +11,9 @@ import newUser from "../../Images/newUser.png";
 function CreateAccountP() {
   const { createUser } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
+  const [specials, setSpecials] = useState([]);
   const [fileURL, setFileURL] = React.useState(null)
+  const list = []
   const [values, setValues] = useState({
     name: "",
     lastName: "",
@@ -36,7 +38,27 @@ function CreateAccountP() {
     setValues({ ...values, [inputName]: value });
     console.log(inputName, value);
   };
-  
+  const handleOnChange2 = (event) => {
+    const { value, name: inputName } = event.target;
+    setValues({ ...values, [inputName]: value });
+    console.log(inputName, value);
+  };
+
+  const special = async () => {
+    const response = db.collection("specialty");
+    const data = await response.get();
+    data.docs.forEach((item) => {
+      if (
+        item.data().enable === "true"
+      ) {
+        list.push({ data: item.data(), id: item.id });
+        console.log(item.id)
+      }
+    });
+    setSpecials(list);
+    return list;
+    
+  };
 
   const handleSubmit = async (e) => {
     try {
@@ -79,10 +101,10 @@ function CreateAccountP() {
                             photo: "false",
                           },
                           response.user.uid,
-                          
-                        ); 
 
-                        
+                        );
+
+
                         setIsLoading(false);
                         history.push("/Curriculum");
                       } else {
@@ -138,8 +160,8 @@ function CreateAccountP() {
             </Link>
           </div>
 
-          <div class = {styles.profileDiv}>
-            <img id={styles.photo} src={newUser} alt = ""/>
+          <div class={styles.profileDiv}>
+            <img id={styles.photo} src={newUser} alt="" />
           </div>
 
           <div class={styles.DatesContainer}>
@@ -257,24 +279,20 @@ function CreateAccountP() {
             </div>
 
             <div id={styles.File6}>
+
               <select
                 name="specialty"
                 class={styles.fields}
                 value={values.specialty}
-                onChange={handleOnChange}
+                onClick={special}
+                onChange={handleOnChange2}
               >
                 <option value="">Especialidad</option>
-                <option value="Depresion">Depresion</option>
-                <option value="Sexualidad">Sexualidad</option>
-                <option value="Atencion infantil">Atencio infantil</option>
-                <option value="Psiquiatra">Psiquiatra</option>
-                <option value="Terapia en familia">Terapia en familia</option>
-                <option value="Ansiedad">Ansiedad</option>
-                <option value="Educacion">Educacion</option>
-                <option value="Psicoterapia">Psicoterapia</option>
-                <option value="Neuropsicologia">Neuropsicologia</option>
-                <option value="Criminalistica">Criminalistica</option>
-                
+                {specials.map((m) => (
+                  <option value={m.data.name}>{m.data.name}</option>
+                ))}  
+                  
+                 
               </select>
             </div>
 
@@ -292,18 +310,12 @@ function CreateAccountP() {
 export default CreateAccountP;
 
 
-/*<p id={styles.instructions2}>
-              En el siguiente campo adjunte su currículum en formato PDF.
-            </p>
-
-            <div id={styles.File1}>
-              <form>
-                <input
-                  type="file"
-                  name="Curriculum"
-                  
-                  id={styles.name}
-                  placeholder="Adjunte su currículum"
-                />
-              </form>
-            </div>*/
+/*<option value="Sexualidad">Sexualidad</option>
+                  <option value="Atencion infantil">Atencio infantil</option>
+                  <option value="Psiquiatra">Psiquiatra</option>
+                  <option value="Terapia en familia">Terapia en familia</option>
+                  <option value="Ansiedad">Ansiedad</option>
+                  <option value="Educacion">Educacion</option>
+                  <option value="Psicoterapia">Psicoterapia</option>
+                  <option value="Neuropsicologia">Neuropsicologia</option>
+                  <option value="Criminalistica">Criminalistica</option>*/

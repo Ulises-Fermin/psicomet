@@ -3,7 +3,7 @@ import modify from "./Modify.css";
 import { auth, db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
-import Itinerary from "../Itinerary/Itinerary";
+import ItineraryP from "../Itinerary/ItineraryP";
 import { app } from "../../Utils/FireBaseConfig";
 import styles from "./Modify_p.module.css";
 import { useHistory } from "react-router";
@@ -266,7 +266,7 @@ function Modify_p() {
                 <div className='form-content-right'>
                   <form className='form'>
                     <h1>Itinerario</h1>
-                    <Itinerary />
+                    <ItineraryP />
                   </form>
                 </div>
               </div>
