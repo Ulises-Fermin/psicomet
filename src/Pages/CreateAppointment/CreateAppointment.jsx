@@ -25,7 +25,10 @@ export default function CreateAppointment(){
         hour: "",
         idPsycho: "",
         idPacient: "",
+        namePacient: "",
+        lastNamePacient: "",
         reason: "",
+        status: ""
     });
     const [time, setTime] = useState([]);
 
@@ -71,7 +74,6 @@ export default function CreateAppointment(){
     };
 
     const checkDate = async (date, hour, idPsycho) => {
-        console.log("entro")
         const response = db.collection("consultations");
         const data = await response.get();
         var cd = true
@@ -81,7 +83,6 @@ export default function CreateAppointment(){
                 cd = false
             }
         })
-        console.log("salio")
         return cd
     }
 
@@ -98,7 +99,10 @@ export default function CreateAppointment(){
                 hour: values.hour,
                 idPsycho: values.idPsycho,
                 idPacient: user.id,
+                namePacient: user.name,
+                lastNamePacient: user.lastName,
                 reason: values.reason,
+                status: "pending"
             });
         }else{
             window.alert("Lo siento, esa fecha esta ocupada.")
