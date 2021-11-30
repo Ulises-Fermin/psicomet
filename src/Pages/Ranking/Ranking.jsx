@@ -23,7 +23,7 @@ function Ranking() {
         const response = db.collection("consultations");
         const data = await response.get();
         data.docs.forEach(item => {
-            if (item.data().idPacient === user.id && item.data().status === "pendiente" && item.data().ranked === "false")
+            if (item.data().idPacient === user.id && item.data().status === "Culminada" && item.data().ranked === "false")
                 list.push({ data: item.data(), id: item.id });
         })
         setPsychologists(list);
