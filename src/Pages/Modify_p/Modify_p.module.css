@@ -13,7 +13,7 @@
 .titulo {
   width: 100%;
   text-align: center;
-  padding-top: 8%;
+  padding-top: 20%;
   padding-left: 14%;
   font-size: 0.8rem;
 }
@@ -55,6 +55,7 @@ label {
   background-color: #E9E5E5;
   margin:auto;
   padding-left: 1%;
+  max-width: 100%;
 }
 
 .forminput {
@@ -67,6 +68,7 @@ label {
   background-color: #E9E5E5;
   margin-right: 1%;
   margin:auto;
+  max-width: 100%;
 }
 
 .textarea {
@@ -76,6 +78,7 @@ label {
   padding-left: 1%;
   padding-top: 1% ;
   margin:auto;
+  max-width: 100%;
 }
 
 .fotoinput {
@@ -120,4 +123,13 @@ label {
   height: 600px;
   align-content: center;
   color: white;
+}
+
+@media only screen and (max-width: 470px){
+
+  .titulo {
+    width: 100%;
+    text-align: center;
+    margin-top: 3%;
+  }
 }

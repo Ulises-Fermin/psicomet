@@ -97,7 +97,7 @@
   
   .form-input-btn {
     padding: 1%;
-    margin:0 0 4% 100%;
+    margin:0 0 8% 100%;
     width: 9rem;
     border-radius: 0.8rem;
     background:  #ffd779;
@@ -127,4 +127,48 @@
     text-decoration: none;
     color: #27cdff;
     font-weight: 600;
+  }
+
+  @media only screen and (max-width: 470px) {
+
+    .form-container {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 28.75rem;
+      height: 100rem;
+    }
+
+    .form-content-left {
+      display: block;
+      width: 100%;
+      left: 0px;
+      z-index: -1; 
+      position: absolute;
+      top: 47rem;
+    }
+    
+    .form-content-right {
+        z-index: 1; 
+        position: relative;
+        width: 100%;
+        margin-top: 60rem;
+        margin-left: 50%;
+        padding-bottom: 3%;
+    }
+
+    .form-input-btn {
+      padding: 1%;
+      margin:auto;
+      margin-top: 27rem;
+      width: 9rem;
+      border-radius: 0.8rem;
+      background:  #ffd779;
+      border-color: black;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      justify-content: center;
+    }
+
   }
