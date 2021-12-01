@@ -106,26 +106,24 @@ function Quest() {
   };
 
   const handleOnChange2 = async (event) => {
-    const { value, name: inputName } = event.target;
-    setValues({ ...values, [inputName]: value });
     const response = db.collection("users");
     const data = await response.get();
+    const { value, name: inputName } = event.target;
+    setValues(value);
+    console.log(values);
     data.docs.forEach((item) => {
       if (
         item.data().role === "psychologist" &&
         item.data().status === "accept" &&
         item.data().curriculum === "have" &&
         item.data().photo === "true" &&
-        (item.data().name + " " + item.data().lastName)
-          .toLowerCase()
-          .includes(names.toLocaleLowerCase())
+        item.data().specialty.toLowerCase().includes(value.toLocaleLowerCase())
       ) {
-        list.push({ data: item.data(), id: item.id });
-        console.log(value);
+        list2.push({ data: item.data(), id: item.id });
       }
     });
-    setPsychologists(list);
-    return list;
+    setPsychologists(list2);
+    return list2;
   };
 
   const ChangeStatusD = async (p) => {
