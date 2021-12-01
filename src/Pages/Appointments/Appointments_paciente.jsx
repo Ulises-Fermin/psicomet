@@ -39,7 +39,7 @@ function Appointments_paciente() {
             <h2 id={styles.titulo}>Consulta</h2>
             <p id={styles.nombre}>{d.data.namePsico}</p>
             <p id={styles.fecha}>{d.data.date}</p>
-            <Link to={`/Chats/${d.data.idPacient}`}>Abrir Chat</Link>
+            <Link to={`/Chats_paciente/${d.data.idPsico}`}>Abrir Chat</Link>
           </div>
         ))}
       </div>
