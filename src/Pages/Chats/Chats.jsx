@@ -50,8 +50,8 @@ function Chats() {
             mensajes_lista.push({ data: item.data, id: item.id });
           }
         });
+        console.log(mensajes_lista);
         setmensajes(mensajes_lista);
-        console.log(mensajes);
       });
   }, []);
 
