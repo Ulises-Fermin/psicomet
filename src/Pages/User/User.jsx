@@ -19,6 +19,16 @@ function User() {
     setUser(null);
   };
 
+  //<div id={styles.buttons2}>
+  //<img id={styles.image} src={chat} alt="" />
+  //<Link to="/Chats" id={styles.My_chats}>
+  //Mis chats
+  //</Link>
+
+  //<img id={styles.image} src={Calendario} alt="" />
+  //<p id={styles.Calendar}>Calendario</p>
+  //</div>;
+
   return (
     <>
       {!!user ? (
@@ -35,26 +45,18 @@ function User() {
                 <div id={styles.buttons1}>
                   <div class={styles.card}>
                     <img id={styles.image} src={Consulta} alt="" />
-                    <Link to="AppointmentsPacient" id={styles.My_chats}>
+                    <Link to="AppointmentsPacient" id={styles.My_citas}>
                       Mis Consultas
                     </Link>
                   </div>
                   <div class={styles.card}>
-                    <img id={styles.image} src={Personas} alt="" />
+                    <img id={styles.image2} src={Personas} alt="" />
                     <Link to="/Quest" id={styles.Ver_especialists}>
                       Ver Especialistas
                     </Link>
                   </div>
                 </div>
-                <div id={styles.buttons2}>
-                  <img id={styles.image} src={chat} alt="" />
-                  <Link to="/Chats" id={styles.My_chats}>
-                    Mis chats
-                  </Link>
 
-                  <img id={styles.image} src={Calendario} alt="" />
-                  <p id={styles.Calendar}>Calendario</p>
-                </div>
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={Agendar} alt="" />
                   <Link to="/CreateAppointment" id={styles.Calendar}>
