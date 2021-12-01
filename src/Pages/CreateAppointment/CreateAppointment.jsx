@@ -81,7 +81,7 @@ export default function CreateAppointment(){
         var cd = true
         data.docs.forEach((item)=>{
             const us = {data:item.data(), id:item.id};
-            if (us.data.idPsycho === idPsycho && us.data.date === date && us.data.hour === hour){
+            if (us.data.idPsycho === idPsycho && us.data.date === date && us.data.hour === hour && (us.data.status === "Pendiente" || us.data.status === "Culminada")){
                 cd = false
             }
         })
