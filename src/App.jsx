@@ -49,21 +49,6 @@ function App() {
           <Navbar />
           <Route exact path="/">
             <Home />
-            <Services />
-
-            {/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
-            {/* Si checkout es verdadero, renderizamos PayPal. Si no, aparece un boton que al presionarlo se hace verdadero. */}
-            {checkout ? (
-              <PayPal />
-            ) : (
-              <button
-                onClick={() => {
-                  setCheckOut(true);
-                }}
-              >
-                Checkout
-              </button>
-            )}
           </Route>
           <Switch>
             <Route exact path="/Home">

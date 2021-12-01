@@ -8,30 +8,30 @@ export const ServicesContainer = styled.div`
     align-items: center;
     background: #ffff;
 
-    @media screen and (max-width: 768px) {
-        height: 1200px;
+    @media screen and (max-width: 1200px) {
+        height: 1300px;
     }
     
-    @media screen and (max-width: 480px) {
-        height: 1200px;
+    @media screen and (max-width: 777px) {
+        height: 1700px;
     }
 `
 
 export const ServicesWrapper = styled.div`
-    max-width: 1000px;
+    max-width: 1250px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     grid-gap: 16px;
     padding: 0 50px;
 
     /* Aqui solo hay dos cajas. Es cuando la pantalla esta por la mitad */
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 777px) {
         grid-template-columns: 1fr;
         padding: 0 20px;
     }
@@ -53,7 +53,6 @@ export const ServicesCard = styled.div`
     &:hover {
         transform: scale(1.02);
         transition: all 0.2s ease-in-out;
-        cursor: pointer;
     }
 `
 
