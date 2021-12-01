@@ -8,8 +8,10 @@ import { UserContext } from "../../Context/UserContext";
 import { Link } from "react-router-dom";
 
 function Appointments() {
-  const { user, setUser } = useContext(UserContext);
-  const [dates, setdates] = useState([]);
+  const { user } = useContext(UserContext);
+  const [datesPending, setDatesPending] = useState([]);
+  const [datesFinished, setDatesFinished] = useState([]);
+  const [datesCanceled, setDatesCanceled] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [values, setValues] = useState({
     idPacient: "",
@@ -24,23 +26,52 @@ function Appointments() {
     observations: "",
     status: "",
   });
-  const list = [];
-  const tarjetas = async () => {
+  const listPending = [];
+  const pending = async () => {
     const citas = db.collection("consultations");
     const data = await citas.get();
     data.docs.forEach((item) => {
-      if (item.data().idPsycho === user.id) {
-        list.push({ data: item.data(), id: item.id });
+      if (item.data().idPsycho === user.id && item.data().status === "Pendiente") {
+        listPending.push({ data: item.data(), id: item.id });
         console.log(item.data.idPsycho);
       }
     });
-    setdates(list);
-    return list;
+    setDatesPending(listPending.sort(function(a,b){return new Date(a.data.date) - new Date(b.data.date)}));
+    return listPending;
+  };
+
+  const listFinished = [];
+  const finished = async () => {
+    const citas = db.collection("consultations");
+    const data = await citas.get();
+    data.docs.forEach((item) => {
+      if (item.data().idPsycho === user.id && item.data().status === "Culminada") {
+        listFinished.push({ data: item.data(), id: item.id });
+        console.log(item.data.idPsycho);
+      }
+    });
+    setDatesFinished(listFinished.sort(function(a,b){return new Date(a.data.date) - new Date(b.data.date)}));
+    return listFinished;
+  };
+
+  const listCanceled = [];
+  const canceled = async () => {
+    const citas = db.collection("consultations");
+    const data = await citas.get();
+    data.docs.forEach((item) => {
+      if (item.data().idPsycho === user.id && item.data().status === "Cancelada") {
+        listCanceled.push({ data: item.data(), id: item.id });
+      }
+    });
+    setDatesCanceled(listCanceled.sort(function(a,b){return new Date(a.data.date) - new Date(b.data.date)}));
+    return listCanceled;
   };
 
   useEffect(() => {
-    tarjetas();
-  }, [user]);
+    pending();
+    finished();
+    canceled();
+  }, [db]);
 
   const handleOnClic = async (userId) => {
     try {
@@ -84,6 +115,9 @@ function Appointments() {
       status: values.status,
     })
     window.alert("Estatus guardado con exito.");
+    pending();
+    finished();
+    canceled();
   }
 
   return (
@@ -94,8 +128,10 @@ function Appointments() {
           <h1>Será redirigido automáticamente.</h1>
         </div>
       ) : (
-        <div>
-          {dates.map((d) => (
+        <div id={styles.sections}>
+        <h2>Consultas Pendientes:</h2>
+          <div class={styles.section}>
+          {datesPending.map((d) => (
             <div class={styles.card}>
               <h2 id={styles.titulo}>Consulta</h2>
               <p id={styles.nombre}>
@@ -147,17 +183,50 @@ function Appointments() {
                 onChange={handleOnChange}>
                   <option value="">{d.data.status}</option>
                   <option value="Culminada">Culminada</option>
-                  <option value="Rechazada">Rechazada</option>
-                  <option value="Pendiente">Pendiente</option>
+                  <option value="Cancelada">Cancelada</option>
                 </select>
                 <button onClick={() => handleSubmit(d.id)}>Guardar</button>
               </div>
               </div>
             </div>
-          ))}
+          ))};
+          </div>
+          <h2>Consultas Culminadas:</h2>
+          <div class={styles.section}>
+          {datesFinished.map((d) => (
+            <div class={styles.card}>
+              <h2 id={styles.titulo}>Consulta</h2>
+              <p id={styles.nombre}>
+                {d.data.namePacient} {d.data.lastNamePacient}
+              </p>
+              <p id={styles.fecha}>{d.data.date}</p>
+              <p id={styles.fecha}>{d.data.hour}</p>
+              <div>
+                <p>Estatus de la consulta:</p>
+                <p>{d.data.status}</p>
+              </div>
+            </div>
+          ))};
+          </div>
+          <h2>Consultas Canceladas:</h2>
+          <div class={styles.section}>
+          {datesCanceled.map((d) => (
+            <div class={styles.card}>
+              <h2 id={styles.titulo}>Consulta</h2>
+              <p id={styles.nombre}>
+                {d.data.namePacient} {d.data.lastNamePacient}
+              </p>
+              <p id={styles.fecha}>{d.data.date}</p>
+              <p id={styles.fecha}>{d.data.hour}</p>
+              <div>
+                <p>Estatus de la consulta:</p>
+                <p>{d.data.status}</p>
+              </div>
+            </div>
+          ))};
+          </div>
         </div>
       )}
-      ;
     </>
   );
 }
