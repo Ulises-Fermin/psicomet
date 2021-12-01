@@ -67,10 +67,19 @@ export default function ChatPacient(){
                 <div class = {styles.messages}>
                     {messages.map(message => (
                         <div class={styles.mini}>
-                            <p id={styles.name}>{message.from}:</p>
-                            <div class={styles.text}>
-                            <p id={styles.mensaje}>{message.message}</p>
-                            </div>
+                            {message.from == user.name?
+                            <div id = {styles.Psicologo}>
+                                <p id={styles.namePsicologo}>{message.from}</p>
+                                <div class={styles.textPsicologo}>
+                                <p id={styles.mensajePsicologo}>{message.message}</p>
+                                </div>
+                            </div>:
+                            <div id = {styles.Paciente}>
+                                <p id={styles.namePaciente}>{message.from}</p>
+                                <div class={styles.textPaciente}>
+                                <p id={styles.mensajePaciente}>{message.message}</p>
+                                </div>
+                                </div>}
                         </div>
                     ))}
                 </div>
