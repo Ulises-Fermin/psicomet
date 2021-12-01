@@ -41,6 +41,8 @@
     margin-bottom: -2%;
     font-family: 'Lato', sans-serif;
     font-weight:500;
+    font-size: 2rem;
+    padding-bottom:1.5rem;
 }
 
 #button {
@@ -63,7 +65,7 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 0px 10px 0 rgba(0,0,0,0.19);
 }
 
-.textPaciente{
+.textPsicologo{
     width: 200px;
     height: 50px;
     margin:auto;
@@ -83,7 +85,7 @@
     box-shadow: 0 0.32rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.textPaciente::before {
+.textPsicologo::before {
     content: '';
     width: 20px; 
     height: 20px;
@@ -96,7 +98,7 @@
   }
 
 
-.textPsicologo{
+.textPaciente{
     width: 200px;
     height: 50px;
     margin:auto;
@@ -116,7 +118,7 @@
     box-shadow: 0 0.32rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.textPsicologo::before {
+.textPaciente::before {
     content: '';
     width: 20px; 
     height: 20px;
@@ -140,7 +142,7 @@
     font-size: 0.9rem;
 }
 
-#namePsicologo{
+#namePaciente{
     margin-bottom: -0.5%;
     font-size: 0.8rem;
     font-family: 'Lato', sans-serif;
@@ -149,7 +151,7 @@
     margin-right: 2rem;
 }
 
-#namePaciente{
+#namePsicologo{
     margin-bottom: -0.5%;
     font-size: 0.8rem;
     font-family: 'Lato', sans-serif;

@@ -47,7 +47,7 @@ function Chats_paciente() {
           id: doc.id,
           data: doc.data(),
         }));
-        const mensajes_lista = [];
+        const mensajes_lista = [...mensajes];
         datos.forEach((item) => {
           if (
             item.data.idPacient === user.id &&

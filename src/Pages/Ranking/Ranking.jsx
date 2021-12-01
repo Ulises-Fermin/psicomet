@@ -64,7 +64,7 @@ function Ranking() {
         await db.collection("users").doc(p.data.idPsycho).get().then(data => {
             db.collection("users").doc(p.data.idPsycho).update({
                 consults: (data.data().consults) + 1,
-                points: (data.data().points) + 1,
+                points: (data.data().points) + 2,
             })
         })
     }
@@ -80,7 +80,7 @@ function Ranking() {
         await db.collection("users").doc(p.data.idPsycho).get().then(data => {
             db.collection("users").doc(p.data.idPsycho).update({
                 consults: (data.data().consults) + 1,
-                points: (data.data().points) + 1,
+                points: (data.data().points) + 3,
             })
         })
     }
@@ -96,7 +96,7 @@ function Ranking() {
         await db.collection("users").doc(p.data.idPsycho).get().then(data => {
             db.collection("users").doc(p.data.idPsycho).update({
                 consults: (data.data().consults) + 1,
-                points: (data.data().points) + 1,
+                points: (data.data().points) + 4,
             })
         })
     }
@@ -112,7 +112,7 @@ function Ranking() {
         await db.collection("users").doc(p.data.idPsycho).get().then(data => {
             db.collection("users").doc(p.data.idPsycho).update({
                 consults: (data.data().consults) + 1,
-                points: (data.data().points) + 1,
+                points: (data.data().points) + 5,
             })
         })
     }

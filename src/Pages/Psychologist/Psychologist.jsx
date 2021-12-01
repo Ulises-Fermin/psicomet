@@ -65,7 +65,7 @@ function Psychologist() {
                   <div class={styles.card}>
                     <img id={styles.image} src={chat} alt="" />
                     <Link to="Files">
-                      <p class={styles.linkto}>Archivos utiles</p>
+                      <p class={styles.linkto}>Archivos útiles</p>
                     </Link>
                   </div>
                   <div class={styles.card}>
