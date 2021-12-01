@@ -13,18 +13,18 @@ import { UserContext } from "../../Context/UserContext";
 function ShowItinerary(itinerarys) {
   var list = [];
   const itinerary = itinerarys;
-  for (const days in itinerary){
-    if (itinerary[days]["checked"] === true){
-        const day = itinerary[days]["value"];
-        list.push(day)
+  for (const days in itinerary) {
+    if (itinerary[days]["checked"] === true) {
+      const day = itinerary[days]["value"];
+      list.push(day)
     }
   }
   return (
     <div id={styles.itinerary}>
       <h3>Itinerario del Especialista:</h3>
-        {list.map((h) => (
-          <p>{h}</p>
-        ))};
+      {list.map((h) => (
+        <p>{h}</p>
+      ))};
     </div>
   )
 };
@@ -154,11 +154,47 @@ function SpecialistCard({ specialist }) {
                 </h1>
                 <p>Especialidad: {specialist.data.specialty}</p>
               </div>
-              <img
-                id={styles.img1}
-                src={url}
-                alt=""
-              />
+              <div id={styles.imgstars}>
+                <img
+                  id={styles.img1}
+                  src={url}
+                  alt=""
+                />
+                <div id={styles.stars}>
+                  {(((specialist.data.points) / (specialist.data.consults)) < 1) ? (
+                    <p id={styles.paintstars}></p>
+                  ) : (null)}
+                  {(((((specialist.data.points) / (specialist.data.consults)) > 1) ||
+                    (((specialist.data.points) / (specialist.data.consults)) === 1)) &&
+                    ((((specialist.data.points) / (specialist.data.consults)) < 2))
+                  ) ? (
+                    <p id={styles.paintstars}>h</p>
+                  ) : (null)}
+                  {(((((specialist.data.points) / (specialist.data.consults)) > 2) ||
+                    (((specialist.data.points) / (specialist.data.consults)) === 2)) &&
+                    ((((specialist.data.points) / (specialist.data.consults)) < 3))
+                  ) ? (
+                    <p id={styles.paintstars}>hh</p>
+                  ) : (null)}
+                  {(((((specialist.data.points) / (specialist.data.consults)) > 3) ||
+                    (((specialist.data.points) / (specialist.data.consults)) === 3)) &&
+                    ((((specialist.data.points) / (specialist.data.consults)) < 4))
+                  ) ? (
+                    <p id={styles.paintstars}>hhh</p>
+                  ) : (null)}
+                  {(((((specialist.data.points) / (specialist.data.consults)) > 4) ||
+                    (((specialist.data.points) / (specialist.data.consults)) === 4)) &&
+                    ((((specialist.data.points) / (specialist.data.consults)) < 5))
+                  ) ? (
+                    <p id={styles.paintstars}>hhhh</p>
+                  ) : (null)}
+                  {((((specialist.data.points) / (specialist.data.consults)) === 5) ||
+                    (((specialist.data.points) / (specialist.data.consults)) > 5)
+                  ) ? (
+                    <p id={styles.paintstars}>hhhhh</p>
+                  ) : (null)}
+                </div>
+              </div>
             </div>
             <div id={styles.box5}>
 
@@ -171,7 +207,7 @@ function SpecialistCard({ specialist }) {
                   <div class={styles.caja}><p class={styles.infor}>{specialist.data.atencionAreas}</p></div>
                 </div>
                 <div class={styles.box8}>
-                  <h2  class={styles.label10}>Experiencia Profesional</h2>
+                  <h2 class={styles.label10}>Experiencia Profesional</h2>
                   <div class={styles.caja}>{specialist.data.experience}</div>
                 </div>
               </div>
