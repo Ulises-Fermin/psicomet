@@ -18,18 +18,14 @@ export default function ChatPacient(){
         if (db){
             const unsubscribe = db
             .collection("chats")
-            .orderBy("date")
+            .where("idPsycho", "==", params.idPsycho)
+            .where("idPacient", "==", user.id)
             .limit(25)
             .onSnapshot(querySnapshot => {
                 const data = querySnapshot.docs.map(doc => ({
                     ...doc.data(),
                     id: doc.id,
                 }));
-                // data.forEach((item)=>{
-                //     if (item.idPacient === user.id && item.idPsycho === params.idPsycho){
-                //         list.push(item);
-                //     }
-                // })
                 setMessages(data);
             });
             return unsubscribe;
@@ -41,10 +37,10 @@ export default function ChatPacient(){
         if (db){
             db.collection("chats").add({
                 message: newMessage,
-                date: firebase.firestore.FieldValue.serverTimestamp(),
+                date: new Date(),
                 idPsycho: params.idPsycho,
                 idPacient: user.id,
-                from: user.name,
+                from: user.name + " " + user.lastName,
             })
         }
     }
@@ -54,8 +50,8 @@ export default function ChatPacient(){
 
     return (
         <>
-                    <div class={styles.body}>
-            <h1 class = {styles.titulo}>Bienvenido/a al chat con su psicólogo</h1>
+            <div class={styles.body}>
+                <h1 class = {styles.titulo}>Bienvenido/a al chat con su psicólogo</h1>
                 <div class = {styles.messages}>
                     {messages.map(message => (
                         <div class={styles.mini}>
@@ -71,7 +67,7 @@ export default function ChatPacient(){
                                 <div class={styles.textPsicologo}>
                                 <p id={styles.mensajePsicologo}>{message.message}</p>
                                 </div>
-                                </div>}
+                            </div>}
                         </div>
                     ))}
                 </div>

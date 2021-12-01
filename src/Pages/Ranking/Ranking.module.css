@@ -1,0 +1,173 @@
+#body{
+    background-image: url("../../Images/Terapia.jpg");
+    
+}
+
+
+#title{
+    text-align: center;
+    color: black;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 300%;
+}
+
+
+#container{
+    margin-left: 10%;
+    margin-right: 10%; 
+    padding-bottom: 5%; 
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+#container2{
+    margin-left: 10%;
+    margin-right: 10%; 
+    padding-bottom: 5%; 
+    display: block;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+#psychoCards{
+    display: flex;
+    flex-direction: column;
+    background-color: #6eb5b8;
+    background-size: cover;
+    border-radius: 15px;
+    padding: 1%;
+    border-style:solid;
+    
+}
+#psychoCards2{
+    display: flex;
+    background-color: #6eb5b8;
+    background-size: cover;
+    border-radius: 15px;
+    padding: 1%;
+    border-style:solid;
+    width: 30%;
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.psychoList{
+    background-color:#6eb5b8;
+    list-style: none;
+    text-align: center;   
+}
+p{
+    font-family: "Scope One", serif;
+}
+.psychoListA{
+    background-color: green;
+    list-style: none;
+    text-align: center;
+    padding: 1%;
+    border-radius: 10px;
+        
+}
+.psychoListD{
+    background-color: red;
+    list-style: none;
+    text-align: center;
+    padding: 1%;
+    border-radius: 10px;
+}
+.psychoListC{
+    background-color:silver;
+    list-style: none;
+    text-align: center;
+    margin: 5px;
+    padding: 1%;
+    border-radius: 10px;
+    margin-top: 15%;
+}
+
+#containerQuest{
+    background-color: #1CB0A7;
+    border-radius: 10px;
+    width: 80%;
+    height: 20%;
+    justify-content: center;
+    padding: auto;
+    display: flex;
+    margin-bottom: 7.5%;
+    padding: 0.5%;
+    margin-right: auto;
+    margin-left: auto;
+}
+#name{
+    width: 75%;
+    font-size: large;
+    margin-right: 5%;
+}
+#button{
+    background-color:#1CB0A7;
+    color: white;
+    border-color: black;
+    padding: 2%;
+    border-style:solid;
+}
+#button:hover{
+    border-color: white;
+}
+
+#isLoading{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4%;
+    background-image: url("../../Images/Loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    align-content: center;
+    color: white;
+}
+#linebuttom{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#checkT{
+    background-color: green;
+    border-radius: 1000rem;
+    width:7.5%;
+    color:green;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+#checkF{
+    background-color:red;
+    border-radius: 1000rem;
+    width:7.5%;
+    color:red;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+#newspecialist{
+    margin-bottom: 3%;
+    display: block;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 25%;
+    
+}
+#inputcontainer{
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-around;
+
+}

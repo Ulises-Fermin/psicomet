@@ -51,11 +51,11 @@ function Profile_e() {
                   <p class={styles.label1}>Idiomas:</p>
                   <p class={styles.label1}>{user.languages}</p>
                   <br />
-                  <p class={styles.label1}>Modelo de Trabajo Terapéutico:</p>
-                  <p class={styles.label1}>Consultas en sincronia</p>
+                  <p class={styles.label1}>Ranking:</p>
+                  <p class={styles.label1}>{(user.points/user.consults)}</p>
                   <br />
-                  <p class={styles.label1}>Precio de consulta:</p>
-                  <p class={styles.label1}>20$ 60 min</p>
+                  <p class={styles.label1}>Nro de consultas:</p>
+                  <p class={styles.label1}>{user.consults}</p>
                   <br />
                   <p class={styles.label1}>Ver Itinerario:</p>
                   <Popup

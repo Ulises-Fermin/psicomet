@@ -35,6 +35,7 @@ import Appointments from "./Pages/Appointments/Appointments";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
 import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
+import Ranking from "./Pages/Ranking/Ranking";
 import Payment from "./Pages/Payment/Payment";
 import Chat from "./Pages/Chats/Chat";
 import ChatPsycho from "./Pages/Chats/ChatPsycho"
@@ -44,6 +45,7 @@ function App() {
   const [checkout, setCheckOut] = useState(false);
 
   return (
+
     <UserContextProvider>
       <Router>
         <ScrollToTop>
@@ -144,6 +146,9 @@ function App() {
             </Route>
             <Route exact path="/ChatPsycho/:idPacient">
               <ChatPsycho />
+            </Route>
+            <Route exact path="/Ranking">
+              <Ranking />
             </Route>
           </Switch>
           <Footer />

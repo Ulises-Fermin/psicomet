@@ -60,21 +60,7 @@
   text-shadow: -1px -1px #fff;
 }
 
-#My_citas {
-  margin-top: 2.5%;
-  margin-left: 17%;
-  margin-bottom: 30%;
-  cursor: pointer;
-  text-align: center;
-  font-size: 200%;
-  color: black;
-  text-decoration: none;
-}
-#My_chats:hover {
-  text-shadow: -1px -1px #fff;
-}
-
-#Calendar {
+.Calendar {
   margin-top: 2.5%;
   margin-bottom: 30%;
   cursor: pointer;
@@ -82,7 +68,7 @@
   font-size: 200%;
   text-shadow: none;
 }
-#Calendar:hover {
+.Calendar:hover {
   text-shadow: -1px -1px #fff (0, 0, 0, 1);
 }
 
