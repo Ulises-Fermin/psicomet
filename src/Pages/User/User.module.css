@@ -60,7 +60,7 @@
   text-shadow: -1px -1px #fff;
 }
 
-#Calendar {
+.Calendar {
   margin-top: 2.5%;
   margin-bottom: 30%;
   cursor: pointer;
@@ -68,7 +68,7 @@
   font-size: 200%;
   text-shadow: none;
 }
-#Calendar:hover {
+.Calendar:hover {
   text-shadow: -1px -1px #fff (0, 0, 0, 1);
 }
 

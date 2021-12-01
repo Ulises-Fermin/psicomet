@@ -36,7 +36,7 @@ import Appointments_paciente from "./Pages/Appointments/Appointments_paciente";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
 import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
-
+import Ranking from "./Pages/Ranking/Ranking";
 function App() {
   // Funcion para el PayPal
   const [checkout, setCheckOut] = useState(false);
@@ -152,6 +152,9 @@ function App() {
             </Route>
             <Route exact path="/AppointmentsPacient">
               <AppointmentsPacient />
+            </Route>
+            <Route exact path="/Ranking">
+              <Ranking />
             </Route>
           </Switch>
           <Footer />
