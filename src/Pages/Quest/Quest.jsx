@@ -74,7 +74,7 @@ const fetchPsychologists = async () => {
     const get = [];
     psychologists.forEach((psycho) => {
       if (
-        (psycho.data.name + " " + psycho.data.lastName)
+        (psycho.name + " " + psycho.lastName)
           .toLowerCase()
           .includes(names.toLocaleLowerCase())
       ) {
@@ -82,13 +82,6 @@ const fetchPsychologists = async () => {
       }
     });
     setPsychologists(get);
-  };
-
-  const watchpicture = async (p) => {
-    const ref = app.storage().ref("Fotos/" + p.id);
-    const image = await ref.getDownloadURL()
-    console.log(image)
-    setUrl(image)
   };
 
   const showMore = (e) => {

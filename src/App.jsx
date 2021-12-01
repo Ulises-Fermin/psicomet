@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./Pages/Home/Home";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBar/Navbar";
+import Home from "./Pages/Home/Home";
 import CreateAccount from "./Pages/CreateAccount/CreateAccount";
 import CreateAccountP from "./Pages/CreateAccountP/CreateAccountP";
 import TypeAccount from "./Pages/TypeAccount/TypeAccount";
@@ -13,7 +14,6 @@ import Psychologist from "./Pages/Psychologist/Psychologist";
 import Chats from "./Pages/Chats/Chats";
 import Chats_paciente from "./Pages/Chats/Chats_paciente";
 import Testimonials from "./Pages/Testimonials/Testimonials";
-import Footer from "./Components/Footer";
 import Price from "./Pages/Price/Price";
 import Services from "./Components/Services";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
@@ -32,42 +32,30 @@ import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
 import Appointments from "./Pages/Appointments/Appointments";
-import Appointments_paciente from "./Pages/Appointments/Appointments_paciente";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
 import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
 import Ranking from "./Pages/Ranking/Ranking";
+import Payment from "./Pages/Payment/Payment";
+import Chat from "./Pages/Chats/Chat";
+import ChatPsycho from "./Pages/Chats/ChatPsycho"
+
 function App() {
   // Funcion para el PayPal
   const [checkout, setCheckOut] = useState(false);
 
   return (
+
     <UserContextProvider>
       <Router>
         <ScrollToTop>
           <Navbar />
           <Route exact path="/">
             <Home />
-            <Services />
-
-            {/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
-            {/* Si checkout es verdadero, renderizamos PayPal. Si no, aparece un boton que al presionarlo se hace verdadero. */}
-            {checkout ? (
-              <PayPal />
-            ) : (
-              <button
-                onClick={() => {
-                  setCheckOut(true);
-                }}
-              >
-                Checkout
-              </button>
-            )}
           </Route>
           <Switch>
             <Route exact path="/Home">
               <Home />
-              <Services />
             </Route>
             <Route exact path="/TypeAccount">
               <TypeAccount />
@@ -141,9 +129,6 @@ function App() {
             <Route exact path="/Appointments">
               <Appointments />
             </Route>
-            <Route exact path="/Appointments_paciente">
-              <Appointments_paciente />
-            </Route>
             <Route exact path="/CreateAppointment">
               <CreateAppointment />
             </Route>
@@ -152,6 +137,15 @@ function App() {
             </Route>
             <Route exact path="/AppointmentsPacient">
               <AppointmentsPacient />
+            </Route>
+            <Route exact path="/Payment">
+              <Payment />
+            </Route>
+            <Route exact path="/Chat/:idPsycho">
+              <Chat />
+            </Route>
+            <Route exact path="/ChatPsycho/:idPacient">
+              <ChatPsycho />
             </Route>
             <Route exact path="/Ranking">
               <Ranking />

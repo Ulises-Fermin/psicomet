@@ -16,19 +16,13 @@ function Ranking() {
     const list = [];
     const list2 = [];
 
-    const [values, setValues] = useState({
-        enable: "",
-    });
-    const handleOnChange = (event) => {
-        const { value, name: inputName } = event.target;
-        setValues({ ...values, [inputName]: value });
-        console.log(inputName, value);
-    };
-    const fetchPsychologists = async () => {
+
+    const uptaderank = async () => {
         setIsLoading(true)
-        const response = db.collection("users");
+        const response = db.collection("consultations");
         const data = await response.get();
         data.docs.forEach(item => {
+            if (item.data().idPacient === user.id && item.data().status === "pending" && item.data().ranked === "false")
                 list.push({ data: item.data(), id: item.id });
         })
         setPsychologists(list);
@@ -36,59 +30,107 @@ function Ranking() {
         return list
     }
 
-    const watchspecialits = async () => {
-        setIsLoading(true)
-        const response = db.collection("specialty");
-        const data = await response.get();
-        data.docs.forEach(item => {
-            list2.push({ data: item.data(), id: item.id });
-
-        })
-        setSpecials(list2);
-        setIsLoading(false);
-        return list2
-    }
-
 
     useEffect(() => {
-        fetchPsychologists();
-    }, [])
-    useEffect(() => {
-        watchspecialits();
+        uptaderank();
     }, [])
 
 
-
-    const ChangeStatusA = async (p) => {
-        db.collection("users").doc(p.id).update({
-            status: "accept",
-
-        });
-        fetchPsychologists()
-
-
-    };
-    const ChangeStatusD = async (p) => {
-        db.collection("users").doc(p.id).update({
-            status: "denegate",
+    const PutRank1 = async (p) => {
+        db.collection("consultations").doc(p.id).update({
+            ranked: "false",
         })
-        fetchPsychologists()
+        addpoint1(p)
+        uptaderank()
     }
+    const addpoint1 = async (p) => {
 
+        await db.collection("users").doc(p.data.idPsycho).get().then(data => {
+            db.collection("users").doc(p.data.idPsycho).update({
+                consults: (data.data().consults) + 1,
+                points: (data.data().points) + 1,
+            })
+        })
+    }
+    const PutRank2 = async (p) => {
+        db.collection("consultations").doc(p.id).update({
+            ranked: "false",
+        })
+        addpoint2(p)
+        uptaderank()
+    }
+    const addpoint2 = async (p) => {
+
+        await db.collection("users").doc(p.data.idPsycho).get().then(data => {
+            db.collection("users").doc(p.data.idPsycho).update({
+                consults: (data.data().consults) + 1,
+                points: (data.data().points) + 1,
+            })
+        })
+    }
+    const PutRank3 = async (p) => {
+        db.collection("consultations").doc(p.id).update({
+            ranked: "false",
+        })
+        addpoint3(p)
+        uptaderank()
+    }
+    const addpoint3 = async (p) => {
+
+        await db.collection("users").doc(p.data.idPsycho).get().then(data => {
+            db.collection("users").doc(p.data.idPsycho).update({
+                consults: (data.data().consults) + 1,
+                points: (data.data().points) + 1,
+            })
+        })
+    }
+    const PutRank4 = async (p) => {
+        db.collection("consultations").doc(p.id).update({
+            ranked: "false",
+        })
+        addpoint4(p)
+        uptaderank()
+    }
+    const addpoint4 = async (p) => {
+
+        await db.collection("users").doc(p.data.idPsycho).get().then(data => {
+            db.collection("users").doc(p.data.idPsycho).update({
+                consults: (data.data().consults) + 1,
+                points: (data.data().points) + 1,
+            })
+        })
+    }
+    const PutRank5 = async (p) => {
+        db.collection("consultations").doc(p.id).update({
+            ranked: "false",
+        })
+        addpoint5(p)
+        uptaderank()
+    }
+    const addpoint5 = async (p) => {
+
+        await db.collection("users").doc(p.data.idPsycho).get().then(data => {
+            db.collection("users").doc(p.data.idPsycho).update({
+                consults: (data.data().consults) + 1,
+                points: (data.data().points) + 1,
+            })
+        })
+    }
 
     return (
 
         <>
             <div id={styles.body}>
-                <h1 id={styles.title}>Aceptar personas</h1>
+                <h1 id={styles.title}>Ranking</h1>
                 <div id={styles.container}>
                     {psychologists.map((p) => (
                         <div id={styles.psychoCards}>
-                            <li class={styles.psychoList}><p>{p.data.name} {p.data.lastName}</p></li>
-                            <li class={styles.psychoList}><p>{p.data.email}</p></li>
-                            <li class={styles.psychoList}><p>{p.data.phone}</p></li>
-                            <li class={styles.psychoList}><p>{p.data.specialty}</p></li>
-                            
+                            <li class={styles.psychoList}><p>{p.data.idPsycho}</p></li>
+                            <buttom onClick={() => PutRank1(p)}>1</buttom>
+                            <buttom onClick={() => PutRank2(p)}>2</buttom>
+                            <buttom onClick={() => PutRank3(p)}>3</buttom>
+                            <buttom onClick={() => PutRank4(p)}>4</buttom>
+                            <buttom onClick={() => PutRank5(p)}>5</buttom>
                         </div>
                     ))}
                 </div>

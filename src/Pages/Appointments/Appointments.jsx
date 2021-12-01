@@ -95,7 +95,7 @@ function Appointments() {
               </p>
               <p id={styles.fecha}>{d.data.date}</p>
               <p id={styles.fecha}>{d.data.hour}</p>
-              <Link to={`/Chats/${d.data.idPacient}`}>Abrir Chat</Link>
+              <Link to={`/ChatPsycho/${d.data.idPacient}`}>Abrir Chat</Link>
               <PopUp trigger={<button>Generar nueva historia</button>} modal>
                 <div>
                   <h1>Paciente:</h1>
