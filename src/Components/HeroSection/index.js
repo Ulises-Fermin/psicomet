@@ -21,7 +21,13 @@ const HeroSection = () => {
             <HeroContent>
                 <HeroH1>Atención psicológica a tu alcance</HeroH1>
                 <HeroP>
-                    Servicio de atención psicológica a distancia con los mejores psicólogos de Venezuela y el mundo de manera fácil y automática.
+                    Servicio de atención psicológica a distancia con los 
+                </HeroP>
+                <HeroP>
+                    mejores psicólogos de Venezuela y el mundo de 
+                </HeroP>
+                <HeroP>
+                     manera fácil y automática.
                 </HeroP>
                 <HeroBtnWrapper>
                     {/* Aqui en primary y dark estamos usando estilos del component ButtonElement que es para botones generales*/}
