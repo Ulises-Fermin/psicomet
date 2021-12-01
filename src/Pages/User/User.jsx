@@ -52,9 +52,7 @@ function User() {
 >>>>>>> 71c4276aee5f41a79f90c9d345410611bf4f85b4
                       Mis Consultas
                     </Link>
-                    <Link to="/Ranking" class={styles.Calendar}>
-                      Ranking
-                    </Link>
+                    
                   </div>
                   <div class={styles.card}>
 <<<<<<< HEAD
@@ -73,12 +71,10 @@ function User() {
 =======
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={chat} alt="" />
-                  <Link to="/Chats" class={styles.Calendar}>
-                    Mis chats
+                  <Link to="/Ranking" class={styles.Calendar}>
+                    Ranking
                   </Link>
 
-                  <img id={styles.image} src={Calendario} alt="" />
-                  <p class={styles.Calendar}>Calendario</p>
                 </div>
 >>>>>>> 71c4276aee5f41a79f90c9d345410611bf4f85b4
                 <div id={styles.buttons2}>

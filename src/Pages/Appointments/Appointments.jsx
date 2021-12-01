@@ -22,6 +22,7 @@ function Appointments() {
     progress: "",
     treatment: "",
     observations: "",
+    status: "",
   });
   const list = [];
   const tarjetas = async () => {
@@ -78,6 +79,13 @@ function Appointments() {
     setIsLoading(false);
   };
 
+  const handleSubmit = async (id) => {
+    await db.collection("consultations").doc(id).update({
+      status: values.status,
+    })
+    window.alert("Estatus guardado con exito.");
+  }
+
   return (
     <>
       {isLoading ? (
@@ -95,6 +103,7 @@ function Appointments() {
               </p>
               <p id={styles.fecha}>{d.data.date}</p>
               <p id={styles.fecha}>{d.data.hour}</p>
+              <div id={styles.buttons}>
               <Link to={`/ChatPsycho/${d.data.idPacient}`}>Abrir Chat</Link>
               <PopUp trigger={<button>Generar nueva historia</button>} modal>
                 <div>
@@ -131,6 +140,19 @@ function Appointments() {
                   </button>
                 </div>
               </PopUp>
+              <div>
+                <p>Estatus de la consulta:</p>
+                <select
+                name="status"
+                onChange={handleOnChange}>
+                  <option value="">{d.data.status}</option>
+                  <option value="Culminada">Culminada</option>
+                  <option value="Rechazada">Rechazada</option>
+                  <option value="Pendiente">Pendiente</option>
+                </select>
+                <button onClick={() => handleSubmit(d.id)}>Guardar</button>
+              </div>
+              </div>
             </div>
           ))}
         </div>

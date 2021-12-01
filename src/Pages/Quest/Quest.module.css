@@ -162,6 +162,15 @@ p{
   color: white;
 }
 
+.fields{
+  background-color: white;
+  color: black;
+  border-color: lightgray;
+  padding: 0.8%;
+  border-style: solid;
+  border-radius: 5px;
+}
+
 #isLoading {
   width: 100%;
   text-align: center;
