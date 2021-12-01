@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import styles from "./CreateAppointment.module.css"
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
+import PopUp from "reactjs-popup";
 
 
 function ShowItinerary(itinerarys) {
@@ -19,6 +20,10 @@ function ShowItinerary(itinerarys) {
 
 export default function CreateAppointment(){
     const {user} = useContext(UserContext);
+    const [names, setNames] = useState({
+        name: "",
+        lastName: "",
+    })
     const [psychologists, setPsychologists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [values, setValues] = useState({
@@ -93,14 +98,22 @@ export default function CreateAppointment(){
     const handleOnChange = async (e) =>{
         const { value, name: inputName } = e.target;
         setValues({ ...values, [inputName]: value });
+        try{
+            const psychol = await db.collection("users").doc(values.idPsycho).get();
+            const psycholo = { data: psychol.data(), id: psychol.id }
+            setNames({
+                name: psycholo.data.name,
+                lastName: psycholo.data.lastName,
+            })
+        }catch (e){
+            console.log("x")
+        }
     }
 
     const handleSubmit = async (name,lastName) => {
         try{
             const dates = new Date(values.date).toString().split(" ")
             if (values.idPsycho !== ""){
-                const psychol = await db.collection("users").doc(values.idPsycho).get();
-                const psycholo = { data: psychol.data(), id: psychol.id }
                 if ((values.date !== "") && (dates[0] !== "Sat") && (dates[0] !== "Fri")){
                     if (values.hour !== ""){
                         if (values.reason !== ""){
@@ -113,8 +126,8 @@ export default function CreateAppointment(){
                                     idPacient: user.id,
                                     namePacient: user.name,
                                     lastNamePacient: user.lastName,
-                                    namePsycho: psycholo.data.name,
-                                    lastNamePsycho: psycholo.data.lastName, 
+                                    namePsycho: names.name,
+                                    lastNamePsycho: names.lastName, 
                                     reason: values.reason,
                                     status: "Pendiente",
                                     ranked: "false",
@@ -176,7 +189,24 @@ export default function CreateAppointment(){
                         
                         <p class={styles.question}>Explique el motivo de la consulta:</p>
                         <textarea rows="10" placeholder="Escribe aqui..." value={values.reason} id={styles.input} name="reason" onChange={handleOnChange}></textarea>
-                        <button id={styles.button} onClick={handleSubmit}>Agendar</button>
+                        <PopUp trigger={<button id={styles.button}>Agendar</button>} modal>
+                                <div id={styles.PopUp}>
+                                    <h1>Confirme su cita:</h1>
+                                    <div>
+                                        <h3>Especialista:</h3>
+                                        <p>{names.name} {names.lastName}</p>
+                                    </div>
+                                    <div>
+                                        <h3>Fecha:</h3>
+                                        <p>{values.date}</p>
+                                    </div>
+                                    <div>
+                                        <h3>Hora:</h3>
+                                        <p>{values.hour}</p>
+                                    </div>
+                                    <button id={styles.button} onClick={handleSubmit}>Confirmar</button>
+                                </div>
+                        </PopUp>
                     </div>
                 </div>
             )},
