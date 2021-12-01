@@ -13,18 +13,18 @@ import { UserContext } from "../../Context/UserContext";
 function ShowItinerary(itinerarys) {
   var list = [];
   const itinerary = itinerarys;
-  for (const days in itinerary) {
-    for (const hours in itinerary[days])
-      if (itinerary[days][hours]["checked"] === true) {
-        const day = days + " " + itinerary[days][hours]["value"] + " / ";
+  for (const days in itinerary){
+    if (itinerary[days]["checked"] === true){
+        const day = itinerary[days]["value"];
         list.push(day)
-        console.log("aqui llego")
-      }
+    }
   }
   return (
     <div id={styles.itinerary}>
       <h3>Itinerario del Especialista:</h3>
-      {list}
+        {list.map((h) => (
+          <p>{h}</p>
+        ))};
     </div>
   )
 };
@@ -122,77 +122,76 @@ function SpecialistCard({ specialist }) {
       >
 
         <div id={styles.PopUp}>
-          <div class={styles.box1}>
-            <img
-              id={styles.img1}
-              src={url}
-              alt=""
-            />
+
+          <div class={styles.box2}>
+            <p class={styles.label1}>Correo Electrónico: </p>
+            <p class={styles.label1}>{specialist.data.email}</p>
+            <p class={styles.label1}>Teléfono: {specialist.data.phone}</p>
+            <p class={styles.label1}>Género: {specialist.data.gender}</p>
+            <p class={styles.label1}>Idiomas: {specialist.data.languages}</p>
+            <p class={styles.label1}>
+              Modelo de Trabajo Terapéutico:
+            </p>
+            <p class={styles.label1}>Consultas en sincronéa</p>
+            <p class={styles.label1}>Precio de consulta:</p>
+            <p class={styles.label1}>20$ 60 min</p>
+            <p class={styles.label1}>Ver Itinerario:</p>
+            <Popup
+              trigger={<button> Itinerario </button>}
+              position="center center"
+              modal
+              id={styles.itinerary}
+            >
+              {ShowItinerary(specialist.data.itinerary)}
+            </Popup>
+            <br />
           </div>
-          <div class={styles.info}>
-            <h1 id={styles.nombre}>
-              Dr. {specialist.data.name} {specialist.data.lastName}
-            </h1>
-            <p>Especialidad: {specialist.data.specialty}</p>
-          </div>
-          <div id={styles.box5}>
-            <div class={styles.box4}>
-              <div class={styles.box2}>
-                <p id={styles.label1}>Correo Electrónico:</p>
-                <p id={styles.mail}>{specialist.data.email}</p>
-                <p id={styles.label1}>Teléfono:</p>
-                <p id={styles.phone}>{specialist.data.phone}</p>
-                <p id={styles.label2}>Género:</p>
-                <p id={styles.gender}>{specialist.data.gender}</p>
-                <p id={styles.label3}>Idiomas:</p>
-                <p id={styles.idioma}>{specialist.data.languages}</p>
-                <p id={styles.label4}>
-                  Modelo de Trabajo Terapéutico:
-                </p>
-                <p id={styles.model}>Consultas en sincronéa</p>
-                <p id={styles.label5}>Precio de consulta:</p>
-                <p id={styles.price}>20$ 60 min</p>
-                <p id={styles.label8}>Ver Itinerario:</p>
-                <Popup
-                  trigger={<button> Itinerario </button>}
-                  position="center center"
-                  modal
-                  id={styles.itinerary}
-                >
-                  {ShowItinerary(specialist.data.itinerary)}
-                </Popup>
-                <br />
+          <div id={styles.bigbox}>
+            <div class={styles.box1}>
+              <div id={styles.info}>
+                <h1 id={styles.nombre}>
+                  Dr. {specialist.data.name} {specialist.data.lastName}
+                </h1>
+                <p>Especialidad: {specialist.data.specialty}</p>
               </div>
+              <img
+                id={styles.img1}
+                src={url}
+                alt=""
+              />
+            </div>
+            <div id={styles.box5}>
+
+
             </div>
             <div class={styles.box7}>
               <div class={styles.box3}>
-                <div id={styles.box8}>
-                  <h2 id={styles.label10}>Áreas de atención</h2>
-                  <div id={styles.caja}>{specialist.data.atencionAreas}</div>
+                <div class={styles.box8}>
+                  <h2 class={styles.label10}>Áreas de atención</h2>
+                  <div class={styles.caja}><p class={styles.infor}>{specialist.data.atencionAreas}</p></div>
                 </div>
-                <div id={styles.box6}>
-                  <h2 id={styles.profesional}>
-                    Experiencia Profesional
-                  </h2>
-                  <div id={styles.caja2}>{specialist.data.experience}</div>
+                <div class={styles.box8}>
+                  <h2  class={styles.label10}>Experiencia Profesional</h2>
+                  <div class={styles.caja}>{specialist.data.experience}</div>
                 </div>
               </div>
-            </div>
-            <div id={styles.box9}>
-              <div id={styles.box13}>
-                <h2 id={styles.label7}>Formación Académica</h2>
-                <div id={styles.caja3}>{specialist.data.academics}</div>
-              </div>
-              <div id={styles.box10}>
-                <h2 id={styles.about}>Sobre {specialist.name}</h2>
-                <div id={styles.caja4}>{specialist.aboutMe}</div>
+              <div class={styles.box3}>
+                <div class={styles.box8}>
+                  <h2 class={styles.label10}>Formación Académica</h2>
+                  <div class={styles.caja}>{specialist.data.academics}</div>
+                </div>
+                <div class={styles.box8}>
+                  <h2 class={styles.label10}>Sobre {specialist.name}</h2>
+                  <div class={styles.caja}>{specialist.aboutMe}</div>
+                </div>
               </div>
             </div>
           </div>
-          {(!!user && user.role==="pacient") ? (
+
+          {(!!user && user.role === "pacient") ? (
             <Link to="/CreateAppointment" id={styles.linkk}>Agendar Cita</Link>
           ) : (null)}
-          
+
         </div>
       </Popup>
       {(user?.role === "admi") ? (

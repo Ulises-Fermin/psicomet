@@ -23,21 +23,21 @@ function User() {
     <>
       {!!user ? (
         <>
-          {(user?.role === "pacient") ? (
+          {user?.role === "pacient" ? (
             <div class={styles.body}>
               {!!user ? (
                 <h1 id={styles.title}>Bienvenido/a {user.name} </h1>
               ) : (
-                <h1 id={styles.title}>
-                  Cargando...
-                </h1>
+                <h1 id={styles.title}>Cargando...</h1>
               )}
 
               <div class={styles.buttons_usuario}>
                 <div id={styles.buttons1}>
                   <div class={styles.card}>
                     <img id={styles.image} src={Consulta} alt="" />
-                    <p id={styles.Mis_consults}>Consultas</p>
+                    <Link to="/AppointmentsPacient" id={styles.My_chats}>
+                      Mis Consultas
+                    </Link>
                   </div>
                   <div class={styles.card}>
                     <img id={styles.image} src={Personas} alt="" />
@@ -57,7 +57,9 @@ function User() {
                 </div>
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={Agendar} alt="" />
-                  <p id={styles.My_chats}>Reservar cita</p>
+                  <Link to="/CreateAppointment" id={styles.Calendar}>
+                    Agendar Cita
+                  </Link>
                   <img id={styles.image} src={Usuario} alt="" />
                   <Link to="/Profile_p" id={styles.Calendar}>
                     Perfil
@@ -65,12 +67,12 @@ function User() {
                 </div>
               </div>
             </div>
-          ) : (history.push("/home"))}
+          ) : (
+            history.push("/home")
+          )}
         </>
       ) : (
-        <h1 id={styles.isLoading}>
-          Cargando...
-        </h1>
+        <h1 id={styles.isLoading}>Cargando...</h1>
       )}
     </>
   );

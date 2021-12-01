@@ -19,7 +19,7 @@ function ShowItinerary(itinerarys) {
 export default function CreateAppointment(){
     const {user} = useContext(UserContext);
     const [psychologists, setPsychologists] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [values, setValues] = useState({
         date: "",
         hour: "",
@@ -89,72 +89,91 @@ export default function CreateAppointment(){
     const handleOnChange = (e) =>{
         const { value, name: inputName } = e.target;
         setValues({ ...values, [inputName]: value });
+        const dates = new Date(values.date).toString().split(" ")
     }
 
     const handleSubmit = async () => {
-        setIsLoading(true);
-        if (await checkDate(values.date, values.hour, values.idPsycho)){
-            await db.collection("consultations").add({
-                date: values.date,
-                hour: values.hour,
-                idPsycho: values.idPsycho,
-                idPacient: user.id,
-                namePacient: user.name,
-                lastNamePacient: user.lastName,
-                reason: values.reason,
-                status: "pending"
-            });
-        }else{
-            window.alert("Lo siento, esa fecha esta ocupada.")
+        try{
+            const dates = new Date(values.date).toString().split(" ")
+            if (values.idPsycho !== ""){
+                if ((values.date !== "") && (dates[0] !== "Sat") && (dates[0] !== "Fri")){
+                    if (values.hour !== ""){
+                        if (values.reason !== ""){
+                            if (await checkDate(values.date, values.hour, values.idPsycho)){
+                                setIsLoading(true);
+                                await db.collection("consultations").add({
+                                    date: values.date,
+                                    hour: values.hour,
+                                    idPsycho: values.idPsycho,
+                                    idPacient: user.id,
+                                    namePacient: user.name,
+                                    lastNamePacient: user.lastName,
+                                    reason: values.reason,
+                                    status: "pending"
+                                });
+                                window.alert("Cita agendada con exito.")
+                                setIsLoading(false);
+                                history.push("/Home");
+                            }else{
+                                window.alert("Lo sentimos, esa fecha esta ocupada.")
+                            }
+                        }else{
+                            window.alert("Asegurese de escribir un motivo de consulta valido.")
+                        }
+                    }else{
+                        window.alert("Asegurese de seleccionar un horario.")
+                    }
+                }else{
+                    window.alert("Asegurese de seleccionar una fecha valida (De Lunes a Viernes).")
+                }
+            }else{
+                window.alert("Asegurese de seleccionar un psicologo.")
+            }
+        }catch (e){
+            window.alert(e)
         }
-        setIsLoading(false);
-        history.push("/Home");
     }
 
     return(
         <>
-            {/* {isLoading ? (
+            {isLoading ? (
+                <div id={styles.isLoading}>
+                    <h1>Cargando...</h1>
+                    <h1>Será redirigido automáticamente.</h1>
+                </div>
+             ) : (
                 <div class={styles.body}>
                     <div class={styles.section}>
                         <h3>Seleccione un psicologo:</h3>
-                        <select value={values.psycho} onChange={handleOnChange} name="psycho">
+                        <select value={values.idPsycho} onChange={handleOnChange} name="idPsycho">
+                            <option value = "">Seleccione un psicologo</option>
                             {psychologists.map((p) => (
                                     <option value={p.id}>{p.data.name} {p.data.lastName}</option>
                             ))}
                         </select>
                     </div>
-                </div>
-            ) : ( */}
-            <div class={styles.body}>
-                <div class={styles.section}>
-                    <h3>Seleccione un psicologo:</h3>
-                    <select value={values.idPsycho} onChange={handleOnChange} name="idPsycho">
-                        {psychologists.map((p) => (
-                                <option value={p.id}>{p.data.name} {p.data.lastName}</option>
-                        ))}
-                    </select>
-                </div>
-                <div class={styles.section}>
-                    <h3>Seleccione una fecha:</h3>
-                    <input type="date" min="2021-11-29" value={values.date} name="date" onChange={handleOnChange}></input>
-                </div>
-                <div class={styles.section}>
-                    <h3>Seleccione un horario:</h3>
-                    <select value={values.hour} name="hour" onChange={handleOnChange}>
-                    {time.map((p) => (
+                    <div class={styles.section}>
+                        <h3>Seleccione una fecha:</h3>
+                        <input type="date" min="2021-12-3" value={values.date} name="date" onChange={handleOnChange}></input>
+                    </div>
+                    <div class={styles.section}>
+                        <h3>Seleccione un horario:</h3>
+                        <select value={values.hour} name="hour" onChange={handleOnChange}>
+                            <option value = "">Seleccione un horario</option> 
+                            {time.map((p) => (
                                 <option value={p}>{p}</option>
-                        ))}
-                    </select>
+                            ))}
+                        </select>
+                    </div>
+                    <div class={styles.section}>
+                    <h3>Explique el motivo de la consulta:</h3>
+                    <textarea rows="10" placeholder="Escribe aqui..." value={values.reason} name="reason" onChange={handleOnChange}></textarea>
+                    </div>
+                    <div class={styles.section}>
+                    <button onClick={handleSubmit}>Agendar</button>
+                    </div>
                 </div>
-                <div class={styles.section}>
-                <h3>Explique el motivo de la consulta:</h3>
-                <textarea rows="10" placeholder="Escribe aqui..." value={values.reason} name="reason" onChange={handleOnChange}></textarea>
-                </div>
-                <div class={styles.section}>
-                <button onClick={handleSubmit}>Agendar</button>
-                </div>
-            </div>
-            {/* )} */}
+            )},
         </>
     )
 }

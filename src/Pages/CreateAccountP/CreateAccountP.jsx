@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./CreateAccountP.module.css";
 import { Link } from "react-router-dom";
 import { auth } from "../../Utils/FireBaseConfig";
+import { db } from "../../Utils/FireBaseConfig";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
@@ -10,7 +11,9 @@ import newUser from "../../Images/newUser.png";
 function CreateAccountP() {
   const { createUser } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
+  const [specials, setSpecials] = useState([]);
   const [fileURL, setFileURL] = React.useState(null)
+  const list = []
   const [values, setValues] = useState({
     name: "",
     lastName: "",
@@ -35,7 +38,27 @@ function CreateAccountP() {
     setValues({ ...values, [inputName]: value });
     console.log(inputName, value);
   };
-  
+  const handleOnChange2 = (event) => {
+    const { value, name: inputName } = event.target;
+    setValues({ ...values, [inputName]: value });
+    console.log(inputName, value);
+  };
+
+  const special = async () => {
+    const response = db.collection("specialty");
+    const data = await response.get();
+    data.docs.forEach((item) => {
+      if (
+        item.data().enable === "true"
+      ) {
+        list.push({ data: item.data(), id: item.id });
+        console.log(item.id)
+      }
+    });
+    setSpecials(list);
+    return list;
+    
+  };
 
   const handleSubmit = async (e) => {
     try {
@@ -78,10 +101,10 @@ function CreateAccountP() {
                             photo: "false",
                           },
                           response.user.uid,
-                          
-                        ); 
 
-                        
+                        );
+
+
                         setIsLoading(false);
                         history.push("/Curriculum");
                       } else {
@@ -137,8 +160,8 @@ function CreateAccountP() {
             </Link>
           </div>
 
-          <div class = {styles.profileDiv}>
-            <img id={styles.photo} src={newUser} alt = ""/>
+          <div class={styles.profileDiv}>
+            <img id={styles.photo} src={newUser} alt="" />
           </div>
 
           <div class={styles.DatesContainer}>
@@ -256,25 +279,18 @@ function CreateAccountP() {
             </div>
 
             <div id={styles.File6}>
+
               <select
                 name="specialty"
                 class={styles.fields}
                 value={values.specialty}
-                onChange={handleOnChange}
+                onClick={special}
+                onChange={handleOnChange2}
               >
                 <option value="">Especialidad</option>
-                <option value="Depresion">Depresion</option>
-                <option value="Ansiedad">Ansiedad</option>
-                <option value="Ansiedad">Sexualidad</option>
-                <option value="Ansiedad">Atencio Infantil</option>
-                <option value="Ansiedad">Psiquiatra</option>
-                <option value="Ansiedad">Terapia en familia</option>
-                <option value="Ansiedad">Ansiedad</option>
-                <option value="Ansiedad">Educacion</option>
-                <option value="Ansiedad">Psicoterapia</option>
-                <option value="Ansiedad">NeuroPsicologo</option>
-                <option value="Ansiedad">Psicologo Criminalista</option>
-                <option value="Otro">Otro</option>
+                {specials.map((m) => (
+                  <option value={m.data.name}>{m.data.name}</option>
+                ))}  
               </select>
             </div>
 
@@ -292,18 +308,12 @@ function CreateAccountP() {
 export default CreateAccountP;
 
 
-/*<p id={styles.instructions2}>
-              En el siguiente campo adjunte su currículum en formato PDF.
-            </p>
-
-            <div id={styles.File1}>
-              <form>
-                <input
-                  type="file"
-                  name="Curriculum"
-                  
-                  id={styles.name}
-                  placeholder="Adjunte su currículum"
-                />
-              </form>
-            </div>*/
+/*<option value="Sexualidad">Sexualidad</option>
+                  <option value="Atencion infantil">Atencio infantil</option>
+                  <option value="Psiquiatra">Psiquiatra</option>
+                  <option value="Terapia en familia">Terapia en familia</option>
+                  <option value="Ansiedad">Ansiedad</option>
+                  <option value="Educacion">Educacion</option>
+                  <option value="Psicoterapia">Psicoterapia</option>
+                  <option value="Neuropsicologia">Neuropsicologia</option>
+                  <option value="Criminalistica">Criminalistica</option>*/

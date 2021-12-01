@@ -38,7 +38,7 @@ function Profile_e() {
             <div class={styles.body}>
               <div class={styles.megabox}>
 
-                <div class={styles.box2}>
+                <div class={styles.box2}> 
                   <p class={styles.label1}>Correo Electrónico:</p>
                   <p class={styles.label1}>{user.email}</p>
                   <br />

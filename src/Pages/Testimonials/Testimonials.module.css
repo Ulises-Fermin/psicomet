@@ -1,12 +1,10 @@
 #body{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-flow: wrap;
+    display: block;
+    
     padding-left: 5%;
     padding-right: 5%;
     height: auto;
-    background-image: url("../../Images/Terapia.png");
+    background-color: #f3ecec;
     
 }
 #TestimonialsSpace{
@@ -76,11 +74,10 @@
     text-align: center;
     font-size: 200%;
     font-family: 'Scope One', serif;
-    margin-top: 2%;
-    padding-top: 2%;
+    margin-top: 0%;
+    padding-top: 5%; 
 }
-#titlediv{
-    margin-top: 5%;
+#titlediv{ 
     margin-bottom: 5%;
 }
 #Logo{
@@ -113,6 +110,21 @@ p {
     flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
+}
+#deletecontainer{
+    text-align: right;
+    margin-top: 1%;
+}
+.delete{
+    background-color: red;
+    list-style: none;
+    text-align: right;
+    padding: 1%;
+    border-radius: 10px;
+}
+#deletebuttom{
+    font-family: "Scope One", serif;
+    font-size: 85%;
 }
 
 @media only screen and (max-width: 768px) {

@@ -11,6 +11,7 @@ import User from "./Pages/User/User";
 import Contact from "./Pages/Contact/Contact";
 import Psychologist from "./Pages/Psychologist/Psychologist";
 import Chats from "./Pages/Chats/Chats";
+import Chats_paciente from "./Pages/Chats/Chats_paciente";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Footer from "./Components/Footer";
 import Price from "./Pages/Price/Price";
@@ -31,7 +32,10 @@ import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
 import Appointments from "./Pages/Appointments/Appointments";
+import Appointments_paciente from "./Pages/Appointments/Appointments_paciente";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
+import Histories from "./Pages/Histories/Histories";
+import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
 
 function App() {
   // Funcion para el PayPal
@@ -86,8 +90,11 @@ function App() {
             <Route exact path="/LogIn">
               <LogIn />
             </Route>
-            <Route exact path="/Chats">
+            <Route exact path="/Chats/:idPacient">
               <Chats />
+            </Route>
+            <Route exact path="/Chats_paciente/:idPsico">
+              <Chats_paciente />
             </Route>
             <Route exact path="/Testimonials">
               <Testimonials />
@@ -134,8 +141,17 @@ function App() {
             <Route exact path="/Appointments">
               <Appointments />
             </Route>
+            <Route exact path="/Appointments_paciente">
+              <Appointments_paciente />
+            </Route>
             <Route exact path="/CreateAppointment">
               <CreateAppointment />
+            </Route>
+            <Route exact path="/Histories">
+              <Histories />
+            </Route>
+            <Route exact path="/AppointmentsPacient">
+              <AppointmentsPacient />
             </Route>
           </Switch>
           <Footer />

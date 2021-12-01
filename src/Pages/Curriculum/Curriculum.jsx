@@ -28,10 +28,9 @@ function Curriculum() {
       function complete() {
         console.info("Finished uploading!");
         db.collection("users").doc(user.id).update({
-          curriculum: "have",
+          curriculum: "have",  
         });
         history.push("/Home");
-        window.location.reload()
       }
     );
   }

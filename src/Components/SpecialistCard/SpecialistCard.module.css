@@ -14,14 +14,6 @@
     background-repeat: no-repeat;
   }
   
-  #img1 {
-    width: auto;
-    margin-left: 11%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    border: 7px solid #6eb5b8;
-    border-radius: 100%;
-  }
   
   h2 {
     font-size: 23px;
@@ -190,22 +182,15 @@
     font-family: "Scope One", serif;
     font-size: large;
     box-shadow: 0px 0px 10px 0px #000000;
-    width: 160%;
-    justify-content: center;
+    width: 130%;
+    padding: 5%;
     position: relative;
-    left: -30%;
-    height: 80%;
+    left: -45%;
+    height: 100%;
+    display: flex;
+    position: relative;
   }
   
-  .box4 {
-    margin-top: 2.5%;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0;
-    box-sizing: border-box;
-    border: 7px solid #6eb5b8;
-    background-color:white;
-  }
   
   #box5 {
     display: flex;
@@ -214,7 +199,7 @@
   }
   
   .box7 {
-    display: flex;
+    display: block;
     flex-direction: column;
   }
   
@@ -226,11 +211,14 @@
     margin-top: 3%;
   }
   
-  #caja {
+  .caja {
     box-sizing: border-box;
-    border: 7px solid #6eb5b8;
-    height: 180px;
+    border: 0.25rem solid #6eb5b8;
+    height: 4rem;
+    width: 9rem;
     background-color: white;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
   
   #profesional {
@@ -241,26 +229,6 @@
     margin-top: 10%;
   }
   
-  #caja2 {
-    box-sizing: border-box;
-    border: 7px solid #6eb5b8;
-    height: 180px;
-    background-color: white;
-  }
-  
-  #caja3 {
-    box-sizing: border-box;
-    border: 7px solid #6eb5b8;
-    height: 180px;
-    background-color: white;
-  }
-  
-  #caja4 {
-    box-sizing: border-box;
-    border: 7px solid #6eb5b8;
-    height: 180px;
-    background-color: white;
-  }
   
   #itinerary{
     background-color: lightblue;
@@ -286,4 +254,56 @@
   #img2{
     margin-bottom: 15%;
   }
-  
+  .box1{
+    display: flex;
+    
+  }
+  .box2 {
+    box-sizing: border-box;
+    width: 30%;
+    border: 7px solid #6eb5b8;
+    margin-left: 2%;
+    padding-bottom: 1%;
+    background-color: white;
+    height: 40%;
+    margin-right: 5%;
+    
+
+  }
+  #img1 {
+    width: 5rem;
+    height: 5rem;
+    margin-left: 6.5%;
+    border: 0.25rem solid #6eb5b8;
+    border-radius: 100%;
+  }
+  #bigbox{
+    display: inline;
+    
+  }
+  .box3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 0%;
+    height: 45%;
+  }
+  .label10 {
+    color: black;
+    font-family: 'Scope One', serif;
+    text-align: center;
+    font-size: 70%;
+  }
+  .box8{
+    margin: 2.5%;
+  }
+  .label1 {
+    color: black;
+    font-family: 'Scope One', serif;
+    text-align: center;
+    font-size: 60%;
+  }
+  .infor{
+    font-size: 40%;
+  }
