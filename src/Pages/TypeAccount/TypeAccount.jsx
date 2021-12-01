@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { UserContext } from "../../Context/UserContext";
 import { useContext } from "react";
+import psicometLogo from '../../Images/LogoPsicomet.png';
 function TypeAccount() {
   const { user, setUser } = useContext(UserContext);
   const history = useHistory();
@@ -16,7 +17,7 @@ function TypeAccount() {
       ) : (
         <div id={styles.Body}>
           <div id={styles.LogoContainer}>
-            <img src="/LogoPsicomet.png" id={styles.Logo} alt="" />
+            <img src={psicometLogo} id={styles.Logo} alt="" />
           </div>
           <p id={styles.pTypeAccount}>
             La plataforma nº1 en atención psicológica en línea

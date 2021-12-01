@@ -77,6 +77,8 @@ br {
 #bigbox{
   display: inline;
   margin-left: 10%;
+  border-color: black;
+  border-style: solid;
 }
 .box2 {
   box-sizing: border-box;
@@ -201,6 +203,7 @@ br {
 #info {
   width: 117%;
   margin-top: 0.5%;
+  background-color: black;
 }
 
 .caja {
