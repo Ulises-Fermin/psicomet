@@ -4,6 +4,8 @@ import { useState, useEffect, useContext } from "react";
 import styles from "./CreateAppointment.module.css"
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
+import Confirmacion from "../Payment/Confirmacion.js";
+import styled from 'styled-components';
 
 
 function ShowItinerary(itinerarys) {
@@ -18,6 +20,7 @@ function ShowItinerary(itinerarys) {
 };
 
 export default function CreateAppointment(){
+    const [showModal, setShowModal] = useState(true);
     const {user} = useContext(UserContext);
     const [psychologists, setPsychologists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -36,6 +39,9 @@ export default function CreateAppointment(){
     const list = [];
     const itinerarys = "";
     const history = useHistory();
+    const openModal = () => {
+        setShowModal(prev => !prev);
+      };
 
     useEffect(() => {
         fetchPsychologists();
@@ -114,6 +120,7 @@ export default function CreateAppointment(){
                                 });
                                 window.alert("Cita agendada con exito.")
                                 setIsLoading(false);
+                                
                                 history.push("/Payment");
                             }else{
                                 window.alert("Lo sentimos, esa fecha esta ocupada.")
@@ -139,6 +146,7 @@ export default function CreateAppointment(){
         <>
             {isLoading ? (
                 <div id={styles.isLoading}>
+
                     <h1>Cargando...</h1>
                     <h1>Será redirigido automáticamente.</h1>
                 </div>
@@ -169,6 +177,7 @@ export default function CreateAppointment(){
                         
                         <p class={styles.question}>Explique el motivo de la consulta:</p>
                         <textarea rows="10" placeholder="Escribe aqui..." value={values.reason} id={styles.input} name="reason" onChange={handleOnChange}></textarea>
+                        {/* <Confirmacion showModal={showModal} setShowModal={setShowModal} /> */}
                         <button id={styles.button} onClick={handleSubmit}>Agendar</button>
                     </div>
                 </div>
