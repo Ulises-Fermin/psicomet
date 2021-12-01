@@ -144,14 +144,16 @@ function Modify_p() {
               <div className='form-container'>
                 <div className='form-content-left'>
                   <form className='form'>
+                    <div class= {styles.titulo}>
                     <h1>
                       Modificación de Datos
                     </h1>
+                    </div>
                     {/* {/* <h1 id={styles.titulo}>Modificación de Datos</h1> */}
                     <div className='form-inputs'>
                       <label className='form-label'>Nombre</label>
                       <input
-                        className='form-input'
+                        class={styles.forminput}
                         name="name"
                         type="text"
                         placeholder="Ingrese su nombre"
@@ -162,7 +164,7 @@ function Modify_p() {
                       <label className='form-label'>Apellido</label>
                       <input
                         name="lastName"
-                        className='form-input'
+                        class={styles.forminput}
                         type="text"
                         placeholder="Ingrese su apellido"
                         value={values.lastName}
@@ -171,25 +173,28 @@ function Modify_p() {
                       <label className='form-label'>Número telefónico</label>
                       <input
                         name="phone"
-                        className='form-input'
+                        class={styles.forminput}
                         type="t el"
                         placeholder="Ingrese su número telefónico"
                         value={values.phone}
                         onChange={handleOnChange}
                       />
                       <label className='form-label'>Género</label>
-                      <input
+                      <select
                         name="gender"
-                        className='form-input'
-                        type="text"
-                        placeholder="Ingrese su género"
+                        class={styles.fields}
                         value={values.gender}
                         onChange={handleOnChange}
-                      />
+                      >
+                        <option value="">Género</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                      </select>
                       <label className='form-label'>Idiomas (separados por comas)</label>
                       <input
                         name="languages"
-                        className='form-input'
+                        class={styles.forminput}
                         type="text"
                         placeholder="Ingrese sus idiomas"
                         value={values.languages}
@@ -197,7 +202,7 @@ function Modify_p() {
                       />
                       <label className='form-label'>Método de consulta</label>
                       <input
-                        className='form-input'
+                        class={styles.forminput}
                         type="text"
                         placeholder="Ingrese su método de consulta"
                       />
@@ -205,15 +210,15 @@ function Modify_p() {
                       <label className='form-label'>Foto</label>
                       <input
                         type="file"
-                        className='form-input'
+                        class={styles.fotoinput}
                         name="foto"
                         onChange={doUpload}
                         accept="image/*"
                         placeholder="Suba una foto de perfil"
                       />
-                      <label className='form-label'>Precio de su servicio</label>
+                      <label class='form-label'>Precio de su servicio</label>
                       <input
-                        className='form-input'
+                        class={styles.forminput}
                         type="text"
                         placeholder="Ingrese el precio de su servicio"
                       />
@@ -221,7 +226,7 @@ function Modify_p() {
                       <label className='form-label'>Áreas de atencion</label>
                       <textarea
                         name="atencionAreas"
-                        className='form-input'
+                        class={styles.forminput}
                         value={values.atencionAreas}
                         onChange={handleOnChange}
                         placeholder="Ingrese sus áreas de atención"
@@ -233,7 +238,7 @@ function Modify_p() {
                         name="experience"
                         value={values.experience}
                         onChange={handleOnChange}
-                        className='form-input'
+                        class={styles.textarea}
                         placeholder="Ingrese su experiencia profesional"
                         cols="30"
                         rows="5"
@@ -241,20 +246,20 @@ function Modify_p() {
                       <label className='form-label'>Formación académica</label>
                       <textarea
                         name="academics"
-                        className='form-input'
+                        class={styles.textarea}
                         onChange={handleOnChange}
                         placeholder="Ingrese su formación académica"
                         cols="30"
                         rows="5"
 
                       ></textarea>
-                      <label className='form-label'>Ingrese información sobre usted</label>
+                      <label className='form-label'>Información adicional</label>
                       <textarea
                         name="aboutMe"
-                        className='form-input'
+                        class={styles.textarea}
                         value={values.aboutMe}
                         onChange={handleOnChange}
-                        placeholder="Ingrese su información sobre usted"
+                        placeholder="Ingrese información sobre usted"
                         cols="30"
                         rows="5"
                       ></textarea>
@@ -265,7 +270,11 @@ function Modify_p() {
                 </div>
                 <div className='form-content-right'>
                   <form className='form'>
-                    <h1>Itinerario</h1>
+                  <div class= {styles.tituloItinerario}>
+                    <h1>
+                      Itinerario
+                    </h1>
+                    </div>
                     <ItineraryP />
                   </form>
                 </div>
