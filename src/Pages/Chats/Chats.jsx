@@ -69,7 +69,7 @@ function Chats() {
         from: user.name,
       });
     } else {
-      window.alert("No puede enviar un mensaje ne blanco.");
+      window.alert("No puede enviar un mensaje en blanco.");
     }
   };
   return (

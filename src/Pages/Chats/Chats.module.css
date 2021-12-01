@@ -1,0 +1,90 @@
+.messages{
+    margin: 2rem auto;
+    width: 75rem;
+    box-shadow: 0 0.32rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 0.625rem;
+    height: 25rem;
+    z-index: 1;
+    background-image: url("../../Images/Terapia.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: grid;
+    overflow-y: scroll;
+    
+}
+.writespace {
+    margin:auto;
+    margin-bottom: 2%;
+    padding: 1.5rem;
+    width: 75rem;
+    box-shadow: 0 0.32rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 0.625rem;
+    background-image: url("../../Images/Terapia.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: grid;
+    overflow-y: scroll;
+}
+
+.titulo {
+    margin-top: -4%;
+    margin-bottom: -2%;
+}
+
+#button {
+    position:absolute;
+    margin-left: 80.5rem;
+    margin-top: -5rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color:#ffd779;
+    border-color: black;
+    padding:0.5%;
+}
+
+.text{
+    width: 200px;
+    height: 50px;
+    margin:auto;
+    background-color: #d3d3d3;
+    color: black;
+    line-height: 18px;
+    text-align: center;
+    padding: 5px 6px 0px 6px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    position: relative;
+    word-break: break-all;
+    display: flex;
+    flex-direction: row;
+}
+
+.text::before {
+    content: '';
+    width: 20px; 
+    height: 20px;
+    background-color: inherit;
+    left: -10px; 
+    position: absolute;
+    transform:  rotate(45DEG); 
+    Top: 50%;
+    margin-top: -5px;
+  }
+
+#name{
+    margin-bottom: -0.5%;
+    font-size: 0.8rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+}
+
+#mensaje{
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 0.85rem;
+}
