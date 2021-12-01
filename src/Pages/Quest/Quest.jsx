@@ -108,7 +108,24 @@ function Quest() {
   const handleOnChange2 = async (event) => {
     const { value, name: inputName } = event.target;
     setValues({ ...values, [inputName]: value });
-    console.log(value);
+    const response = db.collection("users");
+    const data = await response.get();
+    data.docs.forEach((item) => {
+      if (
+        item.data().role === "psychologist" &&
+        item.data().status === "accept" &&
+        item.data().curriculum === "have" &&
+        item.data().photo === "true" &&
+        (item.data().name + " " + item.data().lastName)
+          .toLowerCase()
+          .includes(names.toLocaleLowerCase())
+      ) {
+        list.push({ data: item.data(), id: item.id });
+        console.log(value);
+      }
+    });
+    setPsychologists(list);
+    return list;
   };
 
   const ChangeStatusD = async (p) => {
@@ -185,18 +202,6 @@ function Quest() {
             <button id={styles.button} onClick={handleSubmit}>
               Buscar
             </button>
-            <br />
-            <input
-              type="text"
-              placeholder="especialidad"
-              id={styles.name}
-              value={names2}
-              onChange={handleOnChange2}
-            ></input>
-            <button id={styles.button} onClick={handleSubmit2}>
-              Buscar2
-            </button>
-            <br />
             <select
               name="specialty"
               class={styles.fields}
