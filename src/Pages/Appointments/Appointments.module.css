@@ -51,3 +51,14 @@
   align-content: center;
   color: white;
 }
+
+#buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 3%;
+}

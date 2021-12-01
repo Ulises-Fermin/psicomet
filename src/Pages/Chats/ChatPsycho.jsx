@@ -29,7 +29,7 @@ export default function ChatPacient(){
                     ...doc.data(),
                     id: doc.id,
                 }));
-                setMessages(data.sort((a, b) => a.date - b.date));
+                setMessages(data.sort(function(a,b){return a.date - b.date}));
             });
             return unsubscribe;
         }
@@ -58,7 +58,7 @@ export default function ChatPacient(){
     return (
         <>
             <div class={styles.body}>
-            <h1 class = {styles.titulo}>Bienvenido/a al chat con su paciente</h1>
+            <h1 class = {styles.titulo}>Bienvenido/a al chat con tu paciente</h1>
                 <div class = {styles.messages}>
                     {messages.map(message => (
                         <div class={styles.mini}>
