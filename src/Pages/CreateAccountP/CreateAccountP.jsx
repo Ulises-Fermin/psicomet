@@ -29,6 +29,8 @@ function CreateAccountP() {
     status: "waiting",
     curriculum: "",
     photo: "",
+    points: 3,
+    consults: 1,
   });
 
   const history = useHistory();
@@ -99,6 +101,8 @@ function CreateAccountP() {
                             curriculum: "lack",
                             itinerary: null,
                             photo: "false",
+                            points: 3,
+                            consults: 1,
                           },
                           response.user.uid,
 

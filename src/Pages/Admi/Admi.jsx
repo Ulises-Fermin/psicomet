@@ -97,6 +97,7 @@ function Admi() {
         if (!(newspecial === "")) {
             db.collection("specialty").add({
                 enable: "true",
+                name: values.enable,
             })
         } else {
             window.alert("El espacio se encuentra vacio, escriba algo.");

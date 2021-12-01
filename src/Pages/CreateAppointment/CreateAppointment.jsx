@@ -104,7 +104,8 @@ export default function CreateAppointment(){
         namePacient: "",
         lastNamePacient: "",
         reason: "",
-        status: ""
+        status: "",
+        ranked: "",
     });
     const [time, setTime] = useState([]);
 
@@ -195,7 +196,8 @@ export default function CreateAppointment(){
                                     namePacient: user.name,
                                     lastNamePacient: user.lastName,
                                     reason: values.reason,
-                                    status: "pending"
+                                    status: "pending",
+                                    ranked: "false",
                                 });
                                 window.alert("Cita agendada con exito.")
                                 setIsLoading(false);
