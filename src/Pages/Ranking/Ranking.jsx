@@ -3,19 +3,11 @@ import styles from "./Ranking.module.css";
 import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
-import { app } from "../../Utils/FireBaseConfig"
-import { useHistory } from "react-router";
-
 function Ranking() {
-    const [names, setNames] = useState("");
     const [psychologists, setPsychologists] = useState([]);
-    const [specials, setSpecials] = useState([])
-    const [newspecial, setNewspecial] = useState([])
     const [isLoading, setIsLoading] = useState(false);
-    const { user, setUser } = useContext(UserContext);
-    const history = useHistory();
+    const { user } = useContext(UserContext);
     const list = [];
-    const list2 = [];
 
 
     const uptaderank = async () => {
@@ -34,7 +26,7 @@ function Ranking() {
 
     useEffect(() => {
         uptaderank();
-    }, [])
+    }, [db])
 
 
     const PutRank1 = async (p) => {
@@ -123,11 +115,11 @@ function Ranking() {
         <>
             <div id={styles.body}>
                 <h1 id={styles.title}>Ranking</h1>
-                <h3 id={styles.subtitle}>Vota que tal te ha parecido la consulta. Pulsa el numero de estrellas que quieres asignarle</h3>
+                <h3 id={styles.subtitle}>Puntua la calidad del especialista con los que has tenido consultas que hayas culminado con exito!</h3>
                 <div id={styles.container}>
                     {psychologists.map((p) => (
                         <div id={styles.psychoCards}>
-                            <li class={styles.psychoList}><p id={styles.namePs}>{p.data.namePsycho} {p.data.lastNamePsycho}</p></li>
+                            <li class={styles.psychoList}><p id={styles.namePs}>Dr(a). {p.data.namePsycho} {p.data.lastNamePsycho}</p></li>
                             <buttom class={styles.star} onClick={() => PutRank1(p)}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                             </svg></buttom>
