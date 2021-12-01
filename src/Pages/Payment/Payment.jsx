@@ -40,7 +40,6 @@ const Payment = () => {
         <div>
             <Container>
                 {/* <Button onClick={openModal}>I'm a modal</Button> */}
-                <Confirmacion showModal={showModal} setShowModal={setShowModal} />
                 <Services />
             </Container>
         </div>

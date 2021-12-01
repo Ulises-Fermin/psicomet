@@ -41,23 +41,14 @@ function Psychologist() {
                 <div id={styles.buttons1}>
                   <div class={styles.card}>
                     <img id={styles.image} src={Consulta} alt="" />
+                    <Link to="/Appointments">
+                      <p class={styles.linkto}>Mis Consultas</p>
+                    </Link>
                   </div>
                   <div class={styles.card}>
                     <img id={styles.image} src={Agendar} alt="" />
                     <Link to="Histories">
                       <p class={styles.linkto}>Historias de Pacientes</p>
-                    </Link>
-                  </div>
-                </div>
-                <div id={styles.buttons2}>
-                  <div class={styles.card}>
-                    <img id={styles.image} src={chat} alt="" />
-                    <p class={styles.linkto}>Mis Chats</p>
-                  </div>
-                  <div class={styles.card}>
-                    <img id={styles.image} src={Calendario} alt="" />
-                    <Link to="/Appointments">
-                      <p class={styles.linkto}>Mis Consultas</p>
                     </Link>
                   </div>
                 </div>

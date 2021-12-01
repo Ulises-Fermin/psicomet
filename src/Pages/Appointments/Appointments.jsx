@@ -129,7 +129,7 @@ function Appointments() {
         </div>
       ) : (
         <div id={styles.sections}>
-        <h2>Consultas Pendientes:</h2>
+        <h2 class={styles.types}>Consultas Pendientes:</h2>
           <div class={styles.section}>
           {datesPending.map((d) => (
             <div class={styles.card}>
@@ -140,8 +140,8 @@ function Appointments() {
               <p id={styles.fecha}>{d.data.date}</p>
               <p id={styles.fecha}>{d.data.hour}</p>
               <div id={styles.buttons}>
-              <Link to={`/ChatPsycho/${d.data.idPacient}`}>Abrir Chat</Link>
-              <PopUp trigger={<button>Generar nueva historia</button>} modal>
+              <Link to={`/ChatPsycho/${d.data.idPacient}`} id={styles.chatOpen}>Abrir Chat</Link>
+              <PopUp trigger={<button id={styles.history}>Generar nueva historia</button>} modal>
                 <div>
                   <h1>Paciente:</h1>
                   <h1>
@@ -185,13 +185,13 @@ function Appointments() {
                   <option value="Culminada">Culminada</option>
                   <option value="Cancelada">Cancelada</option>
                 </select>
-                <button onClick={() => handleSubmit(d.id)}>Guardar</button>
+                <button onClick={() => handleSubmit(d.id)} id={styles.save}>Guardar</button>
               </div>
               </div>
             </div>
           ))};
           </div>
-          <h2>Consultas Culminadas:</h2>
+          <h2 class={styles.types}>Consultas Culminadas:</h2>
           <div class={styles.section}>
           {datesFinished.map((d) => (
             <div class={styles.card}>
@@ -208,7 +208,7 @@ function Appointments() {
             </div>
           ))};
           </div>
-          <h2>Consultas Canceladas:</h2>
+          <h2 class={styles.types}>Consultas Canceladas:</h2>
           <div class={styles.section}>
           {datesCanceled.map((d) => (
             <div class={styles.card}>

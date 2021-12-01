@@ -172,13 +172,11 @@ p{
     display: flex;
     margin-right: auto;
     margin-left: auto;
-    justify-content: space-around;
-
+    justify-content: center;
 }
 #buttonE{
-    background-color: green;
+    background-color: rgb(103, 197, 9);
     padding: 0.5%;
-    width: 15%;
     height: 5%;
     border-radius: 1rem;
 }

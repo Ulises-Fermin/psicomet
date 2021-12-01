@@ -52,19 +52,21 @@ function Profile_e() {
                   <p class={styles.label2}>{user.languages}</p>
                   <span class={styles.br}></span>
                   <p class={styles.label1}>Ranking:</p>
-                  <p class={styles.label2}>{(user.points/user.consults)}</p>
+                  <p class={styles.label2}>{(user.points/user.consults)}/5 Estrellas</p>
                   <span class={styles.br}></span>
                   <p class={styles.label1}>Nro de consultas:</p>
                   <p class={styles.label2}>{user.consults}</p>
                   <span class={styles.br}></span>
                   <p class={styles.label1}>Ver Itinerario:</p>
+                  <div id={styles.PopUp}>
                   <Popup
-                    trigger={<button> Itinerario </button>}
+                    trigger={<button id={styles.itinerary}> Itinerario </button>}
                     position="center center"
                     modal
                   >
                     <ShowItinerary />
                   </Popup>
+                  </div>
                   <br />
                   <Link to="/Psychologist" id={styles.volver}>
                     Volver

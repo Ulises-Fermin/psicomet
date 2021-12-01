@@ -11,11 +11,8 @@ import UserContextProvider from "./Context/UserContext";
 import User from "./Pages/User/User";
 import Contact from "./Pages/Contact/Contact";
 import Psychologist from "./Pages/Psychologist/Psychologist";
-import Chats from "./Pages/Chats/Chats";
-import Chats_paciente from "./Pages/Chats/Chats_paciente";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import Price from "./Pages/Price/Price";
-import Services from "./Components/Services";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 import Profile_p from "./Pages/Profile/Profile_p";
 import Profile_e from "./Pages/Profile/Profile_e";
@@ -76,12 +73,6 @@ function App() {
             </Route>
             <Route exact path="/LogIn">
               <LogIn />
-            </Route>
-            <Route exact path="/Chats/:idPacient">
-              <Chats />
-            </Route>
-            <Route exact path="/Chats_paciente/:idPsico">
-              <Chats_paciente />
             </Route>
             <Route exact path="/Testimonials">
               <Testimonials />

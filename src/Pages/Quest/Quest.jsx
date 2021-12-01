@@ -197,9 +197,6 @@ function Quest() {
               value={names}
               onChange={handleOnChange}
             ></input>
-            <button id={styles.button} onClick={handleSubmit}>
-              Buscar
-            </button>
             <select
               name="specialty"
               class={styles.fields}

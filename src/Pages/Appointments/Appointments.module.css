@@ -13,15 +13,16 @@
   background-color: lightblue;
   margin: 0%;
   padding: 0%;
+  text-align: center;
 }
 
 .card {
   margin-top: 1%;
-  margin-bottom: 5%;
-  width: 20%;
+  margin-bottom: 1%;
+  min-width: 20%;
   background-color: aliceblue;
   padding-bottom: 0.5%;
-  margin-left: 40%;
+  margin-left: 1%;
 }
 
 #isLoading {
@@ -49,12 +50,74 @@
   margin-top: 3%;
 }
 
+.types{
+  text-align: center;
+  margin-top: 3%;
+}
+
 .section{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  overflow-x: auto;
+  border: solid;
+  background-color: #6eb5b8;
 }
 
 #sections{
   margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
 }
+
+#chatOpen:link {
+  background-color: #ffd779;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-bottom: 2%;
+}
+
+#chatOpen:hover {
+  background-color: #6eb5b8;
+  text-decoration: none;
+  border-radius: 0;
+  margin-bottom: 1%;
+  color: white;
+}
+
+#history {
+  background-color: #6eb5b8;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-bottom: 2%;
+  border: none;
+  font-size: medium;
+  padding: 1%;
+}
+
+#history:hover {
+  background-color: #ffd779;
+  text-decoration: none;
+  border-radius: 0;
+  margin-bottom: 1%;
+  color: white;
+}
+
+#save{
+  background-color: #ffd779;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-bottom: 2%;
+  border: none;
+  font-size: medium;
+  padding: 2%;
+}
+
+#save:hover {
+  background-color: #6eb5b8;
+  text-decoration: none;
+  border-radius: 0;
+  margin-bottom: 1%;
+  color: white;
+}
+

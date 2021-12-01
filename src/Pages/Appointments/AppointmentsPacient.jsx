@@ -67,7 +67,7 @@ export default function AppointmentsPacients(){
         </div>
       ) : (
         <div id={styles.sections}>
-        <h2>Consultas Pendientes:</h2>
+        <h2 class={styles.types}>Consultas Pendientes:</h2>
           <div class={styles.section}>
           {datesPending.map((d) => (
             <div class={styles.card}>
@@ -78,7 +78,7 @@ export default function AppointmentsPacients(){
               <p id={styles.fecha}>{d.data.date}</p>
               <p id={styles.fecha}>{d.data.hour}</p>
               <div id={styles.buttons}>
-              <Link to={`/ChatPacient/${d.data.idPsycho}`}>Abrir Chat</Link>
+              <Link to={`/Chat/${d.data.idPsycho}`} id={styles.chatOpen}>Abrir Chat</Link>
               <div>
                 <p>Estatus de la consulta:</p>
                 <p>{d.data.status}</p>
@@ -87,7 +87,7 @@ export default function AppointmentsPacients(){
             </div>
           ))};
           </div>
-          <h2>Consultas Culminadas:</h2>
+          <h2 class={styles.types}>Consultas Culminadas:</h2>
           <div class={styles.section}>
           {datesFinished.map((d) => (
             <div class={styles.card}>
@@ -104,7 +104,7 @@ export default function AppointmentsPacients(){
             </div>
           ))};
           </div>
-          <h2>Consultas Canceladas:</h2>
+          <h2 class={styles.types}>Consultas Canceladas:</h2>
           <div class={styles.section}>
           {datesCanceled.map((d) => (
             <div class={styles.card}>

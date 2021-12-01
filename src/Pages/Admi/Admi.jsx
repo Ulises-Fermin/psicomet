@@ -144,10 +144,9 @@ function Admi() {
                                         onChange={handleOnChange}
                                         placeholder="Ingrese nueva especialidad"
                                     >
-
                                     </input>
                                     <button id={styles.buttonE} onClick={sendSpecial}>
-                                        <p>Enviar mensaje</p>
+                                        <p>Crear nueva especialidad</p>
                                     </button>
                                 </div>
                                 <div id={styles.container2}>

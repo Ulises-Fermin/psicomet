@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { db } from "../../Utils/FireBaseConfig";
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
+import styles from "./Itinerary.module.css"
 
 
 const _inputs = [
@@ -103,20 +104,21 @@ export default function ItineraryP() {
 
   return (
     <>
-        <form onSubmit={handleOnSubmit}>
+        <form onSubmit={handleOnSubmit} id={styles.forms}>
             {inputs.map((input) => (
-                <div>
+                <div id={styles.itinerary}>
                     <input
                     type="checkbox"
                     name={input.name}
                     value={input.value}
                     checked={input.checked}
                     onChange={handleOnChange}
+                    id={styles.inputs}
                     />{input.value}
                 </div>
             ))}
       </form>
-      <button onClick={handleOnSubmit}>Guardar</button>
+      <button onClick={handleOnSubmit} id={styles.buttonss}>Guardar</button>
     </>
   );
 }
