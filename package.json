@@ -20,6 +20,7 @@
     "react-scroll": "^1.8.4",
     "react-share": "^4.4.0",
     "react-slideshow-image": "^3.6.0",
+    "react-spring": "^9.3.2",
     "reactjs-popup": "^2.0.5",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"

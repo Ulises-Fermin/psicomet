@@ -17,7 +17,7 @@ export default function Paypal() {
                 description: "Cita individual",
                 amount: {
                   currency_code: "USD",
-                  value: 25.0,
+                  value: 35.0,
                 },
               },
             ],

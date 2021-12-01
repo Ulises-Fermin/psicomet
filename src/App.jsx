@@ -30,7 +30,6 @@ import Denegate from "./Pages/Status/Denegate";
 import Files from "./Pages/Files/Files";
 import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
-import PayPal from "./Components/PayPal.js";
 import Appointments from "./Pages/Appointments/Appointments";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
