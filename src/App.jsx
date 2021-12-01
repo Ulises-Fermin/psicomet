@@ -32,10 +32,11 @@ import ScrollToTop from "./ScrollToTop";
 import React, { useState } from "react";
 import PayPal from "./Components/PayPal.js";
 import Appointments from "./Pages/Appointments/Appointments";
-import Appointments_paciente from "./Pages/Appointments/Appointments_paciente";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
 import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
+import Chat from "./Pages/Chats/Chat";
+import ChatPsycho from "./Pages/Chats/ChatPsycho"
 
 function App() {
   // Funcion para el PayPal
@@ -141,9 +142,6 @@ function App() {
             <Route exact path="/Appointments">
               <Appointments />
             </Route>
-            <Route exact path="/Appointments_paciente">
-              <Appointments_paciente />
-            </Route>
             <Route exact path="/CreateAppointment">
               <CreateAppointment />
             </Route>
@@ -152,6 +150,12 @@ function App() {
             </Route>
             <Route exact path="/AppointmentsPacient">
               <AppointmentsPacient />
+            </Route>
+            <Route exact path="/Chat/:idPsycho">
+              <Chat />
+            </Route>
+            <Route exact path="/ChatPsycho/:idPacient">
+              <ChatPsycho />
             </Route>
           </Switch>
           <Footer />

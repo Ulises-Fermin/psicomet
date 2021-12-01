@@ -35,7 +35,11 @@ function User() {
                 <div id={styles.buttons1}>
                   <div class={styles.card}>
                     <img id={styles.image} src={Consulta} alt="" />
+<<<<<<< HEAD
                     <Link to="/Appointments_paciente" id={styles.My_chats}>
+=======
+                    <Link to="AppointmentsPacient" id={styles.My_chats}>
+>>>>>>> 869d715c6c748e2bd6e815c2067402ab441d67c1
                       Mis Consultas
                     </Link>
                   </div>

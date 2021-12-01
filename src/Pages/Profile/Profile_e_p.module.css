@@ -13,11 +13,12 @@
 
 .info {
   margin-left: 4%;
-  width: 15%;
+  width: 15%;;
 }
 
 #rol {
   margin-top: 15%;
+  background-color:blueviolet ;
 }
 
 .box4 {
