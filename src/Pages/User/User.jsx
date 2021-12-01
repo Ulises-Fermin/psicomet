@@ -38,9 +38,7 @@ function User() {
                     <Link to="/AppointmentsPacient" class={styles.Calendar}>
                       Mis Consultas
                     </Link>
-                    <Link to="/Ranking" class={styles.Calendar}>
-                      Ranking
-                    </Link>
+                    
                   </div>
                   <div class={styles.card}>
                     <img id={styles.image} src={Personas} alt="" />
@@ -51,12 +49,10 @@ function User() {
                 </div>
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={chat} alt="" />
-                  <Link to="/Chats" class={styles.Calendar}>
-                    Mis chats
+                  <Link to="/Ranking" class={styles.Calendar}>
+                    Ranking
                   </Link>
 
-                  <img id={styles.image} src={Calendario} alt="" />
-                  <p class={styles.Calendar}>Calendario</p>
                 </div>
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={Agendar} alt="" />
