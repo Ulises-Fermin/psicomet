@@ -17,7 +17,7 @@ function User() {
   const handleLogOut = async () => {
     await auth.signOut();
     setUser(null);
-  };
+  }; 
 
   return (
     <>
