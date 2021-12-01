@@ -22,7 +22,7 @@ function Ranking() {
         const response = db.collection("consultations");
         const data = await response.get();
         data.docs.forEach(item => {
-            if (item.data().idPacient === user.id && item.data().status === "pending" && item.data().ranked === "false")
+            if (item.data().idPacient === user.id && item.data().status === "pendiente" && item.data().ranked === "false")
                 list.push({ data: item.data(), id: item.id });
         })
         setPsychologists(list);
@@ -38,7 +38,7 @@ function Ranking() {
 
     const PutRank1 = async (p) => {
         db.collection("consultations").doc(p.id).update({
-            ranked: "false",
+            ranked: "true",
         })
         addpoint1(p)
         uptaderank()
@@ -54,7 +54,7 @@ function Ranking() {
     }
     const PutRank2 = async (p) => {
         db.collection("consultations").doc(p.id).update({
-            ranked: "false",
+            ranked: "true",
         })
         addpoint2(p)
         uptaderank()
@@ -70,7 +70,7 @@ function Ranking() {
     }
     const PutRank3 = async (p) => {
         db.collection("consultations").doc(p.id).update({
-            ranked: "false",
+            ranked: "true",
         })
         addpoint3(p)
         uptaderank()
@@ -86,7 +86,7 @@ function Ranking() {
     }
     const PutRank4 = async (p) => {
         db.collection("consultations").doc(p.id).update({
-            ranked: "false",
+            ranked: "true",
         })
         addpoint4(p)
         uptaderank()
@@ -102,7 +102,7 @@ function Ranking() {
     }
     const PutRank5 = async (p) => {
         db.collection("consultations").doc(p.id).update({
-            ranked: "false",
+            ranked: "true",
         })
         addpoint5(p)
         uptaderank()
