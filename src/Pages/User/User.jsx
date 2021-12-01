@@ -45,38 +45,23 @@ function User() {
                 <div id={styles.buttons1}>
                   <div class={styles.card}>
                     <img id={styles.image} src={Consulta} alt="" />
-<<<<<<< HEAD
-                    <Link to="AppointmentsPacient" id={styles.My_citas}>
-=======
                     <Link to="/AppointmentsPacient" class={styles.Calendar}>
->>>>>>> 71c4276aee5f41a79f90c9d345410611bf4f85b4
                       Mis Consultas
                     </Link>
-                    
                   </div>
                   <div class={styles.card}>
-<<<<<<< HEAD
-                    <img id={styles.image2} src={Personas} alt="" />
-                    <Link to="/Quest" id={styles.Ver_especialists}>
-=======
                     <img id={styles.image} src={Personas} alt="" />
                     <Link to="/Quest" class={styles.Calendar}>
->>>>>>> 71c4276aee5f41a79f90c9d345410611bf4f85b4
                       Ver Especialistas
                     </Link>
                   </div>
                 </div>
-<<<<<<< HEAD
-
-=======
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={chat} alt="" />
                   <Link to="/Ranking" class={styles.Calendar}>
                     Ranking
                   </Link>
-
                 </div>
->>>>>>> 71c4276aee5f41a79f90c9d345410611bf4f85b4
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={Agendar} alt="" />
                   <Link to="/CreateAppointment" class={styles.Calendar}>
