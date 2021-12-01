@@ -13,18 +13,18 @@ import { UserContext } from "../../Context/UserContext";
 function ShowItinerary(itinerarys) {
   var list = [];
   const itinerary = itinerarys;
-  for (const days in itinerary) {
-    for (const hours in itinerary[days])
-      if (itinerary[days][hours]["checked"] === true) {
-        const day = days + " " + itinerary[days][hours]["value"] + " / ";
+  for (const days in itinerary){
+    if (itinerary[days]["checked"] === true){
+        const day = itinerary[days]["value"];
         list.push(day)
-        console.log("aqui llego")
-      }
+    }
   }
   return (
     <div id={styles.itinerary}>
       <h3>Itinerario del Especialista:</h3>
-      {list}
+        {list.map((h) => (
+          <p>{h}</p>
+        ))};
     </div>
   )
 };

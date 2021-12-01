@@ -16,6 +16,8 @@ function Appointments() {
     idPsycho: "",
     namePacient: "",
     lastNamePacient: "",
+    namePsycho: "",
+    lastNamePsycho: "",
     date: "",
     progress: "",
     treatment: "",
@@ -65,11 +67,14 @@ function Appointments() {
       idPsycho: user.id,
       namePacient: name,
       lastNamePacient: lastName,
+      namePsycho: user.name,
+      lastNamePsycho: user.lastName,
       date: date,
       progress: values.progress,
       treatment: values.treatment,
       observations: values.observations,
     });
+    window.alert("Historia generada con exito.");
     setIsLoading(false);
   };
 

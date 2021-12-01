@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import styles from "./Histories.module.css"
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
+import PopUp from "reactjs-popup";
 
 export default function Histories() {
     const {user} = useContext(UserContext);
@@ -36,14 +37,13 @@ export default function Histories() {
             <div id={styles.chart}>
                 <div class={styles.row}>
                     <div class={styles.item}>
-                        <p>Fecha</p>
-                        <button onClick={filterDates}>Filtrar</button>
+                        <h3>Fecha</h3>
                     </div>
-                    <div>
-                        <p>Hora</p>
+                    <div class={styles.item}>
+                        <h3>Nombre y Apellido</h3>
                     </div>
-                    <div>
-                        <p>Nombre y Apellido</p>
+                    <div class={styles.item}>
+                        <h3>Otros</h3>
                     </div>
                 </div>
 
@@ -53,10 +53,27 @@ export default function Histories() {
                             <p>{d.data.date}</p>
                         </div>
                         <div>
-                            <p>{d.data.hour}</p>
+                            <p>{d.data.namePacient} {d.data.lastNamePacient}</p>
                         </div>
                         <div>
-                            <p>{d.data.namePacient} {d.data.lastNamePacient}</p>
+                            <PopUp trigger={<button>Ver mas</button>} modal>
+                                <div id={styles.PopUp}>
+                                    <h1>Paciente: {d.data.namePacient}</h1>
+                                    <h2 id={styles.date}>Fecha: {d.data.date}</h2>
+                                    <div>
+                                        <h3>Avances:</h3>
+                                        <p class={styles.info}>{d.data.progress}</p>
+                                    </div>
+                                    <div>
+                                        <h3>Tratamiento:</h3>
+                                        <p class={styles.info}>{d.data.treatment}</p>
+                                    </div>
+                                    <div>
+                                        <h3>Otras observaciones:</h3>
+                                        <p class={styles.info}>{d.data.observations}</p>
+                                    </div>
+                                </div>
+                            </PopUp>
                         </div>
                     </div>
                 ))};

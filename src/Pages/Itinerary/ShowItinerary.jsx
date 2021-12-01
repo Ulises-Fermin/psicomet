@@ -8,7 +8,6 @@ export default function ShowItinerary() {
     var list = [];
     const { user } = useContext(UserContext);
     const itinerary = user.itinerary;
-    console.log(itinerary);
     for (const days in itinerary){
         if (itinerary[days]["checked"] === true){
             const day = itinerary[days]["value"];

@@ -35,8 +35,8 @@ function User() {
                 <div id={styles.buttons1}>
                   <div class={styles.card}>
                     <img id={styles.image} src={Consulta} alt="" />
-                    <Link id={styles.Mis_consults} to="/Appointments_paciente">
-                      Consultas
+                    <Link to="/AppointmentsPacient" id={styles.My_chats}>
+                      Mis Consultas
                     </Link>
                   </div>
                   <div class={styles.card}>
