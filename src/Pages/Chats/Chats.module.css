@@ -1,7 +1,12 @@
+.body{
+    background-color: 	#fffaf0;
+    padding-bottom: 3%;
+}
+
 .messages{
     margin: 2rem auto;
     padding-bottom: 2rem;
-    width: 75rem;
+    width: 70rem;
     box-shadow: 0 0.32rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 0.625rem;
@@ -19,7 +24,7 @@
     margin:auto;
     margin-bottom: 2%;
     padding: 1.5rem;
-    width: 75rem;
+    width: 70rem;
     box-shadow: 0 0.32rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 0.625rem;
@@ -34,18 +39,28 @@
 .titulo {
     margin-top: -4%;
     margin-bottom: -2%;
+    font-family: 'Lato', sans-serif;
+    font-weight:500;
 }
 
 #button {
     position:absolute;
-    margin-left: 80.5rem;
+    margin-left: 78rem;
     margin-top: -5rem;
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
     background-color:#ffd779;
-    border-color: black;
+    border-color: #fdfd96;
+    transition-duration: 0.3s;
     padding:0.5%;
+}
+
+#button:hover {
+    background-color: #fbec5d;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 0px 10px 0 rgba(0,0,0,0.19);
 }
 
 .textPaciente{
