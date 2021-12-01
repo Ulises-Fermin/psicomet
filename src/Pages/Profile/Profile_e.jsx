@@ -10,9 +10,10 @@ import newUser from "../../Images/newUser.png";
 import { app } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
 import Usuario from "../../Images/Usuario.png";
-
+import { useHistory } from "react-router";
 function Profile_e() {
   const { user, setUser } = useContext(UserContext);
+  const history = useHistory();
   const [url, setUrl] = useState([]);
   const handleLogOut = async () => {
     await auth.signOut();
@@ -25,108 +26,115 @@ function Profile_e() {
     console.log(image)
     setUrl(image)
   };
-
-  
+  useEffect(() => {
+    watchpicture()
+  }, []);
 
   return (
     <>
       {!!user ? (
-        <div class={styles.body}>
-              <div class={styles.box2}>
-                <p id={styles.label1}>Correo Electrónico:</p>
-                <p id={styles.mail}>{user.email}</p>
-                <br />
-                <p id={styles.label1}>Teléfono:</p>
-                <p id={styles.phone}>{user.phone}</p>
-                <br />
-                <p id={styles.label2}>Género:</p>
-                <p id={styles.gender}>{user.gender}</p>
-                <br />
-                <p id={styles.label3}>Idiomas:</p>
-                <p id={styles.idioma}>{user.languages}</p>
-                <br />
-                <p id={styles.label4}>Modelo de Trabajo Terapéutico:</p>
-                <p id={styles.model}>Consultas en sincronía</p>
-                <br />
-                <p id={styles.label5}>Precio de consulta:</p>
-                <p id={styles.price}>$20 60 min</p>
-                <br />
-                <p id={styles.label8}>Ver Itinerario:</p>
-                <Popup
-                  trigger={<button> Itinerario </button>}
-                  position="center center"
-                  modal
-                >
-                  <ShowItinerary />
-                </Popup>
-                <br />
-                <Link to="/Psychologist" id={styles.volver}>
-                  Volver
-                </Link>
-                <br />
-                <br />
-              </div>
+        <>
+          {((user?.role === "psychologist") && (user?.status === "accept")) ? (
+            <div class={styles.body}>
+              <div class={styles.megabox}>
 
-            
-              
-            <div id={styles.bigbox}>
-              <div id={styles.info}>
-                <div class={styles.box1}>
-                  <div class={styles.info}>
-                    <h1 id={styles.names}>
-                      Dr. {user.name} {user.lastName}
-                    </h1>
-                    <p id={styles.rol}>Rol: {user.role}</p>
-                    <br />
-                    <Link id={styles.Modify} to="/Modify_p">
-                      Modificar Datos
-                    </Link>
-                  </div>
-                  <div id={styles.spaceimg}>
-                    {(user?.photo==="false") ? (
-                      <>
-                      <img
-                        id={styles.img1}
-                        src={Usuario}
-                        alt=""
-                      />
-                      </>
-                    ) : (
-                      <img
-                        id={styles.img1}
-                        src={url}
-                        alt=""
-                        onClick={() => watchpicture(user)}
-                      />
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div class={styles.box7}>
-                <div class={styles.boxAE}>
-                  <div id={styles.boxBSS}>
-                    <h2 class={styles.label6}>Áreas de atención</h2>
-                    <div class={styles.caja}>{user.atencionAreas}</div>
-                  </div>
-                  <div id={styles.boxFSS}>
-                    <h2 class={styles.label6}>Experiencia Profesional</h2>
-                    <div class={styles.caja}>{user.experience}</div>
-                  </div>
+                <div class={styles.box2}> 
+                  <p class={styles.label1}>Correo Electrónico:</p>
+                  <p class={styles.label1}>{user.email}</p>
+                  <br />
+                  <p class={styles.label1}>Teléfono:</p>
+                  <p class={styles.label1}>{user.phone}</p>
+                  <br />
+                  <p class={styles.label1}>Género:</p>
+                  <p class={styles.label1}>{user.gender}</p>
+                  <br />
+                  <p class={styles.label1}>Idiomas:</p>
+                  <p class={styles.label1}>{user.languages}</p>
+                  <br />
+                  <p class={styles.label1}>Modelo de Trabajo Terapéutico:</p>
+                  <p class={styles.label1}>Consultas en sincronia</p>
+                  <br />
+                  <p class={styles.label1}>Precio de consulta:</p>
+                  <p class={styles.label1}>20$ 60 min</p>
+                  <br />
+                  <p class={styles.label1}>Ver Itinerario:</p>
+                  <Popup
+                    trigger={<button> Itinerario </button>}
+                    position="center center"
+                    modal
+                  >
+                    <ShowItinerary />
+                  </Popup>
+                  <br />
+                  <Link to="/Psychologist" id={styles.volver}>
+                    Volver
+                  </Link>
                 </div>
 
-                <div class={styles.boxFS}>
-                  <div id={styles.boxBSS}>
-                    <h2 class={styles.label6}>Formación Académica</h2>
-                    <div class={styles.caja}>{user.academics}</div>
+
+                <div id={styles.bigbox}>
+                  <div id={styles.info}>
+                    <div class={styles.box1}>
+                      <div class={styles.info}>
+                        <h1 id={styles.names}>
+                          Dr. {user.name} {user.lastName}
+                        </h1>
+                        <p id={styles.rol}>Rol: {user.role}</p>
+                        <br />
+                        <Link id={styles.Modify} to="/Modify_p">
+                          Modificar Datos
+                        </Link>
+                      </div>
+                      <div id={styles.spaceimg}>
+                        {(user?.photo === "false") ? (
+                          <>
+                            <img
+                              id={styles.img1}
+                              src={Usuario}
+                              alt=""
+                            />
+                          </>
+                        ) : (
+                          <img
+                            id={styles.img1}
+                            src={url}
+                            alt=""
+                            onClick={() => watchpicture(user)}
+                          />
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <div id={styles.boxFSS}>
-                    <h2 class={styles.label6}>Sobre mí</h2>
-                    <div class={styles.caja}>{user.aboutMe}</div>
+
+
+                  <div class={styles.box7}>
+                    <div class={styles.box3}>
+                      <div class={styles.box9}>
+                        <h2 class={styles.label6}>Áreas de atención</h2>
+                        <div class={styles.caja}>{user.atencionAreas}</div>
+                      </div>
+                      <div class={styles.box9}>
+                        <h2 class={styles.label6}>Experiencia Profesional</h2>
+                        <div class={styles.caja}>{user.experience}</div>
+                      </div>
+                    </div>
+
+                    <div class={styles.box3}>
+                      <div class={styles.box9}>
+                        <h2 class={styles.label6}>Formación Académica</h2>
+                        <div class={styles.caja}>{user.academics}</div>
+                      </div>
+                      <div class={styles.box9}>
+                        <h2 class={styles.label6}>Sobre mí</h2>
+                        <div class={styles.caja}>{user.aboutMe}</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : (history.push("/home"))}
+        </>
       ) : (
         <h1 id={styles.isLoading}>
           Cargando...

@@ -7,10 +7,17 @@
     padding-top: 1%;
     padding-bottom: 3%;
 }
-
+.megabox{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    padding-top: 1%;
+    padding-bottom: 1%;
+} 
 #img1 {
-  width: 150px;
-  height: 150px;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin-left: 6.5%;
   border: 7px solid #6eb5b8;
   border-radius: 100%;
 }
@@ -67,19 +74,9 @@ br {
   padding-top: 2%;
 }
 
-.box4 {
-  margin-top: 1%;
-  margin-bottom: 1%;
-  
-}
 #bigbox{
-  display:absolute;
-  float: right;
-  margin: auto;
-  margin-right: 2%;
-  margin-top: 50%;
-  width: 70%;
-  height: 40%;
+  display: inline;
+  margin-left: 10%;
 }
 .box2 {
   box-sizing: border-box;
@@ -90,10 +87,11 @@ br {
   margin-bottom: 3%;
 }
 
-#label1 {
-  font-weight: 600;
+.label1 {
+  font-weight: 25%;
   font-family: 'Scope One', serif;
   color: black;
+  font-size: 70%;
 }
 
 #label2 {
@@ -161,7 +159,7 @@ br {
   width: 70%;
   margin-bottom: 0%;
   height: 45%;
-  background-color: yellow;
+  display: flex;
 }
 
 #areas {
@@ -178,8 +176,8 @@ br {
   margin-left: 3%;
   margin-right: 3%;
   margin-top: 2.5%;
-  padding-bottom: 3%;
-  width: 95%;
+  width: 70%;
+  height: 70%;
 
 }
 
@@ -191,8 +189,8 @@ br {
   height: 45%;
 }
 .box9{
-  margin-right: 2.5%;
-  margin-left: 2.5%;
+  margin: 2%;
+  
 }
 
 #academia {
@@ -207,8 +205,8 @@ br {
 
 .caja {
   border: 7px solid #6eb5b8;
-  height: 130px;
-  width: 320px;
+  height: 7.5rem;
+  width: 17.5rem;
   background-color: white;
   margin-left: 2.5%;
   margin-right: 2.5%;

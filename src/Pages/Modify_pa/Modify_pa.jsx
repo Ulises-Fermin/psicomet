@@ -10,6 +10,7 @@ import { useHistory } from "react-router";
 function Modify_pa() {
   const { user, setUser } = useContext(UserContext);
 
+  const history = useHistory();
   const [values, setValues] = useState({
     name: "",
     lastName: "",
@@ -75,63 +76,92 @@ function Modify_pa() {
       },
       function complete() {
         console.info("Finished uploading!");
+        window.alert("Logrado");
         db.collection("users").doc(user.id).update({
           photo: "true",
         });
       }
     );
-}
+  }
 
   return (
     <>
-      <div class={styles.body}>
-        <h1 id={styles.titulo}>Modificación de Datos</h1>
-        <div id={styles.box1}>
-          <p id={styles.label1}>Ingrese su nombre: </p>
-          <input
-            name="name"
-            id={styles.nombre}
-            type="text"
-            placeholder="Ingrese su nombre"
-            value={values.name}
-            onChange={handleOnChange}
-          />
-        </div>
-        <br />
-        <p id={styles.label2}>Ingrese su apellido: </p>
-        <input
-          name="lastName"
-          id={styles.apellido}
-          type="text"
-          placeholder="Ingrese su apellido"
-          value={values.lastName}
-          onChange={handleOnChange}
-        />
-        <br />
-        <p id={styles.label3}>Ingrese su número telefónico: </p>
-        <input
-          name="phone"
-          id={styles.telefono}
-          type="tel"
-          placeholder="Ingrese su número telefónico"
-          value={values.phone}
-          onChange={handleOnChange}
-        />
-        <br />
-        <p id={styles.label4}>Ingrese su género: </p>
-        <input
-          name="gender"
-          id={styles.genero}
-          type="text"
-          placeholder="Ingrese su género"
-          value={values.gender}
-          onChange={handleOnChange}
-        />
+      {!!user ? (
+        <>
+          {(user?.role === "pacient") ? (
+            <>
+              <div id={styles.body}>
+                <h1 id={styles.titulo}>Modificación de Datos</h1>
+                <div id={styles.box1}>
+                  <div class={styles.pspace}>
+                    <p class={styles.label}>Ingrese su nombre: </p>
+                    <input
+                      name="name"
+                      class={styles.pinput}
+                      type="text"
+                      placeholder="Ingrese su nombre"
+                      value={values.name}
+                      onChange={handleOnChange}
+                    />
+                  </div>
+                  <div class={styles.pspace}>
+                    <p class={styles.label}>Ingrese su apellido: </p>
+                    <input
+                      name="lastName"
+                      class={styles.pinput}
+                      type="text"
+                      placeholder="Ingrese su apellido"
+                      value={values.lastName}
+                      onChange={handleOnChange}
+                    />
+                  </div>
+                  <div class={styles.pspace}>
+                    <p class={styles.label}>Ingrese su número telefónico: </p>
+                    <input
+                      name="phone"
+                      class={styles.pinput}
+                      type="tel"
+                      placeholder="Ingrese su número telefónico"
+                      value={values.phone}
+                      onChange={handleOnChange}
+                    />
+                  </div>
+                  <div class={styles.pspace}>
+                    <p class={styles.label}>Ingrese su género: </p>
+                    <input
+                      name="gender"
+                      class={styles.pinput}
+                      type="text"
+                      placeholder="Ingrese su género"
+                      value={values.gender}
+                      onChange={handleOnChange}
+                    />
+                  </div>
+                  <div class={styles.pspace}>
+                    <p class={styles.label}>Coloque una foto de perfil: </p>
+                    <input
+                      type="file"
+                      name="foto"
+                      onChange={doUpload}
+                      id={styles.photo}
+                      accept="image/*"
+                      placeholder="Suba una foto de perfil"
+                    />
+                  </div>
+                  <button type="submit" id={styles.register} onClick={handleSubmit}>
+                    Actualizar Datos
+                  </button>
+                </div>
+              </div>
+            </>
+          ) : (history.push("/home"))}
 
-        <p type="submit" id={styles.register} onClick={handleSubmit}>
-          Actualizar Datos
-        </p>
-      </div>
+        </>
+      ) : (
+        <h1 id={styles.isLoading}>
+          Cargando...
+        </h1>
+      )}
     </>
   );
 }

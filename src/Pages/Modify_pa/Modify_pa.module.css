@@ -1,61 +1,71 @@
-#label1 {
-  margin: 0%;
-  padding: 0%;
-  color: rgb(102, 102, 228);
-  font-size: 300%;
-  font-weight: 600;
+#body {
+    background-image: url("../../Images/Terapia.png");
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding-bottom: 1%;
 }
 
-#label2 {
-  margin: 0%;
-  padding: 0%;
-  color: rgb(102, 102, 228);
-}
 
-#label3 {
-  margin: 0%;
-  padding: 0%;
-  color: rgb(102, 102, 228);
-}
-
-#label4 {
-  margin: 0%;
-  padding: 0%;
-  color: rgb(102, 102, 228);
-}
-
-#box1 {
-  width: 20%;
-}
-
-#nombre {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  padding: 0.2%;
-}
-
-#apellido {
-  margin: 0%;
-  padding: 0%;
-}
-
-#telefono {
-  margin: 0%;
-  padding: 0%;
-}
-
-#genero {
-  margin: 0%;
-  padding: 0%;
-}
-
-#register {
-  font-weight: 600;
+#isLoading{
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4%;
+  background-image: url("../../Images/Loading.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  align-content: center;
   color: white;
-  box-sizing: border-box;
-  border: 7px solid lightblue;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: lightblue;
-  width: 10%;
+}
+
+
+#box1{
+  background-color: white;
+  width: 50%;
+  margin-top: 2.5%;
+  border-radius: 1rem;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: #6eb5b8;
+  border-width: 0.5rem;
+}
+.label{
+  text-align: left;
+}
+
+.pspace{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  display: inline-flex;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+.pinput{
+  display: inline-flex;
+  background-color: white;
+  border-radius: 0.25rem;
+  color: black;
+  width: 15rem;
+  height: 1.75rem;
+  
+}
+
+#register{
+  margin-top: 5%;
+  font-family: 'Scope One', serif;
+  background-color:silver;
+  font-weight: bold;
+  list-style: none;
+  padding: 1%;
+  border-radius: 0.3rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
