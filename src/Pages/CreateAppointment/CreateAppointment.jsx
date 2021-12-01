@@ -1,76 +1,10 @@
 import React from "react";
 import { db } from "../../Utils/FireBaseConfig";
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./CreateAppointment.module.css"
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
-import Confirmacion from "../Payment/Confirmacion.js";
-import styled from 'styled-components';
-import { MdClose } from 'react-icons/md';
-import psicometLogo from '../../Images/LogoPsicomet.png'
-import { useSpring, animated } from 'react-spring';
 
-const Background = styled.div`
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ModalWrapper = styled.div`
-  width: 800px;
-  height: 500px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  z-index: 10;
-  border-radius: 10px;
-`;
-
-const ModalImg = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
-  background: #FFD779;
-`;
-
-const ModalContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.8;
-  color: #141414;
-
-  p {
-    margin-bottom: 1rem;
-  }
-
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-`;
-
-const CloseModalButton = styled(MdClose)`
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  z-index: 10;
-`;
 
 function ShowItinerary(itinerarys) {
     var list = [];
@@ -84,15 +18,6 @@ function ShowItinerary(itinerarys) {
 };
 
 export default function CreateAppointment(){
-    const modalRef = useRef();
-    const [showModal, setShowModal] = useState(true);
-    const animation = useSpring({
-        config: {
-          duration: 250
-        },
-        opacity: showModal ? 1 : 0,
-        transform: showModal ? `translateY(0%)` : `translateY(-100%)`
-      });
     const {user} = useContext(UserContext);
     const [psychologists, setPsychologists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -112,16 +37,6 @@ export default function CreateAppointment(){
     const list = [];
     const itinerarys = "";
     const history = useHistory();
-
-    const openModal = () => {
-        setShowModal(prev => !prev);
-      };
-    
-    const closeModal = e => {
-    if (modalRef.current === e.target) {
-        setShowModal(false);
-    }
-    };
 
     useEffect(() => {
         fetchPsychologists();
@@ -201,7 +116,6 @@ export default function CreateAppointment(){
                                 });
                                 window.alert("Cita agendada con exito.")
                                 setIsLoading(false);
-                                
                                 history.push("/Payment");
                             }else{
                                 window.alert("Lo sentimos, esa fecha esta ocupada.")
@@ -227,7 +141,6 @@ export default function CreateAppointment(){
         <>
             {isLoading ? (
                 <div id={styles.isLoading}>
-
                     <h1>Cargando...</h1>
                     <h1>Será redirigido automáticamente.</h1>
                 </div>
@@ -258,30 +171,7 @@ export default function CreateAppointment(){
                         
                         <p class={styles.question}>Explique el motivo de la consulta:</p>
                         <textarea rows="10" placeholder="Escribe aqui..." value={values.reason} id={styles.input} name="reason" onChange={handleOnChange}></textarea>
-                        <button id={styles.button} onClick={openModal}>Agendar</button>
-                        {showModal ? (
-                            <Background >
-                            <animated.div style={animation}>
-                                <ModalWrapper >
-                                <ModalImg src={psicometLogo} alt='logo' />
-                                <ModalContent>
-                                    <h1>Confirme su cita</h1>
-                                    <p>{user.name}</p>
-                                    <p>{values.date}}"</p>
-                                    <p>{values.hour}</p>
-                                    <button onClick={handleSubmit}>Aceptar</button>
-                                    <button aria-label='Close modal' onClick={() => setShowModal(prev => !prev)}>Aceptar</button>
-                                </ModalContent>
-                                <CloseModalButton
-                                    aria-label='Close modal'
-                                    onClick={() => setShowModal(prev => !prev)}
-                                    />
-                                </ModalWrapper>
-                            </animated.div>
-                            </Background>
-                        ) : null}
-                        {/* <Confirmacion showModal={showModal} setShowModal={setShowModal} /> */}
-
+                        <button id={styles.button} onClick={handleSubmit}>Agendar</button>
                     </div>
                 </div>
             )},

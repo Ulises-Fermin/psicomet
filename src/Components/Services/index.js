@@ -5,7 +5,11 @@ import administrador from '../../Images/psiquiatra.svg'
 import especialista from '../../Images/especialista.svg'
 import hogar from '../../Images/hogar.svg'
 import baby from '../../Images/baby.svg'
-import PayPal from "../../Components/PayPal.js";
+import PayPal1 from "../../Components/Paypal/PayPal1.js";
+import PayPal2 from "../../Components/Paypal/PayPal2.js";
+import PayPal3 from "../../Components/Paypal/PayPal3.js";
+import PayPal4 from "../../Components/Paypal/PayPal4.js";
+import PayPal5 from "../../Components/Paypal/PayPal5.js";
 import services from "./services.css";
 
 {/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
@@ -26,7 +30,7 @@ import services from "./services.css";
                         <ServicesIcon src={Icon1} alt="" />
                         <ServicesH2>Psiquiatría</ServicesH2>
                     {checkout1 ? (
-                        <PayPal />
+                        <PayPal1 />
                     ) : (
                         <button class='btn'
                         onClick={() => {
@@ -42,7 +46,7 @@ import services from "./services.css";
                         <ServicesIcon src={especialista}/>
                         <ServicesH2>Terapia de parejas</ServicesH2>
                     {checkout2 ? (
-                        <PayPal />
+                        <PayPal2 />
                     ) : (
                         <button class='btn'
                         onClick={() => {
@@ -59,7 +63,7 @@ import services from "./services.css";
                         <ServicesH2>Consulta clínica</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     {checkout3 ? (
-                        <PayPal />
+                        <PayPal3 />
                     ) : (
                         <button class='btn'
                         onClick={() => {
@@ -75,7 +79,7 @@ import services from "./services.css";
                         <ServicesH2>Terapia de familia</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     {checkout4 ? (
-                        <PayPal />
+                        <PayPal4 />
                     ) : (
                         <button class='btn'
                         onClick={() => {
@@ -91,7 +95,7 @@ import services from "./services.css";
                         <ServicesH2>Consulta infantil</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     {checkout5 ? (
-                        <PayPal />
+                        <PayPal5 />
                     ) : (
                         <button class='btn'
                         onClick={() => {
