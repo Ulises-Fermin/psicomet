@@ -25,12 +25,12 @@ export default function ChatPacient(){
                     ...doc.data(),
                     id: doc.id,
                 }));
-                data.forEach((item)=>{
-                    if (item.idPacient === user.id && item.idPsycho === params.idPsycho){
-                        list.push(item);
-                    }
-                })
-                setMessages(list);
+                // data.forEach((item)=>{
+                //     if (item.idPacient === user.id && item.idPsycho === params.idPsycho){
+                //         list.push(item);
+                //     }
+                // })
+                setMessages(data);
             });
             return unsubscribe;
         }
