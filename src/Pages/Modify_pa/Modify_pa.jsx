@@ -127,18 +127,21 @@ function Modify_pa() {
                     />
                   </div>
                   <div class={styles.pspace}>
-                    <p class={styles.label}>Ingrese su género: </p>
-                    <input
+                    <p class={styles.label}>Seleccione su género: </p>
+                    <select
                       name="gender"
-                      class={styles.pinput}
-                      type="text"
-                      placeholder="Ingrese su género"
+                      class={styles.fields}
                       value={values.gender}
                       onChange={handleOnChange}
-                    />
+                    >
+                      <option value="">Género</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Otro">Otro</option>
+                    </select>
                   </div>
                   <div class={styles.pspace}>
-                    <p class={styles.label}>Coloque una foto de perfil: </p>
+                    <p class={styles.label}>Suba una foto de perfil: </p>
                     <input
                       type="file"
                       name="foto"

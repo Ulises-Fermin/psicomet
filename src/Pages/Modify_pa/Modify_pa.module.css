@@ -57,14 +57,23 @@
   
 }
 
+.fields {
+  display: inline-flex;
+  background-color: white;
+  border-radius: 0.25rem;
+  color: black;
+  width: 15rem;
+  height: 1.75rem;
+}
+
 #register{
   margin-top: 5%;
   font-family: 'Scope One', serif;
-  background-color:silver;
+  background-color:#ffd779;
   font-weight: bold;
   list-style: none;
   padding: 1%;
-  border-radius: 0.3rem;
+  border-radius: 1rem;
   margin-right: auto;
   margin-left: auto;
   display: block;
