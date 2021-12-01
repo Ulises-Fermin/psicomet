@@ -70,8 +70,6 @@ function Profile_e() {
                     Volver
                   </Link>
                 </div>
-
-
                 <div id={styles.bigbox}>
                   <div id={styles.info}>
                     <div class={styles.box1}>
@@ -131,6 +129,8 @@ function Profile_e() {
                     </div>
                   </div>
                 </div>
+
+                
               </div>
             </div>
           ) : (history.push("/home"))}

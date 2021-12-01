@@ -111,7 +111,7 @@ export default function CreateAppointment(){
                                     namePacient: user.name,
                                     lastNamePacient: user.lastName,
                                     reason: values.reason,
-                                    status: "pending",
+                                    status: "pendiente",
                                     ranked: "false",
                                 });
                                 window.alert("Cita agendada con exito.")
