@@ -21,7 +21,7 @@ function ShowItinerary(itinerarys) {
   }
   return (
     <div id={styles.itinerary}>
-      <h3>Itinerario del Especialista:</h3>
+      <h3 id={styles.itititle}>Itinerario del Especialista:</h3>
       {list.map((h) => (
         <p>{h}</p>
       ))};
@@ -129,15 +129,9 @@ function SpecialistCard({ specialist }) {
             <p class={styles.label1}>Teléfono: {specialist.data.phone}</p>
             <p class={styles.label1}>Género: {specialist.data.gender}</p>
             <p class={styles.label1}>Idiomas: {specialist.data.languages}</p>
-            <p class={styles.label1}>
-              Modelo de Trabajo Terapéutico:
-            </p>
-            <p class={styles.label1}>Consultas en sincronéa</p>
-            <p class={styles.label1}>Precio de consulta:</p>
-            <p class={styles.label1}>20$ 60 min</p>
             <p class={styles.label1}>Ver Itinerario:</p>
             <Popup
-              trigger={<button> Itinerario </button>}
+              trigger={<button id={styles.buttonI}> <p id={styles.pButton}>Itinerario</p> </button>}
               position="center center"
               modal
               id={styles.itinerary}
@@ -208,25 +202,22 @@ function SpecialistCard({ specialist }) {
                 </div>
                 <div class={styles.box8}>
                   <h2 class={styles.label10}>Experiencia Profesional</h2>
-                  <div class={styles.caja}>{specialist.data.experience}</div>
+                  <div class={styles.caja}><p class={styles.infor}>{specialist.data.experience}</p></div>
                 </div>
               </div>
               <div class={styles.box3}>
                 <div class={styles.box8}>
                   <h2 class={styles.label10}>Formación Académica</h2>
-                  <div class={styles.caja}>{specialist.data.academics}</div>
+                  <div class={styles.caja}><p class={styles.infor}>{specialist.data.academics}</p></div>
                 </div>
                 <div class={styles.box8}>
                   <h2 class={styles.label10}>Sobre {specialist.name}</h2>
-                  <div class={styles.caja}>{specialist.aboutMe}</div>
+                  <div class={styles.caja}><p class={styles.infor}>{specialist.aboutMe}</p></div>
                 </div>
               </div>
             </div>
           </div>
 
-          {(!!user && user.role === "pacient") ? (
-            <Link to="/CreateAppointment" id={styles.linkk}>Agendar Cita</Link>
-          ) : (null)}
 
         </div>
       </Popup>

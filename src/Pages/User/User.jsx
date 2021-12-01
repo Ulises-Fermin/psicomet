@@ -17,7 +17,7 @@ function User() {
   const handleLogOut = async () => {
     await auth.signOut();
     setUser(null);
-  }; 
+  };
 
   //<div id={styles.buttons2}>
   //<img id={styles.image} src={chat} alt="" />
@@ -43,26 +43,22 @@ function User() {
 
               <div class={styles.buttons_usuario}>
                 <div id={styles.buttons1}>
-                  <div class={styles.card}>
-                    <img id={styles.image} src={Consulta} alt="" />
-                    <Link to="/AppointmentsPacient" class={styles.Calendar}>
-                      Mis Consultas
-                    </Link>
-                  </div>
-                  <div class={styles.card}>
-                    <img id={styles.image} src={Personas} alt="" />
-                    <Link to="/Quest" class={styles.Calendar}>
-                      Ver Especialistas
-                    </Link>
-                  </div>
+                  <img id={styles.image} src={Consulta} alt="" />
+                  <Link to="/AppointmentsPacient" class={styles.Calendar}>
+                    Mis Consultas
+                  </Link>
+                  <img id={styles.image} src={Personas} alt="" />
+                  <Link to="/Quest" class={styles.Calendar}>
+                    Ver Especialistas
+                  </Link>
                 </div>
-                <div id={styles.buttons2}>
-                  <img id={styles.image} src={chat} alt="" />
+                <div id={styles.buttons1}>
+                  <img id={styles.image2} src={chat} alt="" />
                   <Link to="/Ranking" class={styles.Calendar}>
                     Ranking
                   </Link>
                 </div>
-                <div id={styles.buttons2}>
+                <div id={styles.buttons1}>
                   <img id={styles.image} src={Agendar} alt="" />
                   <Link to="/CreateAppointment" class={styles.Calendar}>
                     Agendar Cita

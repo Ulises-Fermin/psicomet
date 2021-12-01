@@ -37,6 +37,7 @@
   #label1 {
     font-weight: 600;
     color: black;
+    margin-top: 0%;
   }
   
   #label2 {
@@ -230,11 +231,21 @@
   }
   
   
-  #itinerary{
+  /*#itinerary{
     background-color: lightblue;
     padding: 5%;
     width: auto;
     box-shadow: 0px 0px 10px 0px #000000;
+
+  }*/
+  #itinerary{
+      background-color: white;
+      border: solid;
+      border-color: black;
+      border-width: 3px;
+      border-radius: 10px;
+      padding: 3%
+
   }
   
   #linkk{
@@ -303,6 +314,7 @@
     font-family: 'Scope One', serif;
     text-align: center;
     font-size: 60%;
+    margin-top: 10%;
   }
   .infor{
     font-size: 40%;
@@ -311,4 +323,18 @@
   #paintstars{
     color: gold;
     font-size: 150%;
+  }
+  #pButton{
+    font-family: 'Scope One', serif;
+    font-size: 70%;
+    
+  }
+  #buttonI{
+    background-color: #ffd779;
+    border-radius: 0.5rem;
+    padding: 2%;
+  }
+  #itititle{
+    margin-bottom: 10%;
+    
   }

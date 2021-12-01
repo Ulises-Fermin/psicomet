@@ -39,10 +39,12 @@ function Price() {
               class={styles.desplazar}
               id={styles.info}
             >
-              <p>
-                Detecta y trata los desórdenes y patologías mentales que afectan
-                al día a día.
-              </p>
+              <p>Detecta y trata los</p>
+              <p>desórdenes y</p>
+              <p>patologías </p>
+              <p>mentales que </p>
+              <p>afectan al día </p>
+              <p>a día.</p>
             </div>
           </div>
         </div>
@@ -71,10 +73,12 @@ function Price() {
               class={styles.desplazar}
               id={styles.info}
             >
-              <p>
-                Trata los fenómenos e irregularidades del desarrollo psíquico
-                del niño.
-              </p>
+              <p >Trata los </p>
+              <p>fenómenos e </p> 
+              <p>irregularidades   </p>
+              <p>del desarrollo  </p>
+              <p>psícologico del .</p>
+              <p>niño</p>
             </div>
           </div>
         </div>
@@ -103,10 +107,14 @@ function Price() {
               class={styles.desplazar}
               id={styles.info}
             >
-              <p>
-                Intenta solucionar problemas de parejas, ya sea para
-                reconciliarse o previo a una separación.
-              </p>
+              <p>Intenta</p>
+              <p>solucionar  </p>
+              <p>problemas de   </p>
+              <p>parejas, ya  </p>
+              <p>sea para  </p>
+              <p>reconciliarse o</p>
+              <p>previo a una </p>
+              <p>separación</p>
             </div>
           </div>
         </div>
@@ -135,10 +143,13 @@ function Price() {
               class={styles.desplazar}
               id={styles.info}
             >
-              <p>
-                Trata a varios miembros de una familia cuando pasan por
-                dificultades en su convivencia.
-              </p>
+              <p>Trata a varios</p>
+              <p>smiembros de una</p>
+              <p>familia cuando</p> 
+              <p>pasan por</p> 
+              <p>dificultades en su</p> 
+              <p>convivencia.</p>
+              
             </div>
           </div>
         </div>
@@ -167,10 +178,12 @@ function Price() {
               class={styles.desplazar}
               id={styles.info}
             >
-              <p>
-                Enfocada en el tratamiento y prevención de los trastornos
-                mentales.
-              </p>
+              <p>Enfocada en el</p>
+              <p>tratamiento y</p>
+              <p>prevención de los</p>
+              <p>trastornos mentales.</p>
+                
+              
             </div>
           </div>
         </div>

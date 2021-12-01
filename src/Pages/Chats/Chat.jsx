@@ -41,6 +41,7 @@ export default function ChatPacient(){
                 idPsycho: params.idPsycho,
                 idPacient: user.id,
                 from: user.name + " " + user.lastName,
+                
             })
         }
     }

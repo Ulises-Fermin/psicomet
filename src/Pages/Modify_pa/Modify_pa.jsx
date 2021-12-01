@@ -22,7 +22,7 @@ function Modify_pa() {
     role: "pacient",
     idc: null,
     college: null,
-  });
+  }); 
 
   const handleOnChange = (event) => {
     const { value, name: inputName } = event.target;

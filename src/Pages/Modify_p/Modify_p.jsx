@@ -111,7 +111,7 @@ function Modify_p() {
       console.log(con)
     }*/
     window.alert("Datos actualizados.")
-    history.push("/Psychologist")
+    history.push("/Home")
   };
   const doUpload = (event) => {
     const file = event.target.files[0];
