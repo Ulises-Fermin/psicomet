@@ -200,13 +200,6 @@ function Modify_p() {
                         value={values.languages}
                         onChange={handleOnChange}
                       />
-                      <label className='form-label'>Método de consulta</label>
-                      <input
-                        class={styles.forminput}
-                        type="text"
-                        placeholder="Ingrese su método de consulta"
-                      />
-
                       <label className='form-label'>Foto</label>
                       <input
                         type="file"
@@ -215,12 +208,6 @@ function Modify_p() {
                         onChange={doUpload}
                         accept="image/*"
                         placeholder="Suba una foto de perfil"
-                      />
-                      <label class='form-label'>Precio de su servicio</label>
-                      <input
-                        class={styles.forminput}
-                        type="text"
-                        placeholder="Ingrese el precio de su servicio"
                       />
                       {/* <p id={styles.label8}>Ingrese sus áreas de atención: </p> */}
                       <label className='form-label'>Áreas de atencion</label>
