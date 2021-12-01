@@ -33,7 +33,7 @@ function Contact() {
     return(
         <div id={styles.Body}>
             <h1 id={styles.title}>
-                ¡Contáctate con nosotros!
+                ¡Contáctate con nosotros! 
             </h1>
             <div id={styles.file1}>
                 <div class={styles.card} id="Instagram">

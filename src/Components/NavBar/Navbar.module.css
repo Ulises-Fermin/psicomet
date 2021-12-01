@@ -18,9 +18,10 @@
 
 #Logo {
     padding-top: 8%;
-    max-width: 110px;
-    max-height: 90px;
+    max-width: 5rem;
+    max-height: 3.25rem;
     cursor: pointer;
+    padding: 2%;
 }
 
 #NavLoginLink:link {

@@ -1,8 +1,8 @@
 
 #Body {
-  margin: 0px;
-  padding: 0px;
+  
   font-family: Arial, Helvetica, sans-serif;
+
 }
  
 /*#Slyder {
@@ -25,6 +25,8 @@
 #AboutUs {
   padding-left: 8.5%;
   padding-right: 8.5%;
+  width: 100%;
+  padding-bottom: 1%;
 }
 
 .h1AboutUs {
@@ -32,7 +34,8 @@
   font-size: 4vw;
   margin-top: 1.5%;
   margin-bottom: 1%;
-  color:#434244;  
+  color:#434244; 
+  
 }
 .h1AboutUs:hover{
   color:black;
@@ -42,12 +45,11 @@
 
 .pAboutUs {
   text-align: center;
-  font-size: 190%;
-  font-size: 2.5vw;
-  margin-bottom: 2%;
-  margin-top: 1%;
+  font-size: 2vw;
   color: #434244;
+  margin: -1%;
   padding: 1%;
+  
 }
 
 #Rates {
@@ -67,6 +69,7 @@
   border-radius: 25px;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
+  margin-top: 2%;
 }
 .BottomRates:hover{
   max-width: 50%;

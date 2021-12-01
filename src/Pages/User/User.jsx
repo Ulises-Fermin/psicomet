@@ -17,7 +17,7 @@ function User() {
   const handleLogOut = async () => {
     await auth.signOut();
     setUser(null);
-  };
+  }; 
 
   //<div id={styles.buttons2}>
   //<img id={styles.image} src={chat} alt="" />
