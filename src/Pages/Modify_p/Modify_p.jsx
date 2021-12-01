@@ -110,8 +110,8 @@ function Modify_p() {
       con = con + 1
       console.log(con)
     }*/
-    window.alert("Datos actualizados, refresque la pestana para ver cambios")
-    /*history.push("/Psychologist")*/
+    window.alert("Datos actualizados.")
+    history.push("/Psychologist")
   };
   const doUpload = (event) => {
     const file = event.target.files[0];
@@ -127,7 +127,7 @@ function Modify_p() {
       },
       function complete() {
         console.info("Finished uploading!");
-        window.alert("Logrado");
+        window.alert("Imagen cargada con exito.");
         db.collection("users").doc(user.id).update({
           photo: "true",
         });
