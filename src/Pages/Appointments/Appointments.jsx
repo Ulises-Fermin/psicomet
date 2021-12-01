@@ -2,20 +2,10 @@ import React from "react";
 import styles from "./Appointments.module.css";
 import { db } from "../../Utils/FireBaseConfig";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
-import Popup from "reactjs-popup";
-import { app } from "../../Utils/FireBaseConfig";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
-import { Usechats } from "./UseChats";
-import { useHistory } from "react-router-dom";
-=======
 import PopUp from "reactjs-popup";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
-
->>>>>>> develop
+import { Link } from "react-router-dom";
 
 function Appointments() {
   const { user, setUser } = useContext(UserContext);
@@ -30,7 +20,7 @@ function Appointments() {
     progress: "",
     treatment: "",
     observations: "",
-});
+  });
   const list = [];
   const tarjetas = async () => {
     const citas = db.collection("consultations");
@@ -47,45 +37,29 @@ function Appointments() {
 
   useEffect(() => {
     tarjetas();
-<<<<<<< HEAD
-  }, []);
-
-  return (
-    <>
-      <div>
-        {dates.map((d) => (
-          <div class={styles.card}>
-            <h2 id={styles.titulo}>Consulta</h2>
-            <p id={styles.nombre}>{d.data.namePacient}</p>
-            <p id={styles.fecha}>{d.data.date}</p>
-            <Link to={`/Chats/${d.data.idPacient}`}>Abrir Chat</Link>
-          </div>
-        ))}
-      </div>
-=======
   }, [user]);
 
   const handleOnClic = async (userId) => {
-    try{
+    try {
       var citas = db.collection("users");
       var item = await citas.doc(userId).get();
-      var us = {data:item.data(), id:item.id};
-      createHistory(us.id, us.data.name, us.data.lastName)
-    }catch (e){
-      console.log(e)
+      var us = { data: item.data(), id: item.id };
+      createHistory(us.id, us.data.name, us.data.lastName);
+    } catch (e) {
+      console.log(e);
     }
-  }
+  };
 
   const handleOnChange = (e) => {
     const { value, name: inputName } = e.target;
     setValues({ ...values, [inputName]: value });
-  }
+  };
 
   const createHistory = async (id, name, lastName) => {
     setIsLoading(true);
     const today = new Date();
     const now = today.toString().split(" ");
-    const date = now[1] + "-" + now[2] + "-" + now[3]
+    const date = now[1] + "-" + now[2] + "-" + now[3];
     await db.collection("histories").add({
       idPacient: id,
       idPsycho: user.id,
@@ -96,42 +70,67 @@ function Appointments() {
       treatment: values.treatment,
       observations: values.observations,
     });
-      setIsLoading(false);
-  }
+    setIsLoading(false);
+  };
 
   return (
     <>
       {isLoading ? (
         <div id={styles.isLoading}>
-            <h1>Cargando...</h1>
-            <h1>Será redirigido automáticamente.</h1>
+          <h1>Cargando...</h1>
+          <h1>Será redirigido automáticamente.</h1>
         </div>
       ) : (
         <div>
           {dates.map((d) => (
             <div class={styles.card}>
               <h2 id={styles.titulo}>Consulta</h2>
-              <p id={styles.nombre}>{d.data.namePacient} {d.data.lastNamePacient}</p>
+              <p id={styles.nombre}>
+                {d.data.namePacient} {d.data.lastNamePacient}
+              </p>
               <p id={styles.fecha}>{d.data.date}</p>
               <p id={styles.fecha}>{d.data.hour}</p>
+              <Link to={`/Chats/${d.data.idPacient}`}>Abrir Chat</Link>
               <PopUp trigger={<button>Generar nueva historia</button>} modal>
                 <div>
                   <h1>Paciente:</h1>
-                  <h1>{d.data.namePacient} {d.data.lastNamePacient}</h1>
+                  <h1>
+                    {d.data.namePacient} {d.data.lastNamePacient}
+                  </h1>
                   <h2>Avances:</h2>
-                  <textarea rows="5" placeholder="Escribe aqui..." value={values.progress} name="progress" onChange={handleOnChange}></textarea>
+                  <textarea
+                    rows="5"
+                    placeholder="Escribe aqui..."
+                    value={values.progress}
+                    name="progress"
+                    onChange={handleOnChange}
+                  ></textarea>
                   <h2>Tratamiento aplicado:</h2>
-                  <textarea rows="5" placeholder="Escribe aqui..." value={values.treatment} name="treatment" onChange={handleOnChange}></textarea>
+                  <textarea
+                    rows="5"
+                    placeholder="Escribe aqui..."
+                    value={values.treatment}
+                    name="treatment"
+                    onChange={handleOnChange}
+                  ></textarea>
                   <h2>Otras observaciones:</h2>
-                  <textarea rows="5" placeholder="Escribe aqui..." value={values.observations} name="observations" onChange={handleOnChange}></textarea>
-                  <button onClick={()=>handleOnClic(d.data.idPacient)}>Generar historia</button>
+                  <textarea
+                    rows="5"
+                    placeholder="Escribe aqui..."
+                    value={values.observations}
+                    name="observations"
+                    onChange={handleOnChange}
+                  ></textarea>
+                  <button onClick={() => handleOnClic(d.data.idPacient)}>
+                    Generar historia
+                  </button>
                 </div>
               </PopUp>
             </div>
           ))}
         </div>
-      )};
->>>>>>> develop
+      )}
+      ;
     </>
   );
 }

@@ -17,26 +17,43 @@ function Chats() {
   const mensajes_lista = [];
   const [men, setmen] = React.useState("");
   const [mensajes, setmensajes] = useState([]);
-  const mensajes_fetch = async () => {
-    const messages = db.collection("messages_chat");
-    const query = messages.orderBy("fecha").limit(100);
-    const data = await query.get();
-    data.docs.forEach((item) => {
-      if (
-        item.data().idEspecialist === user.id &&
-        item.data().idPacient === params.idPacient
-      ) {
-        mensajes_lista.push({ data: item.data(), id: item.id });
-      }
-    });
-    setmensajes(mensajes_lista);
-    console.log(mensajes);
-    console.log(params.name);
-    return mensajes_lista;
-  };
+  //const mensajes_fetch = async () => {
+  // const messages = db.collection("messages_chat");
+  // const query = messages.orderBy("fecha").limit(100);
+  // const data = await query.get();
+  // data.docs.forEach((item) => {
+  //if (
+  //item.data().idEspecialist === user.id &&
+  //item.data().idPacient === params.idPacient
+  //) //{
+  // mensajes_lista.push({ data: item.data(), id: item.id });
+  //}
+  //});
+  //setmensajes(mensajes_lista);
+  //console.log(mensajes);
+  //console.log(params.name);
+  //return mensajes_lista;
+  //};
 
   useEffect(() => {
-    mensajes_fetch();
+    const unsubscribe = db
+      .collection("messages_chat")
+      .onSnapshot((snapshot) => {
+        const datos = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }));
+        datos.forEach((item) => {
+          if (
+            item.data.idEspecialist === user.id &&
+            item.data.idPacient === params.idPacient
+          ) {
+            mensajes_lista.push({ data: item.data, id: item.id });
+          }
+        });
+        setmensajes(mensajes_lista);
+        console.log(mensajes);
+      });
   }, []);
 
   const Hanndlechange = (e) => {
@@ -53,7 +70,6 @@ function Chats() {
         idPacient: params.idPacient,
         from: user.name,
       });
-      mensajes_fetch();
     } else {
       window.alert("No puede enviar un mensaje ne blanco.");
     }
