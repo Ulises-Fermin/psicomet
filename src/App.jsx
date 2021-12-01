@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./Pages/Home/Home";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/NavBar/Navbar";
+import Home from "./Pages/Home/Home";
 import CreateAccount from "./Pages/CreateAccount/CreateAccount";
 import CreateAccountP from "./Pages/CreateAccountP/CreateAccountP";
 import TypeAccount from "./Pages/TypeAccount/TypeAccount";
@@ -13,7 +14,6 @@ import Psychologist from "./Pages/Psychologist/Psychologist";
 import Chats from "./Pages/Chats/Chats";
 import Chats_paciente from "./Pages/Chats/Chats_paciente";
 import Testimonials from "./Pages/Testimonials/Testimonials";
-import Footer from "./Components/Footer";
 import Price from "./Pages/Price/Price";
 import Services from "./Components/Services";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
@@ -36,6 +36,7 @@ import Appointments_paciente from "./Pages/Appointments/Appointments_paciente";
 import CreateAppointment from "./Pages/CreateAppointment/CreateAppointment";
 import Histories from "./Pages/Histories/Histories";
 import AppointmentsPacient from "./Pages/Appointments/AppointmentsPacient";
+import Payment from "./Pages/Payment/Payment";
 
 function App() {
   // Funcion para el PayPal
@@ -67,7 +68,6 @@ function App() {
           <Switch>
             <Route exact path="/Home">
               <Home />
-              <Services />
             </Route>
             <Route exact path="/TypeAccount">
               <TypeAccount />
@@ -152,6 +152,9 @@ function App() {
             </Route>
             <Route exact path="/AppointmentsPacient">
               <AppointmentsPacient />
+            </Route>
+            <Route exact path="/Payment">
+              <Payment />
             </Route>
           </Switch>
           <Footer />

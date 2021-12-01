@@ -1,7 +1,10 @@
 import React, { useRef, useEffect } from "react";
+import { useHistory } from "react-router";
+import PopUp from "reactjs-popup";
 
 export default function Paypal() {
   const paypal = useRef();
+  const history = useHistory();
 
   useEffect(() => {
     window.paypal
@@ -23,6 +26,9 @@ export default function Paypal() {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           console.log(order);
+          history.push("/Home")
+          window.alert('Pago exitoso. Su cita ha sido reservada.')
+
         },
         onError: (err) => {
           console.log(err);

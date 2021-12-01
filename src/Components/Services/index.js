@@ -8,25 +8,27 @@ import administrador from '../../Images/psiquiatra.svg'
 import especialista from '../../Images/especialista.svg'
 import PayPal from "../../Components/PayPal.js";
 
-            {/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
-            {/* Si checkout es verdadero, renderizamos PayPal. Si no, aparece un boton que al presionarlo se hace verdadero. */}
+{/* PAYPAL. Hay que moverlo de aquí cuando lo de las citas esté listo */}
+{/* Si checkout es verdadero, renderizamos PayPal. Si no, aparece un boton que al presionarlo se hace verdadero. */}
   // Funcion para el PayPal
   
   const Services = () => {
-    const [checkout, setCheckOut] = useState(false);
+    const [checkout1, setCheckOut1] = useState(false);
+    const [checkout2, setCheckOut2] = useState(false);
+    const [checkout3, setCheckOut3] = useState(false);
     return (
         <ServicesContainer id="services">
-            <ServicesH1>Pago -colocar en sección de pagos-</ServicesH1>
+            <ServicesH1>Pago</ServicesH1>
                 <ServicesWrapper>
                     <ServicesCard>
                         <ServicesIcon src={Icon1} alt="" />
                         <ServicesH2>Psiquiatría</ServicesH2>
-                    {checkout ? (
+                    {checkout1 ? (
                         <PayPal />
                     ) : (
                         <button
                         onClick={() => {
-                            setCheckOut(true);
+                            setCheckOut1(true);
                         }}
                         >
                         Checkout
@@ -37,12 +39,12 @@ import PayPal from "../../Components/PayPal.js";
                     <ServicesCard>
                         <ServicesIcon src={especialista}/>
                         <ServicesH2>Terapia de parejas</ServicesH2>
-                    {checkout ? (
+                    {checkout2 ? (
                         <PayPal />
                     ) : (
                         <button
                         onClick={() => {
-                            setCheckOut(true);
+                            setCheckOut2(true);
                         }}
                         >
                         Checkout
@@ -54,12 +56,12 @@ import PayPal from "../../Components/PayPal.js";
                         <ServicesIcon src={administrador} />
                         <ServicesH2>Consulta clínica</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
-                    {checkout ? (
+                    {checkout3 ? (
                         <PayPal />
                     ) : (
                         <button
                         onClick={() => {
-                            setCheckOut(true);
+                            setCheckOut3(true);
                         }}
                         >
                         Checkout

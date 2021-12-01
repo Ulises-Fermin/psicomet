@@ -5,6 +5,7 @@ import styles from "./CreateAppointment.module.css"
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
 
+
 function ShowItinerary(itinerarys) {
     var list = [];
     for (const days in itinerarys){
@@ -113,7 +114,7 @@ export default function CreateAppointment(){
                                 });
                                 window.alert("Cita agendada con exito.")
                                 setIsLoading(false);
-                                history.push("/Home");
+                                history.push("/Payment");
                             }else{
                                 window.alert("Lo sentimos, esa fecha esta ocupada.")
                             }
