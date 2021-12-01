@@ -14,7 +14,6 @@ import { MdPanoramaFishEye } from "react-icons/md";
 function Chats() {
   const { user } = useContext(UserContext);
   const params = useParams();
-  const mensajes_lista = [];
   const [men, setmen] = React.useState("");
   const [mensajes, setmensajes] = useState([]);
   //const mensajes_fetch = async () => {
@@ -34,7 +33,6 @@ function Chats() {
   //console.log(params.name);
   //return mensajes_lista;
   //};
-
   useEffect(() => {
     const unsubscribe = db
       .collection("messages_chat")
@@ -43,6 +41,7 @@ function Chats() {
           id: doc.id,
           data: doc.data(),
         }));
+        const mensajes_lista = [];
         datos.forEach((item) => {
           if (
             item.data.idEspecialist === user.id &&
@@ -60,10 +59,9 @@ function Chats() {
     sendMessage();
   };
 
-  const sendMessage = (e) => {
+  const sendMessage = async (e) => {
     if (!(men === "")) {
-      e.preventDefault();
-      db.collection("messages_chat").add({
+      await db.collection("messages_chat").add({
         fecha: Date.now(),
         men,
         idEspecialist: user.id,
@@ -91,7 +89,6 @@ function Chats() {
           rows="10"
           placeholder="Escriba su mensaje:"
           value={men}
-          onChange={(e) => setmen(e.target.value)}
         />
         <button type="submit" id={styles.button} onClick={sendMessage}>
           {" "}
