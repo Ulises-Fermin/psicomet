@@ -18,23 +18,18 @@ export default function ChatPacient(){
     const analytics = firebase.analytics();
 
     useEffect(() => {
-        var list = [];
         if (db){
             const unsubscribe = db
             .collection("chats")
-            .orderBy("date")
+            .where("idPacient", "==", params.idPacient)
+            .where("idPsycho", "==", user.id)
             .limit(25)
             .onSnapshot(querySnapshot => {
                 const data = querySnapshot.docs.map(doc => ({
                     ...doc.data(),
                     id: doc.id,
                 }));
-                // data.forEach((item)=>{
-                //     if (item.idPsycho === user.id && item.idPacient === params.idPacient){
-                //         list.push(item);
-                //     }
-                // })
-                setMessages(data);
+                setMessages(data.sort((a, b) => a.date - b.date));
             });
             return unsubscribe;
         }
@@ -48,7 +43,7 @@ export default function ChatPacient(){
                 date: firebase.firestore.FieldValue.serverTimestamp(),
                 idPsycho: user.id,
                 idPacient: params.idPacient,
-                from: user.name,
+                from: user.name + " " + user.lastName,
             })
             setNewMessage("")
         }
