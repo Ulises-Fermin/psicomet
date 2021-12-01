@@ -50,7 +50,7 @@ const fetchPsychologists = async () => {
           .toLowerCase()
           .includes(names.toLocaleLowerCase())
       ) {
-        list.push(item.data());
+        list.push({data: item.data(), id: item.id});
       }
     });
     setPsychologists(list);
