@@ -123,7 +123,7 @@ function Quest() {
     psychologists.forEach((psycho) => {
       const especialidad = psycho.data.specialty;
       if (
-        (psycho.data.name + " " + psycho.data.lastName)
+        (psycho.name + " " + psycho.lastName)
           .toLowerCase()
           .includes(names.toLocaleLowerCase())
       ) {

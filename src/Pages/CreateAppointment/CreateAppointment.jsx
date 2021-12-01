@@ -5,6 +5,7 @@ import styles from "./CreateAppointment.module.css"
 import { UserContext } from "../../Context/UserContext";
 import { useHistory } from "react-router";
 
+
 function ShowItinerary(itinerarys) {
     var list = [];
     for (const days in itinerarys){
@@ -113,7 +114,7 @@ export default function CreateAppointment(){
                                 });
                                 window.alert("Cita agendada con exito.")
                                 setIsLoading(false);
-                                history.push("/Home");
+                                history.push("/Payment");
                             }else{
                                 window.alert("Lo sentimos, esa fecha esta ocupada.")
                             }
@@ -143,34 +144,32 @@ export default function CreateAppointment(){
                 </div>
              ) : (
                 <div class={styles.body}>
-                    <div class={styles.section}>
-                        <h3>Seleccione un psicologo:</h3>
-                        <select value={values.idPsycho} onChange={handleOnChange} name="idPsycho">
-                            <option value = "">Seleccione un psicologo</option>
+                    <div class = {styles.titulo}>
+                        <h1>Agendar cita</h1>
+                    </div>
+                    <div id={styles.section}>
+                        <p class={styles.question}>Seleccione un psicólogo:</p>
+                        <select value={values.idPsycho} onChange={handleOnChange} name="idPsycho" id={styles.input}>
+                            <option value = "">Seleccione un psicólogo</option>
                             {psychologists.map((p) => (
                                     <option value={p.id}>{p.data.name} {p.data.lastName}</option>
                             ))}
                         </select>
-                    </div>
-                    <div class={styles.section}>
-                        <h3>Seleccione una fecha:</h3>
-                        <input type="date" min="2021-12-3" value={values.date} name="date" onChange={handleOnChange}></input>
-                    </div>
-                    <div class={styles.section}>
-                        <h3>Seleccione un horario:</h3>
-                        <select value={values.hour} name="hour" onChange={handleOnChange}>
+
+                        <p class={styles.question}>Seleccione una fecha:</p>
+                        <input type="date" min="2021-12-3" value={values.date} name="date" id={styles.input} onChange={handleOnChange}></input>
+
+                        <p class={styles.question}>Seleccione un horario:</p>
+                        <select value={values.hour} name="hour" id={styles.input} onChange={handleOnChange}>
                             <option value = "">Seleccione un horario</option> 
                             {time.map((p) => (
                                 <option value={p}>{p}</option>
                             ))}
                         </select>
-                    </div>
-                    <div class={styles.section}>
-                    <h3>Explique el motivo de la consulta:</h3>
-                    <textarea rows="10" placeholder="Escribe aqui..." value={values.reason} name="reason" onChange={handleOnChange}></textarea>
-                    </div>
-                    <div class={styles.section}>
-                    <button onClick={handleSubmit}>Agendar</button>
+                        
+                        <p class={styles.question}>Explique el motivo de la consulta:</p>
+                        <textarea rows="10" placeholder="Escribe aqui..." value={values.reason} id={styles.input} name="reason" onChange={handleOnChange}></textarea>
+                        <button id={styles.button} onClick={handleSubmit}>Agendar</button>
                     </div>
                 </div>
             )},
