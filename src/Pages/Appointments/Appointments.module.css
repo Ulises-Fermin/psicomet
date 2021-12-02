@@ -21,10 +21,10 @@
   width: 20%;
   background-color: aliceblue;
   padding-bottom: 0.5%;
-  margin-left: 1%;
+  margin-left: 40%;
 }
 
-#isLoading{
+#isLoading {
   width: 100%;
   text-align: center;
   font-size: larger;
@@ -38,7 +38,7 @@
   color: white;
 }
 
-#isLoading{
+#isLoading {
   width: 100%;
   text-align: center;
   font-size: larger;
@@ -52,7 +52,7 @@
   color: white;
 }
 
-#buttons{
+#buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;

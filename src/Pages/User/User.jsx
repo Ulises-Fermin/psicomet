@@ -19,6 +19,16 @@ function User() {
     setUser(null);
   }; 
 
+  //<div id={styles.buttons2}>
+  //<img id={styles.image} src={chat} alt="" />
+  //<Link to="/Chats" id={styles.My_chats}>
+  //Mis chats
+  //</Link>
+
+  //<img id={styles.image} src={Calendario} alt="" />
+  //<p id={styles.Calendar}>Calendario</p>
+  //</div>;
+
   return (
     <>
       {!!user ? (
@@ -38,7 +48,6 @@ function User() {
                     <Link to="/AppointmentsPacient" class={styles.Calendar}>
                       Mis Consultas
                     </Link>
-                    
                   </div>
                   <div class={styles.card}>
                     <img id={styles.image} src={Personas} alt="" />
@@ -52,7 +61,6 @@ function User() {
                   <Link to="/Ranking" class={styles.Calendar}>
                     Ranking
                   </Link>
-
                 </div>
                 <div id={styles.buttons2}>
                   <img id={styles.image} src={Agendar} alt="" />

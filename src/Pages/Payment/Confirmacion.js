@@ -95,15 +95,17 @@ export const Confirmacion = ({ showModal, setShowModal }) => {
               <ModalImg src={psicometLogo} alt='logo' />
               <ModalContent>
                 <h1>Confirme su cita</h1>
-                <p>{user.name}</p>
-                <p>Fecha</p>
-                <p>Hora</p>
+                <p>Muchas gracias por confiar en Psicomet.</p>
+                <p>Presione aceptar para proceder al checkout de su cita.</p>
+                {/* <p>Dr. Ignacio Lemmo</p>
+                <p>01-02-2022</p>
+                <p>10:00 - 10:50</p> */}
                 <button aria-label='Close modal' onClick={() => setShowModal(prev => !prev)}>Aceptar</button>
               </ModalContent>
-              <CloseModalButton
+              {/* <CloseModalButton
                 aria-label='Close modal'
                 onClick={() => setShowModal(prev => !prev)}
-                />
+                /> */}
             </ModalWrapper>
           </animated.div>
         </Background>
