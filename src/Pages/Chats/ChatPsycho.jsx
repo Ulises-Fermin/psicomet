@@ -63,6 +63,7 @@ export default function ChatPacient() {
                 <div class={styles.messages}>
                     {messages.map(message => (
                         <div class={styles.mini}>
+<<<<<<< HEAD
                             {message.from == user.name ?
                                 <div id={styles.Psicologo}>
                                     <p id={styles.namePsicologo}>{message.from}</p>
@@ -75,6 +76,20 @@ export default function ChatPacient() {
                                     <div class={styles.textPaciente}>
                                         <p id={styles.mensajePaciente}>{message.message}</p>
                                     </div>
+=======
+                            {message.from == user.name + " " + user.lastName?
+                            <div id = {styles.Psicologo}>
+                                <p id={styles.namePsicologo}>{message.from}</p>
+                                <div class={styles.textPsicologo}>
+                                <p id={styles.mensajePsicologo}>{message.message}</p>
+                                </div>
+                            </div>:
+                            <div id = {styles.Paciente}>
+                                <p id={styles.namePaciente}>{message.from}</p>
+                                <div class={styles.textPaciente}>
+                                <p id={styles.mensajePaciente}>{message.message}</p>
+                                </div>
+>>>>>>> 26f5d9e017010952e947233be1f476565adde0de
                                 </div>}
                         </div>
 

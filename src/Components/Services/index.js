@@ -29,6 +29,7 @@ import services from "./services.css";
                     <ServicesCard>
                         <ServicesIcon src={Icon1} alt="" />
                         <ServicesH2>Psiquiatría</ServicesH2>
+                        <ServicesH2>$50</ServicesH2>
                     {checkout1 ? (
                         <PayPal1 />
                     ) : (
@@ -45,6 +46,7 @@ import services from "./services.css";
                     <ServicesCard>
                         <ServicesIcon src={especialista}/>
                         <ServicesH2>Terapia de parejas</ServicesH2>
+                        <ServicesH2>$45</ServicesH2>
                     {checkout2 ? (
                         <PayPal2 />
                     ) : (
@@ -61,6 +63,7 @@ import services from "./services.css";
                     <ServicesCard>
                         <ServicesIcon src={administrador} />
                         <ServicesH2>Consulta clínica</ServicesH2>
+                        <ServicesH2>$30</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     {checkout3 ? (
                         <PayPal3 />
@@ -77,6 +80,7 @@ import services from "./services.css";
                     <ServicesCard>
                         <ServicesIcon src={hogar} />
                         <ServicesH2>Terapia de familia</ServicesH2>
+                        <ServicesH2>$50</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     {checkout4 ? (
                         <PayPal4 />
@@ -93,6 +97,7 @@ import services from "./services.css";
                     <ServicesCard>
                         <ServicesIcon src={baby} />
                         <ServicesH2>Consulta infantil</ServicesH2>
+                        <ServicesH2>$35</ServicesH2>
                         {/* <ServicesP>Te ayudamos con todo.</ServicesP> */}
                     {checkout5 ? (
                         <PayPal5 />

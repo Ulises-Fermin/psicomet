@@ -56,3 +56,12 @@ textarea {
     align-content: center;
     color: white;
 }
+
+#PopUp{
+    background-color: white;
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 10px;
+    padding: 3%
+}

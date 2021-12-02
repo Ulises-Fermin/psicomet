@@ -4,13 +4,12 @@ import "firebase/auth";
 import 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDnuGOEGLxWYTsz_lBsBJsUaUt0Unzq3Ts",
-  authDomain: "psicomet-unimet.firebaseapp.com",
-  projectId: "psicomet-unimet",
-  storageBucket: "psicomet-unimet.appspot.com",
-  messagingSenderId: "1058144025256",
-  appId: "1:1058144025256:web:054890f4ece8962317e09d",
-  measurementId: "G-WNB774HQDD"
+  apiKey: "AIzaSyA3TwOmYCO94tHlLTv-jo3LBhoUQdGyRHo",
+  authDomain: "psicomet3.firebaseapp.com",
+  projectId: "psicomet3",
+  storageBucket: "psicomet3.appspot.com",
+  messagingSenderId: "251349685405",
+  appId: "1:251349685405:web:0aad99dbd207f4afb13074"
 };
 
 export const app = initializeApp(firebaseConfig);

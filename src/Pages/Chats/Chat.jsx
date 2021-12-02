@@ -56,7 +56,7 @@ export default function ChatPacient(){
                 <div class = {styles.messages}>
                     {messages.map(message => (
                         <div class={styles.mini}>
-                            {message.from == user.name?
+                            {message.from == user.name + " " + user.lastName?
                             <div id = {styles.Paciente}>
                                 <p id={styles.namePaciente}>{message.from}</p>
                                 <div class={styles.textPaciente}>
