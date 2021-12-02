@@ -147,7 +147,7 @@ function Admi() {
 
                                     </input>
                                     <button id={styles.buttonE} onClick={sendSpecial}>
-                                        Enviar mensaje
+                                        <p>Enviar mensaje</p>
                                     </button>
                                 </div>
                                 <div id={styles.container2}>
