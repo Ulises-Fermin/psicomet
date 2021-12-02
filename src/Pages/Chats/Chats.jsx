@@ -67,6 +67,7 @@ function Chats() {
         idEspecialist: user.id,
         idPacient: params.idPacient,
         from: user.name,
+        
       });
     } else {
       window.alert("No puede enviar un mensaje en blanco.");

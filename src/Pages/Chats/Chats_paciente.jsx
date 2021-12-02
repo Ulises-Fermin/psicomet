@@ -74,6 +74,7 @@ function Chats_paciente() {
         idPacient: user.id,
         idEspecialist: params.idPsico,
         from: user.name,
+        
       });
       // mensajes_fetch();
     } else {
