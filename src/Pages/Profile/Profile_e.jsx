@@ -40,23 +40,23 @@ function Profile_e() {
 
                 <div class={styles.box2}> 
                   <p class={styles.label1}>Correo Electrónico:</p>
-                  <p class={styles.label1}>{user.email}</p>
-                  <br />
+                  <p class={styles.label2}>{user.email}</p>
+                  <span class={styles.br}></span>
                   <p class={styles.label1}>Teléfono:</p>
-                  <p class={styles.label1}>{user.phone}</p>
-                  <br />
+                  <p class={styles.label2}>{user.phone}</p>
+                  <span class={styles.br}></span>
                   <p class={styles.label1}>Género:</p>
-                  <p class={styles.label1}>{user.gender}</p>
-                  <br />
+                  <p class={styles.label2}>{user.gender}</p>
+                  <span class={styles.br}></span>
                   <p class={styles.label1}>Idiomas:</p>
-                  <p class={styles.label1}>{user.languages}</p>
-                  <br />
+                  <p class={styles.label2}>{user.languages}</p>
+                  <span class={styles.br}></span>
                   <p class={styles.label1}>Ranking:</p>
-                  <p class={styles.label1}>{(user.points/user.consults)}</p>
-                  <br />
+                  <p class={styles.label2}>{(user.points/user.consults)}</p>
+                  <span class={styles.br}></span>
                   <p class={styles.label1}>Nro de consultas:</p>
-                  <p class={styles.label1}>{user.consults}</p>
-                  <br />
+                  <p class={styles.label2}>{user.consults}</p>
+                  <span class={styles.br}></span>
                   <p class={styles.label1}>Ver Itinerario:</p>
                   <Popup
                     trigger={<button> Itinerario </button>}
