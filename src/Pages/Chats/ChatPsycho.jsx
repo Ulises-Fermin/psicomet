@@ -50,24 +50,10 @@ export default function ChatPacient() {
         }
     }
     
-    /*const takename = () =>{
-        console.log("holaa")
-        const m = db.collection("users").doc(messages.idPacient)
-        console.log(m)
-        
-    } */ 
-
-    
-    
-        
-    
-
 
 
     const handleOnChange = e => {
-        setNewMessage(e.target.value);
-        
-        
+        setNewMessage(e.target.value);     
     }
 
     return (

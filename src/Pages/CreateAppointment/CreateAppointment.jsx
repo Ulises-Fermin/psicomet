@@ -28,6 +28,8 @@ export default function CreateAppointment(){
         idPacient: "",
         namePacient: "",
         lastNamePacient: "",
+        namePsycho: "",
+        lastNamePsycho: "",
         reason: "",
         status: "",
         ranked: "",
@@ -81,23 +83,24 @@ export default function CreateAppointment(){
         var cd = true
         data.docs.forEach((item)=>{
             const us = {data:item.data(), id:item.id};
-            if (us.data.idPsycho === idPsycho && us.data.date === date && us.data.hour === hour){
+            if (us.data.idPsycho === idPsycho && us.data.date === date && us.data.hour === hour && (us.data.status === "Pendiente" || us.data.status === "Culminada")){
                 cd = false
             }
         })
         return cd
     }
 
-    const handleOnChange = (e) =>{
+    const handleOnChange = async (e) =>{
         const { value, name: inputName } = e.target;
         setValues({ ...values, [inputName]: value });
-        const dates = new Date(values.date).toString().split(" ")
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (name,lastName) => {
         try{
             const dates = new Date(values.date).toString().split(" ")
             if (values.idPsycho !== ""){
+                const psychol = await db.collection("users").doc(values.idPsycho).get();
+                const psycholo = { data: psychol.data(), id: psychol.id }
                 if ((values.date !== "") && (dates[0] !== "Sat") && (dates[0] !== "Fri")){
                     if (values.hour !== ""){
                         if (values.reason !== ""){
@@ -110,6 +113,8 @@ export default function CreateAppointment(){
                                     idPacient: user.id,
                                     namePacient: user.name,
                                     lastNamePacient: user.lastName,
+                                    namePsycho: psycholo.data.name,
+                                    lastNamePsycho: psycholo.data.lastName, 
                                     reason: values.reason,
                                     status: "Pendiente",
                                     ranked: "false",
@@ -153,8 +158,8 @@ export default function CreateAppointment(){
                         <p class={styles.question}>Seleccione un psicólogo:</p>
                         <select value={values.idPsycho} onChange={handleOnChange} name="idPsycho" id={styles.input}>
                             <option value = "">Seleccione un psicólogo</option>
-                            {psychologists.map((p) => (
-                                    <option value={p.id}>{p.data.name} {p.data.lastName}</option>
+                            {psychologists.map((ps) => (
+                                    <option value={ps.id}>{ps.data.name} {ps.data.lastName}</option>
                             ))}
                         </select>
 

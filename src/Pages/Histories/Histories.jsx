@@ -19,13 +19,9 @@ export default function Histories() {
                 list.push({ data: item.data(), id: item.id });
             }
         });
-        setDates(list);
+        setDates(list.sort(function(a,b){return new Date(b.data.date) - new Date(a.data.date)}));
         return list;
     };
-
-    function filterDates () {
-        console.log((dates.sort((a, b) => new Date(a.data.date).getTime() > new Date(b.data.date).getTime())));
-    }
 
     useEffect(() => {
     cards();
