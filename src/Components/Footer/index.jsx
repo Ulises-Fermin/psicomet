@@ -18,14 +18,13 @@ const Footer = () => {
                         <FooterLinkItems>
                             <FooterLinkTitle>Nosotros</FooterLinkTitle>
                                 {/* Si vamos a linkear algo de afuera usamos un a tag */}
-                                <FooterLink to="/" toggle={toggleHome}>Ingresa</FooterLink>
+                                <FooterLink to="/Login" toggle={toggleHome}>Ingresa</FooterLink>
                                 <FooterLink to="/Quest" toggle={toggleHome}>Especialistas</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Precios</FooterLinkTitle>
                                 {/* Si vamos a linkear algo de afuera usamos un a tag */}
-                                <FooterLink to="../Price" toggle={toggleHome}>Bolívares</FooterLink>
-                                <FooterLink to="../Price" toggle={toggleHome}>Dólares</FooterLink>
+                                <FooterLink to="../Price" toggle={toggleHome}>Nuestros precios</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Modalidades</FooterLinkTitle>

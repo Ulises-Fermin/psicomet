@@ -3,6 +3,8 @@ import Video from '../../Videos/video.mp4'
 import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper, ArrowForward, ArrowRight} from './HeroElements'
 import {Button} from '../ButtonElements';
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
+import { useContext } from "react";
 
 
 const HeroSection = () => {
@@ -10,14 +12,18 @@ const HeroSection = () => {
 
     const onHover = () => {
         setHover(!hover)
+    
     }
+
+    const { user } = useContext(UserContext);
+
 
     return (
         <HeroContainer>
             <HeroBg>
                 {/* Ver si es video/mp4 o video.mp4 */}
                 <VideoBg autoPlay muted loop src={Video} type='video.mp4'/> 
-
+                    
             </HeroBg>
             <HeroContent>
                 <HeroH1>Atención psicológica a tu alcance</HeroH1>
