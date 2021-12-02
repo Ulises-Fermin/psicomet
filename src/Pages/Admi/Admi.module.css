@@ -162,6 +162,10 @@ p{
     align-content: center;
     align-items: center;
     width: 25%;
+    background-color: #8dc3c5;
+    padding: 1%;
+    color: black;
+    border-radius: 1rem;
     
 }
 #inputcontainer{
@@ -170,4 +174,11 @@ p{
     margin-left: auto;
     justify-content: space-around;
 
+}
+#buttonE{
+    background-color: green;
+    padding: 0.5%;
+    width: 15%;
+    height: 5%;
+    border-radius: 1rem;
 }

@@ -8,14 +8,27 @@
     text-align: center;
     color: black;
     padding-top: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 0%;
     font-size: 300%;
 }
 
+#subtitle{
+    text-align: center;
+    color: black;
+    padding-top: 2.5%;
+    padding-bottom: 5%;
+    font-size: 200%;
+    font-family: "Scope One", serif;
+}
+
 .star {
-    background-color: lightcoral;
-    width: 20px;
+    background-color: transparent;
+    width: 1.3rem;
     display:inline-block;
+    margin-left: 1%;
+}
+.star:hover{
+    cursor: pointer;
 }
 
 #container{
@@ -38,7 +51,6 @@
 
 #psychoCards{
     display: flex;
-    flex-direction: column;
     background-color: #6eb5b8;
     background-size: cover;
     border-radius: 15px;
@@ -176,3 +188,4 @@ p{
     justify-content: space-around;
 
 }
+

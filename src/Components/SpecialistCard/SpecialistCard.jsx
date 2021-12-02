@@ -168,30 +168,30 @@ function SpecialistCard({ specialist }) {
                     (((specialist.data.points) / (specialist.data.consults)) === 1)) &&
                     ((((specialist.data.points) / (specialist.data.consults)) < 2))
                   ) ? (
-                    <p id={styles.paintstars}>h</p>
+                    <p id={styles.paintstars}>*</p>
                   ) : (null)}
                   {(((((specialist.data.points) / (specialist.data.consults)) > 2) ||
                     (((specialist.data.points) / (specialist.data.consults)) === 2)) &&
                     ((((specialist.data.points) / (specialist.data.consults)) < 3))
                   ) ? (
-                    <p id={styles.paintstars}>hh</p>
+                    <p id={styles.paintstars}>* *</p>
                   ) : (null)}
                   {(((((specialist.data.points) / (specialist.data.consults)) > 3) ||
                     (((specialist.data.points) / (specialist.data.consults)) === 3)) &&
                     ((((specialist.data.points) / (specialist.data.consults)) < 4))
                   ) ? (
-                    <p id={styles.paintstars}>hhh</p>
+                    <p id={styles.paintstars}>* * *</p>
                   ) : (null)}
                   {(((((specialist.data.points) / (specialist.data.consults)) > 4) ||
                     (((specialist.data.points) / (specialist.data.consults)) === 4)) &&
                     ((((specialist.data.points) / (specialist.data.consults)) < 5))
                   ) ? (
-                    <p id={styles.paintstars}>hhhh</p>
+                    <p id={styles.paintstars}>* * * *</p>
                   ) : (null)}
                   {((((specialist.data.points) / (specialist.data.consults)) === 5) ||
                     (((specialist.data.points) / (specialist.data.consults)) > 5)
                   ) ? (
-                    <p id={styles.paintstars}>hhhhh</p>
+                    <p id={styles.paintstars}>* * * * *</p>
                   ) : (null)}
                 </div>
               </div>
