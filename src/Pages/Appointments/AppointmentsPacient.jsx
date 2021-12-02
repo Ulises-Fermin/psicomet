@@ -73,12 +73,12 @@ export default function AppointmentsPacients(){
             <div class={styles.card}>
               <h2 id={styles.titulo}>Consulta</h2>
               <p id={styles.nombre}>
-                {d.data.namePacient} {d.data.lastNamePacient}
+                {d.data.namePsycho} {d.data.lastNamePsycho}
               </p>
               <p id={styles.fecha}>{d.data.date}</p>
               <p id={styles.fecha}>{d.data.hour}</p>
               <div id={styles.buttons}>
-              <Link to={`/ChatPsycho/${d.data.idPacient}`}>Abrir Chat</Link>
+              <Link to={`/Chat/${d.data.idPsycho}`}>Abrir Chat</Link>
               <div>
                 <p>Estatus de la consulta:</p>
                 <p>{d.data.status}</p>

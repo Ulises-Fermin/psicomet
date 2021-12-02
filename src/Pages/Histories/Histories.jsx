@@ -46,13 +46,13 @@ export default function Histories() {
                 {dates.map ((d) => (
                     <div class={styles.row}>
                         <div>
-                            <p>{d.data.date}</p>
+                            <p id={styles.dateNL} >{d.data.date}</p>
+                        </div>
+                        <div >
+                            <p id={styles.dateNL}>{d.data.namePacient} {d.data.lastNamePacient}</p>
                         </div>
                         <div>
-                            <p>{d.data.namePacient} {d.data.lastNamePacient}</p>
-                        </div>
-                        <div>
-                            <PopUp trigger={<button>Ver mas</button>} modal>
+                            <PopUp trigger={<button id={styles.pButton}><p>Ver mas</p></button>} modal>
                                 <div id={styles.PopUp}>
                                     <h1>Paciente: {d.data.namePacient}</h1>
                                     <h2 id={styles.date}>Fecha: {d.data.date}</h2>

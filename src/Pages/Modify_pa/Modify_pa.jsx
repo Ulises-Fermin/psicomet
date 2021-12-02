@@ -22,7 +22,7 @@ function Modify_pa() {
     role: "pacient",
     idc: null,
     college: null,
-  });
+  }); 
 
   const handleOnChange = (event) => {
     const { value, name: inputName } = event.target;
@@ -70,6 +70,7 @@ function Modify_pa() {
       "state_changed",
       function progress(snapshot) {
         console.warn((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        alert("No cambie la pagina ni cierre el programa hasta que la operacion halla finalizado, lleva: " + (snapshot.bytesTransferred / snapshot.totalBytes) * 100)
       },
       function error(error) {
         console.error(error);

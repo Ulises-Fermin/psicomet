@@ -134,25 +134,25 @@ a {
 }
 
 .card1:hover {
-  height: 450px;
+  height: 470px;
   width: 200px;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 .card2:hover {
-  height: 450px;
+  height: 470px;
   width: 200px;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 .card3:hover {
-  height: 450px;
+  height: 550px;
   width: 200px;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 .card4:hover {
-  height: 450px;
+  height: 470px;
   width: 200px;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
@@ -275,4 +275,8 @@ a {
 .info_personal {
   color: #fff;
   font-family: 'Mukta', sans-serif;
+}
+#pdata{
+  color:blue;
+  padding: 3px;
 }
